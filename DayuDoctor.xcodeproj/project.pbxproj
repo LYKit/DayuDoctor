@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
 		C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */; };
 		C13A5DEC21EDC4DC00493EE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DEB21EDC4DC00493EE7 /* ViewController.m */; };
 		C13A5DEF21EDC4DC00493EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13A5DED21EDC4DC00493EE7 /* Main.storyboard */; };
@@ -15,6 +16,15 @@
 		C13A5DF721EDC4DE00493EE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DF621EDC4DE00493EE7 /* main.m */; };
 		C13A5E0121EDC4DE00493EE7 /* DayuDoctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E0021EDC4DE00493EE7 /* DayuDoctorTests.m */; };
 		C13A5E0C21EDC4DE00493EE7 /* DayuDoctorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E0B21EDC4DE00493EE7 /* DayuDoctorUITests.m */; };
+		C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E5B21EDCF0D00493EE7 /* LYErrorConfig.m */; };
+		C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E5C21EDCF0D00493EE7 /* LYResponseObject.m */; };
+		C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E6021EDCF0D00493EE7 /* LYInterfaceConfig.m */; };
+		C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E6121EDCF0D00493EE7 /* LYParserManager.m */; };
+		C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E6D21EDCF0D00493EE7 /* ResponseCommon.m */; };
+		C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E6E21EDCF0D00493EE7 /* LYRequestObject.m */; };
+		C13A5E8F21EDCF9100493EE7 /* NSObject+LYJSONEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E8E21EDCF9100493EE7 /* NSObject+LYJSONEntity.m */; };
+		C13A5E9221EDD0CC00493EE7 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E9121EDD0CC00493EE7 /* NSString+Additions.m */; };
+		C13A5E9521EDD2E400493EE7 /* LYRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5E9321EDD2E400493EE7 /* LYRequestManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B4CCD65CC6307E2717DA444 /* Pods-DayuDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.debug.xcconfig"; sourceTree = "<group>"; };
+		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		C13A5DE421EDC4DC00493EE7 /* DayuDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayuDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13A5DE721EDC4DC00493EE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +63,28 @@
 		C13A5E0721EDC4DE00493EE7 /* DayuDoctorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayuDoctorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13A5E0B21EDC4DE00493EE7 /* DayuDoctorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DayuDoctorUITests.m; sourceTree = "<group>"; };
 		C13A5E0D21EDC4DE00493EE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C13A5E5B21EDCF0D00493EE7 /* LYErrorConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYErrorConfig.m; sourceTree = "<group>"; };
+		C13A5E5C21EDCF0D00493EE7 /* LYResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYResponseObject.m; sourceTree = "<group>"; };
+		C13A5E5E21EDCF0D00493EE7 /* LYRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRequestObject.h; sourceTree = "<group>"; };
+		C13A5E5F21EDCF0D00493EE7 /* ResponseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseCommon.h; sourceTree = "<group>"; };
+		C13A5E6021EDCF0D00493EE7 /* LYInterfaceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYInterfaceConfig.m; sourceTree = "<group>"; };
+		C13A5E6121EDCF0D00493EE7 /* LYParserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYParserManager.m; sourceTree = "<group>"; };
+		C13A5E6221EDCF0D00493EE7 /* LYRequestMethodProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRequestMethodProtocol.h; sourceTree = "<group>"; };
+		C13A5E6921EDCF0D00493EE7 /* LYErrorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYErrorConfig.h; sourceTree = "<group>"; };
+		C13A5E6A21EDCF0D00493EE7 /* LYNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYNetwork.h; sourceTree = "<group>"; };
+		C13A5E6B21EDCF0D00493EE7 /* LYResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYResponseObject.h; sourceTree = "<group>"; };
+		C13A5E6C21EDCF0D00493EE7 /* LYInterfaceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYInterfaceConfig.h; sourceTree = "<group>"; };
+		C13A5E6D21EDCF0D00493EE7 /* ResponseCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseCommon.m; sourceTree = "<group>"; };
+		C13A5E6E21EDCF0D00493EE7 /* LYRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRequestObject.m; sourceTree = "<group>"; };
+		C13A5E7021EDCF0D00493EE7 /* LYJSONEntityElementProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYJSONEntityElementProtocol.h; sourceTree = "<group>"; };
+		C13A5E7121EDCF0D00493EE7 /* LYParserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYParserManager.h; sourceTree = "<group>"; };
+		C13A5E8D21EDCF9000493EE7 /* NSObject+LYJSONEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LYJSONEntity.h"; sourceTree = "<group>"; };
+		C13A5E8E21EDCF9100493EE7 /* NSObject+LYJSONEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LYJSONEntity.m"; sourceTree = "<group>"; };
+		C13A5E9021EDD0CC00493EE7 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		C13A5E9121EDD0CC00493EE7 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		C13A5E9321EDD2E400493EE7 /* LYRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRequestManager.m; sourceTree = "<group>"; };
+		C13A5E9421EDD2E400493EE7 /* LYRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYRequestManager.h; sourceTree = "<group>"; };
+		E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayuDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		314EABF77613AAA31738B4BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B4CCD65CC6307E2717DA444 /* Pods-DayuDoctor.debug.xcconfig */,
+				305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C13A5DDB21EDC4DC00493EE7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +129,8 @@
 				C13A5DFF21EDC4DE00493EE7 /* DayuDoctorTests */,
 				C13A5E0A21EDC4DE00493EE7 /* DayuDoctorUITests */,
 				C13A5DE521EDC4DC00493EE7 /* Products */,
+				314EABF77613AAA31738B4BB /* Pods */,
+				DE64592D20BE65AAC0C144F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,20 +148,21 @@
 			isa = PBXGroup;
 			children = (
 				C13A5E1921EDC75000493EE7 /* Category */,
-				C13A5E1C21EDC75000493EE7 /* Common */,
+				C13A5E1C21EDC75000493EE7 /* CommonView */,
 				C13A5E1D21EDC75100493EE7 /* EntityAPI */,
+				C13A5E2021EDCC9900493EE7 /* FrameworkService */,
 				C13A5E1E21EDC75100493EE7 /* Resource */,
 				C13A5E1B21EDC75000493EE7 /* Utility */,
 				C13A5E1A21EDC75000493EE7 /* ViewControllers */,
 				C13A5DE721EDC4DC00493EE7 /* AppDelegate.h */,
 				C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */,
+				C13A5DF021EDC4DE00493EE7 /* Assets.xcassets */,
+				C13A5DF521EDC4DE00493EE7 /* Info.plist */,
+				C13A5DF221EDC4DE00493EE7 /* LaunchScreen.storyboard */,
+				C13A5DF621EDC4DE00493EE7 /* main.m */,
+				C13A5DED21EDC4DC00493EE7 /* Main.storyboard */,
 				C13A5DEA21EDC4DC00493EE7 /* ViewController.h */,
 				C13A5DEB21EDC4DC00493EE7 /* ViewController.m */,
-				C13A5DED21EDC4DC00493EE7 /* Main.storyboard */,
-				C13A5DF021EDC4DE00493EE7 /* Assets.xcassets */,
-				C13A5DF221EDC4DE00493EE7 /* LaunchScreen.storyboard */,
-				C13A5DF521EDC4DE00493EE7 /* Info.plist */,
-				C13A5DF621EDC4DE00493EE7 /* main.m */,
 			);
 			path = DayuDoctor;
 			sourceTree = "<group>";
@@ -141,6 +188,8 @@
 		C13A5E1921EDC75000493EE7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C13A5E9021EDD0CC00493EE7 /* NSString+Additions.h */,
+				C13A5E9121EDD0CC00493EE7 /* NSString+Additions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -159,11 +208,11 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		C13A5E1C21EDC75000493EE7 /* Common */ = {
+		C13A5E1C21EDC75000493EE7 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Common;
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		C13A5E1D21EDC75100493EE7 /* EntityAPI */ = {
@@ -188,6 +237,48 @@
 			path = TestData;
 			sourceTree = "<group>";
 		};
+		C13A5E2021EDCC9900493EE7 /* FrameworkService */ = {
+			isa = PBXGroup;
+			children = (
+				C13A5E5921EDCF0D00493EE7 /* LYNetworking */,
+			);
+			path = FrameworkService;
+			sourceTree = "<group>";
+		};
+		C13A5E5921EDCF0D00493EE7 /* LYNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C13A5E9421EDD2E400493EE7 /* LYRequestManager.h */,
+				C13A5E9321EDD2E400493EE7 /* LYRequestManager.m */,
+				C13A5E6921EDCF0D00493EE7 /* LYErrorConfig.h */,
+				C13A5E5B21EDCF0D00493EE7 /* LYErrorConfig.m */,
+				C13A5E6C21EDCF0D00493EE7 /* LYInterfaceConfig.h */,
+				C13A5E6021EDCF0D00493EE7 /* LYInterfaceConfig.m */,
+				C13A5E7021EDCF0D00493EE7 /* LYJSONEntityElementProtocol.h */,
+				C13A5E6A21EDCF0D00493EE7 /* LYNetwork.h */,
+				C13A5E7121EDCF0D00493EE7 /* LYParserManager.h */,
+				C13A5E6121EDCF0D00493EE7 /* LYParserManager.m */,
+				C13A5E6221EDCF0D00493EE7 /* LYRequestMethodProtocol.h */,
+				C13A5E5E21EDCF0D00493EE7 /* LYRequestObject.h */,
+				C13A5E6E21EDCF0D00493EE7 /* LYRequestObject.m */,
+				C13A5E6B21EDCF0D00493EE7 /* LYResponseObject.h */,
+				C13A5E5C21EDCF0D00493EE7 /* LYResponseObject.m */,
+				C13A5E8D21EDCF9000493EE7 /* NSObject+LYJSONEntity.h */,
+				C13A5E8E21EDCF9100493EE7 /* NSObject+LYJSONEntity.m */,
+				C13A5E5F21EDCF0D00493EE7 /* ResponseCommon.h */,
+				C13A5E6D21EDCF0D00493EE7 /* ResponseCommon.m */,
+			);
+			path = LYNetworking;
+			sourceTree = "<group>";
+		};
+		DE64592D20BE65AAC0C144F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +286,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C13A5E1021EDC4DE00493EE7 /* Build configuration list for PBXNativeTarget "DayuDoctor" */;
 			buildPhases = (
+				55DC9FBFA217161925800B0C /* [CP] Check Pods Manifest.lock */,
 				C13A5DE021EDC4DC00493EE7 /* Sources */,
 				C13A5DE121EDC4DC00493EE7 /* Frameworks */,
 				C13A5DE221EDC4DC00493EE7 /* Resources */,
@@ -313,14 +405,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		55DC9FBFA217161925800B0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DayuDoctor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C13A5DE021EDC4DC00493EE7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C13A5DEC21EDC4DC00493EE7 /* ViewController.m in Sources */,
+				C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */,
+				C13A5E9221EDD0CC00493EE7 /* NSString+Additions.m in Sources */,
 				C13A5DF721EDC4DE00493EE7 /* main.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
+				C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */,
+				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
+				C13A5E8F21EDCF9100493EE7 /* NSObject+LYJSONEntity.m in Sources */,
+				C13A5E9521EDD2E400493EE7 /* LYRequestManager.m in Sources */,
+				C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */,
+				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +611,7 @@
 		};
 		C13A5E1121EDC4DE00493EE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B4CCD65CC6307E2717DA444 /* Pods-DayuDoctor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +628,7 @@
 		};
 		C13A5E1221EDC4DE00493EE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
