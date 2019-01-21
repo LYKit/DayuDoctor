@@ -100,6 +100,8 @@
             progress(uploadProgress);
         }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        responseObject =  [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+
 #ifdef DEBUG
         NSLog(@"=============================");
         NSLog(@"接口地址： %@",self.interfaceURL);
@@ -108,6 +110,7 @@
         NSLog(@"请求成功，返回数据：%@",responseObject);
         NSLog(@"=============================");
 #endif
+        
         id object = [LYParserManager objectParserJsonMapPropertyWithClassString:NSStringFromClass([self class]) responseName:responseName data:responseObject];
         if (success) {
             success(object,nil);

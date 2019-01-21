@@ -1,33 +1,35 @@
 //
-//  DYZResponseNewsList.h
+//  APINewsList.h
 //  DayuDoctor
 //
 //  Created by zhuopin on 2019/1/20.
 //  Copyright © 2019 大禹中医. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "LYRequestObject.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@interface APINewsList : LYRequestObject
 
-@interface DYZResponseNews : NSObject
+@end
+
+
+
+
+
+@interface News : NSObject
 @property (nonatomic, copy) NSString *ID;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *time;
 @end
 
-@interface DYZResponseNewsData : NSObject
+@interface NewsData : NSObject
 @property (nonatomic, copy) NSString *total;
-@property (nonatomic, strong) NSArray<DYZResponseNews *> *content;
+@property (nonatomic, strong) NSArray<News *> *content;
 @end
 
-@interface DYZResponseNewsList : NSObject
+@interface ResponseNewsList : NSObject
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic, strong) DYZResponseNewsData *data;
+@property (nonatomic, strong) NewsData *data;
 @end
-
-
-
-NS_ASSUME_NONNULL_END

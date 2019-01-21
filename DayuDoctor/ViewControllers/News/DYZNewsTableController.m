@@ -8,15 +8,14 @@
 
 #import "DYZNewsTableController.h"
 #import "DYZNewsTableCell.h"
-#import "DYZRequestNewsList.h"
-#import "DYZResponseNewsList.h"
+#import "APINewsList.h"
 
 @interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *models;
 
-@property (nonatomic, strong) DYZRequestNewsList *request;
-@property (nonatomic, strong) DYZResponseNewsList *response;
+@property (nonatomic, strong) APINewsList *request;
+@property (nonatomic, strong) ResponseNewsList *response;
 @end
 
 @implementation DYZNewsTableController
@@ -29,8 +28,8 @@
     [self setupTableView];
     
     
-    _request = [DYZRequestNewsList new];
-    [_request startPostWithSuccessBlock:^(DYZResponseNewsList *response, NSDictionary *options) {
+    _request = [APINewsList new];
+    [_request startPostWithSuccessBlock:^(ResponseNewsList *response, NSDictionary *options) {
         _response = response;
         
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
