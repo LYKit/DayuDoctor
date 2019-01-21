@@ -59,8 +59,8 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_response.data.content.count) {
-        return _response.data.content.count;
+    if (_response.content.count) {
+        return _response.content.count;
     } else {
         return 10;
     }

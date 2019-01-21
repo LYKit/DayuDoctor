@@ -13,7 +13,7 @@
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
-    self.interfaceURL = InterfaceURL(@"news/list");
+    self.interfaceURL = InterfaceURL(@"/news/list");
     return self;
 }
 
@@ -28,19 +28,11 @@
 
 @end
 
-@implementation NewsData
-+ (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{
-             @"content" : [News class],
-             };
-}
-@end
-
 
 @implementation ResponseNewsList
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
-             @"data" : [NewsData class]
+             @"content" : [News class],
              };
 }
 @end
