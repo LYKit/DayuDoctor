@@ -10,4 +10,11 @@
 
 @implementation DYZRequestCoursesList
 
+- (instancetype)init {
+    self = [super init];
+    if (!self) return nil;
+    self.interfaceURL = @"/course/user";
+    return self;
+}
+
 @end

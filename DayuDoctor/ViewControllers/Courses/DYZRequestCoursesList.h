@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZRequestCoursesList : LYRequestObject
-
+@property (nonatomic, copy) NSString *currPage;
+@property (nonatomic, copy) NSString *pageSize;
 @end
 
 NS_ASSUME_NONNULL_END

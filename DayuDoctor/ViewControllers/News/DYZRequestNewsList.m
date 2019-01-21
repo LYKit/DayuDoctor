@@ -9,5 +9,11 @@
 #import "DYZRequestNewsList.h"
 
 @implementation DYZRequestNewsList
+- (instancetype)init {
+    self = [super init];
+    if (!self) return nil;
+    self.interfaceURL = @"http://39.96.167.96/news/list";
+    return self;
+}
 
 @end

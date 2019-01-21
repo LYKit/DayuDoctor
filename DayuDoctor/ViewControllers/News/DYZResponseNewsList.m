@@ -8,6 +8,23 @@
 
 #import "DYZResponseNewsList.h"
 
-@implementation DYZResponseNewsList
+@implementation DYZResponseNews
 
+@end
+
+@implementation DYZResponseNewsData
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"content" : [DYZResponseNews class],
+             };
+}
+@end
+
+
+@implementation DYZResponseNewsList
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"data" : [DYZResponseNewsData class]
+             };
+}
 @end

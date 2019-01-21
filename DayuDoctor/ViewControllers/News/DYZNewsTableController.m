@@ -7,7 +7,63 @@
 //
 
 #import "DYZNewsTableController.h"
+#import "DYZNewsTableCell.h"
+#import "DYZRequestNewsList.h"
+#import "DYZResponseNewsList.h"
+
+@interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *models;
+
+@property (nonatomic, strong) DYZRequestNewsList *request;
+@property (nonatomic, strong) DYZResponseNewsList *response;
+@end
 
 @implementation DYZNewsTableController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+    self.title = @"资讯列表";
+    [self setupTableView];
+    
+    
+    _request = [DYZRequestNewsList new];
+    [_request startPostWithSuccessBlock:^(DYZResponseNewsList *response, NSDictionary *options) {
+        _response = response;
+        
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+    
+    
+}
+
+- (void)setupTableView {
+    _tableView = [UITableView new];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = 100;
+    [self.view addSubview:_tableView];
+    [_tableView registerClass:[DYZNewsTableCell class] forCellReuseIdentifier:@"cell"];
+    
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+}
+
+#pragma tableView delegate
+- (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    DYZNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (_response.data.content.count) {
+        return _response.data.content.count;
+    } else {
+        return 10;
+    }
+}
 @end

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683C821F47FF7002E255A /* DYZBaseViewController.m */; };
+		0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */; };
+		0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */; };
+		0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */; };
+		0D8683E221F48F03002E255A /* DYZResponseCoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E121F48F03002E255A /* DYZResponseCoursesList.m */; };
+		0D8683E521F48FA1002E255A /* DYZRequestCoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E421F48FA1002E255A /* DYZRequestCoursesList.m */; };
+		0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E821F49286002E255A /* DYZNewsTableController.m */; };
+		0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */; };
+		0D8683EF21F492CA002E255A /* DYZRequestNewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EE21F492CA002E255A /* DYZRequestNewsList.m */; };
+		0D8683F221F492E1002E255A /* DYZResponseNewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683F121F492E1002E255A /* DYZResponseNewsList.m */; };
 		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
 		C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */; };
 		C13A5DEC21EDC4DC00493EE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DEB21EDC4DC00493EE7 /* ViewController.m */; };
@@ -46,6 +56,26 @@
 
 /* Begin PBXFileReference section */
 		0B4CCD65CC6307E2717DA444 /* Pods-DayuDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.debug.xcconfig"; sourceTree = "<group>"; };
+		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
+		0D8683C821F47FF7002E255A /* DYZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZBaseViewController.m; sourceTree = "<group>"; };
+		0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYZCoursesTableController.m; sourceTree = "<group>"; };
+		0D8683D221F48C9C002E255A /* DYZCoursesTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYZCoursesTableController.h; sourceTree = "<group>"; };
+		0D8683D721F48E08002E255A /* DYZBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseTableViewCell.h; sourceTree = "<group>"; };
+		0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZBaseTableViewCell.m; sourceTree = "<group>"; };
+		0D8683DA21F48E2A002E255A /* DYZCoursesTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCoursesTableCell.h; sourceTree = "<group>"; };
+		0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCoursesTableCell.m; sourceTree = "<group>"; };
+		0D8683E021F48F03002E255A /* DYZResponseCoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZResponseCoursesList.h; sourceTree = "<group>"; };
+		0D8683E121F48F03002E255A /* DYZResponseCoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZResponseCoursesList.m; sourceTree = "<group>"; };
+		0D8683E321F48FA1002E255A /* DYZRequestCoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZRequestCoursesList.h; sourceTree = "<group>"; };
+		0D8683E421F48FA1002E255A /* DYZRequestCoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZRequestCoursesList.m; sourceTree = "<group>"; };
+		0D8683E721F49286002E255A /* DYZNewsTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZNewsTableController.h; sourceTree = "<group>"; };
+		0D8683E821F49286002E255A /* DYZNewsTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZNewsTableController.m; sourceTree = "<group>"; };
+		0D8683EA21F492A7002E255A /* DYZNewsTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZNewsTableCell.h; sourceTree = "<group>"; };
+		0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZNewsTableCell.m; sourceTree = "<group>"; };
+		0D8683ED21F492CA002E255A /* DYZRequestNewsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZRequestNewsList.h; sourceTree = "<group>"; };
+		0D8683EE21F492CA002E255A /* DYZRequestNewsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZRequestNewsList.m; sourceTree = "<group>"; };
+		0D8683F021F492E1002E255A /* DYZResponseNewsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZResponseNewsList.h; sourceTree = "<group>"; };
+		0D8683F121F492E1002E255A /* DYZResponseNewsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZResponseNewsList.m; sourceTree = "<group>"; };
 		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		C13A5DE421EDC4DC00493EE7 /* DayuDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayuDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13A5DE721EDC4DC00493EE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,6 +143,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8683C121F47809002E255A /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonView;
+			sourceTree = "<group>";
+		};
+		0D8683C221F4780A002E255A /* EntityAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0D8683C321F4780A002E255A /* TestData */,
+			);
+			path = EntityAPI;
+			sourceTree = "<group>";
+		};
+		0D8683C321F4780A002E255A /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
+		0D8683C421F4780A002E255A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0D8683C521F4780A002E255A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D8683C721F47FF7002E255A /* DYZBaseViewController.h */,
+				0D8683C821F47FF7002E255A /* DYZBaseViewController.m */,
+				0D8683D721F48E08002E255A /* DYZBaseTableViewCell.h */,
+				0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */,
+				0D8683E621F4925F002E255A /* News */,
+				0D8683D021F48C9C002E255A /* Courses */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0D8683C621F47811002E255A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0D8683D021F48C9C002E255A /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				0D8683D221F48C9C002E255A /* DYZCoursesTableController.h */,
+				0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */,
+				0D8683DA21F48E2A002E255A /* DYZCoursesTableCell.h */,
+				0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */,
+				0D8683E321F48FA1002E255A /* DYZRequestCoursesList.h */,
+				0D8683E421F48FA1002E255A /* DYZRequestCoursesList.m */,
+				0D8683E021F48F03002E255A /* DYZResponseCoursesList.h */,
+				0D8683E121F48F03002E255A /* DYZResponseCoursesList.m */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		0D8683E621F4925F002E255A /* News */ = {
+			isa = PBXGroup;
+			children = (
+				0D8683E721F49286002E255A /* DYZNewsTableController.h */,
+				0D8683E821F49286002E255A /* DYZNewsTableController.m */,
+				0D8683EA21F492A7002E255A /* DYZNewsTableCell.h */,
+				0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */,
+				0D8683ED21F492CA002E255A /* DYZRequestNewsList.h */,
+				0D8683EE21F492CA002E255A /* DYZRequestNewsList.m */,
+				0D8683F021F492E1002E255A /* DYZResponseNewsList.h */,
+				0D8683F121F492E1002E255A /* DYZResponseNewsList.m */,
+			);
+			name = News;
+			path = DayuDoctor/ViewControllers/News;
+			sourceTree = SOURCE_ROOT;
+		};
 		314EABF77613AAA31738B4BB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +257,13 @@
 		C13A5DE621EDC4DC00493EE7 /* DayuDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				0D8683C121F47809002E255A /* CommonView */,
+				0D8683C221F4780A002E255A /* EntityAPI */,
+				0D8683C621F47811002E255A /* Resource */,
+				0D8683C421F4780A002E255A /* Utility */,
+				0D8683C521F4780A002E255A /* ViewControllers */,
 				C13A5E1921EDC75000493EE7 /* Category */,
-				C13A5E1C21EDC75000493EE7 /* CommonView */,
-				C13A5E1D21EDC75100493EE7 /* EntityAPI */,
 				C13A5E2021EDCC9900493EE7 /* FrameworkService */,
-				C13A5E1E21EDC75100493EE7 /* Resource */,
-				C13A5E1B21EDC75000493EE7 /* Utility */,
-				C13A5E1A21EDC75000493EE7 /* ViewControllers */,
 				C13A5DE721EDC4DC00493EE7 /* AppDelegate.h */,
 				C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */,
 				C13A5DF021EDC4DE00493EE7 /* Assets.xcassets */,
@@ -192,49 +302,6 @@
 				C13A5E9121EDD0CC00493EE7 /* NSString+Additions.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		C13A5E1A21EDC75000493EE7 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		C13A5E1B21EDC75000493EE7 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		C13A5E1C21EDC75000493EE7 /* CommonView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonView;
-			sourceTree = "<group>";
-		};
-		C13A5E1D21EDC75100493EE7 /* EntityAPI */ = {
-			isa = PBXGroup;
-			children = (
-				C13A5E1F21EDC7D400493EE7 /* TestData */,
-			);
-			path = EntityAPI;
-			sourceTree = "<group>";
-		};
-		C13A5E1E21EDC75100493EE7 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		C13A5E1F21EDC7D400493EE7 /* TestData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TestData;
 			sourceTree = "<group>";
 		};
 		C13A5E2021EDCC9900493EE7 /* FrameworkService */ = {
@@ -433,16 +500,26 @@
 			files = (
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C13A5DEC21EDC4DC00493EE7 /* ViewController.m in Sources */,
+				0D8683E521F48FA1002E255A /* DYZRequestCoursesList.m in Sources */,
 				C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */,
+				0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */,
 				C13A5E9221EDD0CC00493EE7 /* NSString+Additions.m in Sources */,
+				0D8683EF21F492CA002E255A /* DYZRequestNewsList.m in Sources */,
+				0D8683E221F48F03002E255A /* DYZResponseCoursesList.m in Sources */,
 				C13A5DF721EDC4DE00493EE7 /* main.m in Sources */,
+				0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */,
 				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
 				C13A5E8F21EDCF9100493EE7 /* NSObject+LYJSONEntity.m in Sources */,
+				0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */,
+				0D8683F221F492E1002E255A /* DYZResponseNewsList.m in Sources */,
+				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
 				C13A5E9521EDD2E400493EE7 /* LYRequestManager.m in Sources */,
+				0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */,
 				C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
+				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
