@@ -9,8 +9,6 @@
 #import "DYZNewsTableController.h"
 #import "DYZNewsTableCell.h"
 #import "APINewsList.h"
-#import <YYKit.h>
-#import "MENetWorkManager.h"
 
 @interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -24,15 +22,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"资讯列表";
-    [self setupTableView];
+    
     _request = [APINewsList new];
+    
+    [self setupTableView];
+}
+
+- (void)requestNews {
+    __weak typeof(self) _self = self;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [_request startPostWithSuccessBlock:^(ResponseNewsList *response, NSDictionary *options) {
-        self->_response = response;
+        _self.response = response;
+        [_self.tableView reloadData];
+        [_self endRefreshing];
         
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        
+        [_self endRefreshing];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 
@@ -49,19 +58,36 @@
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+    
+    __weak typeof(self) _self = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        _self.request.currPage = 1;
+        [_self requestNews];
+    }];
+    [_tableView.mj_header beginRefreshing];
+    
+    _tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+//        _self.request.currPage += 1;
+        [_self requestNews];
+    }];
+}
+
+- (void)endRefreshing {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
 }
 
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if (_response.content.count) {
+        News *news = _response.content[indexPath.row];
+        [cell setNews:news];
+    }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_response.content.count) {
-        return _response.content.count;
-    } else {
-        return 10;
-    }
+    return _response.content.count;
 }
 @end

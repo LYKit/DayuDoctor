@@ -7,7 +7,6 @@
 //
 
 #import "DYZCoursesTableController.h"
-#import <Masonry.h>
 #import "DYZCoursesTableCell.h"
 
 @interface DYZCoursesTableController ()<UITableViewDelegate, UITableViewDataSource>

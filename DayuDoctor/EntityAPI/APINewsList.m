@@ -27,7 +27,7 @@
 @implementation News
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
-             @"id" : @"ID"
+             @"ID" : @"id"
              };
 };
 @end

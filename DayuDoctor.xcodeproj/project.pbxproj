@@ -16,7 +16,6 @@
 		0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E821F49286002E255A /* DYZNewsTableController.m */; };
 		0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */; };
 		0D8683EF21F492CA002E255A /* APINewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EE21F492CA002E255A /* APINewsList.m */; };
-		0DD4851621F6A662004812C2 /* MENetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4851521F6A662004812C2 /* MENetWorkManager.m */; };
 		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
 		C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */; };
 		C13A5DEC21EDC4DC00493EE7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DEB21EDC4DC00493EE7 /* ViewController.m */; };
@@ -74,8 +73,6 @@
 		0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZNewsTableCell.m; sourceTree = "<group>"; };
 		0D8683ED21F492CA002E255A /* APINewsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APINewsList.h; sourceTree = "<group>"; };
 		0D8683EE21F492CA002E255A /* APINewsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APINewsList.m; sourceTree = "<group>"; };
-		0DD4851421F6A662004812C2 /* MENetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MENetWorkManager.h; sourceTree = "<group>"; };
-		0DD4851521F6A662004812C2 /* MENetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MENetWorkManager.m; sourceTree = "<group>"; };
 		0DD4851721F6ADB5004812C2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		C13A5DE421EDC4DC00493EE7 /* DayuDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayuDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,8 +213,6 @@
 			children = (
 				0D8683E721F49286002E255A /* DYZNewsTableController.h */,
 				0D8683E821F49286002E255A /* DYZNewsTableController.m */,
-				0DD4851421F6A662004812C2 /* MENetWorkManager.h */,
-				0DD4851521F6A662004812C2 /* MENetWorkManager.m */,
 				0D8683EA21F492A7002E255A /* DYZNewsTableCell.h */,
 				0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */,
 			);
@@ -521,7 +516,6 @@
 			files = (
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C13A5DEC21EDC4DC00493EE7 /* ViewController.m in Sources */,
-				0DD4851621F6A662004812C2 /* MENetWorkManager.m in Sources */,
 				0D8683E521F48FA1002E255A /* DYZRequestCoursesList.m in Sources */,
 				C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */,
 				0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */,
@@ -714,7 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = DayuDoctor/Utility/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -733,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = DayuDoctor/Utility/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
