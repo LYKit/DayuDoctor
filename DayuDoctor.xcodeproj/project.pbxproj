@@ -52,6 +52,7 @@
 		C1BCDB8221F7260D00CDF3EB /* DYZClassifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB8121F7260D00CDF3EB /* DYZClassifyController.m */; };
 		C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB8421F7262700CDF3EB /* DYZApplyController.m */; };
 		C1BCDB8821F7282700CDF3EB /* DYZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB8721F7282700CDF3EB /* DYZMainViewController.m */; };
+		C1BCDB8A21F7382F00CDF3EB /* homeHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB8921F7382F00CDF3EB /* homeHeader.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		C1BCDB8421F7262700CDF3EB /* DYZApplyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZApplyController.m; sourceTree = "<group>"; };
 		C1BCDB8621F7282700CDF3EB /* DYZMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMainViewController.h; sourceTree = "<group>"; };
 		C1BCDB8721F7282700CDF3EB /* DYZMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMainViewController.m; sourceTree = "<group>"; };
+		C1BCDB8921F7382F00CDF3EB /* homeHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeHeader.png; sourceTree = "<group>"; };
 		E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayuDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 				C1BCDB7521F7235900CDF3EB /* ico_send_pre@2x.png */,
 				C1BCDB7921F7235900CDF3EB /* order_btn_blue_p@2x.png */,
 				C1BCDB7621F7235900CDF3EB /* order_btn_gray_nor@2x.png */,
+				C1BCDB8921F7382F00CDF3EB /* homeHeader.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				C1BCDB5B21F704A300CDF3EB /* DYZMainHeaderView.xib in Resources */,
 				C1BCDB6F21F7194200CDF3EB /* DYZMineViewController.xib in Resources */,
 				C13A5DEF21EDC4DC00493EE7 /* Main.storyboard in Resources */,
+				C1BCDB8A21F7382F00CDF3EB /* homeHeader.png in Resources */,
 				C1BCDB7B21F7235900CDF3EB /* ico_send_pre@2x.png in Resources */,
 				C1BCDB7321F722E100CDF3EB /* ico_logo_offline_36@2x.png in Resources */,
 				C1BCDB7221F722E100CDF3EB /* ico_logo_online_36@2x.png in Resources */,

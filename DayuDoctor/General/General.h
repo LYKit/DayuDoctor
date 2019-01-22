@@ -12,6 +12,9 @@
 
 #endif /* General_h */
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 // iphonex
 #import "UIDeviceHardware.h"
 #define IS_IPHONE_X ([[UIDeviceHardware platformString] isEqualToString:@"iPhone X"] || SCREEN_SIZE_5)
