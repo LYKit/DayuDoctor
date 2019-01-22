@@ -4,5 +4,8 @@ target "DayuDoctor" do
 pod 'AFNetworking'
 pod 'YYKit'
 pod 'Masonry'
+pod 'MJRefresh'
+pod 'MBProgressHUD'
+pod 'Toast'
 end
 

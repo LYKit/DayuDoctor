@@ -7,18 +7,28 @@
 //
 
 #import "DYZBaseTableViewCell.h"
+#import <Masonry.h>
+#import <YYKit.h>
 
 @implementation DYZBaseTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (!self) return self;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    UIView *line = [UIView new];
+    line.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
+    [self.contentView addSubview:line];
+    
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.contentView);
+        make.left.mas_equalTo(16);
+        make.right.equalTo(self.contentView).mas_offset(-16);
+        make.height.mas_equalTo(0.5);
+    }];
+    
+    return self;
 }
 
 @end

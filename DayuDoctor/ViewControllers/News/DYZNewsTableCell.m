@@ -34,6 +34,7 @@
     _titleLabel.font = [UIFont systemFontOfSize:15];
     _titleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
     [self.contentView addSubview:_titleLabel];
+    _titleLabel.text = @"但是现在公司的项目使用的是HTTP协议但是现在公司的项目使用的是HTTP协议";
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self->_imageView).mas_offset(10);
@@ -42,7 +43,16 @@
         make.height.mas_equalTo(15);
     }];
     
-    
+    _descLabel = [UILabel new];
+    _descLabel.font = [UIFont systemFontOfSize:13];
+    _descLabel.textColor = [UIColor colorWithHexString:@"#666666"];
+    [self.contentView addSubview:_descLabel];
+    [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self->_imageView.mas_bottom).mas_offset(-10);
+        make.left.right.equalTo(self->_titleLabel);
+        make.height.mas_equalTo(13);
+    }];
+    _descLabel.text = @"运行项目时报上面的错误运行项目时报上面的错误运行项目时报上面的错误";
     return self;
 }
 

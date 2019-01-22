@@ -9,6 +9,8 @@
 #import "DYZNewsTableController.h"
 #import "DYZNewsTableCell.h"
 #import "APINewsList.h"
+#import <YYKit.h>
+#import "MENetWorkManager.h"
 
 @interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -23,20 +25,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.title = @"资讯列表";
     [self setupTableView];
-    
-    
     _request = [APINewsList new];
     [_request startPostWithSuccessBlock:^(ResponseNewsList *response, NSDictionary *options) {
-        _response = response;
+        self->_response = response;
         
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
-    
-    
 }
 
 - (void)setupTableView {
@@ -45,6 +42,8 @@
     _tableView.dataSource = self;
     _tableView.rowHeight = 100;
     [self.view addSubview:_tableView];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
     [_tableView registerClass:[DYZNewsTableCell class] forCellReuseIdentifier:@"cell"];
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -59,10 +58,6 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_response.data.content.count) {
-        return _response.data.content.count;
-    } else {
-        return 10;
-    }
+    return 10;
 }
 @end
