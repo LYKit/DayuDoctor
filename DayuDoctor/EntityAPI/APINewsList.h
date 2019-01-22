@@ -7,6 +7,7 @@
 //
 
 #import "LYRequestObject.h"
+#import "LYResponseObject.h"
 
 @interface APINewsList : LYRequestObject
 
@@ -23,13 +24,8 @@
 @property (nonatomic, copy) NSString *time;
 @end
 
-@interface NewsData : NSObject
+@interface ResponseNewsList : LYResponseObject
 @property (nonatomic, copy) NSString *total;
 @property (nonatomic, strong) NSArray<News *> *content;
 @end
 
-@interface ResponseNewsList : NSObject
-@property (nonatomic, copy) NSString *code;
-@property (nonatomic, copy) NSString *message;
-@property (nonatomic, strong) NewsData *data;
-@end

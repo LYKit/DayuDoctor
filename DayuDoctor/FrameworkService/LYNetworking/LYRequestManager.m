@@ -20,13 +20,16 @@ static LYRequestManager *_sharedClient;
         _sharedClient.securityPolicy.allowInvalidCertificates=YES;
         _sharedClient.securityPolicy.validatesDomainName = NO;
         _sharedClient.requestSerializer.HTTPShouldHandleCookies=YES;
-        _sharedClient.requestSerializer.timeoutInterval = 20;
+        _sharedClient.requestSerializer.timeoutInterval = 30;
+        [_sharedClient.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
                                                                                         @"application/xml",
                                                                                         @"text/json",
                                                                                         @"text/javascript",
                                                                                         @"text/html",
-                                                                                        @"text/plain"]];
+                                                                                        @"text/plain",
+                                                                                        @"multipart/form-data"]];
+
     }
     return _sharedClient;
 }
