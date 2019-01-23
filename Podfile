@@ -9,5 +9,6 @@ pod 'MBProgressHUD'
 pod 'Toast'
 pod 'VTMagic'
 pod 'CYLTabBarController'
+pod 'SDWebImage'
 end
 

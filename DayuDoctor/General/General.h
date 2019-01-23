@@ -12,12 +12,12 @@
 
 #endif /* General_h */
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 // iphonex
 #import "UIDeviceHardware.h"
 #define IS_IPHONE_X ([[UIDeviceHardware platformString] isEqualToString:@"iPhone X"] || SCREEN_SIZE_5)
 #define SCREEN_SIZE_5 CGSizeEqualToSize(CGSizeMake(375, 812), [[UIScreen mainScreen] bounds].size)
 
 
+// 屏幕size
+#define SCREEN_WIDTH  [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
