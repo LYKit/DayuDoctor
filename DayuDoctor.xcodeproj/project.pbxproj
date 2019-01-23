@@ -52,6 +52,7 @@
 		C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB8421F7262700CDF3EB /* DYZApplyController.m */; };
 		C1BCDB8821F7282700CDF3EB /* DYZMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB8721F7282700CDF3EB /* DYZMainViewController.m */; };
 		C1BCDB8A21F7382F00CDF3EB /* homeHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB8921F7382F00CDF3EB /* homeHeader.png */; };
+		C1BCDB8D21F810B700CDF3EB /* DYZHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB8C21F810B700CDF3EB /* DYZHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		C1BCDB8621F7282700CDF3EB /* DYZMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMainViewController.h; sourceTree = "<group>"; };
 		C1BCDB8721F7282700CDF3EB /* DYZMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMainViewController.m; sourceTree = "<group>"; };
 		C1BCDB8921F7382F00CDF3EB /* homeHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeHeader.png; sourceTree = "<group>"; };
+		C1BCDB8C21F810B700CDF3EB /* DYZHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZHomeViewController.xib; sourceTree = "<group>"; };
 		E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayuDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -403,6 +405,7 @@
 		C1BCDB4C21F6C75C00CDF3EB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C1BCDB8B21F8107600CDF3EB /* Cell */,
 				C1BCDB5321F7036800CDF3EB /* View */,
 				C1BCDB6521F712E700CDF3EB /* DYZMainTabBarController.h */,
 				C1BCDB6621F712E700CDF3EB /* DYZMainTabBarController.m */,
@@ -410,6 +413,7 @@
 				C1BCDB8721F7282700CDF3EB /* DYZMainViewController.m */,
 				C1BCDB4D21F6C80D00CDF3EB /* DYZHomeViewController.h */,
 				C1BCDB4E21F6C80D00CDF3EB /* DYZHomeViewController.m */,
+				C1BCDB8C21F810B700CDF3EB /* DYZHomeViewController.xib */,
 				C1BCDB8021F7260D00CDF3EB /* DYZClassifyController.h */,
 				C1BCDB8121F7260D00CDF3EB /* DYZClassifyController.m */,
 				C1BCDB8321F7262700CDF3EB /* DYZApplyController.h */,
@@ -435,6 +439,13 @@
 				0DD4851721F6ADB5004812C2 /* PrefixHeader.pch */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		C1BCDB8B21F8107600CDF3EB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DE64592D20BE65AAC0C144F1 /* Frameworks */ = {
@@ -554,6 +565,7 @@
 				C1BCDB7F21F7235900CDF3EB /* order_btn_blue_p@2x.png in Resources */,
 				C13A5DF421EDC4DE00493EE7 /* LaunchScreen.storyboard in Resources */,
 				C1BCDB7A21F7235900CDF3EB /* ico_rec_nor@2x.png in Resources */,
+				C1BCDB8D21F810B700CDF3EB /* DYZHomeViewController.xib in Resources */,
 				C1BCDB7E21F7235900CDF3EB /* ico_send_nor@2x.png in Resources */,
 				C13A5DF121EDC4DE00493EE7 /* Assets.xcassets in Resources */,
 				C1BCDB7C21F7235900CDF3EB /* order_btn_gray_nor@2x.png in Resources */,

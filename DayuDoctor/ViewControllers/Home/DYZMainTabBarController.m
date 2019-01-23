@@ -24,7 +24,6 @@
     
     [self createTabBar];
     [self customizeTabBarAppearance];
-    
 }
 
 - (void)createTabBar {

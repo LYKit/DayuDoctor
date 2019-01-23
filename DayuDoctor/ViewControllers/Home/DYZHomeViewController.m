@@ -8,10 +8,18 @@
 
 #import "DYZHomeViewController.h"
 
+typedef enum : NSUInteger {
+    enumHeaderImageSection,
+    enumNewsRollSection,
+    enumClassifySection,
+    enumVideoRecommendSection
+} enumSectionType;
 
+@interface DYZHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *collection;
 
-@interface DYZHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong) UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 
 
 @end
@@ -22,27 +30,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    
+        
 }
 
 
 
 /// MARK: tableView'delegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
-}
 
 
 @end
