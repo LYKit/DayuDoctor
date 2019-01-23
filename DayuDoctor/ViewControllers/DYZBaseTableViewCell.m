@@ -7,8 +7,6 @@
 //
 
 #import "DYZBaseTableViewCell.h"
-#import <Masonry.h>
-#import <YYKit.h>
 
 @implementation DYZBaseTableViewCell
 

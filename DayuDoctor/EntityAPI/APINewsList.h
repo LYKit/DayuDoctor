@@ -10,7 +10,8 @@
 #import "LYResponseObject.h"
 
 @interface APINewsList : LYRequestObject
-
+//@property (nonatomic, assign) NSInteger currPage;
+//@property (nonatomic, assign) NSInteger pageSize;
 @end
 
 
