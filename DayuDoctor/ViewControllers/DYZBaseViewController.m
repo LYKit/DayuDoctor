@@ -17,8 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-    
+    // 禁用自动偏移
+    self.modalPresentationCapturesStatusBarAppearance = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.navigationController.navigationBar.translucent = NO;
 
 }
 @end

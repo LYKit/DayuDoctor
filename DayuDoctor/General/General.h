@@ -20,4 +20,5 @@
 #define IS_IPHONE_X ([[UIDeviceHardware platformString] isEqualToString:@"iPhone X"] || SCREEN_SIZE_5)
 #define SCREEN_SIZE_5 CGSizeEqualToSize(CGSizeMake(375, 812), [[UIScreen mainScreen] bounds].size)
 
+#define ADJUST_SCROLLVIEW_INSET_NEVER(controller,view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
 

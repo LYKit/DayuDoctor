@@ -16,6 +16,8 @@
 		0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E821F49286002E255A /* DYZNewsTableController.m */; };
 		0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */; };
 		0D8683EF21F492CA002E255A /* APINewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EE21F492CA002E255A /* APINewsList.m */; };
+		0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */; };
+		0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6131721F87C9900C97464 /* DYZMineCell.m */; };
 		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
 		C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */; };
 		C13A5DEF21EDC4DC00493EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13A5DED21EDC4DC00493EE7 /* Main.storyboard */; };
@@ -39,7 +41,6 @@
 		C1BCDB5B21F704A300CDF3EB /* DYZMainHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB5A21F704A300CDF3EB /* DYZMainHeaderView.xib */; };
 		C1BCDB6721F712E700CDF3EB /* DYZMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB6621F712E700CDF3EB /* DYZMainTabBarController.m */; };
 		C1BCDB6E21F7194200CDF3EB /* DYZMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB6C21F7194200CDF3EB /* DYZMineViewController.m */; };
-		C1BCDB6F21F7194200CDF3EB /* DYZMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB6D21F7194200CDF3EB /* DYZMineViewController.xib */; };
 		C1BCDB7221F722E100CDF3EB /* ico_logo_online_36@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB7021F722E100CDF3EB /* ico_logo_online_36@2x.png */; };
 		C1BCDB7321F722E100CDF3EB /* ico_logo_offline_36@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB7121F722E100CDF3EB /* ico_logo_offline_36@2x.png */; };
 		C1BCDB7A21F7235900CDF3EB /* ico_rec_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB7421F7235900CDF3EB /* ico_rec_nor@2x.png */; };
@@ -93,6 +94,10 @@
 		0D8683ED21F492CA002E255A /* APINewsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APINewsList.h; sourceTree = "<group>"; };
 		0D8683EE21F492CA002E255A /* APINewsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APINewsList.m; sourceTree = "<group>"; };
 		0DD4851721F6ADB5004812C2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0DD6131121F850DB00C97464 /* ZFNoramlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNoramlViewController.h; sourceTree = "<group>"; };
+		0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFNoramlViewController.m; sourceTree = "<group>"; };
+		0DD6131621F87C9900C97464 /* DYZMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMineCell.h; sourceTree = "<group>"; };
+		0DD6131721F87C9900C97464 /* DYZMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMineCell.m; sourceTree = "<group>"; };
 		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		C13A5DE421EDC4DC00493EE7 /* DayuDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayuDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13A5DE721EDC4DC00493EE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,7 +146,6 @@
 		C1BCDB6621F712E700CDF3EB /* DYZMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMainTabBarController.m; sourceTree = "<group>"; };
 		C1BCDB6B21F7194200CDF3EB /* DYZMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMineViewController.h; sourceTree = "<group>"; };
 		C1BCDB6C21F7194200CDF3EB /* DYZMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMineViewController.m; sourceTree = "<group>"; };
-		C1BCDB6D21F7194200CDF3EB /* DYZMineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMineViewController.xib; sourceTree = "<group>"; };
 		C1BCDB7021F722E100CDF3EB /* ico_logo_online_36@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_logo_online_36@2x.png"; sourceTree = "<group>"; };
 		C1BCDB7121F722E100CDF3EB /* ico_logo_offline_36@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_logo_offline_36@2x.png"; sourceTree = "<group>"; };
 		C1BCDB7421F7235900CDF3EB /* ico_rec_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico_rec_nor@2x.png"; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				0D8683C821F47FF7002E255A /* DYZBaseViewController.m */,
 				0D8683D721F48E08002E255A /* DYZBaseTableViewCell.h */,
 				0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */,
+				0DD6131021F84FE200C97464 /* Player */,
 				C1BCDB4C21F6C75C00CDF3EB /* Home */,
 				C1BCDB4B21F6C75C00CDF3EB /* Mine */,
 				0D8683E621F4925F002E255A /* News */,
@@ -277,6 +282,15 @@
 			name = News;
 			path = DayuDoctor/ViewControllers/News;
 			sourceTree = SOURCE_ROOT;
+		};
+		0DD6131021F84FE200C97464 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				0DD6131121F850DB00C97464 /* ZFNoramlViewController.h */,
+				0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
 		};
 		314EABF77613AAA31738B4BB /* Pods */ = {
 			isa = PBXGroup;
@@ -397,7 +411,8 @@
 			children = (
 				C1BCDB6B21F7194200CDF3EB /* DYZMineViewController.h */,
 				C1BCDB6C21F7194200CDF3EB /* DYZMineViewController.m */,
-				C1BCDB6D21F7194200CDF3EB /* DYZMineViewController.xib */,
+				0DD6131621F87C9900C97464 /* DYZMineCell.h */,
+				0DD6131721F87C9900C97464 /* DYZMineCell.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -570,7 +585,6 @@
 				C13A5DF121EDC4DE00493EE7 /* Assets.xcassets in Resources */,
 				C1BCDB7C21F7235900CDF3EB /* order_btn_gray_nor@2x.png in Resources */,
 				C1BCDB5B21F704A300CDF3EB /* DYZMainHeaderView.xib in Resources */,
-				C1BCDB6F21F7194200CDF3EB /* DYZMineViewController.xib in Resources */,
 				C13A5DEF21EDC4DC00493EE7 /* Main.storyboard in Resources */,
 				C1BCDB8A21F7382F00CDF3EB /* homeHeader.png in Resources */,
 				C1BCDB7B21F7235900CDF3EB /* ico_send_pre@2x.png in Resources */,
@@ -623,10 +637,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -662,12 +678,14 @@
 				0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
+				0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */,
 				C13A5E9521EDD2E400493EE7 /* LYRequestManager.m in Sources */,
 				0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */,
 				C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
+				0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
