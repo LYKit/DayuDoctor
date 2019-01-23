@@ -64,7 +64,6 @@
 //        _self.request.currPage = 1;
         [_self requestNews];
     }];
-    [_tableView.mj_header beginRefreshing];
     
     _tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
 //        _self.request.currPage += 1;

@@ -7,5 +7,7 @@ pod 'Masonry'
 pod 'MJRefresh'
 pod 'MBProgressHUD'
 pod 'Toast'
+pod 'VTMagic'
+pod 'CYLTabBarController'
 end
 

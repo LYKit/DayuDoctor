@@ -14,39 +14,49 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - CYLTabBarController (1.17.20)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.15.7)
   - Toast (4.0.0)
+  - VTMagic (1.2.4):
+    - VTMagic/Core (= 1.2.4)
+  - VTMagic/Core (1.2.4)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
+  - CYLTabBarController
   - Masonry
   - MBProgressHUD
   - MJRefresh
   - Toast
+  - VTMagic
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - CYLTabBarController
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - Toast
+    - VTMagic
     - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CYLTabBarController: 376fc15463c582cd5a24a7e9d46a578243bd5b12
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 47dca1dcdef014688194cf6d5c7228459e17b8f0
+PODFILE CHECKSUM: a952e18fab07c9b9928ce98ae0abd7c3e94bea8f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
