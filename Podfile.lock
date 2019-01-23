@@ -28,6 +28,13 @@ PODS:
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
+  - ZFPlayer (3.2.1):
+    - ZFPlayer/Core (= 3.2.1)
+  - ZFPlayer/AVPlayer (3.2.1):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.2.1):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.2.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -39,6 +46,9 @@ DEPENDENCIES:
   - Toast
   - VTMagic
   - YYKit
+  - ZFPlayer (~> 3.0)
+  - ZFPlayer/AVPlayer (~> 3.0)
+  - ZFPlayer/ControlView (~> 3.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -51,6 +61,7 @@ SPEC REPOS:
     - Toast
     - VTMagic
     - YYKit
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -62,7 +73,8 @@ SPEC CHECKSUMS:
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZFPlayer: 00292c75ee52f5c2e4056c4fe911aa7697f5559f
 
-PODFILE CHECKSUM: 7ad2026f9f85c56d06687b5d2e9e721a5955e5de
+PODFILE CHECKSUM: e57091a12ee79eb47f5ae744368b4c943968c787
 
 COCOAPODS: 1.5.0

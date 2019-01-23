@@ -6,11 +6,11 @@
 //  Copyright © 2019年 大禹中医. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DYZBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DYZMineViewController : UIViewController
+@interface DYZMineViewController : DYZBaseViewController
 
 @end
 

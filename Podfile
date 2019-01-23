@@ -10,5 +10,8 @@ pod 'Toast'
 pod 'VTMagic'
 pod 'CYLTabBarController'
 pod 'SDWebImage'
+pod 'ZFPlayer', '~> 3.0'
+pod 'ZFPlayer/AVPlayer', '~> 3.0'
+pod 'ZFPlayer/ControlView', '~> 3.0'
 end
 

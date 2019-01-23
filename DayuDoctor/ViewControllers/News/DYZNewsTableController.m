@@ -9,10 +9,10 @@
 #import "DYZNewsTableController.h"
 #import "DYZNewsTableCell.h"
 #import "APINewsList.h"
+#import "ZFNoramlViewController.h"
 
 @interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *models;
 
 @property (nonatomic, strong) APINewsList *request;
 @property (nonatomic, strong) ResponseNewsList *response;
@@ -27,6 +27,7 @@
     _request = [APINewsList new];
     
     [self setupTableView];
+    [self requestNews];
 }
 
 - (void)requestNews {
@@ -54,7 +55,7 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
     [_tableView registerClass:[DYZNewsTableCell class] forCellReuseIdentifier:@"cell"];
-    
+    ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
@@ -65,7 +66,7 @@
         [_self requestNews];
     }];
     
-    _tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingBlock:^{
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
 //        _self.request.currPage += 1;
         [_self requestNews];
     }];
@@ -88,5 +89,11 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _response.content.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ZFNoramlViewController *vc = [ZFNoramlViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end
