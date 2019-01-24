@@ -12,9 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DYZHomeViewController">
             <connections>
-                <outlet property="collection" destination="j8c-cO-pdY" id="aG2-JO-Vds"/>
-                <outlet property="headerImage" destination="hiz-nM-fh2" id="8wG-FQ-aiG"/>
-                <outlet property="headerView" destination="4Np-gW-4cI" id="5Qs-Mj-XMI"/>
+                <outlet property="collectionView" destination="j8c-cO-pdY" id="b6T-UR-Inp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cu1-Z6-RnP"/>
             </connections>
         </placeholder>
@@ -26,12 +24,16 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="j8c-cO-pdY">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uAa-Dh-nVl">
-                        <size key="itemSize" width="50" height="50"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zax-Xx-54W">
+                        <size key="itemSize" width="0.0" height="0.0"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="UYL-6S-BWk"/>
+                        <outlet property="delegate" destination="-1" id="mCa-YS-fG1"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,27 +45,23 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
-        <view contentMode="scaleToFill" id="4Np-gW-4cI">
-            <rect key="frame" x="0.0" y="0.0" width="361" height="163"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TAM-D5-290">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeHeader.png" translatesAutoresizingMaskIntoConstraints="NO" id="hiz-nM-fh2">
-                    <rect key="frame" x="0.0" y="0.0" width="361" height="163"/>
-                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phy-PJ-Xd8">
+                    <rect key="frame" x="10" y="15" width="66" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="hiz-nM-fh2" firstAttribute="top" secondItem="v4V-7A-K0i" secondAttribute="top" id="ET6-pb-x5u"/>
-                <constraint firstItem="v4V-7A-K0i" firstAttribute="bottom" secondItem="hiz-nM-fh2" secondAttribute="bottom" id="YNh-ms-3Xp"/>
-                <constraint firstItem="v4V-7A-K0i" firstAttribute="trailing" secondItem="hiz-nM-fh2" secondAttribute="trailing" id="Ybv-Yx-Q4Z"/>
-                <constraint firstItem="hiz-nM-fh2" firstAttribute="leading" secondItem="v4V-7A-K0i" secondAttribute="leading" id="sIv-p8-Owe"/>
+                <constraint firstItem="phy-PJ-Xd8" firstAttribute="centerY" secondItem="TAM-D5-290" secondAttribute="centerY" id="1Wy-78-FvU"/>
+                <constraint firstItem="phy-PJ-Xd8" firstAttribute="leading" secondItem="ubJ-I9-SA0" secondAttribute="leading" constant="10" id="lZ5-ep-p2o"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="v4V-7A-K0i"/>
-            <point key="canvasLocation" x="-690" y="-50"/>
-        </view>
+            <viewLayoutGuide key="safeArea" id="ubJ-I9-SA0"/>
+        </collectionReusableView>
     </objects>
-    <resources>
-        <image name="homeHeader.png" width="632" height="252"/>
-    </resources>
 </document>

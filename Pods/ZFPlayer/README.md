@@ -12,11 +12,13 @@
 <a href="http://weibo.com/zifeng1300"><img src="https://img.shields.io/badge/weibo-@%E4%BB%BB%E5%AD%90%E4%B8%B0-yellow.svg?style=flat"></a>
 </p>
 
-[中文说明](https://www.jianshu.com/p/90e55deb4d51)
+[🇨🇳](https://www.jianshu.com/p/90e55deb4d51)
 
 Before this, you used ZFPlayer, are you worried about encapsulating avplayer instead of using or modifying the source code to support other players, the control layer is not easy to customize, and so on? In order to solve these problems, I have wrote this player template, for player SDK you can conform the `ZFPlayerMediaPlayback` protocol, for control view you can conform the `ZFPlayerMediaControl` protocol, can custom the player and control view.
 
 在3.X之前，是不是在烦恼播放器SDK自定义、控制层自定义等问题。作者公司多个项目分别使用不同播放器SDK以及每个项目控制层都不一样，但是为了统一管理、统一调用，我特意写了这个播放器壳子。播放器SDK只要遵守`ZFPlayerMediaPlayback`协议，控制层只要遵守`ZFPlayerMediaControl`协议，完全可以实现自定义播放器和控制层。
+
+如果你用在swift项目中，建议使用3.1.8版本，从3.2.0版本开始改为framework版本和swift兼容性有些问题，另外作者最近一直在写swift版本的ZFPlayer，相信过不了多久就可以完成，提供给大家使用。
 
 ![ZFPlayer.png](https://upload-images.jianshu.io/upload_images/635942-5662bfec6d457cba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -27,8 +29,9 @@ Before this, you used ZFPlayer, are you worried about encapsulating avplayer ins
 
 ## Installation
 
-ZFPlayer is available through [CocoaPods](https://cocoapods.org). To install it,use player template simply add the following line to your Podfile:
-只有Core文件夹下代码，使用AVPlayer、IJK、KSY都需要pod单独模块，或者使用自定义播放器管理类，如需定制功能请单独联系作者。
+ZFPlayer is available through [CocoaPods](https://cocoapods.org). 
+
+`pod 'ZFPlayer'`只有Core文件夹下代码，使用AVPlayer、IJK、KSY都需要pod单独模块，或者使用自定义播放器管理类，从3.2.0版本开始只提供framework版本，如需定制功能请单独联系作者。
 
 ```objc
 pod 'ZFPlayer', '~> 3.0'
@@ -154,20 +157,5 @@ Rotate the video the viewController must implement
 ## License
 
 ZFPlayer is available under the MIT license. See the LICENSE file for more info.
-
-## Question
-
-1、demo运行不了？
-
-答：下载后本demo可以直接编译运行，不需要`pod install`，`pod install`后会出错，因为依赖其他播放器SDK较大，所以默认没有添加进来。如果你想用，那请修改一podspec文件，具体怎么修改自己一查便知，然后再pod install。
-
-2、为啥我podfile这样写`pod 'ZFPlayer', '~> 3.0'`和demo里不一样，缺少好多类
-
-答：作者秉着插件化的思想来开发此开源库，首先作者的思想是提供一个播放器壳子，关于播放器的核心SDK、还有控制层是完全支持自定义的，所以默认只有Core文件夹下的代码，如果你想使用作者提供的AVPlayer、IJKPlayer等都可单独在podfile写，提供的默认控制层亦是如此，具体看上边readme吧。
-
-3、之前是免费加群，为什么现在要付费加群？
-
-答：之前是免费群每天找作者解决问题的太多了，作者还有自己的工作要干，为了过滤一些伸手党，所以变为付费入群。群内比较活跃，作者、群友都可帮忙解决，如果你有问题都可以加群交流。如果你QQ上没有钱，那你可以扫上边的码，备注写上QQ号，作者看到后会加你然后拉你入群。
-
 
 
