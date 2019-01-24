@@ -22,6 +22,8 @@ static LYRequestManager *_sharedClient;
         _sharedClient.requestSerializer.HTTPShouldHandleCookies=YES;
         _sharedClient.requestSerializer.timeoutInterval = 30;
         [_sharedClient.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        [_sharedClient.requestSerializer setValue:@"" forHTTPHeaderField:@"Authentication"];
+
         _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",
                                                                                         @"application/xml",
                                                                                         @"text/json",
@@ -33,4 +35,13 @@ static LYRequestManager *_sharedClient;
     }
     return _sharedClient;
 }
+
+- (void)configHeaderParams:(NSMutableDictionary *)params {
+    for (NSString *key in params.allKeys) {
+        NSString *value = params[key];
+        [self.requestSerializer setValue:value forHTTPHeaderField:key];
+    }
+}
+
+
 @end

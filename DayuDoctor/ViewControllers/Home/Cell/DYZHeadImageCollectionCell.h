@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIHomeBanner.h"
+
 
 static NSString * const kHeadImageCollectionCell = @"DYZHeadImageCollectionCell";
 
@@ -14,6 +16,9 @@ static NSString * const kHeadImageCollectionCell = @"DYZHeadImageCollectionCell"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZHeadImageCollectionCell : UICollectionViewCell
+
+@property (nonatomic, strong) NSMutableArray *bannerList;
+
 
 @end
 

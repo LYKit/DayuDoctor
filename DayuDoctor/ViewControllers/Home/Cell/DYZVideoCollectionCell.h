@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIHomeCourseList.h"
 
 static NSString * const kVideoCollectionCell = @"DYZVideoCollectionCell";
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZVideoCollectionCell : UICollectionViewCell
+
+@property (nonatomic, strong) CourseModel *model;
+
 
 @end
 

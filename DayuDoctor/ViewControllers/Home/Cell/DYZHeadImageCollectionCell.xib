@@ -18,24 +18,10 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                 <rect key="frame" x="0.0" y="0.0" width="113" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="46U-HF-UrY">
-                        <rect key="frame" x="0.0" y="0.0" width="113" height="79"/>
-                        <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </imageView>
-                </subviews>
             </view>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="46U-HF-UrY" secondAttribute="bottom" id="MXb-rV-zbJ"/>
-                <constraint firstAttribute="trailing" secondItem="46U-HF-UrY" secondAttribute="trailing" id="s6p-lP-znK"/>
-                <constraint firstItem="46U-HF-UrY" firstAttribute="leading" secondItem="b5h-o6-SVQ" secondAttribute="leading" id="y60-00-oFL"/>
-                <constraint firstItem="46U-HF-UrY" firstAttribute="top" secondItem="b5h-o6-SVQ" secondAttribute="top" id="y9Z-7i-nWB"/>
-            </constraints>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="ZTv-07-UaJ"/>
             <size key="customSize" width="113" height="79"/>
-            <connections>
-                <outlet property="headerImage" destination="46U-HF-UrY" id="pwj-9u-xhl"/>
-            </connections>
             <point key="canvasLocation" x="-805.60000000000002" y="-154.27286356821591"/>
         </collectionViewCell>
     </objects>

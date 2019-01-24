@@ -13,4 +13,6 @@
 
 + (instancetype)sharedClient;
 
+- (void)configHeaderParams:(NSMutableDictionary *)params;
+
 @end

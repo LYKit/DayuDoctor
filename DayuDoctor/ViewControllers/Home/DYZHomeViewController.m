@@ -12,6 +12,8 @@
 #import "DYZNewsRollCollectionCell.h"
 #import "DYZHeadImageCollectionCell.h"
 #import "APIClassify.h"
+#import "APIHomeCourseList.h"
+#import "APIHomeBanner.h"
 
 typedef enum : NSUInteger {
     enumHeaderImageSection,
@@ -25,6 +27,8 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *classifyList;
+@property (nonatomic, strong) NSMutableArray *courseList;
+@property (nonatomic, strong) NSMutableArray *bannerList;
 
 
 @end
@@ -40,15 +44,40 @@ typedef enum : NSUInteger {
     [self.collectionView registerNib:[UINib nibWithNibName:kHeadImageCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kHeadImageCollectionCell];
     [self.collectionView registerNib:[UINib nibWithNibName:kNewsRolCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kNewsRolCollectionCell];
 
+    [self createBaseView];
     [self loadData];
 }
 
+- (void)createBaseView {
+    
+}
+
+
 /// MARK: loadData
 - (void)loadData {
+    // 分类接口
     APIClassify *request = [APIClassify new];
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseClassify *responseObject, NSDictionary *options) {
         weakSelf.classifyList = responseObject.classifies;
+        [weakSelf.collectionView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+    
+    // 推荐视频接口
+    APIHomeCourseList *requestCourse = [APIHomeCourseList new];
+    [requestCourse startPostWithSuccessBlock:^(ResponseHomeCourseList *responseObject, NSDictionary *options) {
+        weakSelf.courseList = responseObject.coursesList;
+        [weakSelf.collectionView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+    
+    // Banners
+    APIHomeBanner *requestBanner = [APIHomeBanner new];
+    [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
+        weakSelf.bannerList = responseObject.banners;
         [weakSelf.collectionView reloadData];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
@@ -71,7 +100,7 @@ typedef enum : NSUInteger {
             return self.classifyList.count > 10 ? 10 : self.classifyList.count;
         } break;
         case enumVideoRecommendSection:{
-            return 10;
+            return self.courseList.count;
         } break;
         default:
             break;
@@ -85,6 +114,7 @@ typedef enum : NSUInteger {
     switch (indexPath.section) {
         case enumHeaderImageSection:{
             DYZHeadImageCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kHeadImageCollectionCell forIndexPath:indexPath];
+            cell.bannerList = self.bannerList;
             return cell;
         } break;
         case enumNewsRollSection: {
@@ -98,6 +128,7 @@ typedef enum : NSUInteger {
         } break;
         case enumVideoRecommendSection:{
             DYZVideoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kVideoCollectionCell forIndexPath:indexPath];
+            cell.model = self.courseList[indexPath.row];
             return cell;
         } break;
         default:
@@ -114,18 +145,39 @@ typedef enum : NSUInteger {
             return CGSizeMake(SCREEN_WIDTH, 150);
         } break;
         case enumNewsRollSection: {
-            return CGSizeMake(SCREEN_WIDTH, 50);
+            return CGSizeMake(SCREEN_WIDTH, 40);
         } break;
         case enumClassifySection:{
             return CGSizeMake(70, 75);
         } break;
         case enumVideoRecommendSection:{
-            return CGSizeMake(100, 50);
+            CGFloat width = (SCREEN_WIDTH-20-20-1)/3.0;
+            return CGSizeMake(width, width);
         } break;
         default:
             break;
     }
     return CGSizeZero;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    CGFloat spacingLeft = 10;
+    CGFloat spacingRight = 10;
+    switch (section) {
+        case enumHeaderImageSection:
+        case enumNewsRollSection: {
+            return UIEdgeInsetsMake(0, spacingLeft, 0, spacingRight);
+        } break;
+        case enumClassifySection:{
+            return UIEdgeInsetsMake(20, spacingLeft, 0, spacingRight);
+        } break;
+        case enumVideoRecommendSection:{
+            return UIEdgeInsetsMake(25, spacingLeft, 0, spacingRight);
+        } break;
+        default:
+            break;
+    }
+    return UIEdgeInsetsZero;
 }
 
 @end

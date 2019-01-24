@@ -94,7 +94,7 @@
     NSDictionary *parameterdic = [LYInterfaceConfig addValuesWithParamters:paramters];
     
     self.requestManager = [LYRequestManager sharedClient];
-    
+    [self.requestManager configHeaderParams:_headerParams];
     self.requestTask = [_requestManager POST:_interfaceURL parameters:parameterdic progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);

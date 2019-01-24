@@ -10,4 +10,41 @@
 
 @implementation APIHomeCourseList
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.interfaceURL = InterfaceURL(@"/course/index");
+    }
+    return self;
+}
+
+
 @end
+
+@implementation ResponseHomeCourseList
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"coursesList" : [CourseModel class],
+             };
+}
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"coursesList" : @"courses"
+             };
+}
+
+@end
+
+
+@implementation CourseModel
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"courseId" : @"id"
+             };
+}
+
+@end
+

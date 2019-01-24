@@ -27,6 +27,9 @@
 /** 接口加密后新方式 **/
 @property (nonatomic, copy) NSString *commandKey;
 
+// 设置header里的属性
+@property (nonatomic, strong) NSMutableDictionary<NSString *,NSString *> *headerParams;
+
 
 /**
  是否缓存

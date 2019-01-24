@@ -13,17 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DYZVideoCollectionCell">
-            <rect key="frame" x="0.0" y="0.0" width="122" height="114"/>
+            <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="122" height="114"/>
+                <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R46-R5-BP3">
-                        <rect key="frame" x="0.0" y="0.0" width="122" height="84"/>
+                        <rect key="frame" x="0.0" y="0.0" width="95" height="65.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="R46-R5-BP3" secondAttribute="height" multiplier="61:42" id="yIz-hD-bUp"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="视频名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh4-eR-h2g">
-                        <rect key="frame" x="36.5" y="94.5" width="49.5" height="14.5"/>
+                        <rect key="frame" x="23" y="73.5" width="49.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -33,19 +36,18 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="R46-R5-BP3" secondAttribute="trailing" id="1cj-1o-5Ny"/>
-                <constraint firstAttribute="bottom" secondItem="R46-R5-BP3" secondAttribute="bottom" constant="30" id="DZs-gK-Lg0"/>
                 <constraint firstItem="R46-R5-BP3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Gjp-7F-aJo"/>
-                <constraint firstAttribute="bottom" secondItem="wh4-eR-h2g" secondAttribute="bottom" constant="5" id="L0G-1h-LKA"/>
+                <constraint firstItem="wh4-eR-h2g" firstAttribute="top" secondItem="R46-R5-BP3" secondAttribute="bottom" constant="8" id="PE2-NS-tgp"/>
                 <constraint firstItem="wh4-eR-h2g" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ZhV-Yq-aNG"/>
                 <constraint firstItem="R46-R5-BP3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sgu-GC-egB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
-            <size key="customSize" width="122" height="114"/>
+            <size key="customSize" width="156" height="144"/>
             <connections>
                 <outlet property="imageView" destination="R46-R5-BP3" id="JuF-Cv-TUi"/>
                 <outlet property="lblName" destination="wh4-eR-h2g" id="u4O-ms-57t"/>
             </connections>
-            <point key="canvasLocation" x="195.19999999999999" y="158.32083958020991"/>
+            <point key="canvasLocation" x="-25.600000000000001" y="222.1889055472264"/>
         </collectionViewCell>
     </objects>
 </document>

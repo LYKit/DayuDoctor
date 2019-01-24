@@ -29,6 +29,23 @@
 }
 
 - (void)createBaseView {
+
+    self.searchBar.translatesAutoresizingMaskIntoConstraints = NO;
+    for (UIView *view in self.searchBar.subviews) {
+        for (UIView *subViews in view.subviews) {
+            if ([subViews isKindOfClass:[UITextField class]]) {
+//                [subViews setRadius:15.0];
+                subViews.backgroundColor = [UIColor whiteColor];//输入框背景色
+                if (@available(iOS 11.0, *)) {
+                    subViews.frame = CGRectMake(0, 7, self.searchBar.frame.size.width, 30);
+                    UITextField *textField = (UITextField *)subViews;
+                    textField.font = [UIFont systemFontOfSize:14.0f];
+                    [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
+                }
+                break;
+            }
+        }
+    }
     
 }
 

@@ -24,19 +24,31 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2G-Eq-UHU">
-                            <rect key="frame" x="10" y="4.5" width="30" height="28"/>
+                            <rect key="frame" x="10" y="6" width="20" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="height" multiplier="27:34" id="bt0-fd-vUK"/>
+                                <constraint firstAttribute="width" constant="20" id="cfW-dP-8Vv"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="消息"/>
+                            <state key="normal" backgroundImage="icon_message"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBL-6F-zUi">
-                            <rect key="frame" x="312" y="5" width="30" height="27"/>
+                            <rect key="frame" x="322" y="9" width="20" height="19"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="FBL-6F-zUi" secondAttribute="height" multiplier="33:31" id="Y52-oC-S82"/>
+                                <constraint firstAttribute="width" constant="20" id="dT2-y7-3Ru"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="下载"/>
+                            <state key="normal" backgroundImage="icon_download"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHK-Fu-7av">
-                            <rect key="frame" x="257" y="5" width="30" height="27"/>
+                            <rect key="frame" x="262" y="6.5" width="25" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="N2Z-Tv-wOi"/>
+                                <constraint firstAttribute="width" secondItem="LHK-Fu-7av" secondAttribute="height" multiplier="35:34" id="NGs-vm-3HN"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="搜索"/>
+                            <state key="normal" backgroundImage="icon_search"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,4 +83,9 @@
             <point key="canvasLocation" x="120" y="-151.12443778110946"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_download" width="66" height="62"/>
+        <image name="icon_message" width="54" height="68"/>
+        <image name="icon_search" width="70" height="68"/>
+    </resources>
 </document>

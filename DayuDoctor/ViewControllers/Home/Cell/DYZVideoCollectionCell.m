@@ -24,4 +24,11 @@
     // Initialization code
 }
 
+
+- (void)setModel:(CourseModel *)model {
+    _model = model;
+    [_imageView sd_setImageWithURLString:_model.img];
+    _lblName.text = _model.title;
+}
+
 @end

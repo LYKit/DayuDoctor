@@ -20,6 +20,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.imageView.layer.cornerRadius = 25;
+    self.imageView.layer.masksToBounds = YES;
 }
 
 
