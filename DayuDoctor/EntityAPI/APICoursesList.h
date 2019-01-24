@@ -14,4 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+@interface Course : NSObject
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *img;
+@property (nonatomic, copy) NSString *teacher;
+@property (nonatomic, copy) NSString *amount;
+@property (nonatomic, copy) NSString *buynum;
+@end
+
+@interface ResponseCoursesList : NSObject
+@property (nonatomic, copy) NSString *total;
+@property (nonatomic, strong) NSArray<Course *> *content;
+@end
+
 NS_ASSUME_NONNULL_END

@@ -8,6 +8,7 @@
 
 #import "DYZMineViewController.h"
 #import "DYZMineCell.h"
+#import "DYZCoursesTableController.h"
 
 @interface DYZMineViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -25,9 +26,7 @@
     __weak typeof(self) _self = self;
     _profileView = [UIView new];
     _profileView.backgroundColor = [UIColor whiteColor];
-    [_profileView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(kScreenWidth, 100));
-    }];
+    _profileView.frame = CGRectMake(0, 0, kScreenWidth, 100);
     
     _avatorImgView = [UIImageView new];
     _avatorImgView.backgroundColor = [UIColor yellowColor];
@@ -68,6 +67,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"个人中心";
     
+    [self setuppProfileView];
     [self setupTableView];
 }
 
@@ -85,7 +85,6 @@
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    [self setuppProfileView];
     _tableView.tableHeaderView = _profileView;
 }
 
@@ -104,6 +103,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
+    switch (indexPath.row) {
+        case 0: {
+            DYZCoursesTableController *vc = [DYZCoursesTableController new];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -12,7 +12,28 @@
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
-    self.interfaceURL = @"/course/user";
+    self.interfaceURL = InterfaceURL(@"/course/user");
+    self.headerParams = [@{
+                          @"token" : @"C34C178C67E04BD4544484F7C593CE81E0AA90E864ED06F8",
+                          } mutableCopy];
     return self;
+}
+@end
+
+
+@implementation Course
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"ID" : @"id"
+             };
+};
+@end
+
+
+@implementation ResponseCoursesList
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"content" : [Course class],
+             };
 }
 @end

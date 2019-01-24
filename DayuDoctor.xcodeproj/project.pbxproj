@@ -266,12 +266,12 @@
 				C1BCDB4C21F6C75C00CDF3EB /* Home */,
 				C1BCDB4B21F6C75C00CDF3EB /* Mine */,
 				0D8683E621F4925F002E255A /* News */,
-				0D8683D021F48C9C002E255A /* Courses */,
+				0D8683D021F48C9C002E255A /* MyCourses */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		0D8683D021F48C9C002E255A /* Courses */ = {
+		0D8683D021F48C9C002E255A /* MyCourses */ = {
 			isa = PBXGroup;
 			children = (
 				0D8683D221F48C9C002E255A /* DYZCoursesTableController.h */,
@@ -279,7 +279,7 @@
 				0D8683DA21F48E2A002E255A /* DYZCoursesTableCell.h */,
 				0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */,
 			);
-			path = Courses;
+			path = MyCourses;
 			sourceTree = "<group>";
 		};
 		0D8683E621F4925F002E255A /* News */ = {
