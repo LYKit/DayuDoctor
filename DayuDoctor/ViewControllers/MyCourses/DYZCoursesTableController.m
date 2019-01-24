@@ -8,10 +8,13 @@
 
 #import "DYZCoursesTableController.h"
 #import "DYZCoursesTableCell.h"
+#import "APICoursesList.h"
 
 @interface DYZCoursesTableController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *models;
+@property (nonatomic, strong) APICoursesList *request;
+@property (nonatomic, strong) ResponseCoursesList *response;
+
 @end
 
 @implementation DYZCoursesTableController
@@ -20,7 +23,17 @@
     [super viewDidLoad];
 
 
-    self.title = @"课程列表";
+    self.navigationItem.title = @"啥答案撒所多";
+    
+    _request = [APICoursesList new];
+    
+    __weak typeof(self) _self = self;
+    
+    [_request startPostWithSuccessBlock:^(ResponseCoursesList *response, NSDictionary *options) {
+        _self.response = response;
+        [_self.tableView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+    }];
     
     [self setupTableView];
 }
@@ -40,10 +53,14 @@
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZCoursesTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if (_response.content.count) {
+        Course *course = _response.content[indexPath.row];
+        cell.textLabel.text = course.title;
+    }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.models.count;
+    return _response.content.count;
 }
 @end

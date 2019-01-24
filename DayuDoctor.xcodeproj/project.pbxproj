@@ -256,12 +256,12 @@
 				C1BCDB4C21F6C75C00CDF3EB /* Home */,
 				C1BCDB4B21F6C75C00CDF3EB /* Mine */,
 				0D8683E621F4925F002E255A /* News */,
-				0D8683D021F48C9C002E255A /* Courses */,
+				0D8683D021F48C9C002E255A /* MyCourses */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		0D8683D021F48C9C002E255A /* Courses */ = {
+		0D8683D021F48C9C002E255A /* MyCourses */ = {
 			isa = PBXGroup;
 			children = (
 				0D8683D221F48C9C002E255A /* DYZCoursesTableController.h */,
@@ -269,7 +269,7 @@
 				0D8683DA21F48E2A002E255A /* DYZCoursesTableCell.h */,
 				0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */,
 			);
-			path = Courses;
+			path = MyCourses;
 			sourceTree = "<group>";
 		};
 		0D8683E621F4925F002E255A /* News */ = {
@@ -672,7 +672,6 @@
 				C1BCDB9121F84AC200CDF3EB /* DYZClassifyCollectionCell.m in Sources */,
 				C1BCDB6721F712E700CDF3EB /* DYZMainTabBarController.m in Sources */,
 				C11C645A21F8752A000D0CB7 /* UIImageView+DYZWebImageView.m in Sources */,
-				0D8683E521F48FA1002E255A /* DYZRequestCoursesList.m in Sources */,
 				C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */,
 				C1BCDB9621F84AD500CDF3EB /* DYZVideoCollectionCell.m in Sources */,
 				C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */,
@@ -683,7 +682,6 @@
 				C1BCDB8221F7260D00CDF3EB /* DYZClassifyController.m in Sources */,
 				C1BCDB8821F7282700CDF3EB /* DYZMainViewController.m in Sources */,
 				0D8683EF21F492CA002E255A /* APINewsList.m in Sources */,
-				0D8683E221F48F03002E255A /* DYZResponseCoursesList.m in Sources */,
 				C11C643F21F85BC7000D0CB7 /* DYZNewsRollCollectionCell.m in Sources */,
 				C13A5DF721EDC4DE00493EE7 /* main.m in Sources */,
 				C1BCDB6E21F7194200CDF3EB /* DYZMineViewController.m in Sources */,
