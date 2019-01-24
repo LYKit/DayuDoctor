@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D72798521F96571001C0768 /* APICoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72798421F96571001C0768 /* APICoursesList.m */; };
 		0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683C821F47FF7002E255A /* DYZBaseViewController.m */; };
 		0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */; };
 		0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */; };
 		0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */; };
-		0D8683E221F48F03002E255A /* DYZResponseCoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E121F48F03002E255A /* DYZResponseCoursesList.m */; };
-		0D8683E521F48FA1002E255A /* DYZRequestCoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E421F48FA1002E255A /* DYZRequestCoursesList.m */; };
 		0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E821F49286002E255A /* DYZNewsTableController.m */; };
 		0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */; };
 		0D8683EF21F492CA002E255A /* APINewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EE21F492CA002E255A /* APINewsList.m */; };
@@ -79,6 +78,8 @@
 
 /* Begin PBXFileReference section */
 		0B4CCD65CC6307E2717DA444 /* Pods-DayuDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.debug.xcconfig"; sourceTree = "<group>"; };
+		0D72798321F96571001C0768 /* APICoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICoursesList.h; sourceTree = "<group>"; };
+		0D72798421F96571001C0768 /* APICoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICoursesList.m; sourceTree = "<group>"; };
 		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
 		0D8683C821F47FF7002E255A /* DYZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZBaseViewController.m; sourceTree = "<group>"; };
 		0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYZCoursesTableController.m; sourceTree = "<group>"; };
@@ -87,10 +88,6 @@
 		0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZBaseTableViewCell.m; sourceTree = "<group>"; };
 		0D8683DA21F48E2A002E255A /* DYZCoursesTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCoursesTableCell.h; sourceTree = "<group>"; };
 		0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCoursesTableCell.m; sourceTree = "<group>"; };
-		0D8683E021F48F03002E255A /* DYZResponseCoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZResponseCoursesList.h; sourceTree = "<group>"; };
-		0D8683E121F48F03002E255A /* DYZResponseCoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZResponseCoursesList.m; sourceTree = "<group>"; };
-		0D8683E321F48FA1002E255A /* DYZRequestCoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZRequestCoursesList.h; sourceTree = "<group>"; };
-		0D8683E421F48FA1002E255A /* DYZRequestCoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZRequestCoursesList.m; sourceTree = "<group>"; };
 		0D8683E721F49286002E255A /* DYZNewsTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZNewsTableController.h; sourceTree = "<group>"; };
 		0D8683E821F49286002E255A /* DYZNewsTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZNewsTableController.m; sourceTree = "<group>"; };
 		0D8683EA21F492A7002E255A /* DYZNewsTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZNewsTableCell.h; sourceTree = "<group>"; };
@@ -219,6 +216,8 @@
 			children = (
 				0D8683ED21F492CA002E255A /* APINewsList.h */,
 				0D8683EE21F492CA002E255A /* APINewsList.m */,
+				0D72798321F96571001C0768 /* APICoursesList.h */,
+				0D72798421F96571001C0768 /* APICoursesList.m */,
 				C11C645521F86826000D0CB7 /* APIClassify.h */,
 				C11C645621F86826000D0CB7 /* APIClassify.m */,
 				C11C645B21F890D7000D0CB7 /* APIHomeCourseList.h */,
@@ -269,10 +268,6 @@
 				0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */,
 				0D8683DA21F48E2A002E255A /* DYZCoursesTableCell.h */,
 				0D8683DB21F48E2A002E255A /* DYZCoursesTableCell.m */,
-				0D8683E321F48FA1002E255A /* DYZRequestCoursesList.h */,
-				0D8683E421F48FA1002E255A /* DYZRequestCoursesList.m */,
-				0D8683E021F48F03002E255A /* DYZResponseCoursesList.h */,
-				0D8683E121F48F03002E255A /* DYZResponseCoursesList.m */,
 			);
 			path = Courses;
 			sourceTree = "<group>";
@@ -692,6 +687,7 @@
 				C11C643F21F85BC7000D0CB7 /* DYZNewsRollCollectionCell.m in Sources */,
 				C13A5DF721EDC4DE00493EE7 /* main.m in Sources */,
 				C1BCDB6E21F7194200CDF3EB /* DYZMineViewController.m in Sources */,
+				0D72798521F96571001C0768 /* APICoursesList.m in Sources */,
 				0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */,
