@@ -30,7 +30,29 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQ9-pV-b0N">
                                 <rect key="frame" x="49" y="0.0" width="263" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="新闻资讯滚动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZg-XM-kiA">
+                                        <rect key="frame" x="0.0" y="18" width="263" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="新闻资讯滚动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-68-SDP">
+                                        <rect key="frame" x="0.0" y="50" width="263" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Sst-68-SDP" firstAttribute="top" secondItem="pZg-XM-kiA" secondAttribute="bottom" constant="18" id="4N7-jV-Drk"/>
+                                    <constraint firstItem="Sst-68-SDP" firstAttribute="leading" secondItem="bQ9-pV-b0N" secondAttribute="leading" id="RvQ-XH-Dbj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sst-68-SDP" secondAttribute="trailing" id="Zc5-ao-ybA"/>
+                                    <constraint firstAttribute="trailing" secondItem="pZg-XM-kiA" secondAttribute="trailing" id="cfu-ju-bVB"/>
+                                    <constraint firstItem="pZg-XM-kiA" firstAttribute="leading" secondItem="bQ9-pV-b0N" secondAttribute="leading" id="hxP-iz-nKS"/>
+                                    <constraint firstItem="pZg-XM-kiA" firstAttribute="centerY" secondItem="bQ9-pV-b0N" secondAttribute="centerY" id="mmJ-w8-61E"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,7 +76,11 @@
             <viewLayoutGuide key="safeArea" id="W3s-XG-B3g"/>
             <size key="customSize" width="312" height="50"/>
             <connections>
+                <outlet property="constraintCurrentCenter" destination="mmJ-w8-61E" id="cgo-CP-hTb"/>
+                <outlet property="constraintNextTop" destination="4N7-jV-Drk" id="dWU-KC-6O0"/>
                 <outlet property="contentViewRoll" destination="bQ9-pV-b0N" id="bj9-Oz-ZJj"/>
+                <outlet property="lblCurrent" destination="pZg-XM-kiA" id="E5b-5w-Hsb"/>
+                <outlet property="lblNext" destination="Sst-68-SDP" id="9lO-g7-Kua"/>
             </connections>
             <point key="canvasLocation" x="-654.39999999999998" y="-33.283358320839582"/>
         </collectionViewCell>

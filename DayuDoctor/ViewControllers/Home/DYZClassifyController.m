@@ -8,7 +8,7 @@
 
 #import "DYZClassifyController.h"
 #import "DYZClassifyCollectionCell.h"
-#import "APIClassify.h"
+#import "APIClassifyAll.h"
 
 @interface DYZClassifyController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -30,7 +30,7 @@
 
 - (void)loadData {
     // 分类接口
-    APIClassify *request = [APIClassify new];
+    APIClassifyAll *request = [APIClassifyAll new];
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseClassify *responseObject, NSDictionary *options) {
         weakSelf.classifyList = responseObject.classifies;

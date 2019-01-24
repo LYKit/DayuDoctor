@@ -15,7 +15,6 @@
     self = [super init];
     if (self) {
         self.interfaceURL = InterfaceURL(@"/classify/index");
-        self.headerParams = [@{@"token":@"123456"} mutableCopy];
     }
     return self;
 }

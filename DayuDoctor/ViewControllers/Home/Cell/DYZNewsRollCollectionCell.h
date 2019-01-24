@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APINewsList.h"
 
 static NSString * const kNewsRolCollectionCell = @"DYZNewsRollCollectionCell";
 
@@ -14,6 +15,9 @@ static NSString * const kNewsRolCollectionCell = @"DYZNewsRollCollectionCell";
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZNewsRollCollectionCell : UICollectionViewCell
+
+@property (nonatomic, strong) NSArray<News *> *newsList;
+
 
 @end
 

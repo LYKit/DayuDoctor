@@ -45,23 +45,5 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TAM-D5-290">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐视频" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phy-PJ-Xd8">
-                    <rect key="frame" x="10" y="15" width="66" height="20"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="phy-PJ-Xd8" firstAttribute="centerY" secondItem="TAM-D5-290" secondAttribute="centerY" id="1Wy-78-FvU"/>
-                <constraint firstItem="phy-PJ-Xd8" firstAttribute="leading" secondItem="ubJ-I9-SA0" secondAttribute="leading" constant="10" id="lZ5-ep-p2o"/>
-            </constraints>
-            <viewLayoutGuide key="safeArea" id="ubJ-I9-SA0"/>
-        </collectionReusableView>
     </objects>
 </document>

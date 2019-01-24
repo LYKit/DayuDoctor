@@ -11,9 +11,11 @@
 #import "DYZVideoCollectionCell.h"
 #import "DYZNewsRollCollectionCell.h"
 #import "DYZHeadImageCollectionCell.h"
+#import "DYZVideoReusableView.h"
 #import "APIClassify.h"
 #import "APIHomeCourseList.h"
 #import "APIHomeBanner.h"
+#import "APINewsList.h"
 
 typedef enum : NSUInteger {
     enumHeaderImageSection,
@@ -24,11 +26,13 @@ typedef enum : NSUInteger {
 
 @interface DYZHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
+@property (strong, nonatomic) IBOutlet UICollectionReusableView *headerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *classifyList;
 @property (nonatomic, strong) NSMutableArray *courseList;
 @property (nonatomic, strong) NSMutableArray *bannerList;
+@property (nonatomic, strong) NSArray *newsList;
 
 
 @end
@@ -39,17 +43,22 @@ typedef enum : NSUInteger {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    [self.collectionView registerNib:[UINib nibWithNibName:kClassifyCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kClassifyCollectionCell];
-    [self.collectionView registerNib:[UINib nibWithNibName:kVideoCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kVideoCollectionCell];
-    [self.collectionView registerNib:[UINib nibWithNibName:kHeadImageCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kHeadImageCollectionCell];
-    [self.collectionView registerNib:[UINib nibWithNibName:kNewsRolCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kNewsRolCollectionCell];
 
+    [self registerView];
     [self createBaseView];
     [self loadData];
 }
 
 - (void)createBaseView {
     
+}
+
+- (void)registerView {
+    [self.collectionView registerNib:[UINib nibWithNibName:kClassifyCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kClassifyCollectionCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:kVideoCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kVideoCollectionCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:kHeadImageCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kHeadImageCollectionCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:kNewsRolCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kNewsRolCollectionCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:kDYZVideoReusableView bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kDYZVideoReusableView];
 }
 
 
@@ -78,6 +87,15 @@ typedef enum : NSUInteger {
     APIHomeBanner *requestBanner = [APIHomeBanner new];
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.bannerList = responseObject.banners;
+        [weakSelf.collectionView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+    
+    // 资讯
+    APINewsList *requestNews = [APINewsList new];
+    [requestNews startPostWithSuccessBlock:^(ResponseNewsList *responseObject, NSDictionary *options) {
+        weakSelf.newsList = responseObject.content;
         [weakSelf.collectionView reloadData];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
@@ -119,6 +137,7 @@ typedef enum : NSUInteger {
         } break;
         case enumNewsRollSection: {
             DYZNewsRollCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kNewsRolCollectionCell forIndexPath:indexPath];
+            cell.newsList = self.newsList;
             return cell;
         } break;
         case enumClassifySection:{
@@ -169,15 +188,26 @@ typedef enum : NSUInteger {
             return UIEdgeInsetsMake(0, spacingLeft, 0, spacingRight);
         } break;
         case enumClassifySection:{
-            return UIEdgeInsetsMake(20, spacingLeft, 0, spacingRight);
+            return UIEdgeInsetsMake(20, spacingLeft, 10, spacingRight);
         } break;
         case enumVideoRecommendSection:{
-            return UIEdgeInsetsMake(25, spacingLeft, 0, spacingRight);
+            return UIEdgeInsetsMake(0, spacingLeft, 0, spacingRight);
         } break;
         default:
             break;
     }
     return UIEdgeInsetsZero;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    if (section == enumVideoRecommendSection) {
+        return CGSizeMake(SCREEN_WIDTH, 50);
+    }
+    return CGSizeZero;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    return [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kDYZVideoReusableView forIndexPath:indexPath];
 }
 
 @end
