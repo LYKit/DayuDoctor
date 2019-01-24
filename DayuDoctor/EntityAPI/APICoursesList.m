@@ -1,20 +1,18 @@
 //
-//  DYZRequestCoursesList.m
+//  APICoursesList.m
 //  DayuDoctor
 //
-//  Created by zhuopin on 2019/1/20.
+//  Created by zhuopin on 2019/1/24.
 //  Copyright © 2019 大禹中医. All rights reserved.
 //
 
-#import "DYZRequestCoursesList.h"
+#import "APICoursesList.h"
 
-@implementation DYZRequestCoursesList
-
+@implementation APICoursesList
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
     self.interfaceURL = @"/course/user";
     return self;
 }
-
 @end
