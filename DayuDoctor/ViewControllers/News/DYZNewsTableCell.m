@@ -56,7 +56,7 @@
     [self.contentView addSubview:_descLabel];
     [_descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_self.imgView.mas_bottom).mas_offset(-10);
-        make.left.right.equalTo(self->_titleLabel);
+        make.left.right.equalTo(_self.titleLabel);
         make.height.mas_equalTo(13);
     }];
     return self;

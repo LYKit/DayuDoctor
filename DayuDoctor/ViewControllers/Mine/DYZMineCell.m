@@ -24,6 +24,7 @@
         make.right.mas_offset(-16);
         make.top.bottom.equalTo(self.contentView);
     }];
+//    self.bottomLine.hidden = YES;
     
     return self;
 }

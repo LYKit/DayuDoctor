@@ -7,10 +7,13 @@
 //
 
 #import "DYZBaseTableViewCell.h"
+#import "APICoursesList.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZCoursesTableCell : DYZBaseTableViewCell
+
+- (void)setCourse:(Course *)course;
 
 @end
 

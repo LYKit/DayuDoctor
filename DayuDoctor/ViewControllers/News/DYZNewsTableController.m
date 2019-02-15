@@ -32,17 +32,14 @@
 
 - (void)requestNews {
     __weak typeof(self) _self = self;
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     [_request startPostWithSuccessBlock:^(ResponseNewsList *response, NSDictionary *options) {
         _self.response = response;
         [_self.tableView reloadData];
         [_self endRefreshing];
         
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         [_self endRefreshing];
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 

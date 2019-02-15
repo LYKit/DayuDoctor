@@ -91,19 +91,36 @@
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZMineCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *title = self.models[indexPath.row];
-    cell.label.text = title;
+    if (self.models.count) {
+        NSString *title = self.models[indexPath.section];
+        cell.label.text = title;
+    }
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.models.count;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 10;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *v = [UIView new];
+//    v.layer.borderWidth = 1;
+//    v.layer.borderColor = [[UIColor colorWithHexString:@"#efefef"] CGColor];
+//    return v;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    switch (indexPath.row) {
+    switch (indexPath.section) {
         case 0: {
             DYZCoursesTableController *vc = [DYZCoursesTableController new];
             self.hidesBottomBarWhenPushed = YES;

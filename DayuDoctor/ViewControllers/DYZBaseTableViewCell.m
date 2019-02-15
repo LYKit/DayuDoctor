@@ -25,7 +25,7 @@
         make.right.equalTo(self.contentView).mas_offset(-16);
         make.height.mas_equalTo(0.5);
     }];
-    
+    _bottomLine = line;
     return self;
 }
 

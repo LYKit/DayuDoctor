@@ -42,9 +42,12 @@
     _tableView = [UITableView new];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.rowHeight = 100;
     [self.view addSubview:_tableView];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
     [_tableView registerClass:[DYZCoursesTableCell class] forCellReuseIdentifier:@"cell"];
-    
+    ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
@@ -55,7 +58,7 @@
     DYZCoursesTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (_response.content.count) {
         Course *course = _response.content[indexPath.row];
-        cell.textLabel.text = course.title;
+        [cell setCourse:course];
     }
     return cell;
 }
