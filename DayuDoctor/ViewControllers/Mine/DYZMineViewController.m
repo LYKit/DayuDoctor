@@ -9,10 +9,10 @@
 #import "DYZMineViewController.h"
 #import "DYZMineCell.h"
 #import "DYZCoursesTableController.h"
-<<<<<<< HEAD
 #import "DYZMyCollectionViewController.h"
-=======
 #import "DYZUserInfoEditorController.h"
+#import "DYZVipRightsController.h"
+#import "DYZShareViewController.h"
 #import "DYZMemberManager.h"
 #import "DYZLoginController.h"
 #import "APIUserInfo.h"
@@ -32,8 +32,6 @@ typedef enum : NSUInteger {
     enumOptionUpdate,
     enumOptionOut,
 } enumUserInfoOption;
-
->>>>>>> 1bc533c9ae83ce55f656cd06f1785270b8d20ec9
 
 
 @interface  MineOption: NSObject
@@ -90,9 +88,9 @@ typedef enum : NSUInteger {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (![DYZMemberManager sharedMemberManger].token.length) {
-        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
-    }
+//    if (![DYZMemberManager sharedMemberManger].token.length) {
+//        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
+//    }
 }
 
 
@@ -110,19 +108,6 @@ typedef enum : NSUInteger {
 
 
 #pragma tableView delegate
-<<<<<<< HEAD
-- (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    DYZMineCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (self.models.count) {
-        NSString *title = self.models[indexPath.section];
-        cell.label.text = title;
-    }
-    return cell;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.models.count;
-=======
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.optionsList.count;
 }
@@ -135,13 +120,7 @@ typedef enum : NSUInteger {
     DYZMineCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZMineCell forIndexPath:indexPath];
     cell.strTitle = _optionsList[indexPath.row].name;
     return cell;
->>>>>>> 1bc533c9ae83ce55f656cd06f1785270b8d20ec9
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
 //    return 10;
 //}
@@ -155,15 +134,9 @@ typedef enum : NSUInteger {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-<<<<<<< HEAD
-
-    switch (indexPath.section) {
-        case 0: {
-=======
     self.hidesBottomBarWhenPushed = YES;
     switch (indexPath.row) {
         case enumOptionCourse: {
->>>>>>> 1bc533c9ae83ce55f656cd06f1785270b8d20ec9
             DYZCoursesTableController *vc = [DYZCoursesTableController new];
             [self.navigationController pushViewController:vc animated:YES];
         } break;
@@ -181,10 +154,17 @@ typedef enum : NSUInteger {
             
         } break;
         case enumOptionCollection: {
-            
+            DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+
         } break;
         case enumOptionMember: {
-            
+            DYZVipRightsController *vc = [DYZVipRightsController new];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
         } break;
         case enumOptionScore: {
             
@@ -193,34 +173,22 @@ typedef enum : NSUInteger {
             
         } break;
         case enumOptionShare: {
-            
+            DYZShareViewController *vc = [DYZShareViewController new];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
         } break;
         case enumOptionService: {
             
         } break;
         case enumOptionUpdate: {
             
-<<<<<<< HEAD
-            
-        case 4: {
-            DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
-            self.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
-        } break;
-            
-=======
-        } break;
-        case enumOptionOut: {
-            
-        } break;
->>>>>>> 1bc533c9ae83ce55f656cd06f1785270b8d20ec9
         default:
             break;
     }
     
     self.hidesBottomBarWhenPushed = NO;
-
+    }
 }
 
 
@@ -232,24 +200,6 @@ typedef enum : NSUInteger {
     _status.text = @"已登录";
     _userName.text = _responseUserInfo.detail.name.length ? _responseUserInfo.detail.name : [DYZMemberManager getMemberInfo].mobile;
 }
-
-<<<<<<< HEAD
-- (NSMutableArray *)models {
-    if (_models == nil) {
-        _models = [NSMutableArray new];
-        [_models addObject:@"我的课程"];
-        [_models addObject:@"我的资料"];
-        [_models addObject:@"充值中心"];
-        [_models addObject:@"我的订单"];
-        [_models addObject:@"我的收藏"];
-        [_models addObject:@"会员权益"];
-        [_models addObject:@"我的积分"];
-        [_models addObject:@"系统消息"];
-        [_models addObject:@"分享"];
-        [_models addObject:@"在线客服"];
-        [_models addObject:@"版本更新"];
-        [_models addObject:@"联系客服"];
-=======
 - (NSArray *)optionsList { // 修改位置即调整枚举顺序
     if (!_optionsList) {
         NSArray *array =
@@ -271,7 +221,6 @@ typedef enum : NSUInteger {
         _optionsList = [array sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
             return obj1.pos > obj2.pos;
         }];
->>>>>>> 1bc533c9ae83ce55f656cd06f1785270b8d20ec9
     }
     return _optionsList;
 }

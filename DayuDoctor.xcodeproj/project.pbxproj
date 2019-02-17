@@ -11,6 +11,7 @@
 		0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8FA221939AD007B37F8 /* APIMyCollectionList.m */; };
 		0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */; };
 		0D4BB9022219664A007B37F8 /* DYZVipRightsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB9012219664A007B37F8 /* DYZVipRightsController.m */; };
+		0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB90522197354007B37F8 /* DYZShareViewController.m */; };
 		0D72798521F96571001C0768 /* APICoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72798421F96571001C0768 /* APICoursesList.m */; };
 		0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683C821F47FF7002E255A /* DYZBaseViewController.m */; };
 		0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */; };
@@ -133,6 +134,8 @@
 		0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMyCollectionCell.m; sourceTree = "<group>"; };
 		0D4BB9002219664A007B37F8 /* DYZVipRightsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZVipRightsController.h; sourceTree = "<group>"; };
 		0D4BB9012219664A007B37F8 /* DYZVipRightsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVipRightsController.m; sourceTree = "<group>"; };
+		0D4BB90422197354007B37F8 /* DYZShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZShareViewController.h; sourceTree = "<group>"; };
+		0D4BB90522197354007B37F8 /* DYZShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZShareViewController.m; sourceTree = "<group>"; };
 		0D72798321F96571001C0768 /* APICoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICoursesList.h; sourceTree = "<group>"; };
 		0D72798421F96571001C0768 /* APICoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICoursesList.m; sourceTree = "<group>"; };
 		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
@@ -349,6 +352,16 @@
 			);
 			path = VIP;
 			sourceTree = "<group>";
+		};
+		0D4BB90322197341007B37F8 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				0D4BB90422197354007B37F8 /* DYZShareViewController.h */,
+				0D4BB90522197354007B37F8 /* DYZShareViewController.m */,
+			);
+			name = Share;
+			path = DayuDoctor/ViewControllers/Share;
+			sourceTree = SOURCE_ROOT;
 		};
 		0D8683C121F47809002E255A /* CommonView */ = {
 			isa = PBXGroup;
@@ -570,6 +583,7 @@
 		C1BCDB4B21F6C75C00CDF3EB /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				0D4BB90322197341007B37F8 /* Share */,
 				0D4BB8FF221965F6007B37F8 /* VIP */,
 				0D4BB8F5221905B5007B37F8 /* MyCollection */,
 				C1C9BB6E2212D5170059B3B5 /* Cell */,
@@ -927,6 +941,7 @@
 				C1BCDB9121F84AC200CDF3EB /* DYZClassifyCollectionCell.m in Sources */,
 				C1BCDB6721F712E700CDF3EB /* DYZMainTabBarController.m in Sources */,
 				C11C645A21F8752A000D0CB7 /* UIImageView+DYZWebImageView.m in Sources */,
+				0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */,
 				C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */,
 				C1BCDB9621F84AD500CDF3EB /* DYZVideoCollectionCell.m in Sources */,
 				C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */,
