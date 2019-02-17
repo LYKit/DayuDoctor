@@ -10,6 +10,8 @@
 #import "LYRequestManager.h"
 #import "LYResponseObject.h"
 #import "LYParserManager.h"
+#import "DYZHTTPHeader.h"
+
 
 @interface LYRequestObject ()
 
@@ -95,13 +97,15 @@
     
     self.requestManager = [LYRequestManager sharedClient];
     [self.requestManager configHeaderParams:_headerParams];
-    self.requestTask = [_requestManager POST:_interfaceURL parameters:parameterdic progress:^(NSProgress * _Nonnull uploadProgress) {
+    [self.requestManager configHeaderParams:[DYZHTTPHeader commonHeader]];
+
+    self.requestTask = [_requestManager POSTHTTPBody:_interfaceURL parameters:parameterdic progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);
         }
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    } success:^(NSURLSessionDataTask *task, id responseObject) {
         responseObject =  [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-
+        
 #ifdef DEBUG
         NSLog(@"=============================");
         NSLog(@"接口地址： %@",self.interfaceURL);
@@ -115,7 +119,7 @@
         if (success) {
             success(object,nil);
         }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
 #ifdef DEBUG
         NSLog(@"=============================");
         NSLog(@"接口地址： %@",self.interfaceURL);
@@ -128,6 +132,7 @@
         if (fail) {
             fail(lyError,nil);
         }
+
     }];
     
     if (self.isCache) {

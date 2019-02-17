@@ -44,13 +44,13 @@ typedef void(^LYRequestProgressBlock)(NSProgress *uploadProgress);
  @param progress 进度回调
  @param fail 失败回调
  */
-- (void)startGetWithSuccessBlock:(LYRequestSuccessBlock)success
-                        progress:(LYRequestProgressBlock)progress
-                       failBlock:(LYRequestFailBlock)fail;
-
-- (void)startPostWithSuccessBlock:(LYRequestSuccessBlock)success
-                         progress:(LYRequestProgressBlock)progress
-                        failBlock:(LYRequestFailBlock)fail;
+//- (void)startGetWithSuccessBlock:(LYRequestSuccessBlock)success
+//                        progress:(LYRequestProgressBlock)progress
+//                       failBlock:(LYRequestFailBlock)fail;
+//
+//- (void)startPostWithSuccessBlock:(LYRequestSuccessBlock)success
+//                         progress:(LYRequestProgressBlock)progress
+//                        failBlock:(LYRequestFailBlock)fail;
 
 
 

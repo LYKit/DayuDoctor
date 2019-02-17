@@ -10,8 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DYZMineCell : DYZBaseTableViewCell
-@property (nonatomic, strong) UILabel *label;
+static NSString * const kDYZMineCell = @"DYZMineCell";
+
+@interface DYZMineCell : UITableViewCell
+@property (nonatomic, copy) NSString *strTitle;
+
 
 @end
 

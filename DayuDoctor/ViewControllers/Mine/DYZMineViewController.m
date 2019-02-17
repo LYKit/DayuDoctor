@@ -9,127 +9,208 @@
 #import "DYZMineViewController.h"
 #import "DYZMineCell.h"
 #import "DYZCoursesTableController.h"
+#import "DYZUserInfoEditorController.h"
+#import "DYZMemberManager.h"
+#import "DYZLoginController.h"
+#import "APIUserInfo.h"
+
+typedef enum : NSUInteger {
+    enumOptionCourse = 0,
+    enumOptionAppoint,
+    enumOptionInfo,
+    enumOptionPay,
+    enumOptionOrder,
+    enumOptionCollection,
+    enumOptionMember,
+    enumOptionScore,
+    enumOptionMessage,
+    enumOptionShare,
+    enumOptionService,
+    enumOptionUpdate,
+    enumOptionOut,
+} enumUserInfoOption;
+
+
+
+@interface  MineOption: NSObject
+@property (nonatomic, assign) enumUserInfoOption pos;
+@property (nonatomic, copy) NSString *name;
+
++ (MineOption *)createOption:(NSString *)name pos:(enumUserInfoOption)pos;
+@end
+
+
+@implementation MineOption
++ (MineOption *)createOption:(NSString *)name pos:(enumUserInfoOption)pos
+{
+    MineOption *option = [MineOption new];
+    option.name = name;
+    option.pos = pos;
+    return option;
+}
+@end
+
+
+
+
+
 
 @interface DYZMineViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *models;
-@property (nonatomic, strong) UIImageView *avatorImgView;
-@property (nonatomic, strong) UIView *profileView;
-@property (nonatomic, strong) UILabel *userNameLabel;
-@property (nonatomic, strong) UILabel *userDescLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIImageView *headImage;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *status;
+
+@property (nonatomic, strong) NSArray<MineOption *> *optionsList;
+
+@property (nonatomic, strong) ResponseUserInfo *responseUserInfo;
+
 
 @end
 
 @implementation DYZMineViewController
 
-- (void)setuppProfileView {
-    __weak typeof(self) _self = self;
-    _profileView = [UIView new];
-    _profileView.backgroundColor = [UIColor whiteColor];
-    _profileView.frame = CGRectMake(0, 0, kScreenWidth, 100);
-    
-    _avatorImgView = [UIImageView new];
-    _avatorImgView.backgroundColor = [UIColor yellowColor];
-    _avatorImgView.layer.cornerRadius = 30;
-    _avatorImgView.layer.masksToBounds = YES;
-    [_profileView addSubview:_avatorImgView];
-    
-    [_avatorImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(20);
-        make.left.mas_equalTo(16);
-        make.size.mas_equalTo(CGSizeMake(60, 60));
-    }];
-    
-    _userNameLabel = [UILabel new];
-    _userNameLabel.font = [UIFont systemFontOfSize:15];
-    _userNameLabel.textColor = [UIColor colorWithHexString:@"#333333"];
-    [_profileView addSubview:_userNameLabel];
-    _userNameLabel.text = @"sdafasf";
-    [_userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_self.avatorImgView).mas_offset(5);
-        make.left.equalTo(_self.avatorImgView.mas_right).mas_offset(10);
-        make.right.mas_offset(-16);
-    }];
-    
-    _userDescLabel = [UILabel new];
-    _userDescLabel.font = [UIFont systemFontOfSize:13];
-    _userDescLabel.textColor = [UIColor colorWithHexString:@"#666666"];
-    [_profileView addSubview:_userDescLabel];
-    _userDescLabel.text = @"sdafasf";
-    [_userDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_self.avatorImgView).mas_offset(-5);
-        make.left.equalTo(_self.avatorImgView.mas_right).mas_offset(10);
-        make.right.mas_offset(-16);
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadData];
     self.navigationItem.title = @"个人中心";
     
-    [self setuppProfileView];
-    [self setupTableView];
+    self.tableView.tableHeaderView = self.headerView;
+    self.tableView.separatorInset = UIEdgeInsetsZero;
+    self.headImage.layer.masksToBounds = YES;
+    self.headImage.layer.cornerRadius = 27;
+    [self.tableView registerClass:[DYZMineCell class] forCellReuseIdentifier:kDYZMineCell];
 }
 
-- (void)setupTableView {
-    _tableView = [UITableView new];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.rowHeight = 45;
-    [self.view addSubview:_tableView];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
-    [_tableView registerClass:[DYZMineCell class] forCellReuseIdentifier:@"cell"];
-    ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (![DYZMemberManager sharedMemberManger].token.length) {
+        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
+    }
+}
+
+
+- (void)loadData {
+    
+    __weak typeof(self) weakSelf = self;
+    [[APIUserInfo new] startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
+        weakSelf.responseUserInfo = responseObject;
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
     }];
     
-    _tableView.tableHeaderView = _profileView;
 }
+
+
 
 #pragma tableView delegate
-- (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    DYZMineCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    NSString *title = self.models[indexPath.row];
-    cell.label.text = title;
-    return cell;
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.optionsList.count;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.models.count;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 45;
+}
+
+- (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    DYZMineCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZMineCell forIndexPath:indexPath];
+    cell.strTitle = _optionsList[indexPath.row].name;
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    self.hidesBottomBarWhenPushed = YES;
     switch (indexPath.row) {
-        case 0: {
+        case enumOptionCourse: {
             DYZCoursesTableController *vc = [DYZCoursesTableController new];
-            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
         } break;
+        case enumOptionAppoint: {
             
+        } break;
+        case enumOptionInfo: {
+            DYZUserInfoEditorController *vc = [DYZUserInfoEditorController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        } break;
+        case enumOptionPay: {
+            
+        } break;
+        case enumOptionOrder: {
+            
+        } break;
+        case enumOptionCollection: {
+            
+        } break;
+        case enumOptionMember: {
+            
+        } break;
+        case enumOptionScore: {
+            
+        } break;
+        case enumOptionMessage: {
+            
+        } break;
+        case enumOptionShare: {
+            
+        } break;
+        case enumOptionService: {
+            
+        } break;
+        case enumOptionUpdate: {
+            
+        } break;
+        case enumOptionOut: {
+            
+        } break;
         default:
             break;
     }
+    
+    self.hidesBottomBarWhenPushed = NO;
+
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+
+
+
+/// MARK: getter/setter
+- (void)setResponseUserInfo:(ResponseUserInfo *)responseUserInfo {
+    _responseUserInfo = responseUserInfo;
+    _status.text = @"已登录";
+    _userName.text = _responseUserInfo.detail.name.length ? _responseUserInfo.detail.name : [DYZMemberManager getMemberInfo].mobile;
 }
 
-- (NSMutableArray *)models {
-    if (_models == nil) {
-        _models = [NSMutableArray new];
-        [_models addObject:@"A"];
-        [_models addObject:@"B"];
-        [_models addObject:@"C"];
-        [_models addObject:@"D"];
-        [_models addObject:@"E"];
+- (NSArray *)optionsList { // 修改位置即调整枚举顺序
+    if (!_optionsList) {
+        NSArray *array =
+  @[
+    [MineOption createOption:@"我的课程" pos:enumOptionCourse],
+    [MineOption createOption:@"我的预约" pos:enumOptionAppoint],
+    [MineOption createOption:@"我的资料" pos:enumOptionInfo],
+    [MineOption createOption:@"充值中心" pos:enumOptionPay],
+    [MineOption createOption:@"我的订单" pos:enumOptionOrder],
+    [MineOption createOption:@"我的收藏" pos:enumOptionCollection],
+    [MineOption createOption:@"会员权益" pos:enumOptionMember],
+    [MineOption createOption:@"我的积分" pos:enumOptionScore],
+    [MineOption createOption:@"系统消息" pos:enumOptionMessage],
+    [MineOption createOption:@"分享" pos:enumOptionShare],
+    [MineOption createOption:@"在线客服" pos:enumOptionService],
+    [MineOption createOption:@"版本更新" pos:enumOptionUpdate],
+    [MineOption createOption:@"退出" pos:enumOptionOut]
+    ];
+        _optionsList = [array sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
+            return obj1.pos > obj2.pos;
+        }];
     }
-    return _models;
+    return _optionsList;
 }
+
 
 @end
+
+
+
+

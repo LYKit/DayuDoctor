@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "LYInterfaceConfig.h"
 #import "LYErrorConfig.h"
+#import "ResponseCommon.h"
 #import "NSObject+LYJSONEntity.h"
 #import "LYJSONEntityElementProtocol.h"
 #import "LYRequestMethodProtocol.h"
