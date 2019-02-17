@@ -7,8 +7,14 @@
 //
 
 #import "DYZApplyController.h"
+#import "DYZLoginController.h"
+#import "DYZRegisterController.h"
+#import "DYZUpdatePwdController.h"
 
 @interface DYZApplyController ()
+
+
+
 
 @end
 
@@ -20,6 +26,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
+
+- (IBAction)didPressedLogin:(id)sender {
+    [self.navigationController pushViewController:[DYZLoginController new] animated:YES];
+}
+
+- (IBAction)didPressedRegister:(id)sender {
+    [self.navigationController pushViewController:[DYZRegisterController new] animated:YES];
+}
+
+- (IBAction)update:(id)sender {
+    [self.navigationController pushViewController:[DYZUpdatePwdController new] animated:YES];
+
+}
 
 
 @end

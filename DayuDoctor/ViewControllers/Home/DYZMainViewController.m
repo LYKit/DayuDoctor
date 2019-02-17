@@ -11,6 +11,16 @@
 #import "YYKit.h"
 #import "DYZMainHeaderView.h"
 #import "DYZHomeViewController.h"
+#import "DYZFaceTeachController.h"
+
+typedef enum : NSUInteger {
+    enumMagicViewVideo = 0,
+    enumMagicViewNews,
+    enumMagicViewFaceTeach,
+    enumMagicViewQA,
+    enumMagicViewJoin,
+    enumMagicViewHospital,
+} enumMagicViewPage;
 
 @interface DYZMainViewController ()
 @property (nonatomic, strong) DYZMainHeaderView *headerView;
@@ -69,13 +79,18 @@
     self.magicView.dataSource = self;
     self.magicView.delegate = self;
     [self.magicView reloadData];
+    
+    
+    
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 50)];
+//    [self.magicView addSubview:view];
 }
 
 
 /// MARK: VTMagic'delegate
 - (NSArray<NSString *> *)menuTitlesForMagicView:(VTMagicView *)magicView
 {
-    return @[@"首页",@"视频",@"资讯",@"面授",@"答疑"];
+    return @[@"课程",@"资讯",@"面授",@"答疑",@"加盟",@"医馆"];
 }
 
 - (UIButton *)magicView:(VTMagicView *)magicView menuItemAtIndex:(NSUInteger)itemIndex
@@ -94,21 +109,25 @@
 - (UIViewController *)magicView:(VTMagicView *)magicView viewControllerAtPage:(NSUInteger)pageIndex
 {
     switch (pageIndex) {
-        case 0: {
+        case enumMagicViewVideo: {
             DYZHomeViewController *home = [DYZHomeViewController new];
             return home;
         }break;
-        case 1: {
-            
-        }break;
-        case 2: {
+        case enumMagicViewNews: {
             DYZNewsTableController *newsList = [DYZNewsTableController new];
             return newsList;
         }break;
-        case 3: {
-
+        case enumMagicViewFaceTeach: {
+            DYZFaceTeachController *vc = [DYZFaceTeachController new];
+            return vc;
         }break;
-        case 4: {
+        case enumMagicViewQA: {
+            
+        }break;
+        case enumMagicViewJoin: {
+            
+        }break;
+        case enumMagicViewHospital: {
             
         }break;
         default:

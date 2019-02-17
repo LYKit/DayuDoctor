@@ -15,4 +15,11 @@
 
 - (void)configHeaderParams:(NSMutableDictionary *)params;
 
+// 请求参数同时添加进 HTTPBody
+- (NSURLSessionDataTask *)POSTHTTPBody:(NSString *)URLString
+                            parameters:(NSDictionary *)parameters
+                              progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                               success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                               failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
 @end
