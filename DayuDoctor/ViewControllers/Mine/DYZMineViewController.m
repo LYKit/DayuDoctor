@@ -9,6 +9,7 @@
 #import "DYZMineViewController.h"
 #import "DYZMineCell.h"
 #import "DYZCoursesTableController.h"
+#import "DYZMyCollectionViewController.h"
 
 @interface DYZMineViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -128,6 +129,14 @@
             self.hidesBottomBarWhenPushed = NO;
         } break;
             
+            
+        case 4: {
+            DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } break;
+            
         default:
             break;
     }
@@ -140,11 +149,18 @@
 - (NSMutableArray *)models {
     if (_models == nil) {
         _models = [NSMutableArray new];
-        [_models addObject:@"A"];
-        [_models addObject:@"B"];
-        [_models addObject:@"C"];
-        [_models addObject:@"D"];
-        [_models addObject:@"E"];
+        [_models addObject:@"我的课程"];
+        [_models addObject:@"我的资料"];
+        [_models addObject:@"充值中心"];
+        [_models addObject:@"我的订单"];
+        [_models addObject:@"我的收藏"];
+        [_models addObject:@"会员权益"];
+        [_models addObject:@"我的积分"];
+        [_models addObject:@"系统消息"];
+        [_models addObject:@"分享"];
+        [_models addObject:@"在线客服"];
+        [_models addObject:@"版本更新"];
+        [_models addObject:@"联系客服"];
     }
     return _models;
 }
