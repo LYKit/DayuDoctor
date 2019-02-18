@@ -88,9 +88,9 @@ typedef enum : NSUInteger {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    if (![DYZMemberManager sharedMemberManger].token.length) {
-//        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
-//    }
+    if (![DYZMemberManager sharedMemberManger].token.length) {
+        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
+    }
 }
 
 
@@ -121,16 +121,6 @@ typedef enum : NSUInteger {
     cell.strTitle = _optionsList[indexPath.row].name;
     return cell;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 10;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *v = [UIView new];
-//    v.layer.borderWidth = 1;
-//    v.layer.borderColor = [[UIColor colorWithHexString:@"#efefef"] CGColor];
-//    return v;
-//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -155,16 +145,11 @@ typedef enum : NSUInteger {
         } break;
         case enumOptionCollection: {
             DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
-            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
-
         } break;
         case enumOptionMember: {
             DYZVipRightsController *vc = [DYZVipRightsController new];
-            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
         } break;
         case enumOptionScore: {
             
@@ -174,9 +159,7 @@ typedef enum : NSUInteger {
         } break;
         case enumOptionShare: {
             DYZShareViewController *vc = [DYZShareViewController new];
-            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
         } break;
         case enumOptionService: {
             
@@ -185,10 +168,9 @@ typedef enum : NSUInteger {
             
         default:
             break;
+        }
     }
-    
     self.hidesBottomBarWhenPushed = NO;
-    }
 }
 
 
@@ -204,6 +186,7 @@ typedef enum : NSUInteger {
     if (!_optionsList) {
         NSArray *array =
   @[
+    [MineOption createOption:@"退出" pos:enumOptionOut],
     [MineOption createOption:@"我的课程" pos:enumOptionCourse],
     [MineOption createOption:@"我的预约" pos:enumOptionAppoint],
     [MineOption createOption:@"我的资料" pos:enumOptionInfo],
@@ -215,8 +198,7 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"系统消息" pos:enumOptionMessage],
     [MineOption createOption:@"分享" pos:enumOptionShare],
     [MineOption createOption:@"在线客服" pos:enumOptionService],
-    [MineOption createOption:@"版本更新" pos:enumOptionUpdate],
-    [MineOption createOption:@"退出" pos:enumOptionOut]
+    [MineOption createOption:@"版本更新" pos:enumOptionUpdate]
     ];
         _optionsList = [array sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
             return obj1.pos > obj2.pos;

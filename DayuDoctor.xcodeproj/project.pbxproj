@@ -85,8 +85,6 @@
 		C1C9BB682212D4100059B3B5 /* DYZFaceTeachController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB662212D4100059B3B5 /* DYZFaceTeachController.xib */; };
 		C1C9BB6C2212D4FC0059B3B5 /* DYZMineInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB6A2212D4FC0059B3B5 /* DYZMineInfoController.m */; };
 		C1C9BB6D2212D4FC0059B3B5 /* DYZMineInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB6B2212D4FC0059B3B5 /* DYZMineInfoController.xib */; };
-		C1C9BB722212D5520059B3B5 /* DYZCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB702212D5520059B3B5 /* DYZCollectController.m */; };
-		C1C9BB732212D5520059B3B5 /* DYZCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB712212D5520059B3B5 /* DYZCollectController.xib */; };
 		C1C9BB762212D59B0059B3B5 /* DYZVMeetController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB752212D59B0059B3B5 /* DYZVMeetController.m */; };
 		C1C9BB7A2212D5AF0059B3B5 /* DYZMeetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB782212D5AF0059B3B5 /* DYZMeetDetailController.m */; };
 		C1C9BB7B2212D5AF0059B3B5 /* DYZMeetDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB792212D5AF0059B3B5 /* DYZMeetDetailController.xib */; };
@@ -268,9 +266,6 @@
 		C1C9BB692212D4FC0059B3B5 /* DYZMineInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMineInfoController.h; sourceTree = "<group>"; };
 		C1C9BB6A2212D4FC0059B3B5 /* DYZMineInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMineInfoController.m; sourceTree = "<group>"; };
 		C1C9BB6B2212D4FC0059B3B5 /* DYZMineInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMineInfoController.xib; sourceTree = "<group>"; };
-		C1C9BB6F2212D5520059B3B5 /* DYZCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCollectController.h; sourceTree = "<group>"; };
-		C1C9BB702212D5520059B3B5 /* DYZCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCollectController.m; sourceTree = "<group>"; };
-		C1C9BB712212D5520059B3B5 /* DYZCollectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZCollectController.xib; sourceTree = "<group>"; };
 		C1C9BB742212D59B0059B3B5 /* DYZVMeetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZVMeetController.h; sourceTree = "<group>"; };
 		C1C9BB752212D59B0059B3B5 /* DYZVMeetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVMeetController.m; sourceTree = "<group>"; };
 		C1C9BB772212D5AF0059B3B5 /* DYZMeetDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMeetDetailController.h; sourceTree = "<group>"; };
@@ -602,9 +597,6 @@
 				C1C9BB692212D4FC0059B3B5 /* DYZMineInfoController.h */,
 				C1C9BB6A2212D4FC0059B3B5 /* DYZMineInfoController.m */,
 				C1C9BB6B2212D4FC0059B3B5 /* DYZMineInfoController.xib */,
-				C1C9BB6F2212D5520059B3B5 /* DYZCollectController.h */,
-				C1C9BB702212D5520059B3B5 /* DYZCollectController.m */,
-				C1C9BB712212D5520059B3B5 /* DYZCollectController.xib */,
 				C1C9BB742212D59B0059B3B5 /* DYZVMeetController.h */,
 				C1C9BB752212D59B0059B3B5 /* DYZVMeetController.m */,
 				C1C9BB772212D5AF0059B3B5 /* DYZMeetDetailController.h */,
@@ -858,7 +850,6 @@
 				C1C9BB632212D36B0059B3B5 /* DYZJoinController.xib in Resources */,
 				C1BCDB5B21F704A300CDF3EB /* DYZMainHeaderView.xib in Resources */,
 				C1C9BB502212D1F70059B3B5 /* DYZMessageController.xib in Resources */,
-				C1C9BB732212D5520059B3B5 /* DYZCollectController.xib in Resources */,
 				C1C9BBAD2216BBB80059B3B5 /* DYZUserInfoEditorController.xib in Resources */,
 				C1C9BB9B221560130059B3B5 /* DYZFaceTeachCell.xib in Resources */,
 				C1C9BB552212D25C0059B3B5 /* DYZSearchController.xib in Resources */,
@@ -988,7 +979,6 @@
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
 				0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */,
-				C1C9BB722212D5520059B3B5 /* DYZCollectController.m in Sources */,
 				C1C9BB9E221569BC0059B3B5 /* APIFaceTeach.m in Sources */,
 				C13A5E9521EDD2E400493EE7 /* LYRequestManager.m in Sources */,
 				C1C9BB4A2212CE6B0059B3B5 /* DYZUpdatePwdController.m in Sources */,
