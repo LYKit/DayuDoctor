@@ -15,22 +15,26 @@
 #import "DYZShareViewController.h"
 #import "DYZMemberManager.h"
 #import "DYZLoginController.h"
+#import "DYZVMeetController.h"
+#import "DYZUpdatePwdController.h"
 #import "APIUserInfo.h"
 
 typedef enum : NSUInteger {
-    enumOptionCourse = 0,
-    enumOptionAppoint,
-    enumOptionInfo,
-    enumOptionPay,
-    enumOptionOrder,
-    enumOptionCollection,
-    enumOptionMember,
-    enumOptionScore,
-    enumOptionMessage,
-    enumOptionShare,
-    enumOptionService,
-    enumOptionUpdate,
-    enumOptionOut,
+    enumOptionCourse = 0,   // 课程
+    enumOptionAppoint,      // 预约
+    enumOptionInfo,         // 我的资料
+    enumOptionPay,          // 充值中心
+    enumOptionOrder,        // 我的订单
+    enumOptionCollection,   // 收藏
+    enumOptionMember,       // 会员权益
+    enumOptionScore,        // 我的积分
+    enumOptionMessage,      // 系统消息
+    enumOptionShare,        // 分享
+    enumOptionService,      // 在线客服
+    enumOptionUpdate,       // 版本更新
+    enumOptionPhone,        // 联系客服
+    enumOptionChangePwd,    // 修改密码
+    enumOptionOut,          // 退出
 } enumUserInfoOption;
 
 
@@ -131,7 +135,8 @@ typedef enum : NSUInteger {
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionAppoint: {
-            
+            DYZVMeetController *vc = [DYZVMeetController new];
+            [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionInfo: {
             DYZUserInfoEditorController *vc = [DYZUserInfoEditorController new];
@@ -166,13 +171,39 @@ typedef enum : NSUInteger {
         } break;
         case enumOptionUpdate: {
             
+        }
+        case enumOptionPhone: {
+            
+        }
+        case enumOptionChangePwd: {
+            DYZUpdatePwdController *vc = [DYZUpdatePwdController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        case enumOptionOut: {
+            __weak typeof(self) weakSelf = self;
+            UIAlertController *sheetAlert = [UIAlertController alertControllerWithTitle:@"您是否要退出登录" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [weakSelf outLogin];
+            }];
+            UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+            [sheetAlert addAction:action];
+            [sheetAlert addAction:actionCancel];
+            [self presentViewController:sheetAlert animated:YES completion:nil];
+        }
         default:
             break;
-        }
     }
     self.hidesBottomBarWhenPushed = NO;
 }
 
+
+/// MARK: fuction
+- (void)outLogin {
+    [DYZMemberManager clearMemberInfo];
+    if (![DYZMemberManager sharedMemberManger].token.length) {
+        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
+    }
+}
 
 
 
@@ -198,7 +229,9 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"系统消息" pos:enumOptionMessage],
     [MineOption createOption:@"分享" pos:enumOptionShare],
     [MineOption createOption:@"在线客服" pos:enumOptionService],
-    [MineOption createOption:@"版本更新" pos:enumOptionUpdate]
+    [MineOption createOption:@"版本更新" pos:enumOptionUpdate],
+    [MineOption createOption:@"修改密码" pos:enumOptionChangePwd],
+    [MineOption createOption:@"联系客服" pos:enumOptionPhone],
     ];
         _optionsList = [array sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
             return obj1.pos > obj2.pos;

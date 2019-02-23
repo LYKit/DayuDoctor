@@ -30,6 +30,14 @@
     }
 }
 
++ (void)clearMemberInfo {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"mobile"];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [DYZMemberManager sharedMemberManger].token = @"";
+}
+
 
 + (LocalMemberInfo)getMemberInfo
 {

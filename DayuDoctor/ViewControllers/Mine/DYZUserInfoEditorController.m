@@ -68,8 +68,12 @@
     request.email = _txtEmail.text;
     request.address = @"北京";
     request.goodtypes = @"开发";
+    request.img = @"123";
+#warning  需处理
+    __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];

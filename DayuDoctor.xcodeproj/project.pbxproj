@@ -52,6 +52,19 @@
 		C17E4CCD21F9BB7F0094CC99 /* DYZVideoReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17E4CCB21F9BB7F0094CC99 /* DYZVideoReusableView.xib */; };
 		C17E4CD021F9BE840094CC99 /* APIClassifyAll.m in Sources */ = {isa = PBXBuildFile; fileRef = C17E4CCF21F9BE840094CC99 /* APIClassifyAll.m */; };
 		C17E4CD221F9C1F70094CC99 /* DYZApplyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17E4CD121F9C1F70094CC99 /* DYZApplyController.xib */; };
+		C183E62F221AB2C600A2D380 /* DYZVMeetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C183E62E221AB2C600A2D380 /* DYZVMeetController.xib */; };
+		C183E632221AB67200A2D380 /* APIReservations.m in Sources */ = {isa = PBXBuildFile; fileRef = C183E631221AB67200A2D380 /* APIReservations.m */; };
+		C183E636221BCFF700A2D380 /* DYZMeetingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C183E634221BCFF700A2D380 /* DYZMeetingCell.m */; };
+		C183E637221BCFF700A2D380 /* DYZMeetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C183E635221BCFF700A2D380 /* DYZMeetingCell.xib */; };
+		C183E63A221BDADC00A2D380 /* APIOrderCancel.m in Sources */ = {isa = PBXBuildFile; fileRef = C183E639221BDADC00A2D380 /* APIOrderCancel.m */; };
+		C183E63E221BDDAB00A2D380 /* DYZMeetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C183E63C221BDDAB00A2D380 /* DYZMeetDetailController.m */; };
+		C183E63F221BDDAB00A2D380 /* DYZMeetDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C183E63D221BDDAB00A2D380 /* DYZMeetDetailController.xib */; };
+		C183E642221BE42300A2D380 /* APIOrdersDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C183E641221BE42300A2D380 /* APIOrdersDetail.m */; };
+		C1AA2175221BF16200CC262C /* DYZMeetDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AA2173221BF16200CC262C /* DYZMeetDetailCell.m */; };
+		C1AA2176221BF16200CC262C /* DYZMeetDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AA2174221BF16200CC262C /* DYZMeetDetailCell.xib */; };
+		C1AA217C221BF87400CC262C /* APISignUpDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AA217B221BF87400CC262C /* APISignUpDetail.m */; };
+		C1AA2180221D401200CC262C /* DYZQACell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AA217E221D401200CC262C /* DYZQACell.m */; };
+		C1AA2181221D401200CC262C /* DYZQACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AA217F221D401200CC262C /* DYZQACell.xib */; };
 		C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB4E21F6C80D00CDF3EB /* DYZHomeViewController.m */; };
 		C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB5121F6FEE900CDF3EB /* UIDeviceHardware.m */; };
 		C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB5821F7049B00CDF3EB /* DYZMainHeaderView.m */; };
@@ -86,8 +99,6 @@
 		C1C9BB6C2212D4FC0059B3B5 /* DYZMineInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB6A2212D4FC0059B3B5 /* DYZMineInfoController.m */; };
 		C1C9BB6D2212D4FC0059B3B5 /* DYZMineInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB6B2212D4FC0059B3B5 /* DYZMineInfoController.xib */; };
 		C1C9BB762212D59B0059B3B5 /* DYZVMeetController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB752212D59B0059B3B5 /* DYZVMeetController.m */; };
-		C1C9BB7A2212D5AF0059B3B5 /* DYZMeetDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB782212D5AF0059B3B5 /* DYZMeetDetailController.m */; };
-		C1C9BB7B2212D5AF0059B3B5 /* DYZMeetDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB792212D5AF0059B3B5 /* DYZMeetDetailController.xib */; };
 		C1C9BB7E2213C2A40059B3B5 /* APILogin.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB7D2213C2A40059B3B5 /* APILogin.m */; };
 		C1C9BB812213C2B40059B3B5 /* APIRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB802213C2B40059B3B5 /* APIRegister.m */; };
 		C1C9BB842213C2C50059B3B5 /* APIUpdatePwd.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB832213C2C50059B3B5 /* APIUpdatePwd.m */; };
@@ -103,6 +114,11 @@
 		C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BBAA2216BBB80059B3B5 /* DYZUserInfoEditorController.m */; };
 		C1C9BBAD2216BBB80059B3B5 /* DYZUserInfoEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BBAB2216BBB80059B3B5 /* DYZUserInfoEditorController.xib */; };
 		C1C9BBB02217C28C0059B3B5 /* APIUpdateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BBAF2217C28C0059B3B5 /* APIUpdateUserInfo.m */; };
+		C1E8B78B221D4970003CC670 /* APIFAQS.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B78A221D4970003CC670 /* APIFAQS.m */; };
+		C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B78F221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m */; };
+		C1E8B796221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B791221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m */; };
+		C1E8B797221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B792221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m */; };
+		C1E8B798221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B793221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +228,27 @@
 		C17E4CCE21F9BE840094CC99 /* APIClassifyAll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClassifyAll.h; sourceTree = "<group>"; };
 		C17E4CCF21F9BE840094CC99 /* APIClassifyAll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIClassifyAll.m; sourceTree = "<group>"; };
 		C17E4CD121F9C1F70094CC99 /* DYZApplyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZApplyController.xib; sourceTree = "<group>"; };
+		C183E62E221AB2C600A2D380 /* DYZVMeetController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZVMeetController.xib; sourceTree = "<group>"; };
+		C183E630221AB67200A2D380 /* APIReservations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIReservations.h; sourceTree = "<group>"; };
+		C183E631221AB67200A2D380 /* APIReservations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIReservations.m; sourceTree = "<group>"; };
+		C183E633221BCFF700A2D380 /* DYZMeetingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMeetingCell.h; sourceTree = "<group>"; };
+		C183E634221BCFF700A2D380 /* DYZMeetingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMeetingCell.m; sourceTree = "<group>"; };
+		C183E635221BCFF700A2D380 /* DYZMeetingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMeetingCell.xib; sourceTree = "<group>"; };
+		C183E638221BDADC00A2D380 /* APIOrderCancel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIOrderCancel.h; sourceTree = "<group>"; };
+		C183E639221BDADC00A2D380 /* APIOrderCancel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIOrderCancel.m; sourceTree = "<group>"; };
+		C183E63B221BDDAB00A2D380 /* DYZMeetDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMeetDetailController.h; sourceTree = "<group>"; };
+		C183E63C221BDDAB00A2D380 /* DYZMeetDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMeetDetailController.m; sourceTree = "<group>"; };
+		C183E63D221BDDAB00A2D380 /* DYZMeetDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMeetDetailController.xib; sourceTree = "<group>"; };
+		C183E640221BE42300A2D380 /* APIOrdersDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIOrdersDetail.h; sourceTree = "<group>"; };
+		C183E641221BE42300A2D380 /* APIOrdersDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIOrdersDetail.m; sourceTree = "<group>"; };
+		C1AA2172221BF16200CC262C /* DYZMeetDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMeetDetailCell.h; sourceTree = "<group>"; };
+		C1AA2173221BF16200CC262C /* DYZMeetDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMeetDetailCell.m; sourceTree = "<group>"; };
+		C1AA2174221BF16200CC262C /* DYZMeetDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMeetDetailCell.xib; sourceTree = "<group>"; };
+		C1AA217A221BF87400CC262C /* APISignUpDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APISignUpDetail.h; sourceTree = "<group>"; };
+		C1AA217B221BF87400CC262C /* APISignUpDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APISignUpDetail.m; sourceTree = "<group>"; };
+		C1AA217D221D401200CC262C /* DYZQACell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZQACell.h; sourceTree = "<group>"; };
+		C1AA217E221D401200CC262C /* DYZQACell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZQACell.m; sourceTree = "<group>"; };
+		C1AA217F221D401200CC262C /* DYZQACell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZQACell.xib; sourceTree = "<group>"; };
 		C1BCDB4D21F6C80D00CDF3EB /* DYZHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZHomeViewController.h; sourceTree = "<group>"; };
 		C1BCDB4E21F6C80D00CDF3EB /* DYZHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZHomeViewController.m; sourceTree = "<group>"; };
 		C1BCDB5021F6FEE900CDF3EB /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
@@ -268,9 +305,6 @@
 		C1C9BB6B2212D4FC0059B3B5 /* DYZMineInfoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMineInfoController.xib; sourceTree = "<group>"; };
 		C1C9BB742212D59B0059B3B5 /* DYZVMeetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZVMeetController.h; sourceTree = "<group>"; };
 		C1C9BB752212D59B0059B3B5 /* DYZVMeetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVMeetController.m; sourceTree = "<group>"; };
-		C1C9BB772212D5AF0059B3B5 /* DYZMeetDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMeetDetailController.h; sourceTree = "<group>"; };
-		C1C9BB782212D5AF0059B3B5 /* DYZMeetDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMeetDetailController.m; sourceTree = "<group>"; };
-		C1C9BB792212D5AF0059B3B5 /* DYZMeetDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMeetDetailController.xib; sourceTree = "<group>"; };
 		C1C9BB7C2213C2A40059B3B5 /* APILogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APILogin.h; sourceTree = "<group>"; };
 		C1C9BB7D2213C2A40059B3B5 /* APILogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APILogin.m; sourceTree = "<group>"; };
 		C1C9BB7F2213C2B40059B3B5 /* APIRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIRegister.h; sourceTree = "<group>"; };
@@ -298,6 +332,16 @@
 		C1C9BBAB2216BBB80059B3B5 /* DYZUserInfoEditorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZUserInfoEditorController.xib; sourceTree = "<group>"; };
 		C1C9BBAE2217C28C0059B3B5 /* APIUpdateUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIUpdateUserInfo.h; sourceTree = "<group>"; };
 		C1C9BBAF2217C28C0059B3B5 /* APIUpdateUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIUpdateUserInfo.m; sourceTree = "<group>"; };
+		C1E8B789221D4970003CC670 /* APIFAQS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIFAQS.h; sourceTree = "<group>"; };
+		C1E8B78A221D4970003CC670 /* APIFAQS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIFAQS.m; sourceTree = "<group>"; };
+		C1E8B78D221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		C1E8B78E221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		C1E8B78F221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		C1E8B790221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		C1E8B791221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		C1E8B792221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
+		C1E8B793221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		C1E8B794221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayuDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -398,6 +442,16 @@
 				C1C9BBA0221661880059B3B5 /* APIUserInfo.m */,
 				C1C9BBAE2217C28C0059B3B5 /* APIUpdateUserInfo.h */,
 				C1C9BBAF2217C28C0059B3B5 /* APIUpdateUserInfo.m */,
+				C183E630221AB67200A2D380 /* APIReservations.h */,
+				C183E631221AB67200A2D380 /* APIReservations.m */,
+				C183E638221BDADC00A2D380 /* APIOrderCancel.h */,
+				C183E639221BDADC00A2D380 /* APIOrderCancel.m */,
+				C183E640221BE42300A2D380 /* APIOrdersDetail.h */,
+				C183E641221BE42300A2D380 /* APIOrdersDetail.m */,
+				C1AA217A221BF87400CC262C /* APISignUpDetail.h */,
+				C1AA217B221BF87400CC262C /* APISignUpDetail.m */,
+				C1E8B789221D4970003CC670 /* APIFAQS.h */,
+				C1E8B78A221D4970003CC670 /* APIFAQS.m */,
 			);
 			path = EntityAPI;
 			sourceTree = "<group>";
@@ -533,6 +587,7 @@
 		C13A5E1921EDC75000493EE7 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C1E8B78C221D5EC5003CC670 /* FDTableView */,
 				C13A5E9021EDD0CC00493EE7 /* NSString+Additions.h */,
 				C13A5E9121EDD0CC00493EE7 /* NSString+Additions.m */,
 				C11C645821F8752A000D0CB7 /* UIImageView+DYZWebImageView.h */,
@@ -599,9 +654,10 @@
 				C1C9BB6B2212D4FC0059B3B5 /* DYZMineInfoController.xib */,
 				C1C9BB742212D59B0059B3B5 /* DYZVMeetController.h */,
 				C1C9BB752212D59B0059B3B5 /* DYZVMeetController.m */,
-				C1C9BB772212D5AF0059B3B5 /* DYZMeetDetailController.h */,
-				C1C9BB782212D5AF0059B3B5 /* DYZMeetDetailController.m */,
-				C1C9BB792212D5AF0059B3B5 /* DYZMeetDetailController.xib */,
+				C183E62E221AB2C600A2D380 /* DYZVMeetController.xib */,
+				C183E63B221BDDAB00A2D380 /* DYZMeetDetailController.h */,
+				C183E63C221BDDAB00A2D380 /* DYZMeetDetailController.m */,
+				C183E63D221BDDAB00A2D380 /* DYZMeetDetailController.xib */,
 				C1C9BBA92216BBB80059B3B5 /* DYZUserInfoEditorController.h */,
 				C1C9BBAA2216BBB80059B3B5 /* DYZUserInfoEditorController.m */,
 				C1C9BBAB2216BBB80059B3B5 /* DYZUserInfoEditorController.xib */,
@@ -669,6 +725,9 @@
 		C1BCDB8B21F8107600CDF3EB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C1AA217D221D401200CC262C /* DYZQACell.h */,
+				C1AA217E221D401200CC262C /* DYZQACell.m */,
+				C1AA217F221D401200CC262C /* DYZQACell.xib */,
 				C1BCDB8E21F84AC200CDF3EB /* DYZClassifyCollectionCell.h */,
 				C1BCDB8F21F84AC200CDF3EB /* DYZClassifyCollectionCell.m */,
 				C1BCDB9021F84AC200CDF3EB /* DYZClassifyCollectionCell.xib */,
@@ -705,6 +764,12 @@
 			children = (
 				0DD6131621F87C9900C97464 /* DYZMineCell.h */,
 				0DD6131721F87C9900C97464 /* DYZMineCell.m */,
+				C183E633221BCFF700A2D380 /* DYZMeetingCell.h */,
+				C183E634221BCFF700A2D380 /* DYZMeetingCell.m */,
+				C183E635221BCFF700A2D380 /* DYZMeetingCell.xib */,
+				C1AA2172221BF16200CC262C /* DYZMeetDetailCell.h */,
+				C1AA2173221BF16200CC262C /* DYZMeetDetailCell.m */,
+				C1AA2174221BF16200CC262C /* DYZMeetDetailCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -718,6 +783,21 @@
 				C1C9BB90221512DB0059B3B5 /* DYZHTTPHeader.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C1E8B78C221D5EC5003CC670 /* FDTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C1E8B790221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.h */,
+				C1E8B793221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.m */,
+				C1E8B78D221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.h */,
+				C1E8B791221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m */,
+				C1E8B794221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.h */,
+				C1E8B78F221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m */,
+				C1E8B78E221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				C1E8B792221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m */,
+			);
+			path = FDTableView;
 			sourceTree = "<group>";
 		};
 		DE64592D20BE65AAC0C144F1 /* Frameworks */ = {
@@ -836,6 +916,7 @@
 			files = (
 				C1C9BB4B2212CE6B0059B3B5 /* DYZUpdatePwdController.xib in Resources */,
 				C17E4CD221F9C1F70094CC99 /* DYZApplyController.xib in Resources */,
+				C1AA2181221D401200CC262C /* DYZQACell.xib in Resources */,
 				C1C9BB5E2212D3000059B3B5 /* DYZQAViewController.xib in Resources */,
 				C1C9BBA3221665E90059B3B5 /* DYZMineViewController.xib in Resources */,
 				C13A5DF421EDC4DE00493EE7 /* LaunchScreen.storyboard in Resources */,
@@ -846,15 +927,18 @@
 				C1BCDB8D21F810B700CDF3EB /* DYZHomeViewController.xib in Resources */,
 				C1C9BB6D2212D4FC0059B3B5 /* DYZMineInfoController.xib in Resources */,
 				C13A5DF121EDC4DE00493EE7 /* Assets.xcassets in Resources */,
-				C1C9BB7B2212D5AF0059B3B5 /* DYZMeetDetailController.xib in Resources */,
 				C1C9BB632212D36B0059B3B5 /* DYZJoinController.xib in Resources */,
+				C183E63F221BDDAB00A2D380 /* DYZMeetDetailController.xib in Resources */,
 				C1BCDB5B21F704A300CDF3EB /* DYZMainHeaderView.xib in Resources */,
+				C183E62F221AB2C600A2D380 /* DYZVMeetController.xib in Resources */,
 				C1C9BB502212D1F70059B3B5 /* DYZMessageController.xib in Resources */,
+				C183E637221BCFF700A2D380 /* DYZMeetingCell.xib in Resources */,
 				C1C9BBAD2216BBB80059B3B5 /* DYZUserInfoEditorController.xib in Resources */,
 				C1C9BB9B221560130059B3B5 /* DYZFaceTeachCell.xib in Resources */,
 				C1C9BB552212D25C0059B3B5 /* DYZSearchController.xib in Resources */,
 				C17E4CC221F990660094CC99 /* DYZClassifyController.xib in Resources */,
 				C13A5DEF21EDC4DC00493EE7 /* Main.storyboard in Resources */,
+				C1AA2176221BF16200CC262C /* DYZMeetDetailCell.xib in Resources */,
 				C11C643B21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib in Resources */,
 				C11C644021F85BC7000D0CB7 /* DYZNewsRollCollectionCell.xib in Resources */,
 				C17E4CCD21F9BB7F0094CC99 /* DYZVideoReusableView.xib in Resources */,
@@ -924,6 +1008,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C183E642221BE42300A2D380 /* APIOrdersDetail.m in Sources */,
+				C1E8B78B221D4970003CC670 /* APIFAQS.m in Sources */,
 				C1C9BB9A221560130059B3B5 /* DYZFaceTeachCell.m in Sources */,
 				C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */,
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
@@ -937,12 +1023,15 @@
 				C1BCDB9621F84AD500CDF3EB /* DYZVideoCollectionCell.m in Sources */,
 				C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */,
 				C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */,
+				C1E8B797221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */,
 				C1C9BB8A221426AD0059B3B5 /* LYAlertView.m in Sources */,
 				0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */,
 				C13A5E9221EDD0CC00493EE7 /* NSString+Additions.m in Sources */,
 				C11C645D21F890D7000D0CB7 /* APIHomeCourseList.m in Sources */,
 				C1BCDB8221F7260D00CDF3EB /* DYZClassifyController.m in Sources */,
+				C183E63A221BDADC00A2D380 /* APIOrderCancel.m in Sources */,
+				C1E8B798221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				C1BCDB8821F7282700CDF3EB /* DYZMainViewController.m in Sources */,
 				0D8683EF21F492CA002E255A /* APINewsList.m in Sources */,
 				C11C643F21F85BC7000D0CB7 /* DYZNewsRollCollectionCell.m in Sources */,
@@ -950,6 +1039,7 @@
 				C1C9BB402212CBAA0059B3B5 /* DYZRegisterController.m in Sources */,
 				C1C9BBB02217C28C0059B3B5 /* APIUpdateUserInfo.m in Sources */,
 				C1C9BB812213C2B40059B3B5 /* APIRegister.m in Sources */,
+				C183E63E221BDDAB00A2D380 /* DYZMeetDetailController.m in Sources */,
 				C1C9BB6C2212D4FC0059B3B5 /* DYZMineInfoController.m in Sources */,
 				C13A5DF721EDC4DE00493EE7 /* main.m in Sources */,
 				C1BCDB6E21F7194200CDF3EB /* DYZMineViewController.m in Sources */,
@@ -962,20 +1052,25 @@
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C17E4CCC21F9BB7F0094CC99 /* DYZVideoReusableView.m in Sources */,
 				C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */,
+				C1AA2175221BF16200CC262C /* DYZMeetDetailCell.m in Sources */,
 				C11C646421F98991000D0CB7 /* APIHomeBanner.m in Sources */,
 				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
 				C13A5E8F21EDCF9100493EE7 /* NSObject+LYJSONEntity.m in Sources */,
 				0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */,
 				C1C9BB3B2212C1450059B3B5 /* DYZLoginController.m in Sources */,
+				C1E8B796221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				C1C9BB762212D59B0059B3B5 /* DYZVMeetController.m in Sources */,
 				C1C9BBA1221661880059B3B5 /* APIUserInfo.m in Sources */,
+				C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C1C9BB4F2212D1F70059B3B5 /* DYZMessageController.m in Sources */,
+				C183E632221AB67200A2D380 /* APIReservations.m in Sources */,
+				C1AA217C221BF87400CC262C /* APISignUpDetail.m in Sources */,
 				C11C645721F86826000D0CB7 /* APIClassify.m in Sources */,
 				C1C9BB592212D2890059B3B5 /* DYZSearchListController.m in Sources */,
 				C1C9BB872213C42A0059B3B5 /* APISendCode.m in Sources */,
-				C1C9BB7A2212D5AF0059B3B5 /* DYZMeetDetailController.m in Sources */,
 				C1C9BB622212D36B0059B3B5 /* DYZJoinController.m in Sources */,
 				C1C9BB842213C2C50059B3B5 /* APIUpdatePwd.m in Sources */,
+				C183E636221BCFF700A2D380 /* DYZMeetingCell.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
 				0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */,
@@ -988,6 +1083,7 @@
 				0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */,
 				C1C9BB91221512DB0059B3B5 /* DYZHTTPHeader.m in Sources */,
 				C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */,
+				C1AA2180221D401200CC262C /* DYZQACell.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
