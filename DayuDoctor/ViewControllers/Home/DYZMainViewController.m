@@ -12,7 +12,7 @@
 #import "DYZMainHeaderView.h"
 #import "DYZHomeViewController.h"
 #import "DYZFaceTeachController.h"
-#import "DYZCacheListController.h"
+#import "DYZCacheParentController.h"
 #import "DYZQAViewController.h"
 
 typedef enum : NSUInteger {
@@ -59,7 +59,7 @@ typedef enum : NSUInteger {
 }
 
 - (void)cacheVC {
-    DYZCacheListController *vc = [DYZCacheListController new];
+    DYZCacheParentController *vc = [DYZCacheParentController new];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
     vc.hidesBottomBarWhenPushed = NO;

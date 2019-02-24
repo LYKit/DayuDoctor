@@ -1,24 +1,23 @@
 //
-//  DYZCacheListController.m
+//  DYZCachingListController.m
 //  DayuDoctor
 //
-//  Created by zhuopin on 2019/2/18.
+//  Created by zhuopin on 2019/2/24.
 //  Copyright © 2019 大禹中医. All rights reserved.
 //
 
-#import "DYZCacheListController.h"
+#import "DYZCachingListController.h"
 
-@interface DYZCacheListController ()
+@interface DYZCachingListController ()
 
 @end
 
-@implementation DYZCacheListController
+@implementation DYZCachingListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"下载列表";
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor yellowColor];
+
 }
 
 /*

@@ -15,7 +15,6 @@
 		0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620C8221A431E00C5D508 /* HSSessionModel.m */; };
 		0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CA221A431E00C5D508 /* NSString+Hash.m */; };
 		0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CE221A431E00C5D508 /* HSDownloadManager.m */; };
-		0D5620D5221A443300C5D508 /* DYZCacheListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620D4221A443300C5D508 /* DYZCacheListController.m */; };
 		0D72798521F96571001C0768 /* APICoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72798421F96571001C0768 /* APICoursesList.m */; };
 		0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683C821F47FF7002E255A /* DYZBaseViewController.m */; };
 		0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */; };
@@ -26,6 +25,15 @@
 		0D8683EF21F492CA002E255A /* APINewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EE21F492CA002E255A /* APINewsList.m */; };
 		0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */; };
 		0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6131721F87C9900C97464 /* DYZMineCell.m */; };
+		0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158522226D5F005F6E76 /* DYZCachedListController.m */; };
+		0DDA158922226D82005F6E76 /* DYZCachingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158822226D82005F6E76 /* DYZCachingListController.m */; };
+		0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */; };
+		0DDA159022227501005F6E76 /* DYZCachingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158F22227500005F6E76 /* DYZCachingCell.m */; };
+		0DDA159322227511005F6E76 /* DYZCachedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159222227511005F6E76 /* DYZCachedCell.m */; };
+		0DDA159622227E93005F6E76 /* DYZClassCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159522227E93005F6E76 /* DYZClassCourseController.m */; };
+		0DDA15992222834A005F6E76 /* APICourseClassify.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA15982222834A005F6E76 /* APICourseClassify.m */; };
+		0DDA159C22228F62005F6E76 /* DYZClassCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159B22228F62005F6E76 /* DYZClassCourseCell.m */; };
+		0DDA159F2222B7A8005F6E76 /* APIRecomcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159E2222B7A8005F6E76 /* APIRecomcode.m */; };
 		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
 		C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */; };
 		C11C643B21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C11C643921F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib */; };
@@ -160,8 +168,6 @@
 		0D5620CC221A431E00C5D508 /* HSDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadManager.h; sourceTree = "<group>"; };
 		0D5620CD221A431E00C5D508 /* HSSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSessionModel.h; sourceTree = "<group>"; };
 		0D5620CE221A431E00C5D508 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
-		0D5620D3221A443300C5D508 /* DYZCacheListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCacheListController.h; sourceTree = "<group>"; };
-		0D5620D4221A443300C5D508 /* DYZCacheListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheListController.m; sourceTree = "<group>"; };
 		0D72798321F96571001C0768 /* APICoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICoursesList.h; sourceTree = "<group>"; };
 		0D72798421F96571001C0768 /* APICoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICoursesList.m; sourceTree = "<group>"; };
 		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
@@ -183,6 +189,24 @@
 		0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFNoramlViewController.m; sourceTree = "<group>"; };
 		0DD6131621F87C9900C97464 /* DYZMineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMineCell.h; sourceTree = "<group>"; };
 		0DD6131721F87C9900C97464 /* DYZMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMineCell.m; sourceTree = "<group>"; };
+		0DDA158422226D5F005F6E76 /* DYZCachedListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachedListController.h; sourceTree = "<group>"; };
+		0DDA158522226D5F005F6E76 /* DYZCachedListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachedListController.m; sourceTree = "<group>"; };
+		0DDA158722226D82005F6E76 /* DYZCachingListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachingListController.h; sourceTree = "<group>"; };
+		0DDA158822226D82005F6E76 /* DYZCachingListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachingListController.m; sourceTree = "<group>"; };
+		0DDA158A22226DC3005F6E76 /* DYZCacheParentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCacheParentController.h; sourceTree = "<group>"; };
+		0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheParentController.m; sourceTree = "<group>"; };
+		0DDA158E22227500005F6E76 /* DYZCachingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachingCell.h; sourceTree = "<group>"; };
+		0DDA158F22227500005F6E76 /* DYZCachingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachingCell.m; sourceTree = "<group>"; };
+		0DDA159122227511005F6E76 /* DYZCachedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachedCell.h; sourceTree = "<group>"; };
+		0DDA159222227511005F6E76 /* DYZCachedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachedCell.m; sourceTree = "<group>"; };
+		0DDA159422227E93005F6E76 /* DYZClassCourseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZClassCourseController.h; sourceTree = "<group>"; };
+		0DDA159522227E93005F6E76 /* DYZClassCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZClassCourseController.m; sourceTree = "<group>"; };
+		0DDA15972222834A005F6E76 /* APICourseClassify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICourseClassify.h; sourceTree = "<group>"; };
+		0DDA15982222834A005F6E76 /* APICourseClassify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICourseClassify.m; sourceTree = "<group>"; };
+		0DDA159A22228F62005F6E76 /* DYZClassCourseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZClassCourseCell.h; sourceTree = "<group>"; };
+		0DDA159B22228F62005F6E76 /* DYZClassCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZClassCourseCell.m; sourceTree = "<group>"; };
+		0DDA159D2222B7A8005F6E76 /* APIRecomcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIRecomcode.h; sourceTree = "<group>"; };
+		0DDA159E2222B7A8005F6E76 /* APIRecomcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIRecomcode.m; sourceTree = "<group>"; };
 		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		C11C643721F85BB1000D0CB7 /* DYZHeadImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZHeadImageCollectionCell.h; sourceTree = "<group>"; };
 		C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZHeadImageCollectionCell.m; sourceTree = "<group>"; };
@@ -436,8 +460,13 @@
 		0D5620D2221A440000C5D508 /* Caches */ = {
 			isa = PBXGroup;
 			children = (
-				0D5620D3221A443300C5D508 /* DYZCacheListController.h */,
-				0D5620D4221A443300C5D508 /* DYZCacheListController.m */,
+				0DDA158D222274DD005F6E76 /* Cell */,
+				0DDA158A22226DC3005F6E76 /* DYZCacheParentController.h */,
+				0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */,
+				0DDA158422226D5F005F6E76 /* DYZCachedListController.h */,
+				0DDA158522226D5F005F6E76 /* DYZCachedListController.m */,
+				0DDA158722226D82005F6E76 /* DYZCachingListController.h */,
+				0DDA158822226D82005F6E76 /* DYZCachingListController.m */,
 			);
 			path = Caches;
 			sourceTree = "<group>";
@@ -492,6 +521,10 @@
 				C1AA217B221BF87400CC262C /* APISignUpDetail.m */,
 				C1E8B789221D4970003CC670 /* APIFAQS.h */,
 				C1E8B78A221D4970003CC670 /* APIFAQS.m */,
+				0DDA15972222834A005F6E76 /* APICourseClassify.h */,
+				0DDA15982222834A005F6E76 /* APICourseClassify.m */,
+				0DDA159D2222B7A8005F6E76 /* APIRecomcode.h */,
+				0DDA159E2222B7A8005F6E76 /* APIRecomcode.m */,
 			);
 			path = EntityAPI;
 			sourceTree = "<group>";
@@ -552,6 +585,17 @@
 				0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		0DDA158D222274DD005F6E76 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA158E22227500005F6E76 /* DYZCachingCell.h */,
+				0DDA158F22227500005F6E76 /* DYZCachingCell.m */,
+				0DDA159122227511005F6E76 /* DYZCachedCell.h */,
+				0DDA159222227511005F6E76 /* DYZCachedCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		314EABF77613AAA31738B4BB /* Pods */ = {
@@ -738,6 +782,8 @@
 				C1C9BB642212D4100059B3B5 /* DYZFaceTeachController.h */,
 				C1C9BB652212D4100059B3B5 /* DYZFaceTeachController.m */,
 				C1C9BB662212D4100059B3B5 /* DYZFaceTeachController.xib */,
+				0DDA159422227E93005F6E76 /* DYZClassCourseController.h */,
+				0DDA159522227E93005F6E76 /* DYZClassCourseController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -767,6 +813,8 @@
 		C1BCDB8B21F8107600CDF3EB /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA159A22228F62005F6E76 /* DYZClassCourseCell.h */,
+				0DDA159B22228F62005F6E76 /* DYZClassCourseCell.m */,
 				C1AA217D221D401200CC262C /* DYZQACell.h */,
 				C1AA217E221D401200CC262C /* DYZQACell.m */,
 				C1AA217F221D401200CC262C /* DYZQACell.xib */,
@@ -1061,12 +1109,14 @@
 				C1C9BB672212D4100059B3B5 /* DYZFaceTeachController.m in Sources */,
 				C1C9BB5D2212D3000059B3B5 /* DYZQAViewController.m in Sources */,
 				C1BCDB9121F84AC200CDF3EB /* DYZClassifyCollectionCell.m in Sources */,
+				0DDA159322227511005F6E76 /* DYZCachedCell.m in Sources */,
 				C1BCDB6721F712E700CDF3EB /* DYZMainTabBarController.m in Sources */,
 				C11C645A21F8752A000D0CB7 /* UIImageView+DYZWebImageView.m in Sources */,
 				0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */,
 				C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */,
 				C1BCDB9621F84AD500CDF3EB /* DYZVideoCollectionCell.m in Sources */,
 				C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */,
+				0DDA159F2222B7A8005F6E76 /* APIRecomcode.m in Sources */,
 				C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */,
 				C1E8B797221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */,
@@ -1098,6 +1148,7 @@
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C17E4CCC21F9BB7F0094CC99 /* DYZVideoReusableView.m in Sources */,
 				C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */,
+				0DDA159622227E93005F6E76 /* DYZClassCourseController.m in Sources */,
 				C1AA2175221BF16200CC262C /* DYZMeetDetailCell.m in Sources */,
 				C11C646421F98991000D0CB7 /* APIHomeBanner.m in Sources */,
 				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
@@ -1109,7 +1160,9 @@
 				C1C9BBA1221661880059B3B5 /* APIUserInfo.m in Sources */,
 				C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C1C9BB4F2212D1F70059B3B5 /* DYZMessageController.m in Sources */,
+				0DDA15992222834A005F6E76 /* APICourseClassify.m in Sources */,
 				C183E632221AB67200A2D380 /* APIReservations.m in Sources */,
+				0DDA159C22228F62005F6E76 /* DYZClassCourseCell.m in Sources */,
 				C1AA217C221BF87400CC262C /* APISignUpDetail.m in Sources */,
 				C11C645721F86826000D0CB7 /* APIClassify.m in Sources */,
 				C1C9BB592212D2890059B3B5 /* DYZSearchListController.m in Sources */,
@@ -1127,12 +1180,15 @@
 				C17E4CD021F9BE840094CC99 /* APIClassifyAll.m in Sources */,
 				0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */,
 				C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */,
+				0DDA159022227501005F6E76 /* DYZCachingCell.m in Sources */,
 				0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */,
 				C1C9BB91221512DB0059B3B5 /* DYZHTTPHeader.m in Sources */,
 				C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */,
+				0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */,
 				C1AA2180221D401200CC262C /* DYZQACell.m in Sources */,
+				0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
-				0D5620D5221A443300C5D508 /* DYZCacheListController.m in Sources */,
+				0DDA158922226D82005F6E76 /* DYZCachingListController.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
 				0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */,

@@ -16,6 +16,7 @@
 #import "APIHomeCourseList.h"
 #import "APIHomeBanner.h"
 #import "APINewsList.h"
+#import "DYZClassCourseController.h"//分类课程列表
 
 typedef enum : NSUInteger {
     enumHeaderImageSection,
@@ -208,6 +209,29 @@ typedef enum : NSUInteger {
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     return [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:kDYZVideoReusableView forIndexPath:indexPath];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (indexPath.section) {
+        case enumHeaderImageSection:
+        case enumNewsRollSection: {
+
+        } break;
+        case enumClassifySection:{
+            DYZClassCourseController *vc = [DYZClassCourseController new];
+            ClassifyModel *classify = self.classifyList[indexPath.item];
+            vc.classify = classify;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            vc.hidesBottomBarWhenPushed = NO;
+        } break;
+        case enumVideoRecommendSection:{
+
+        } break;
+        default:
+            break;
+    }
 }
 
 @end

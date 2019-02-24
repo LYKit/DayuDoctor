@@ -12,8 +12,33 @@
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
-    self.interfaceURL = InterfaceURL(@"/news/list");
+    self.interfaceURL = InterfaceURL(@"/course/follow");
     return self;
 }
+
+@end
+
+
+@implementation CollectionCourse
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"ID" : @"id"
+             };
+}
+
+
+@end
+
+
+
+@implementation ResponseMyCollectionList
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"content" : [CollectionCourse class],
+             };
+}
+
 
 @end
