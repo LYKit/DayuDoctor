@@ -10,9 +10,7 @@
 
 
 @interface DYZMainHeaderView ()
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIButton *btnMessage;
-@property (weak, nonatomic) IBOutlet UIButton *btnDownload;
+
 
 @end
 

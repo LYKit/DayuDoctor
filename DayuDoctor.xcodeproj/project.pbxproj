@@ -12,6 +12,10 @@
 		0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */; };
 		0D4BB9022219664A007B37F8 /* DYZVipRightsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB9012219664A007B37F8 /* DYZVipRightsController.m */; };
 		0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB90522197354007B37F8 /* DYZShareViewController.m */; };
+		0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620C8221A431E00C5D508 /* HSSessionModel.m */; };
+		0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CA221A431E00C5D508 /* NSString+Hash.m */; };
+		0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CE221A431E00C5D508 /* HSDownloadManager.m */; };
+		0D5620D5221A443300C5D508 /* DYZCacheListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620D4221A443300C5D508 /* DYZCacheListController.m */; };
 		0D72798521F96571001C0768 /* APICoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72798421F96571001C0768 /* APICoursesList.m */; };
 		0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683C821F47FF7002E255A /* DYZBaseViewController.m */; };
 		0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */; };
@@ -136,6 +140,14 @@
 		0D4BB9012219664A007B37F8 /* DYZVipRightsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVipRightsController.m; sourceTree = "<group>"; };
 		0D4BB90422197354007B37F8 /* DYZShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZShareViewController.h; sourceTree = "<group>"; };
 		0D4BB90522197354007B37F8 /* DYZShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZShareViewController.m; sourceTree = "<group>"; };
+		0D5620C8221A431E00C5D508 /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
+		0D5620CA221A431E00C5D508 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		0D5620CB221A431E00C5D508 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		0D5620CC221A431E00C5D508 /* HSDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadManager.h; sourceTree = "<group>"; };
+		0D5620CD221A431E00C5D508 /* HSSessionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSessionModel.h; sourceTree = "<group>"; };
+		0D5620CE221A431E00C5D508 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
+		0D5620D3221A443300C5D508 /* DYZCacheListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCacheListController.h; sourceTree = "<group>"; };
+		0D5620D4221A443300C5D508 /* DYZCacheListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheListController.m; sourceTree = "<group>"; };
 		0D72798321F96571001C0768 /* APICoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICoursesList.h; sourceTree = "<group>"; };
 		0D72798421F96571001C0768 /* APICoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICoursesList.m; sourceTree = "<group>"; };
 		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
@@ -337,8 +349,6 @@
 			children = (
 				0D4BB8F6221905E7007B37F8 /* DYZMyCollectionViewController.h */,
 				0D4BB8F7221905E7007B37F8 /* DYZMyCollectionViewController.m */,
-				0D4BB8FC22195E9F007B37F8 /* DYZMyCollectionCell.h */,
-				0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */,
 			);
 			name = MyCollection;
 			path = DayuDoctor/ViewControllers/MyCollection;
@@ -362,6 +372,36 @@
 			name = Share;
 			path = DayuDoctor/ViewControllers/Share;
 			sourceTree = SOURCE_ROOT;
+		};
+		0D5620C7221A431E00C5D508 /* HSDownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				0D5620C9221A431E00C5D508 /* MD5 */,
+				0D5620CD221A431E00C5D508 /* HSSessionModel.h */,
+				0D5620C8221A431E00C5D508 /* HSSessionModel.m */,
+				0D5620CC221A431E00C5D508 /* HSDownloadManager.h */,
+				0D5620CE221A431E00C5D508 /* HSDownloadManager.m */,
+			);
+			path = HSDownloadManager;
+			sourceTree = "<group>";
+		};
+		0D5620C9221A431E00C5D508 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				0D5620CA221A431E00C5D508 /* NSString+Hash.m */,
+				0D5620CB221A431E00C5D508 /* NSString+Hash.h */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		0D5620D2221A440000C5D508 /* Caches */ = {
+			isa = PBXGroup;
+			children = (
+				0D5620D3221A443300C5D508 /* DYZCacheListController.h */,
+				0D5620D4221A443300C5D508 /* DYZCacheListController.m */,
+			);
+			path = Caches;
+			sourceTree = "<group>";
 		};
 		0D8683C121F47809002E255A /* CommonView */ = {
 			isa = PBXGroup;
@@ -426,6 +466,7 @@
 				0DD6131021F84FE200C97464 /* Player */,
 				C1BCDB4C21F6C75C00CDF3EB /* Home */,
 				C1BCDB4B21F6C75C00CDF3EB /* Mine */,
+				0D5620D2221A440000C5D508 /* Caches */,
 				0D8683E621F4925F002E255A /* News */,
 				0D8683D021F48C9C002E255A /* MyCourses */,
 			);
@@ -549,6 +590,7 @@
 		C13A5E2021EDCC9900493EE7 /* FrameworkService */ = {
 			isa = PBXGroup;
 			children = (
+				0D5620C7221A431E00C5D508 /* HSDownloadManager */,
 				C13A5E5921EDCF0D00493EE7 /* LYNetworking */,
 			);
 			path = FrameworkService;
@@ -711,6 +753,8 @@
 		C1C9BB6E2212D5170059B3B5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0D4BB8FC22195E9F007B37F8 /* DYZMyCollectionCell.h */,
+				0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */,
 				0DD6131621F87C9900C97464 /* DYZMineCell.h */,
 				0DD6131721F87C9900C97464 /* DYZMineCell.m */,
 			);
@@ -934,6 +978,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C9BB9A221560130059B3B5 /* DYZFaceTeachCell.m in Sources */,
+				0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */,
 				C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */,
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C1C9BB672212D4100059B3B5 /* DYZFaceTeachController.m in Sources */,
@@ -968,6 +1013,7 @@
 				0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */,
 				C1C9BB7E2213C2A40059B3B5 /* APILogin.m in Sources */,
 				C1C9BB542212D25C0059B3B5 /* DYZSearchController.m in Sources */,
+				0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C17E4CCC21F9BB7F0094CC99 /* DYZVideoReusableView.m in Sources */,
 				C13A5E8521EDCF0D00493EE7 /* LYResponseObject.m in Sources */,
@@ -984,6 +1030,7 @@
 				C1C9BB872213C42A0059B3B5 /* APISendCode.m in Sources */,
 				C1C9BB7A2212D5AF0059B3B5 /* DYZMeetDetailController.m in Sources */,
 				C1C9BB622212D36B0059B3B5 /* DYZJoinController.m in Sources */,
+				0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */,
 				C1C9BB842213C2C50059B3B5 /* APIUpdatePwd.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
@@ -999,6 +1046,7 @@
 				C1C9BB91221512DB0059B3B5 /* DYZHTTPHeader.m in Sources */,
 				C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
+				0D5620D5221A443300C5D508 /* DYZCacheListController.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
 				0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */,

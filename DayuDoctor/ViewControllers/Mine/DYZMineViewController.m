@@ -88,9 +88,9 @@ typedef enum : NSUInteger {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    if (![DYZMemberManager sharedMemberManger].token.length) {
-//        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
-//    }
+    if (![DYZMemberManager sharedMemberManger].token.length) {
+        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
+    }
 }
 
 

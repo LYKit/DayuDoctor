@@ -12,6 +12,7 @@
 #import "DYZMainHeaderView.h"
 #import "DYZHomeViewController.h"
 #import "DYZFaceTeachController.h"
+#import "DYZCacheListController.h"
 
 typedef enum : NSUInteger {
     enumMagicViewVideo = 0,
@@ -50,7 +51,17 @@ typedef enum : NSUInteger {
         make.left.right.top.equalTo(self.view);
         make.height.mas_equalTo(64);
     }];
+    
+    [_headerView.btnDownload addTarget:self
+                                action:@selector(cacheVC)
+                      forControlEvents:UIControlEventTouchUpInside];
+}
 
+- (void)cacheVC {
+    DYZCacheListController *vc = [DYZCacheListController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)loadDefaultData {

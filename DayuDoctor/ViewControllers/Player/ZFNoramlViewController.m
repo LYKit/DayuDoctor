@@ -15,6 +15,7 @@
 //#import "ZFSmallPlayViewController.h"
 #import "UIImageView+ZFCache.h"
 #import "ZFUtilities.h"
+#import "HSDownloadManager.h"
 
 static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/635942-14593722fe3f0695.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240";
 
@@ -26,14 +27,26 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 @property (nonatomic, strong) UIButton *changeBtn;
 @property (nonatomic, strong) UIButton *nextBtn;
 @property (nonatomic, strong) NSArray <NSURL *>*assetURLs;
+@property (nonatomic, strong) UIProgressView *progressView;
 
 @end
 
 @implementation ZFNoramlViewController
 
+- (NSArray *)getFileList{
+    NSString *string = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"HSCache"];
+    NSArray *fileList = [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:string error:nil] pathsMatchingExtensions:@[@"pdf",@"txt",@"plist", @"mp4"]];
+    
+    NSString *URLString = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
+    
+    
+    
+    return fileList;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    NSArray *mp4s = [self getFileList];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Push" style:UIBarButtonItemStylePlain target:self action:@selector(pushNewVC)];
     [self.view addSubview:self.containerView];
@@ -41,6 +54,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [self.containerView addSubview:self.playBtn];
     [self.view addSubview:self.changeBtn];
     [self.view addSubview:self.nextBtn];
+    [self.view addSubview:self.progressView];
     
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
 //    KSMediaPlayerManager *playerManager = [[KSMediaPlayerManager alloc] init];
@@ -127,7 +141,16 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     x = (CGRectGetWidth(self.view.frame)-w)/2;
     y = CGRectGetMaxY(self.changeBtn.frame)+50;
     self.nextBtn.frame = CGRectMake(x, y, w, h);
+    
+    w = 300;
+    h = 30;
+    x = 20;
+    y = CGRectGetMaxY(self.nextBtn.frame) + 20;
+    self.progressView.frame = CGRectMake(x, y, w, h);
+    self.progressView.backgroundColor = [UIColor yellowColor];
 }
+
+
 
 - (void)changeVideo:(UIButton *)sender {
     /// 切换playerManager
@@ -136,7 +159,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 //    [self.player replaceCurrentPlayerManager:playerManager];
     
     NSString *URLString = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
-    URLString = @"http://39.96.167.96:8080/video?id=1";
+//    URLString = @"http://39.96.167.96:8080/video?id=1";
     self.player.assetURL = [NSURL URLWithString:URLString];
     [self.controlView showTitle:@"Apple" coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
 }
@@ -146,13 +169,41 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [self.controlView showTitle:@"视频标题" coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
 }
 
+//test  视频下载
 - (void)nextClick:(UIButton *)sender {
-    if (!self.player.isLastAssetURL) {
-        [self.player playTheNext];
-        NSString *title = [NSString stringWithFormat:@"视频标题%zd",self.player.currentPlayIndex];
-        [self.controlView showTitle:title coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
-    } else {
-        NSLog(@"最后一个视频了");
+    NSString *url = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
+    [[HSDownloadManager sharedInstance] download:url progress:^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            progressLabel.text = [NSString stringWithFormat:@"%.f%%", progress * 100];
+            _progressView.progress = progress;
+        });
+    } state:^(DownloadState state) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [sender setTitle:[self getTitleWithDownloadState:state] forState:UIControlStateNormal];
+        });
+    }];
+
+//    if (!self.player.isLastAssetURL) {
+//        [self.player playTheNext];
+//        NSString *title = [NSString stringWithFormat:@"视频标题%zd",self.player.currentPlayIndex];
+//        [self.controlView showTitle:title coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
+//    } else {
+//        NSLog(@"最后一个视频了");
+//    }
+}
+#pragma mark 按钮状态
+- (NSString *)getTitleWithDownloadState:(DownloadState)state
+{
+    switch (state) {
+        case DownloadStateStart:
+            return @"暂停";
+        case DownloadStateSuspended:
+        case DownloadStateFailed:
+            return @"开始";
+        case DownloadStateCompleted:
+            return @"完成";
+        default:
+            break;
     }
 }
 
@@ -236,6 +287,13 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
         [_nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _nextBtn;
+}
+
+- (UIProgressView *)progressView {
+    if (_progressView == nil) {
+        _progressView = [UIProgressView new];
+    }
+    return _progressView;
 }
 
 @end
