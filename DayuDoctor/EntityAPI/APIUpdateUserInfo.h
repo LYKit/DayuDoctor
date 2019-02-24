@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, copy) NSString *goodtypes;
+@property (nonatomic, copy) NSString *img;
 
 @end
 

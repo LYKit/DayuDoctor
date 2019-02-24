@@ -13,6 +13,7 @@
 #import "DYZHomeViewController.h"
 #import "DYZFaceTeachController.h"
 #import "DYZCacheListController.h"
+#import "DYZQAViewController.h"
 
 typedef enum : NSUInteger {
     enumMagicViewVideo = 0,
@@ -133,7 +134,8 @@ typedef enum : NSUInteger {
             return vc;
         }break;
         case enumMagicViewQA: {
-            
+            DYZQAViewController *vc = [DYZQAViewController new];
+            return vc;
         }break;
         case enumMagicViewJoin: {
             

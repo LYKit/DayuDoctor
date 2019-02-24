@@ -23,6 +23,7 @@ typedef struct {
 
 // 存储账号密码到本地
 + (void)saveMemberInfo:(NSString *)mobile password:(NSString *)password;
++ (void)clearMemberInfo;
 
 // 获取本地账号密码
 + (LocalMemberInfo)getMemberInfo;

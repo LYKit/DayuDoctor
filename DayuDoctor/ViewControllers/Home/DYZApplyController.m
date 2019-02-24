@@ -7,13 +7,23 @@
 //
 
 #import "DYZApplyController.h"
-#import "DYZLoginController.h"
-#import "DYZRegisterController.h"
-#import "DYZUpdatePwdController.h"
+#import "APISignUpDetail.h"
+#import "DYZUserInfoEditorController.h"
+
 
 @interface DYZApplyController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UILabel *lblPhone;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmail;
+@property (weak, nonatomic) IBOutlet UILabel *lblAddress;
+@property (weak, nonatomic) IBOutlet UILabel *lblGood;
+@property (weak, nonatomic) IBOutlet UILabel *lblMoney;
+@property (weak, nonatomic) IBOutlet UILabel *lblRemark;
+@property (weak, nonatomic) IBOutlet UIView *bgPerfect;
+@property (weak, nonatomic) IBOutlet UIButton *btnBgPerfect;
 
+@property (nonatomic, strong) SignUpDetail *detail;
 
 
 @end
@@ -23,22 +33,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"报名";
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self loadData];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"perfectInformation" object:nil];
 }
 
-
-- (IBAction)didPressedLogin:(id)sender {
-    [self.navigationController pushViewController:[DYZLoginController new] animated:YES];
+- (void)loadData {
+    __weak typeof(self) weakSelf = self;
+    [[APISignUpDetail new] startPostWithSuccessBlock:^(ResponseSignUpDetail *responseObject, NSDictionary *options) {
+        weakSelf.detail = responseObject.detail;
+        [weakSelf refreshData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
 
-- (IBAction)didPressedRegister:(id)sender {
-    [self.navigationController pushViewController:[DYZRegisterController new] animated:YES];
+- (void)refreshData {
+    if ([_detail.flag boolValue]) {
+        _lblName.text = _detail.name;
+        _lblPhone.text = _detail.telephone;
+        _lblAddress.text = _detail.address;
+        _lblEmail.text = _detail.email;
+        _lblGood.text = _detail.goodtypes;
+        _lblMoney.text = [NSString stringWithFormat:@"报名费：%@",_detail.amount];
+        _lblRemark.text = _detail.remark.length ? [NSString stringWithFormat:@"备注：%@",_detail.remark] : @"备注：擅长科目为报名科目";
+        _bgPerfect.hidden = YES;
+        [_btnBgPerfect setTitle:@"点击这里完善资料" forState:UIControlStateNormal];
+    } else {
+        _bgPerfect.hidden = NO;
+        [_btnBgPerfect setTitle:@"点击前往登录" forState:UIControlStateNormal];
+    }
 }
 
-- (IBAction)update:(id)sender {
-    [self.navigationController pushViewController:[DYZUpdatePwdController new] animated:YES];
-
+- (IBAction)didPressApply:(id)sender {
+    
 }
 
+- (IBAction)didPressedperfect:(id)sender {
+    if ([DYZMemberManager sharedMemberManger].token.length) {
+        self.hidesBottomBarWhenPushed = YES;
+        DYZUserInfoEditorController *vc = [DYZUserInfoEditorController new];
+        [self.navigationController pushViewController:vc animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    } else {
+        UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+        tab.selectedIndex = 3;
+    }
+}
 
 @end
