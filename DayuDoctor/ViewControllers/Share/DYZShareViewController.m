@@ -7,6 +7,7 @@
 //
 
 #import "DYZShareViewController.h"
+#import "DYZShareButton.h"
 
 @interface DYZShareViewController ()
 @property (nonatomic, strong) UIImageView *qrImgView;
@@ -43,23 +44,69 @@
     }];
     
     
+//    DYZShareButton *shareButton = [DYZShareButton new];
+//    shareButton.imageView.backgroundColor = [UIColor yellowColor];
+//    shareButton.titleLabel.text = @"新浪微博";
+//    [self.view addSubview:shareButton];
+//    [shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_qrImgView.mas_bottom).mas_offset(10);
+//        make.left.mas_equalTo(70);
+//        make.width.mas_equalTo(70);
+//        make.height.mas_equalTo(70);
+//    }];
+//    shareButton.titleLabel.backgroundColor = [UIColor greenColor];
+//    shareButton.backgroundColor = [UIColor redColor];
+//    [shareButton addTarget:self
+//                    action:@selector(shareAction)
+//          forControlEvents:UIControlEventTouchUpInside];
+    
     NSMutableArray *buttons = [NSMutableArray new];
     NSArray *titles = @[@"新浪微博", @"微信好友", @"微信朋友圈", @"短信"];
     for (NSInteger i = 0; i < 4; ++i) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        DYZShareButton *button = [DYZShareButton new];
         NSString *title = titles[i];
-        [button setTitle:title forState:UIControlStateNormal];
+        button.titleLabel.text = title;
         [self.view addSubview:button];
         [buttons addObject:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_qrImgView.mas_bottom).mas_offset(30);
         }];
+        button.tag = i;
+        [button addTarget:self
+                   action:@selector(buttonAction:)
+         forControlEvents:UIControlEventTouchUpInside];
     }
-    
+
     [buttons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal
-                      withFixedItemLength:100
-                              leadSpacing:30
-                              tailSpacing:30];
+                      withFixedItemLength:70
+                              leadSpacing:10
+                              tailSpacing:10];
+
 }
+
+- (void)buttonAction:(DYZShareButton *)button {
+    switch (button.tag) {
+        case 0: {
+            
+        } break;
+            
+        case 1: {
+            
+        } break;
+
+        case 2: {
+            
+        } break;
+
+        case 3: {
+            
+        } break;
+
+            
+        default:
+            break;
+    }
+}
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import "DYZCachingCell.h"
 
+
 @interface DYZCachingCell()
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, strong) UIImageView *imgView;
@@ -15,6 +16,12 @@
 @end
 
 @implementation DYZCachingCell
+
+- (void)setModel:(HSSessionModel *)model {
+    model.progressBlock = ^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
+        _label.text = [NSString stringWithFormat:@"%lf", progress];
+    };
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

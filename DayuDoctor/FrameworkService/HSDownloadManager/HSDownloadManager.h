@@ -11,6 +11,9 @@
 
 @interface HSDownloadManager : NSObject
 
+
+@property (nonatomic, strong, readonly) NSMutableArray *lodingModels;
+
 /**
  *  单例
  *

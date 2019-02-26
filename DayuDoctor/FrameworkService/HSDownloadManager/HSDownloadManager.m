@@ -30,9 +30,19 @@
 @property (nonatomic, strong) NSMutableDictionary *tasks;
 /** 保存所有下载相关信息 */
 @property (nonatomic, strong) NSMutableDictionary *sessionModels;
+
+@property (nonatomic, strong) NSMutableArray *lodingModels;
+
 @end
 
 @implementation HSDownloadManager
+
+- (NSMutableArray *)lodingModels {
+    if (_lodingModels == nil) {
+        _lodingModels = [NSMutableArray new];
+    }
+    return _lodingModels;
+}
 
 - (NSMutableDictionary *)tasks
 {
@@ -138,6 +148,7 @@ static HSDownloadManager *_downloadManager;
     sessionModel.stateBlock = stateBlock;
     sessionModel.stream = stream;
     [self.sessionModels setValue:sessionModel forKey:@(task.taskIdentifier).stringValue];
+    [self.lodingModels addObject:sessionModel];
     
     [self start:url];
 }

@@ -10,14 +10,17 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 #import "DYZCachingCell.h"
+#import "HSDownloadManager.h"
+#import "DYZCacheListBottomView.h"
 
 
 
 @interface DYZCachedListController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UILabel *memoryLabel;
 @property (nonatomic, strong) UIButton *pasueButton;
 @property (nonatomic, strong) UIButton *editButton;
+@property (nonatomic, strong) NSMutableArray *models;
+@property (nonatomic, strong) DYZCacheListBottomView *bottomView;
 @end
 
 @implementation DYZCachedListController
@@ -27,6 +30,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupMemoryLabel];
     [self setupTableView];
+    
+    self.models = [[HSDownloadManager sharedInstance].lodingModels mutableCopy];
 }
 
 - (void)setupTableView {
@@ -41,26 +46,28 @@
     ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_pasueButton.mas_bottom).mas_offset(5);
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
+        CGFloat bottom = IS_IPHONE_X ? 34 : 0;
+        make.bottom.equalTo(self.view).mas_offset(-bottom);
     }];
+    
+    [self setupBottomView];
 }
 
+- (void)setupBottomView {
+    CGFloat bottom = IS_IPHONE_X ? 34 : 0;
+    bottom += 20;
+    _bottomView = [DYZCacheListBottomView new];
+    [self.view addSubview:_bottomView];
+    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self.view);
+        make.height.mas_equalTo(50);
+        make.bottom.equalTo(self.view).mas_offset(-bottom);
+    }];
+    _bottomView.hidden = YES;
+}
 
 - (void)setupMemoryLabel {
-    UILabel *label = [UILabel new];
-    label.textColor = [UIColor colorWithHexString:@"#333333"];
-    label.font = [UIFont systemFontOfSize:15];
-    [self.view addSubview:label];
-    
-    label.text = [self freeDiskSpaceInBytes];
-    
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(5);
-        make.left.mas_equalTo(16);
-        make.right.mas_equalTo(-16);
-        make.height.mas_equalTo(17);
-    }];
-    _memoryLabel = label;
     
     _editButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _editButton.layer.cornerRadius = 5;
@@ -71,7 +78,7 @@
     [_editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:_editButton];
     [_editButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_memoryLabel.mas_bottom).mas_offset(10);
+        make.top.mas_equalTo(35);
         make.right.mas_equalTo(-16);
         make.width.mas_equalTo(90);
     }];
@@ -89,7 +96,7 @@
     [_pasueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:_pasueButton];
     [_pasueButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_memoryLabel.mas_bottom).mas_offset(10);
+        make.top.equalTo(_editButton);
         make.right.equalTo(_editButton.mas_left).mas_offset(-10);
         make.width.mas_equalTo(100);
     }];
@@ -98,36 +105,45 @@
 
 - (void)editAction {
     [self.tableView setEditing:!self.tableView.editing animated:YES];
+    
+    BOOL isEditing = self.tableView.editing;
+    if (isEditing) {
+        _bottomView.hidden = NO;
+        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(_bottomView.mas_top);
+        }];
+    } else {
+        _bottomView.hidden = YES;
+        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view);
+        }];
+    }
 }
 
 - (void)pauseAction:(UIButton *)button {
     
 }
 
-- (NSString *)freeDiskSpaceInBytes {
-    struct statfs buf;
-    long long freespace = -1;
-    if(statfs("/var", &buf) >= 0){
-        freespace = (long long)(buf.f_bsize * buf.f_bfree);
-    }
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDictionary *attributes = [fileManager attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    return [NSString stringWithFormat:@"手机剩余存储空间为：%qi MB" ,freespace / 1024 / 1024 ];
-}
-
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZCachingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    HSSessionModel *model = self.models[indexPath.row];
+//    [cell setModel:model];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
+    return self.models.count;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleNone;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 

@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZCacheParentController : VTMagicController
+@property (nonatomic, strong) UILabel *memoryLabel;
 
 @end
 

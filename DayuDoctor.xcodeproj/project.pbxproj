@@ -29,11 +29,12 @@
 		0DDA158922226D82005F6E76 /* DYZCachingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158822226D82005F6E76 /* DYZCachingListController.m */; };
 		0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */; };
 		0DDA159022227501005F6E76 /* DYZCachingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158F22227500005F6E76 /* DYZCachingCell.m */; };
-		0DDA159322227511005F6E76 /* DYZCachedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159222227511005F6E76 /* DYZCachedCell.m */; };
 		0DDA159622227E93005F6E76 /* DYZClassCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159522227E93005F6E76 /* DYZClassCourseController.m */; };
 		0DDA15992222834A005F6E76 /* APICourseClassify.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA15982222834A005F6E76 /* APICourseClassify.m */; };
 		0DDA159C22228F62005F6E76 /* DYZClassCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159B22228F62005F6E76 /* DYZClassCourseCell.m */; };
 		0DDA159F2222B7A8005F6E76 /* APIRecomcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159E2222B7A8005F6E76 /* APIRecomcode.m */; };
+		0DF2D8C522244D3000CCF1F1 /* DYZShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2D8C422244D3000CCF1F1 /* DYZShareButton.m */; };
+		0DF2D8C922245CE600CCF1F1 /* DYZCacheListBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2D8C822245CE600CCF1F1 /* DYZCacheListBottomView.m */; };
 		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
 		C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */; };
 		C11C643B21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C11C643921F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib */; };
@@ -197,8 +198,6 @@
 		0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheParentController.m; sourceTree = "<group>"; };
 		0DDA158E22227500005F6E76 /* DYZCachingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachingCell.h; sourceTree = "<group>"; };
 		0DDA158F22227500005F6E76 /* DYZCachingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachingCell.m; sourceTree = "<group>"; };
-		0DDA159122227511005F6E76 /* DYZCachedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachedCell.h; sourceTree = "<group>"; };
-		0DDA159222227511005F6E76 /* DYZCachedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachedCell.m; sourceTree = "<group>"; };
 		0DDA159422227E93005F6E76 /* DYZClassCourseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZClassCourseController.h; sourceTree = "<group>"; };
 		0DDA159522227E93005F6E76 /* DYZClassCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZClassCourseController.m; sourceTree = "<group>"; };
 		0DDA15972222834A005F6E76 /* APICourseClassify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICourseClassify.h; sourceTree = "<group>"; };
@@ -207,6 +206,10 @@
 		0DDA159B22228F62005F6E76 /* DYZClassCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZClassCourseCell.m; sourceTree = "<group>"; };
 		0DDA159D2222B7A8005F6E76 /* APIRecomcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIRecomcode.h; sourceTree = "<group>"; };
 		0DDA159E2222B7A8005F6E76 /* APIRecomcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIRecomcode.m; sourceTree = "<group>"; };
+		0DF2D8C322244D3000CCF1F1 /* DYZShareButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZShareButton.h; sourceTree = "<group>"; };
+		0DF2D8C422244D3000CCF1F1 /* DYZShareButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZShareButton.m; sourceTree = "<group>"; };
+		0DF2D8C722245CE600CCF1F1 /* DYZCacheListBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCacheListBottomView.h; sourceTree = "<group>"; };
+		0DF2D8C822245CE600CCF1F1 /* DYZCacheListBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheListBottomView.m; sourceTree = "<group>"; };
 		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
 		C11C643721F85BB1000D0CB7 /* DYZHeadImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZHeadImageCollectionCell.h; sourceTree = "<group>"; };
 		C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZHeadImageCollectionCell.m; sourceTree = "<group>"; };
@@ -431,6 +434,8 @@
 			children = (
 				0D4BB90422197354007B37F8 /* DYZShareViewController.h */,
 				0D4BB90522197354007B37F8 /* DYZShareViewController.m */,
+				0DF2D8C322244D3000CCF1F1 /* DYZShareButton.h */,
+				0DF2D8C422244D3000CCF1F1 /* DYZShareButton.m */,
 			);
 			name = Share;
 			path = DayuDoctor/ViewControllers/Share;
@@ -460,6 +465,7 @@
 		0D5620D2221A440000C5D508 /* Caches */ = {
 			isa = PBXGroup;
 			children = (
+				0DF2D8C622245CBF00CCF1F1 /* View */,
 				0DDA158D222274DD005F6E76 /* Cell */,
 				0DDA158A22226DC3005F6E76 /* DYZCacheParentController.h */,
 				0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */,
@@ -592,10 +598,17 @@
 			children = (
 				0DDA158E22227500005F6E76 /* DYZCachingCell.h */,
 				0DDA158F22227500005F6E76 /* DYZCachingCell.m */,
-				0DDA159122227511005F6E76 /* DYZCachedCell.h */,
-				0DDA159222227511005F6E76 /* DYZCachedCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0DF2D8C622245CBF00CCF1F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DF2D8C722245CE600CCF1F1 /* DYZCacheListBottomView.h */,
+				0DF2D8C822245CE600CCF1F1 /* DYZCacheListBottomView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		314EABF77613AAA31738B4BB /* Pods */ = {
@@ -1109,7 +1122,6 @@
 				C1C9BB672212D4100059B3B5 /* DYZFaceTeachController.m in Sources */,
 				C1C9BB5D2212D3000059B3B5 /* DYZQAViewController.m in Sources */,
 				C1BCDB9121F84AC200CDF3EB /* DYZClassifyCollectionCell.m in Sources */,
-				0DDA159322227511005F6E76 /* DYZCachedCell.m in Sources */,
 				C1BCDB6721F712E700CDF3EB /* DYZMainTabBarController.m in Sources */,
 				C11C645A21F8752A000D0CB7 /* UIImageView+DYZWebImageView.m in Sources */,
 				0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */,
@@ -1151,6 +1163,7 @@
 				0DDA159622227E93005F6E76 /* DYZClassCourseController.m in Sources */,
 				C1AA2175221BF16200CC262C /* DYZMeetDetailCell.m in Sources */,
 				C11C646421F98991000D0CB7 /* APIHomeBanner.m in Sources */,
+				0DF2D8C522244D3000CCF1F1 /* DYZShareButton.m in Sources */,
 				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
 				C13A5E8F21EDCF9100493EE7 /* NSObject+LYJSONEntity.m in Sources */,
 				0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */,
@@ -1159,6 +1172,7 @@
 				C1C9BB762212D59B0059B3B5 /* DYZVMeetController.m in Sources */,
 				C1C9BBA1221661880059B3B5 /* APIUserInfo.m in Sources */,
 				C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				0DF2D8C922245CE600CCF1F1 /* DYZCacheListBottomView.m in Sources */,
 				C1C9BB4F2212D1F70059B3B5 /* DYZMessageController.m in Sources */,
 				0DDA15992222834A005F6E76 /* APICourseClassify.m in Sources */,
 				C183E632221AB67200A2D380 /* APIReservations.m in Sources */,

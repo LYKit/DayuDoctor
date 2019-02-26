@@ -9,9 +9,10 @@
 #import "DYZCacheParentController.h"
 #import "DYZCachedListController.h"
 #import "DYZCachingListController.h"
+#include <sys/param.h>
+#include <sys/mount.h>
 
 @interface DYZCacheParentController ()
-
 @end
 
 @implementation DYZCacheParentController
@@ -47,6 +48,7 @@
     [self.magicView reloadData];
     
     
+    [self setupDeviceMemoryLabel];
     
     //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 50)];
     //    [self.magicView addSubview:view];
@@ -84,6 +86,31 @@
         }break;
     }
     return [UIViewController new];
+}
+
+- (void)setupDeviceMemoryLabel {
+    _memoryLabel = [UILabel new];
+    _memoryLabel.text = [self freeDiskSpaceInBytes];
+    [self.magicView addSubview:_memoryLabel];
+    [_memoryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.magicView.navigationView.mas_bottom).mas_offset(5);
+        make.left.mas_equalTo(16);
+        make.right.mas_equalTo(-16);
+        make.height.mas_offset(17);
+    }];
+}
+
+
+- (NSString *)freeDiskSpaceInBytes {
+    struct statfs buf;
+    long long freespace = -1;
+    if(statfs("/var", &buf) >= 0){
+        freespace = (long long)(buf.f_bsize * buf.f_bfree);
+    }
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSDictionary *attributes = [fileManager attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
+    return [NSString stringWithFormat:@"手机剩余存储空间为：%qi MB" ,freespace / 1024 / 1024 ];
 }
 
 @end
