@@ -171,14 +171,14 @@ typedef enum : NSUInteger {
         } break;
         case enumOptionUpdate: {
             
-        }
+        } break;
         case enumOptionPhone: {
             
-        }
+        } break;
         case enumOptionChangePwd: {
             DYZUpdatePwdController *vc = [DYZUpdatePwdController new];
             [self.navigationController pushViewController:vc animated:YES];
-        }
+        } break;
         case enumOptionOut: {
             __weak typeof(self) weakSelf = self;
             UIAlertController *sheetAlert = [UIAlertController alertControllerWithTitle:@"您是否要退出登录" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -189,7 +189,7 @@ typedef enum : NSUInteger {
             [sheetAlert addAction:action];
             [sheetAlert addAction:actionCancel];
             [self presentViewController:sheetAlert animated:YES completion:nil];
-        }
+        } break;
         default:
             break;
     }

@@ -11,6 +11,7 @@
 #import "DYZMineViewController.h"
 #import "DYZClassifyController.h"
 #import "DYZApplyController.h"
+#import "DHGuidePageHUD.h"
 
 @interface DYZMainTabBarController ()
 
@@ -25,6 +26,13 @@
     
     [self createTabBar];
     [self customizeTabBarAppearance];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"guideIsShow"]) {
+        NSArray *imageNameArray = @[@"guide1.jpg",@"guide2.jpg",@"guide3.jpg",@"guide4.jpg"];
+        DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageNameArray:imageNameArray buttonIsHidden:YES];
+        [self.view addSubview:guidePage];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"guideIsShow"];
+    }
 }
 
 - (void)createTabBar {

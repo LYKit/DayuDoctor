@@ -7,10 +7,12 @@
 //
 
 #import "DYZMainHeaderView.h"
+#import "UIView+CALayerRelation.h"
 
 
-@interface DYZMainHeaderView ()
-
+@interface DYZMainHeaderView () <UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *btnMessage;
 
 @end
 
@@ -19,6 +21,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self createBaseView];
+    self.searchBar.delegate = self;
 }
 
 + (DYZMainHeaderView *)createFromNib {
@@ -32,10 +35,10 @@
     for (UIView *view in self.searchBar.subviews) {
         for (UIView *subViews in view.subviews) {
             if ([subViews isKindOfClass:[UITextField class]]) {
-//                [subViews setRadius:15.0];
+                [subViews setRadius:20.0];
                 subViews.backgroundColor = [UIColor whiteColor];//输入框背景色
                 if (@available(iOS 11.0, *)) {
-                    subViews.frame = CGRectMake(0, 7, self.searchBar.frame.size.width, 30);
+                    subViews.frame = CGRectMake(0, 7, self.searchBar.frame.size.width, 40);
                     UITextField *textField = (UITextField *)subViews;
                     textField.font = [UIFont systemFontOfSize:14.0f];
                     [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
@@ -44,7 +47,14 @@
             }
         }
     }
-    
+}
+
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    if ([self.delegate respondsToSelector:@selector(searchBarDidClick)]) {
+        [self.delegate searchBarDidClick];
+    }
+    return NO;
 }
 
 @end

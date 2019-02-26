@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZSearchListController : UIViewController
+@property (nonatomic, copy) NSString *keyword;
+
 
 @end
 

@@ -10,11 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol DYZMainHeaderViewDelegate <NSObject>
+
+- (void)searchBarDidClick;
+
+@end
+
 @interface DYZMainHeaderView : UIView
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIButton *btnMessage;
 @property (weak, nonatomic) IBOutlet UIButton *btnDownload;
+
 + (DYZMainHeaderView *)createFromNib;
+
+@property (nonatomic, weak) id<DYZMainHeaderViewDelegate> delegate;
 
 @end
 

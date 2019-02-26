@@ -61,7 +61,6 @@
 }
 
 
-
 - (APIFAQS *)requestQA {
     if (!_requestQA) {
         _requestQA = [APIFAQS new];
