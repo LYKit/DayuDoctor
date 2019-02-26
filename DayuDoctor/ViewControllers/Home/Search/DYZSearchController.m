@@ -7,8 +7,17 @@
 //
 
 #import "DYZSearchController.h"
+#import "APISearchRecord.h"
+#import "DYZSearchCollectionCell.h"
+#import "UIView+CALayerRelation.h"
+#import "DYZSearchListController.h"
 
-@interface DYZSearchController ()
+@interface DYZSearchController () <UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (nonatomic, strong) NSArray *recordList;
 
 @end
 
@@ -16,17 +25,103 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self createBaseView];
+    [self loadData];
+    
+    self.searchBar.delegate = self;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView registerNib:[UINib nibWithNibName:kDYZSearchCollectionCell bundle:nil] forCellWithReuseIdentifier:kDYZSearchCollectionCell];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf.searchBar becomeFirstResponder];
+    });
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)loadData {
+    APISearchRecord *request = [APISearchRecord new];
+    request.currPage = 1;
+    request.pageSize = 10;
+    __weak typeof(self) weakSelf = self;
+    [request startPostWithSuccessBlock:^(ResponseSearchRecord *responseObject, NSDictionary *options) {
+        weakSelf.recordList = responseObject.record;
+        [weakSelf.collectionView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
-*/
 
+- (IBAction)didPressedDownload:(id)sender {
+}
+
+- (IBAction)didPressedClear:(id)sender {
+    
+}
+
+- (IBAction)didPressedBack:(id)sender {
+    self.view.alpha = 1;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self.view removeFromSuperview];
+            [self removeFromParentViewController];
+        }
+    }];
+}
+
+
+- (void)createBaseView {
+    self.searchBar.translatesAutoresizingMaskIntoConstraints = NO;
+    for (UIView *view in self.searchBar.subviews) {
+        for (UIView *subViews in view.subviews) {
+            if ([subViews isKindOfClass:[UITextField class]]) {
+                [subViews setRadius:20.0];
+                subViews.backgroundColor = [UIColor whiteColor];//输入框背景色
+                if (@available(iOS 11.0, *)) {
+                    subViews.frame = CGRectMake(0, 7, self.searchBar.frame.size.width, 40);
+                    UITextField *textField = (UITextField *)subViews;
+                    textField.font = [UIFont systemFontOfSize:14.0f];
+                    [textField setValue:[UIColor grayColor] forKeyPath:@"_placeholderLabel.textColor"];
+                }
+                break;
+            }
+        }
+    }
+}
+
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self searchBarClicked:_searchBar.text];
+}
+
+- (void)searchBarClicked:(NSString *)keyword {
+    DYZSearchListController *searchList = [DYZSearchListController new];
+    searchList.keyword = keyword;
+    [self.navigationController pushViewController:searchList animated:YES];
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.recordList.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [DYZSearchCollectionCell cellSize:_recordList[indexPath.row]];
+}
+
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    DYZSearchCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kDYZSearchCollectionCell forIndexPath:indexPath];
+    cell.strTitle = _recordList[indexPath.row];
+    return cell;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self searchBarClicked:_recordList[indexPath.row]];
+}
 @end
+
+

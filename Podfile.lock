@@ -24,9 +24,6 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - Toast (4.0.0)
-  - VTMagic (1.2.4):
-    - VTMagic/Core (= 1.2.4)
-  - VTMagic/Core (1.2.4)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -47,7 +44,6 @@ DEPENDENCIES:
   - SDCycleScrollView
   - SDWebImage
   - Toast
-  - VTMagic
   - YYKit
   - ZFPlayer (~> 3.0)
   - ZFPlayer/AVPlayer (~> 3.0)
@@ -63,7 +59,6 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - Toast
-    - VTMagic
     - YYKit
     - ZFPlayer
 
@@ -76,10 +71,9 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
-  VTMagic: b49e5f456dbcbfd9a3588ba92417233a105bc193
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 00292c75ee52f5c2e4056c4fe911aa7697f5559f
 
-PODFILE CHECKSUM: ea226bd6eb8a39dd2cbc4b4cf31c037ddd0354b6
+PODFILE CHECKSUM: eb7fdf573a6638f4e8dcc7b9194ab2f110291af1
 
 COCOAPODS: 1.5.0
