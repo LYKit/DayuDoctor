@@ -12,6 +12,11 @@
 		0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */; };
 		0D4BB9022219664A007B37F8 /* DYZVipRightsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB9012219664A007B37F8 /* DYZVipRightsController.m */; };
 		0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB90522197354007B37F8 /* DYZShareViewController.m */; };
+		0D5176542225AC3600A8A1D9 /* YCDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5176472225AC3600A8A1D9 /* YCDownloadManager.m */; };
+		0D5176552225AC3600A8A1D9 /* YCDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51764C2225AC3600A8A1D9 /* YCDownloader.m */; };
+		0D5176562225AC3600A8A1D9 /* YCDownloadUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51764E2225AC3600A8A1D9 /* YCDownloadUtils.m */; };
+		0D5176572225AC3600A8A1D9 /* YCDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5176502225AC3600A8A1D9 /* YCDownloadTask.m */; };
+		0D5176582225AC3600A8A1D9 /* YCDownloadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5176522225AC3600A8A1D9 /* YCDownloadItem.m */; };
 		0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620C8221A431E00C5D508 /* HSSessionModel.m */; };
 		0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CA221A431E00C5D508 /* NSString+Hash.m */; };
 		0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CE221A431E00C5D508 /* HSDownloadManager.m */; };
@@ -184,6 +189,17 @@
 		0D4BB9012219664A007B37F8 /* DYZVipRightsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVipRightsController.m; sourceTree = "<group>"; };
 		0D4BB90422197354007B37F8 /* DYZShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZShareViewController.h; sourceTree = "<group>"; };
 		0D4BB90522197354007B37F8 /* DYZShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZShareViewController.m; sourceTree = "<group>"; };
+		0D5176472225AC3600A8A1D9 /* YCDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloadManager.m; sourceTree = "<group>"; };
+		0D5176482225AC3600A8A1D9 /* YCDownloadItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloadItem.h; sourceTree = "<group>"; };
+		0D51764A2225AC3600A8A1D9 /* YCDownloadUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloadUtils.h; sourceTree = "<group>"; };
+		0D51764B2225AC3600A8A1D9 /* YCDownloadSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloadSession.h; sourceTree = "<group>"; };
+		0D51764C2225AC3600A8A1D9 /* YCDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloader.m; sourceTree = "<group>"; };
+		0D51764D2225AC3600A8A1D9 /* YCDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloadTask.h; sourceTree = "<group>"; };
+		0D51764E2225AC3600A8A1D9 /* YCDownloadUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloadUtils.m; sourceTree = "<group>"; };
+		0D51764F2225AC3600A8A1D9 /* YCDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloader.h; sourceTree = "<group>"; };
+		0D5176502225AC3600A8A1D9 /* YCDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloadTask.m; sourceTree = "<group>"; };
+		0D5176512225AC3600A8A1D9 /* YCDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloadManager.h; sourceTree = "<group>"; };
+		0D5176522225AC3600A8A1D9 /* YCDownloadItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloadItem.m; sourceTree = "<group>"; };
 		0D5620C8221A431E00C5D508 /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
 		0D5620CA221A431E00C5D508 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		0D5620CB221A431E00C5D508 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
@@ -503,6 +519,32 @@
 			path = DayuDoctor/ViewControllers/Share;
 			sourceTree = SOURCE_ROOT;
 		};
+		0D5176462225AC3600A8A1D9 /* YCDownloadSession */ = {
+			isa = PBXGroup;
+			children = (
+				0D5176472225AC3600A8A1D9 /* YCDownloadManager.m */,
+				0D5176482225AC3600A8A1D9 /* YCDownloadItem.h */,
+				0D5176492225AC3600A8A1D9 /* core */,
+				0D5176512225AC3600A8A1D9 /* YCDownloadManager.h */,
+				0D5176522225AC3600A8A1D9 /* YCDownloadItem.m */,
+			);
+			path = YCDownloadSession;
+			sourceTree = "<group>";
+		};
+		0D5176492225AC3600A8A1D9 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				0D51764A2225AC3600A8A1D9 /* YCDownloadUtils.h */,
+				0D51764B2225AC3600A8A1D9 /* YCDownloadSession.h */,
+				0D51764C2225AC3600A8A1D9 /* YCDownloader.m */,
+				0D51764D2225AC3600A8A1D9 /* YCDownloadTask.h */,
+				0D51764E2225AC3600A8A1D9 /* YCDownloadUtils.m */,
+				0D51764F2225AC3600A8A1D9 /* YCDownloader.h */,
+				0D5176502225AC3600A8A1D9 /* YCDownloadTask.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
 		0D5620C7221A431E00C5D508 /* HSDownloadManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +811,7 @@
 		C13A5E2021EDCC9900493EE7 /* FrameworkService */ = {
 			isa = PBXGroup;
 			children = (
+				0D5176462225AC3600A8A1D9 /* YCDownloadSession */,
 				0D5620C7221A431E00C5D508 /* HSDownloadManager */,
 				C13A5E5921EDCF0D00493EE7 /* LYNetworking */,
 			);
@@ -1250,6 +1293,7 @@
 				C1E8CEA92221043C003CC670 /* DYZFlowLayout.m in Sources */,
 				C1C9BB9A221560130059B3B5 /* DYZFaceTeachCell.m in Sources */,
 				0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */,
+				0D5176542225AC3600A8A1D9 /* YCDownloadManager.m in Sources */,
 				C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */,
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C1E8CEB4222273AC003CC670 /* UIView+CALayerRelation.m in Sources */,
@@ -1277,6 +1321,7 @@
 				0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */,
 				C13A5E9221EDD0CC00493EE7 /* NSString+Additions.m in Sources */,
 				C11C645D21F890D7000D0CB7 /* APIHomeCourseList.m in Sources */,
+				0D5176562225AC3600A8A1D9 /* YCDownloadUtils.m in Sources */,
 				C1BCDB8221F7260D00CDF3EB /* DYZClassifyController.m in Sources */,
 				C183E63A221BDADC00A2D380 /* APIOrderCancel.m in Sources */,
 				C1E8B798221D5EC5003CC670 /* UITableView+FDIndexPathHeightCache.m in Sources */,
@@ -1312,11 +1357,13 @@
 				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
 				C13A5E8F21EDCF9100493EE7 /* NSObject+LYJSONEntity.m in Sources */,
 				0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */,
+				0D5176552225AC3600A8A1D9 /* YCDownloader.m in Sources */,
 				C1C9BB3B2212C1450059B3B5 /* DYZLoginController.m in Sources */,
 				C1E8B796221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				C1C9BB762212D59B0059B3B5 /* DYZVMeetController.m in Sources */,
 				C1C9BBA1221661880059B3B5 /* APIUserInfo.m in Sources */,
 				C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				0D5176572225AC3600A8A1D9 /* YCDownloadTask.m in Sources */,
 				0DF2D8C922245CE600CCF1F1 /* DYZCacheListBottomView.m in Sources */,
 				C1C9BB4F2212D1F70059B3B5 /* DYZMessageController.m in Sources */,
 				0DDA15992222834A005F6E76 /* APICourseClassify.m in Sources */,
@@ -1333,6 +1380,7 @@
 				C183E636221BCFF700A2D380 /* DYZMeetingCell.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
+				0D5176582225AC3600A8A1D9 /* YCDownloadItem.m in Sources */,
 				0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */,
 				C1C9BB9E221569BC0059B3B5 /* APIFaceTeach.m in Sources */,
 				C13A5E9521EDD2E400493EE7 /* LYRequestManager.m in Sources */,

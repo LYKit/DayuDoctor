@@ -9,8 +9,7 @@
 #import "DYZCacheParentController.h"
 #import "DYZCachedListController.h"
 #import "DYZCachingListController.h"
-#include <sys/param.h>
-#include <sys/mount.h>
+#import "YCDownloadUtils.h"
 
 @interface DYZCacheParentController ()
 @end
@@ -102,15 +101,8 @@
 
 
 - (NSString *)freeDiskSpaceInBytes {
-    struct statfs buf;
-    long long freespace = -1;
-    if(statfs("/var", &buf) >= 0){
-        freespace = (long long)(buf.f_bsize * buf.f_bfree);
-    }
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDictionary *attributes = [fileManager attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
-    return [NSString stringWithFormat:@"手机剩余存储空间为：%qi MB" ,freespace / 1024 / 1024 ];
+    NSString *str = [NSString stringWithFormat:@"%@", [YCDownloadUtils fileSizeStringFromBytes:[YCDownloadUtils fileSystemFreeSize]]];
+    return [NSString stringWithFormat:@"剩余空间：%@", str];
 }
 
 @end
