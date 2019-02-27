@@ -9,13 +9,10 @@
 #import "ZFNoramlViewController.h"
 #import <ZFPlayer/ZFPlayer.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>
-//#import <ZFPlayer/ZFIJKPlayerManager.h>
-//#import <ZFPlayer/KSMediaPlayerManager.h>
 #import <ZFPlayer/ZFPlayerControlView.h>
-//#import "ZFSmallPlayViewController.h"
 #import "UIImageView+ZFCache.h"
 #import "ZFUtilities.h"
-#import "HSDownloadManager.h"
+#import "YCDownloadManager.h"
 
 static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/635942-14593722fe3f0695.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240";
 
@@ -24,42 +21,70 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 @property (nonatomic, strong) UIImageView *containerView;
 @property (nonatomic, strong) ZFPlayerControlView *controlView;
 @property (nonatomic, strong) UIButton *playBtn;
-@property (nonatomic, strong) UIButton *changeBtn;
-@property (nonatomic, strong) UIButton *nextBtn;
+@property (nonatomic, strong) UIButton *downBtn;
+@property (nonatomic, strong) UIButton *fileBtn;
 @property (nonatomic, strong) NSArray <NSURL *>*assetURLs;
-@property (nonatomic, strong) UIProgressView *progressView;
-
 @end
 
 @implementation ZFNoramlViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.player.viewControllerDisappear = NO;
+}
 
-- (NSArray *)getFileList{
-    NSString *string = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"HSCache"];
-    NSArray *fileList = [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:string error:nil] pathsMatchingExtensions:@[@"pdf",@"txt",@"plist", @"mp4"]];
-    
-    NSString *URLString = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
-    
-    
-    
-    return fileList;
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.player.viewControllerDisappear = YES;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *mp4s = [self getFileList];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Push" style:UIBarButtonItemStylePlain target:self action:@selector(pushNewVC)];
+    
+    [self setupView];
+    [self setupPlayer];
+}
+
+- (void)setupView {
     [self.view addSubview:self.containerView];
-    
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+        make.top.equalTo(self.view).mas_offset(y);
+        make.left.right.equalTo(self.view);
+        CGFloat h = kScreenWidth * 9 / 16;
+        make.height.mas_equalTo(h);
+    }];
     [self.containerView addSubview:self.playBtn];
-    [self.view addSubview:self.changeBtn];
-    [self.view addSubview:self.nextBtn];
-    [self.view addSubview:self.progressView];
+    [self.playBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.containerView);
+        make.size.mas_equalTo(CGSizeMake(45, 45));
+    }];
     
+    [self.view addSubview:self.downBtn];
+    CGFloat bottom = IS_IPHONE_X ? 34 : 0;
+    [self.downBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-bottom);
+        make.left.mas_equalTo(0);
+        make.width.mas_equalTo(kScreenWidth / 2);
+        make.height.mas_equalTo(50);
+    }];
+    
+    [self.view addSubview:self.fileBtn];
+    [self.fileBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(-bottom);
+        make.left.equalTo(self.downBtn.mas_right);
+        make.width.mas_equalTo(kScreenWidth / 2);
+        make.height.mas_equalTo(50);
+    }];
+}
+
+- (void)setupPlayer {
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
-//    KSMediaPlayerManager *playerManager = [[KSMediaPlayerManager alloc] init];
-//    ZFIJKPlayerManager *playerManager = [[ZFIJKPlayerManager alloc] init];
-    /// 播放器相关
     self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:self.containerView];
     self.player.controlView = self.controlView;
     /// 设置退到后台继续播放
@@ -74,14 +99,14 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     self.player.playerDidToEnd = ^(id  _Nonnull asset) {
         @strongify(self)
         [self.player.currentPlayerManager replay];
-//        [self.player playTheNext];
-//        if (!self.player.isLastAssetURL) {
-//            NSString *title = [NSString stringWithFormat:@"视频标题%zd",self.player.currentPlayIndex];
-//            [self.controlView showTitle:title coverURLString:kVideoCover fullScreenMode:ZFFullScreenModeLandscape];
-//        } else {
-//            [self.player stop];
-//        }
-//        [self.player stop];
+        //        [self.player playTheNext];
+        //        if (!self.player.isLastAssetURL) {
+        //            NSString *title = [NSString stringWithFormat:@"视频标题%zd",self.player.currentPlayIndex];
+        //            [self.controlView showTitle:title coverURLString:kVideoCover fullScreenMode:ZFFullScreenModeLandscape];
+        //        } else {
+        //            [self.player stop];
+        //        }
+        //        [self.player stop];
     };
     
     self.player.playerReadyToPlay = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
@@ -106,107 +131,18 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     self.player.assetURLs = self.assetURLs;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.player.viewControllerDisappear = NO;
+- (void)downClick:(UIButton *)sender {
+
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    self.player.viewControllerDisappear = YES;
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    CGFloat x = 0;
-    CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
-    CGFloat w = CGRectGetWidth(self.view.frame);
-    CGFloat h = w*9/16;
-    self.containerView.frame = CGRectMake(x, y, w, h);
+- (void)fileButton:(UIButton *)sender {
     
-    w = 44;
-    h = w;
-    x = (CGRectGetWidth(self.containerView.frame)-w)/2;
-    y = (CGRectGetHeight(self.containerView.frame)-h)/2;
-    self.playBtn.frame = CGRectMake(x, y, w, h);
-    
-    w = 100;
-    h = 30;
-    x = (CGRectGetWidth(self.view.frame)-w)/2;
-    y = CGRectGetMaxY(self.containerView.frame)+50;
-    self.changeBtn.frame = CGRectMake(x, y, w, h);
-    
-    w = 100;
-    h = 30;
-    x = (CGRectGetWidth(self.view.frame)-w)/2;
-    y = CGRectGetMaxY(self.changeBtn.frame)+50;
-    self.nextBtn.frame = CGRectMake(x, y, w, h);
-    
-    w = 300;
-    h = 30;
-    x = 20;
-    y = CGRectGetMaxY(self.nextBtn.frame) + 20;
-    self.progressView.frame = CGRectMake(x, y, w, h);
-    self.progressView.backgroundColor = [UIColor yellowColor];
-}
-
-
-
-- (void)changeVideo:(UIButton *)sender {
-    /// 切换playerManager
-//    ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
-//    self.player.currentPlayerManager = playerManager;
-//    [self.player replaceCurrentPlayerManager:playerManager];
-    
-    NSString *URLString = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
-//    URLString = @"http://39.96.167.96:8080/video?id=1";
-    self.player.assetURL = [NSURL URLWithString:URLString];
-    [self.controlView showTitle:@"Apple" coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
 }
 
 - (void)playClick:(UIButton *)sender {
     [self.player playTheIndex:0];
     [self.controlView showTitle:@"视频标题" coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
 }
-
-//test  视频下载
-- (void)nextClick:(UIButton *)sender {
-    NSString *url = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
-    [[HSDownloadManager sharedInstance] download:url progress:^(NSInteger receivedSize, NSInteger expectedSize, CGFloat progress) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-//            progressLabel.text = [NSString stringWithFormat:@"%.f%%", progress * 100];
-            _progressView.progress = progress;
-        });
-    } state:^(DownloadState state) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [sender setTitle:[self getTitleWithDownloadState:state] forState:UIControlStateNormal];
-        });
-    }];
-
-//    if (!self.player.isLastAssetURL) {
-//        [self.player playTheNext];
-//        NSString *title = [NSString stringWithFormat:@"视频标题%zd",self.player.currentPlayIndex];
-//        [self.controlView showTitle:title coverURLString:kVideoCover fullScreenMode:ZFFullScreenModePortrait];
-//    } else {
-//        NSLog(@"最后一个视频了");
-//    }
-}
-#pragma mark 按钮状态
-- (NSString *)getTitleWithDownloadState:(DownloadState)state
-{
-    switch (state) {
-        case DownloadStateStart:
-            return @"暂停";
-        case DownloadStateSuspended:
-        case DownloadStateFailed:
-            return @"开始";
-        case DownloadStateCompleted:
-            return @"完成";
-        default:
-            break;
-    }
-}
-
 - (void)pushNewVC {
 //    ZFSmallPlayViewController *vc = [[ZFSmallPlayViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
@@ -271,29 +207,30 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     return _playBtn;
 }
 
-- (UIButton *)changeBtn {
-    if (!_changeBtn) {
-        _changeBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_changeBtn setTitle:@"Change video" forState:UIControlStateNormal];
-        [_changeBtn addTarget:self action:@selector(changeVideo:) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton *)fileBtn {
+    if (!_fileBtn) {
+        _fileBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_fileBtn setTitle:@"目录" forState:UIControlStateNormal];
+        _fileBtn.backgroundColor = [UIColor colorWithHexString:@"#fdf1f1"];
+        _fileBtn.layer.borderColor = [UIColor redColor].CGColor;
+        _fileBtn.layer.borderWidth = 0.5;
+        _fileBtn.layer.masksToBounds = YES;
+        [_fileBtn addTarget:self action:@selector(fileButton:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _changeBtn;
+    return _fileBtn;
 }
 
-- (UIButton *)nextBtn {
-    if (!_nextBtn) {
-        _nextBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_nextBtn setTitle:@"Next" forState:UIControlStateNormal];
-        [_nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton *)downBtn {
+    if (!_downBtn) {
+        _downBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_downBtn setTitle:@"下载" forState:UIControlStateNormal];
+        _downBtn.backgroundColor = [UIColor colorWithHexString:@"#fdf1f1"];
+        _downBtn.layer.borderColor = [UIColor redColor].CGColor;
+        _downBtn.layer.borderWidth = 0.5;
+        _downBtn.layer.masksToBounds = YES;
+        [_downBtn addTarget:self action:@selector(downClick:) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _nextBtn;
-}
-
-- (UIProgressView *)progressView {
-    if (_progressView == nil) {
-        _progressView = [UIProgressView new];
-    }
-    return _progressView;
+    return _downBtn;
 }
 
 @end
