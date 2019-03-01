@@ -17,6 +17,10 @@
 		0D5176562225AC3600A8A1D9 /* YCDownloadUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D51764E2225AC3600A8A1D9 /* YCDownloadUtils.m */; };
 		0D5176572225AC3600A8A1D9 /* YCDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5176502225AC3600A8A1D9 /* YCDownloadTask.m */; };
 		0D5176582225AC3600A8A1D9 /* YCDownloadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5176522225AC3600A8A1D9 /* YCDownloadItem.m */; };
+		0D53177222276B3300951DA2 /* VideoCacheListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53176D22276B3300951DA2 /* VideoCacheListCell.m */; };
+		0D53177322276B3300951DA2 /* VideoCacheListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D53176E22276B3300951DA2 /* VideoCacheListCell.xib */; };
+		0D53177422276B3300951DA2 /* VideoCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53177122276B3300951DA2 /* VideoCacheController.m */; };
+		0D53177722276B6900951DA2 /* VideoListInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53177622276B6900951DA2 /* VideoListInfoModel.m */; };
 		0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620C8221A431E00C5D508 /* HSSessionModel.m */; };
 		0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CA221A431E00C5D508 /* NSString+Hash.m */; };
 		0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CE221A431E00C5D508 /* HSDownloadManager.m */; };
@@ -200,6 +204,13 @@
 		0D5176502225AC3600A8A1D9 /* YCDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloadTask.m; sourceTree = "<group>"; };
 		0D5176512225AC3600A8A1D9 /* YCDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCDownloadManager.h; sourceTree = "<group>"; };
 		0D5176522225AC3600A8A1D9 /* YCDownloadItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCDownloadItem.m; sourceTree = "<group>"; };
+		0D53176D22276B3300951DA2 /* VideoCacheListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCacheListCell.m; sourceTree = "<group>"; };
+		0D53176E22276B3300951DA2 /* VideoCacheListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoCacheListCell.xib; sourceTree = "<group>"; };
+		0D53176F22276B3300951DA2 /* VideoCacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCacheController.h; sourceTree = "<group>"; };
+		0D53177022276B3300951DA2 /* VideoCacheListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCacheListCell.h; sourceTree = "<group>"; };
+		0D53177122276B3300951DA2 /* VideoCacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCacheController.m; sourceTree = "<group>"; };
+		0D53177522276B6900951DA2 /* VideoListInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoListInfoModel.h; path = DayuDoctor/ViewControllers/Caches/VideoListInfoModel.h; sourceTree = SOURCE_ROOT; };
+		0D53177622276B6900951DA2 /* VideoListInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoListInfoModel.m; path = DayuDoctor/ViewControllers/Caches/VideoListInfoModel.m; sourceTree = SOURCE_ROOT; };
 		0D5620C8221A431E00C5D508 /* HSSessionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSessionModel.m; sourceTree = "<group>"; };
 		0D5620CA221A431E00C5D508 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		0D5620CB221A431E00C5D508 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
@@ -522,10 +533,10 @@
 		0D5176462225AC3600A8A1D9 /* YCDownloadSession */ = {
 			isa = PBXGroup;
 			children = (
-				0D5176472225AC3600A8A1D9 /* YCDownloadManager.m */,
-				0D5176482225AC3600A8A1D9 /* YCDownloadItem.h */,
 				0D5176492225AC3600A8A1D9 /* core */,
 				0D5176512225AC3600A8A1D9 /* YCDownloadManager.h */,
+				0D5176472225AC3600A8A1D9 /* YCDownloadManager.m */,
+				0D5176482225AC3600A8A1D9 /* YCDownloadItem.h */,
 				0D5176522225AC3600A8A1D9 /* YCDownloadItem.m */,
 			);
 			path = YCDownloadSession;
@@ -543,6 +554,20 @@
 				0D5176502225AC3600A8A1D9 /* YCDownloadTask.m */,
 			);
 			path = core;
+			sourceTree = "<group>";
+		};
+		0D53176C22276B3300951DA2 /* VideoCache */ = {
+			isa = PBXGroup;
+			children = (
+				0D53177522276B6900951DA2 /* VideoListInfoModel.h */,
+				0D53177622276B6900951DA2 /* VideoListInfoModel.m */,
+				0D53177022276B3300951DA2 /* VideoCacheListCell.h */,
+				0D53176D22276B3300951DA2 /* VideoCacheListCell.m */,
+				0D53176E22276B3300951DA2 /* VideoCacheListCell.xib */,
+				0D53176F22276B3300951DA2 /* VideoCacheController.h */,
+				0D53177122276B3300951DA2 /* VideoCacheController.m */,
+			);
+			path = VideoCache;
 			sourceTree = "<group>";
 		};
 		0D5620C7221A431E00C5D508 /* HSDownloadManager */ = {
@@ -569,6 +594,7 @@
 		0D5620D2221A440000C5D508 /* Caches */ = {
 			isa = PBXGroup;
 			children = (
+				0D53176C22276B3300951DA2 /* VideoCache */,
 				0DF2D8C622245CBF00CCF1F1 /* View */,
 				0DDA158D222274DD005F6E76 /* Cell */,
 				0DDA158A22226DC3005F6E76 /* DYZCacheParentController.h */,
@@ -1201,6 +1227,7 @@
 				C1C9BB3C2212C1450059B3B5 /* DYZLoginController.xib in Resources */,
 				C1BCDB8D21F810B700CDF3EB /* DYZHomeViewController.xib in Resources */,
 				C1E8CEB1222111F8003CC670 /* DYZSearchCollectionCell.xib in Resources */,
+				0D53177322276B3300951DA2 /* VideoCacheListCell.xib in Resources */,
 				C1C9BB6D2212D4FC0059B3B5 /* DYZMineInfoController.xib in Resources */,
 				C1E8CE8C2220F162003CC670 /* GuideImage.bundle in Resources */,
 				C13A5DF121EDC4DE00493EE7 /* Assets.xcassets in Resources */,
@@ -1288,6 +1315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D53177222276B3300951DA2 /* VideoCacheListCell.m in Sources */,
 				C183E642221BE42300A2D380 /* APIOrdersDetail.m in Sources */,
 				C1E8B78B221D4970003CC670 /* APIFAQS.m in Sources */,
 				C1E8CEA92221043C003CC670 /* DYZFlowLayout.m in Sources */,
@@ -1308,6 +1336,7 @@
 				C1E8CE8D2220F162003CC670 /* DHGifImageOperation.m in Sources */,
 				C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */,
 				C1BCDB9621F84AD500CDF3EB /* DYZVideoCollectionCell.m in Sources */,
+				0D53177722276B6900951DA2 /* VideoListInfoModel.m in Sources */,
 				C1E8CEB822227B7A003CC670 /* DYZSearchListCell.m in Sources */,
 				C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */,
 				0DDA159F2222B7A8005F6E76 /* APIRecomcode.m in Sources */,
@@ -1315,6 +1344,7 @@
 				C1E8B797221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				C1E8CED822229B3F003CC670 /* VTContentView.m in Sources */,
 				0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */,
+				0D53177422276B3300951DA2 /* VideoCacheController.m in Sources */,
 				C1C9BB8A221426AD0059B3B5 /* LYAlertView.m in Sources */,
 				C1E8CED922229B3F003CC670 /* VTMagicController.m in Sources */,
 				C1E8CEB0222111F8003CC670 /* DYZSearchCollectionCell.m in Sources */,

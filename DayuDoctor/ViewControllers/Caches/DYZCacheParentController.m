@@ -10,6 +10,7 @@
 #import "DYZCachedListController.h"
 #import "DYZCachingListController.h"
 #import "YCDownloadUtils.h"
+#import "VideoCacheController.h"
 
 @interface DYZCacheParentController ()
 @end
@@ -76,8 +77,8 @@
 {
     switch (pageIndex) {
         case 0: {
-            DYZCachedListController *home = [DYZCachedListController new];
-            return home;
+            VideoCacheController *caching = [VideoCacheController new];
+            return caching;
         }break;
         case 1: {
             DYZCachingListController *newsList = [DYZCachingListController new];

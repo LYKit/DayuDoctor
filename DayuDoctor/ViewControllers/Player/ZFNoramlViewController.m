@@ -13,6 +13,7 @@
 #import "UIImageView+ZFCache.h"
 #import "ZFUtilities.h"
 #import "YCDownloadManager.h"
+#import "VideoCacheController.h"
 
 static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/635942-14593722fe3f0695.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240";
 
@@ -132,7 +133,22 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 }
 
 - (void)downClick:(UIButton *)sender {
-
+//    YCDownloadItem *item = nil;
+//    if (model.vid) {
+//        item = [YCDownloadManager itemWithFileId:model.vid];
+//    }else if (model.video_url){
+//        item = [YCDownloadManager itemsWithDownloadUrl:model.video_url].firstObject;
+//    }
+//    if (!item) {
+//        item = [YCDownloadItem itemWithUrl:model.video_url fileId:model.vid];
+//        item.extraData = [VideoListInfoModel dateWithInfoModel:model];
+//        item.enableSpeed = true;
+//        [YCDownloadManager startDownloadWithItem:item];
+//    }
+    NSString *url = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h.mp4";
+    YCDownloadItem *item = [YCDownloadItem itemWithUrl:url fileId:url];
+    item.enableSpeed = YES;
+    [YCDownloadManager startDownloadWithItem:item];
 }
 
 - (void)fileButton:(UIButton *)sender {
