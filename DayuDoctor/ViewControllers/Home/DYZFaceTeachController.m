@@ -60,6 +60,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self openWebPageWithUrlString:_responseFace.content[indexPath.row].url];
 }
 
 

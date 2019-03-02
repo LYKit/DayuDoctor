@@ -9,6 +9,7 @@
 #import "DYZClassifyController.h"
 #import "DYZClassifyCollectionCell.h"
 #import "APIClassifyAll.h"
+#import "DYZClassCourseController.h"
 
 @interface DYZClassifyController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -62,5 +63,15 @@
     return CGSizeMake(70, 75);
 }
 
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    DYZClassCourseController *vc = [DYZClassCourseController new];
+    ClassifyModel *classify = self.classifyList[indexPath.item];
+    vc.classify = classify;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.hidesBottomBarWhenPushed = NO;
+}
 
 @end

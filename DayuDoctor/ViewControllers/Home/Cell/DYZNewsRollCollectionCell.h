@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray<News *> *newsList;
 
+@property (nonatomic, assign, readonly) NSInteger curIndex;
+
 
 @end
 

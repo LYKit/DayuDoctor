@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *classID;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *icon;
-
+@property (nonatomic, copy) NSString *url;
 
 @end
 

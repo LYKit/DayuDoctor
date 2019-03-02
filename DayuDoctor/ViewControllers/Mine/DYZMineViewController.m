@@ -143,10 +143,10 @@ typedef enum : NSUInteger {
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionPay: {
-            
+            [self openWebPageWithUrlString:kPayCenterURL];
         } break;
         case enumOptionOrder: {
-            
+
         } break;
         case enumOptionCollection: {
             DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
@@ -157,7 +157,7 @@ typedef enum : NSUInteger {
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionScore: {
-            
+            [self openWebPageWithUrlString:kMineScoreURL];
         } break;
         case enumOptionMessage: {
             

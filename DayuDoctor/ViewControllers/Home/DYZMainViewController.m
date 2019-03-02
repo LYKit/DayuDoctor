@@ -17,6 +17,7 @@
 #import "DYZSearchController.h"
 #import "APIHomeBanner.h"
 #import "DYZJoinController.h"
+#import "DYZHospitalController.h"
 
 typedef enum : NSUInteger {
     enumMagicViewVideo = 0,
@@ -45,6 +46,11 @@ typedef enum : NSUInteger {
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 
@@ -170,11 +176,12 @@ typedef enum : NSUInteger {
             return vc;
         }break;
         case enumMagicViewJoin: {
-            DYZJoinController *vc = [DYZJoinController new];
+            DYZJoinController *vc = [[DYZJoinController alloc] init];
             return vc;
         }break;
         case enumMagicViewHospital: {
-            
+            DYZHospitalController *vc = [DYZHospitalController new];
+            return vc;
         }break;
         default:
             break;

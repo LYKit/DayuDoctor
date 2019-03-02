@@ -89,10 +89,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    ZFNoramlViewController *vc = [ZFNoramlViewController new];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-    vc.hidesBottomBarWhenPushed = NO;
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    ZFNoramlViewController *vc = [ZFNoramlViewController new];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+//    vc.hidesBottomBarWhenPushed = NO;
+    
+    [self openWebPageWithUrlString:_response.content[indexPath.row].url];
 }
 @end

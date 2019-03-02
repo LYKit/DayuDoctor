@@ -29,11 +29,13 @@ typedef enum : NSUInteger {
 
 @property (strong, nonatomic) IBOutlet UICollectionReusableView *headerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) DYZNewsRollCollectionCell *rollCell;
 
-@property (nonatomic, strong) NSMutableArray *classifyList;
-@property (nonatomic, strong) NSMutableArray *courseList;
+
+@property (nonatomic, strong) NSMutableArray<ClassifyModel *> *classifyList;
+@property (nonatomic, strong) NSMutableArray<CourseModel *> *courseList;
 @property (nonatomic, strong) NSMutableArray *bannerList;
-@property (nonatomic, strong) NSArray *newsList;
+@property (nonatomic, strong) NSArray<News *> *newsList;
 
 
 @end
@@ -137,8 +139,15 @@ typedef enum : NSUInteger {
             return cell;
         } break;
         case enumNewsRollSection: {
+            if (self.rollCell) {
+                if (!self.rollCell.newsList) {
+                    self.rollCell.newsList = self.newsList;
+                }
+                return self.rollCell;
+            }
             DYZNewsRollCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kNewsRolCollectionCell forIndexPath:indexPath];
             cell.newsList = self.newsList;
+            self.rollCell = cell;
             return cell;
         } break;
         case enumClassifySection:{
@@ -216,18 +225,24 @@ typedef enum : NSUInteger {
     switch (indexPath.section) {
         case enumHeaderImageSection:
         case enumNewsRollSection: {
-
+            [self openWebPageWithUrlString:_newsList[_rollCell.curIndex].url];
         } break;
         case enumClassifySection:{
-            DYZClassCourseController *vc = [DYZClassCourseController new];
             ClassifyModel *classify = self.classifyList[indexPath.item];
-            vc.classify = classify;
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
-            vc.hidesBottomBarWhenPushed = NO;
+
+            if ([classify.classID isEqualToString:@"-1"]) {
+                UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+                tab.selectedIndex = 1;
+            } else {
+                DYZClassCourseController *vc = [DYZClassCourseController new];
+                vc.classify = classify;
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+                vc.hidesBottomBarWhenPushed = NO;
+            }
         } break;
         case enumVideoRecommendSection:{
-
+            [self openWebPageWithUrlString:self.courseList[indexPath.row].url];
         } break;
         default:
             break;

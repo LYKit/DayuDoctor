@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *courseId;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *img;
+@property (nonatomic, copy) NSString *url;
 
 
 @end

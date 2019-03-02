@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *teacher;
 @property (nonatomic, copy) NSString *amount;
 @property (nonatomic, copy) NSString *buynum;
+@property (nonatomic, copy) NSString *url;
+
 @end
 
 @interface ResponseCoursesList : NSObject

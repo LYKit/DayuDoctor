@@ -42,6 +42,7 @@
     
     [_timer invalidate];
     _timer = nil;
+    _index = 0;
     
     if (_newsList.count) {
         _timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(updateNews) userInfo:nil repeats:YES];
@@ -49,6 +50,10 @@
     }
 }
 
+
+- (NSInteger)curIndex {
+    return _index;
+}
 
 
 - (void)updateNews {

@@ -19,17 +19,6 @@
 
 @implementation DYZClassCourseController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = NO;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"课程列表";
@@ -102,7 +91,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
+    ClassifyCourse *model = _response.content[indexPath.row];
+    [self openWebPageWithUrlString:model.url];
 }
 
 

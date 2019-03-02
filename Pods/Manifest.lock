@@ -14,10 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - AXIndicatorView (0.1.1)
+  - AXNavigationBackItemInjection (0.0.2)
+  - AXPracticalHUD (2.1.4):
+    - AXIndicatorView
+  - AXWebViewController (0.7.2):
+    - Aspects
+    - AXNavigationBackItemInjection
+    - AXPracticalHUD
+    - NJKWebViewProgress
   - CYLTabBarController (1.17.20)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.15.7)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.4.2):
@@ -37,6 +52,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AXWebViewController
   - CYLTabBarController
   - Masonry
   - MBProgressHUD
@@ -52,10 +68,16 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - Aspects
+    - AXIndicatorView
+    - AXNavigationBackItemInjection
+    - AXPracticalHUD
+    - AXWebViewController
     - CYLTabBarController
     - Masonry
     - MBProgressHUD
     - MJRefresh
+    - NJKWebViewProgress
     - SDCycleScrollView
     - SDWebImage
     - Toast
@@ -64,16 +86,22 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  AXIndicatorView: 566b490a2dd9781d4ffbcc9752be9b9cdc6e728e
+  AXNavigationBackItemInjection: efe0446967f3cbcc85a9118decd1e145138912dd
+  AXPracticalHUD: 821d170b31e050c426ef8754b07b4264a8b1d861
+  AXWebViewController: 96566c473fce2806f4da696132b31777f5404c9f
   CYLTabBarController: 376fc15463c582cd5a24a7e9d46a578243bd5b12
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 00292c75ee52f5c2e4056c4fe911aa7697f5559f
 
-PODFILE CHECKSUM: eb7fdf573a6638f4e8dcc7b9194ab2f110291af1
+PODFILE CHECKSUM: f5f337e4648f0b1d180d46649189c0072c9b29b1
 
 COCOAPODS: 1.5.0
