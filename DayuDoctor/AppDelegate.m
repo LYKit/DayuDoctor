@@ -10,6 +10,7 @@
 #import "DYZMemberManager.h"
 #import "FrameworkService/YCDownloadSession/YCDownloadManager.h"
 #import "VideoListInfoModel.h"
+#import <JShare/JSHAREService.h>
 
 @interface AppDelegate ()
 
@@ -28,6 +29,9 @@
 
     [DYZMemberManager aotuLogin];
     [self setUpDownload];
+    
+    //极光分享
+    [self setupJShare];
     return YES;
 }
 
@@ -69,6 +73,34 @@
     localNote.userInfo = @{@"type" : @1};
     [[UIApplication sharedApplication] scheduleLocalNotification:localNote];
 }
+
+- (void)setupJShare {
+    JSHARELaunchConfig *config = [[JSHARELaunchConfig alloc] init];
+    config.appKey = @"AppKey copied from JiGuang Portal application";
+    config.SinaWeiboAppKey = @"374535501";
+    config.SinaWeiboAppSecret = @"baccd12c166f1df96736b51ffbf600a2";
+    config.SinaRedirectUri = @"https://www.jiguang.cn";
+    config.QQAppId = @"1105864531";
+    config.QQAppKey = @"glFYjkHQGSOCJHMC";
+    config.WeChatAppId = @"wxa2ea563906227379";
+    config.WeChatAppSecret = @"bb63c0a06bf0ee7f633a5bc44304d110";
+    config.JChatProAuth = @"a7e2ce002d1a071a6ca9f37d";
+    [JSHAREService setupWithConfig:config];
+    [JSHAREService setDebug:YES];
+}
+
+//目前适用所有 iOS 系统
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    [JSHAREService handleOpenUrl:url];
+    return YES;
+}
+
+//仅支持 iOS9 以上系统，iOS8 及以下系统不会回调
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    [JSHAREService handleOpenUrl:url];
+    return YES;
+}
+
 
 -(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler{
     [[YCDownloader downloader] addCompletionHandler:completionHandler identifier:identifier];

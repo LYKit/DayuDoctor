@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0407C5D8534AFAE58A6B7E4C8795CB8"
+               BlueprintIdentifier = "8EE3DC8D4E4F5E6341ACE8462179C4B1"
                BlueprintName = "ZFPlayer"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libZFPlayer.a">

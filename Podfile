@@ -16,5 +16,6 @@ pod 'ZFPlayer/AVPlayer', '~> 3.0'
 pod 'ZFPlayer/ControlView', '~> 3.0'
 pod 'AXWebViewController'
 #pod 'RxWebViewController'
+pod 'JShare'
 end
 
