@@ -208,7 +208,7 @@ typedef enum : NSUInteger {
 //    if (![DYZMemberManager sharedMemberManger].token.length) {
 //        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
 //    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccesStatus object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOutLoginSuccesStatus object:nil];
 }
 
 
