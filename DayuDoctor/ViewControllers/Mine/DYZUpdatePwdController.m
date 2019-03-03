@@ -32,7 +32,7 @@ static NSInteger const countDownSecond = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"修改密码";
+    self.title = [DYZMemberManager sharedMemberManger].token.length?  @"修改密码" : @"忘记密码";
     _index = 0;
 }
 
@@ -59,9 +59,10 @@ static NSInteger const countDownSecond = 60;
         if (responseObject.resultcode.integerValue == 0) {
             [DYZMemberManager sharedMemberManger].token = responseObject.token;
             [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPwd.text];
-            [LYAlertView showAerltViewWithTitle:nil message:@"修改成功" cancelButtonTtitle:@"去登录" ensuerButtonTitle:nil onSureUsingBlock:nil onCancelUsingBlock:^{
+            [weakSelf.view makeToast:@"修改成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf.navigationController popViewControllerAnimated:YES];
-            }];
+            });
         }
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         

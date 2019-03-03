@@ -9,6 +9,9 @@
 #import "DYZMemberManager.h"
 #import "APILogin.h"
 
+NSString * const kLoginSuccesStatus = @"loginSuccesStatus";
+NSString * const kOutLoginSuccesStatus = @"outLoginSuccesStatus";
+
 @implementation DYZMemberManager
 
 + (instancetype)sharedMemberManger {

@@ -11,7 +11,7 @@
 
 @implementation DYZHTTPHeader
 
-+ (NSDictionary *)commonHeader {
++ (NSMutableDictionary *)commonHeader {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     if ([DYZMemberManager sharedMemberManger].token) {

@@ -18,6 +18,7 @@
 #import "APIHomeBanner.h"
 #import "DYZJoinController.h"
 #import "DYZHospitalController.h"
+#import "DYZMessageController.h"
 
 typedef enum : NSUInteger {
     enumMagicViewVideo = 0,
@@ -62,18 +63,10 @@ typedef enum : NSUInteger {
         make.left.right.top.equalTo(self.view);
         make.height.mas_equalTo(IS_IPHONE_X ? 88:64);
     }];
-    
-    [_headerView.btnDownload addTarget:self
-                                action:@selector(cacheVC)
-                      forControlEvents:UIControlEventTouchUpInside];
+
 }
 
-- (void)cacheVC {
-    DYZCacheParentController *vc = [DYZCacheParentController new];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-    vc.hidesBottomBarWhenPushed = NO;
-}
+
 
 - (void)loadDefaultData {
     __weak typeof(self) weakSelf = self;
@@ -121,6 +114,7 @@ typedef enum : NSUInteger {
 }
 
 
+/// MARK: headerview'delegate
 - (void)searchBarDidClick {
     DYZSearchController *searchVC = [DYZSearchController new];
     [self addChildViewController:searchVC];
@@ -133,6 +127,21 @@ typedef enum : NSUInteger {
     [UIView animateWithDuration:0.3 animations:^{
         searchVC.view.alpha = 1;
     }];
+}
+
+
+- (void)downloadDidClick {
+    DYZCacheParentController *vc = [DYZCacheParentController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.hidesBottomBarWhenPushed = NO;
+}
+
+- (void)messageDidClick {
+    DYZMessageController *vc = [DYZMessageController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    vc.hidesBottomBarWhenPushed = NO;
 }
 
 

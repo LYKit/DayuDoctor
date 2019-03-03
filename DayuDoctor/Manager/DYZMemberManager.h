@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString * const kLoginSuccesStatus;
+extern NSString * const kOutLoginSuccesStatus;
+
+
 typedef struct {
     NSString *mobile;
     NSString *password;

@@ -49,11 +49,18 @@
         if (responseObject.resultcode.integerValue == 0) {
             [DYZMemberManager sharedMemberManger].token = responseObject.token;
             [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPassword.text];
+            [weakSelf loginSuccess];
             [weakSelf.navigationController popViewControllerAnimated:NO];
+        } else {
+            [weakSelf.view makeToast:responseObject.resultmsg];
         }
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
+}
+
+- (void)loginSuccess {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccesStatus object:nil];
 }
 
 - (IBAction)didPressedFind:(id)sender {

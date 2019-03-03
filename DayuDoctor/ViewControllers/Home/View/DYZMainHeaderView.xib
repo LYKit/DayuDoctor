@@ -31,6 +31,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" backgroundImage="icon_message"/>
+                            <connections>
+                                <action selector="didPressedMessage:" destination="iN0-l3-epB" eventType="touchUpInside" id="X4Q-TO-cL2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBL-6F-zUi">
                             <rect key="frame" x="322" y="27" width="20" height="19"/>
@@ -40,6 +43,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" backgroundImage="icon_download"/>
+                            <connections>
+                                <action selector="didPressedDownload:" destination="iN0-l3-epB" eventType="touchUpInside" id="hos-yJ-PNI"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHK-Fu-7av">
                             <rect key="frame" x="262" y="24.5" width="25" height="24"/>

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZHTTPHeader : NSObject
 
-+ (NSDictionary *)commonHeader;
++ (NSMutableDictionary *)commonHeader;
 
 
 @end

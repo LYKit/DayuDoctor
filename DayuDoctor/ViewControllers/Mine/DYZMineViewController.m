@@ -18,6 +18,8 @@
 #import "DYZVMeetController.h"
 #import "DYZUpdatePwdController.h"
 #import "APIUserInfo.h"
+#import "DYZMessageController.h"
+#import "DYZUpdateController.h"
 
 typedef enum : NSUInteger {
     enumOptionCourse = 0,   // 课程
@@ -69,6 +71,7 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *status;
 
 @property (nonatomic, strong) NSArray<MineOption *> *optionsList;
+@property (nonatomic, strong) DYZUpdateController *versionController;
 
 @property (nonatomic, strong) ResponseUserInfo *responseUserInfo;
 
@@ -160,20 +163,22 @@ typedef enum : NSUInteger {
             [self openWebPageWithUrlString:kMineScoreURL];
         } break;
         case enumOptionMessage: {
-            
+            DYZMessageController *vc = [DYZMessageController new];
+            [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionShare: {
             DYZShareViewController *vc = [DYZShareViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionService: {
-            
+            [self openWebPageWithUrlString:kEmergencyURL];
         } break;
         case enumOptionUpdate: {
-            
+            [self.versionController presentInWindow];
         } break;
         case enumOptionPhone: {
-            
+            NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"tel://%@",@"10010"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
         } break;
         case enumOptionChangePwd: {
             DYZUpdatePwdController *vc = [DYZUpdatePwdController new];
@@ -200,14 +205,22 @@ typedef enum : NSUInteger {
 /// MARK: fuction
 - (void)outLogin {
     [DYZMemberManager clearMemberInfo];
-    if (![DYZMemberManager sharedMemberManger].token.length) {
-        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
-    }
+//    if (![DYZMemberManager sharedMemberManger].token.length) {
+//        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
+//    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccesStatus object:nil];
 }
 
 
 
 /// MARK: getter/setter
+- (DYZUpdateController *)versionController {
+    if (!_versionController) {
+        _versionController = [DYZUpdateController new];
+    }
+    return _versionController;
+}
+
 - (void)setResponseUserInfo:(ResponseUserInfo *)responseUserInfo {
     _responseUserInfo = responseUserInfo;
     _status.text = @"已登录";

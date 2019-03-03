@@ -13,6 +13,7 @@
 @interface DYZMainHeaderView () <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *btnMessage;
+@property (weak, nonatomic) IBOutlet UIButton *btnDownload;
 
 @end
 
@@ -55,6 +56,19 @@
         [self.delegate searchBarDidClick];
     }
     return NO;
+}
+
+
+- (IBAction)didPressedMessage:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(messageDidClick)]) {
+        [self.delegate messageDidClick];
+    }
+}
+
+- (IBAction)didPressedDownload:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(downloadDidClick)]) {
+        [self.delegate downloadDidClick];
+    }
 }
 
 @end

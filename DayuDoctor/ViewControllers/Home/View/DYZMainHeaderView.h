@@ -14,11 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol DYZMainHeaderViewDelegate <NSObject>
 
 - (void)searchBarDidClick;
+- (void)messageDidClick;
+- (void)downloadDidClick;
+
 
 @end
 
 @interface DYZMainHeaderView : UIView
-@property (weak, nonatomic) IBOutlet UIButton *btnDownload;
 
 + (DYZMainHeaderView *)createFromNib;
 

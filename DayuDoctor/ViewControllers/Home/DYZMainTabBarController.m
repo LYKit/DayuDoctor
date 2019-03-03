@@ -12,6 +12,8 @@
 #import "DYZClassifyController.h"
 #import "DYZApplyController.h"
 #import "DHGuidePageHUD.h"
+#import "DYZLoginController.h"
+
 
 @interface DYZMainTabBarController ()
 
@@ -35,6 +37,9 @@
     }
 }
 
+
+
+
 - (void)createTabBar {
     DYZMainViewController *firstViewController = [[DYZMainViewController alloc] init];
     UIViewController *firstNavigationController = [[UINavigationController alloc]
@@ -45,10 +50,18 @@
     DYZApplyController *thirdViewController = [[DYZApplyController alloc] init];
     UIViewController *thirdNavigationController = [[UINavigationController alloc]
                                                     initWithRootViewController:thirdViewController];
-    DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
-    UIViewController *fourNavigationController = [[UINavigationController alloc]
-                                                    initWithRootViewController:fourViewController];
     
+    UIViewController *fourNavigationController = nil;
+    if ([DYZMemberManager sharedMemberManger].token.length) {
+        DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
+        fourNavigationController = [[UINavigationController alloc]
+                                                      initWithRootViewController:fourViewController];
+    } else {
+        DYZLoginController *fourViewController = [[DYZLoginController alloc] init];
+        fourNavigationController = [[UINavigationController alloc]
+                                                      initWithRootViewController:fourViewController];
+    }
+
     [self customizeTabBarForController];
     [self setViewControllers:@[firstNavigationController,
                                secondNavigationController,

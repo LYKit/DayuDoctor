@@ -25,7 +25,12 @@ typedef enum : NSUInteger {
     enumVideoRecommendSection
 } enumSectionType;
 
-@interface DYZHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface DYZHomeViewController ()
+<
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
+    UICollectionViewDelegateFlowLayout
+>
 
 @property (strong, nonatomic) IBOutlet UICollectionReusableView *headerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

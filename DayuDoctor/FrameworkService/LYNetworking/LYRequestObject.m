@@ -114,7 +114,6 @@
         NSLog(@"请求成功，返回数据：%@",responseObject);
         NSLog(@"=============================");
 #endif
-        
         id object = [LYParserManager objectParserJsonMapPropertyWithClassString:NSStringFromClass([self class]) responseName:responseName data:responseObject];
         if (success) {
             success(object,nil);
