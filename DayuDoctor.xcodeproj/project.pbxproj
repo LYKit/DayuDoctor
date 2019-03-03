@@ -32,10 +32,10 @@
 		0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683E821F49286002E255A /* DYZNewsTableController.m */; };
 		0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */; };
 		0D8683EF21F492CA002E255A /* APINewsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683EE21F492CA002E255A /* APINewsList.m */; };
+		0DBEA30A222BD714005E0F72 /* APIDeleteCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBEA309222BD714005E0F72 /* APIDeleteCollection.m */; };
 		0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */; };
 		0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6131721F87C9900C97464 /* DYZMineCell.m */; };
 		0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158522226D5F005F6E76 /* DYZCachedListController.m */; };
-		0DDA158922226D82005F6E76 /* DYZCachingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158822226D82005F6E76 /* DYZCachingListController.m */; };
 		0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */; };
 		0DDA159022227501005F6E76 /* DYZCachingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA158F22227500005F6E76 /* DYZCachingCell.m */; };
 		0DDA159622227E93005F6E76 /* DYZClassCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA159522227E93005F6E76 /* DYZClassCourseController.m */; };
@@ -238,6 +238,8 @@
 		0D8683EB21F492A7002E255A /* DYZNewsTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZNewsTableCell.m; sourceTree = "<group>"; };
 		0D8683ED21F492CA002E255A /* APINewsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APINewsList.h; sourceTree = "<group>"; };
 		0D8683EE21F492CA002E255A /* APINewsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APINewsList.m; sourceTree = "<group>"; };
+		0DBEA308222BD714005E0F72 /* APIDeleteCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIDeleteCollection.h; sourceTree = "<group>"; };
+		0DBEA309222BD714005E0F72 /* APIDeleteCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIDeleteCollection.m; sourceTree = "<group>"; };
 		0DD4851721F6ADB5004812C2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0DD6131121F850DB00C97464 /* ZFNoramlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNoramlViewController.h; sourceTree = "<group>"; };
 		0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFNoramlViewController.m; sourceTree = "<group>"; };
@@ -245,8 +247,6 @@
 		0DD6131721F87C9900C97464 /* DYZMineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMineCell.m; sourceTree = "<group>"; };
 		0DDA158422226D5F005F6E76 /* DYZCachedListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachedListController.h; sourceTree = "<group>"; };
 		0DDA158522226D5F005F6E76 /* DYZCachedListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachedListController.m; sourceTree = "<group>"; };
-		0DDA158722226D82005F6E76 /* DYZCachingListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachingListController.h; sourceTree = "<group>"; };
-		0DDA158822226D82005F6E76 /* DYZCachingListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCachingListController.m; sourceTree = "<group>"; };
 		0DDA158A22226DC3005F6E76 /* DYZCacheParentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCacheParentController.h; sourceTree = "<group>"; };
 		0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheParentController.m; sourceTree = "<group>"; };
 		0DDA158E22227500005F6E76 /* DYZCachingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCachingCell.h; sourceTree = "<group>"; };
@@ -615,8 +615,6 @@
 				0DDA158B22226DC3005F6E76 /* DYZCacheParentController.m */,
 				0DDA158422226D5F005F6E76 /* DYZCachedListController.h */,
 				0DDA158522226D5F005F6E76 /* DYZCachedListController.m */,
-				0DDA158722226D82005F6E76 /* DYZCachingListController.h */,
-				0DDA158822226D82005F6E76 /* DYZCachingListController.m */,
 			);
 			path = Caches;
 			sourceTree = "<group>";
@@ -683,6 +681,8 @@
 				C1E8CEAB22210641003CC670 /* APISearchRecord.m */,
 				C1E8CEBA22228240003CC670 /* APISearchList.h */,
 				C1E8CEBB22228240003CC670 /* APISearchList.m */,
+				0DBEA308222BD714005E0F72 /* APIDeleteCollection.h */,
+				0DBEA309222BD714005E0F72 /* APIDeleteCollection.m */,
 			);
 			path = EntityAPI;
 			sourceTree = "<group>";
@@ -1444,6 +1444,7 @@
 				C183E636221BCFF700A2D380 /* DYZMeetingCell.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
+				0DBEA30A222BD714005E0F72 /* APIDeleteCollection.m in Sources */,
 				0D5176582225AC3600A8A1D9 /* YCDownloadItem.m in Sources */,
 				0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */,
 				C1C9BB9E221569BC0059B3B5 /* APIFaceTeach.m in Sources */,
@@ -1461,7 +1462,6 @@
 				C1AA2180221D401200CC262C /* DYZQACell.m in Sources */,
 				0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
-				0DDA158922226D82005F6E76 /* DYZCachingListController.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
 				C1E8CEDA22229B3F003CC670 /* VTMenuBar.m in Sources */,

@@ -14,13 +14,43 @@
 @property (nonatomic, strong) UILabel *teacLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
 @property (nonatomic, strong) UILabel *amountLabel;
+@property (nonatomic, strong) UIImageView *selectImgView;
 @end
 
 @implementation DYZMyCollectionCell
 
+
+- (void)setCollectionCourse:(CollectionCourse *)course {
+    [_imgView sd_setImageWithURLString:course.img];
+    _courseNameLabel.text = course.title;
+    _teacLabel.text = [NSString stringWithFormat:@"主讲人：%@", course.teacher];
+    _priceLabel.text = course.amount;
+    _amountLabel.text = [NSString stringWithFormat:@"已购买人数：%@", course.buynum];
+    if (course.isSelected) {
+        _selectImgView.highlighted = YES;
+    } else {
+        _selectImgView.highlighted = NO;
+    }
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (!self) return nil;
+    
+//    UIImage *unselectImg = [UIImage imageNamed:@"unselect"];
+//    UIImage *selected = [UIImage imageNamed:@"selected"];
+//    _selectImgView = [UIImageView new];
+//    _selectImgView.image = unselectImg;
+//    _selectImgView.highlightedImage = selected;
+//    [self.contentView addSubview:_selectImgView];
+//    [_selectImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(-32);
+//        make.centerY.equalTo(self.contentView);
+//        make.size.mas_equalTo(_selectImgView.image.size);
+//    }];
+    
+    
+    
     
     _imgView = [UIImageView new];
     [self.contentView addSubview:_imgView];
@@ -29,7 +59,6 @@
         make.left.mas_equalTo(16);
         make.size.mas_equalTo(CGSizeMake(60, 60));
     }];
-    _imgView.backgroundColor = [UIColor greenColor];
     
     _courseNameLabel = [UILabel new];
     _courseNameLabel.font = [UIFont systemFontOfSize:15];
@@ -41,7 +70,6 @@
         make.right.mas_equalTo(-16);
         make.height.mas_equalTo(15);
     }];
-    _courseNameLabel.backgroundColor = [UIColor yellowColor];
     
     
     _teacLabel = [UILabel new];
@@ -54,7 +82,6 @@
         make.height.mas_equalTo(13);
         make.right.mas_equalTo(-16);
     }];
-    _teacLabel.backgroundColor = [UIColor yellowColor];
     
     _priceLabel = [UILabel new];
     _priceLabel.font = [UIFont systemFontOfSize:13];
@@ -65,7 +92,6 @@
         make.left.equalTo(_teacLabel);
         make.height.mas_equalTo(13);
     }];
-    _priceLabel.text = @"100";
     
     _amountLabel = [UILabel new];
     _amountLabel.font = [UIFont systemFontOfSize:13];
@@ -77,8 +103,6 @@
         make.right.mas_lessThanOrEqualTo(-16);
         make.height.mas_equalTo(13);
     }];
-    _amountLabel.backgroundColor = [UIColor yellowColor];
-    _amountLabel.text = @"200";
     return self;
 }
 @end

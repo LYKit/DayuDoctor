@@ -29,6 +29,7 @@
     
     [_request startGetWithSuccessBlock:^(ResponseRecomcode *responseObject, NSDictionary *options) {
         _response = responseObject;
+        _codeLabel.text = _response.recomcode;
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -90,15 +91,12 @@
     
     _codeLabel = [UILabel new];
     _codeLabel.font = [UIFont systemFontOfSize:15];
-    _codeLabel.textColor = [UIColor yellowColor];
-    _codeLabel.text = @"F6PGG0G6";
     [self.view addSubview:_codeLabel];
     [_codeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_hasPromotLabel.mas_bottom).mas_equalTo(15);
         make.left.equalTo(tipLabel.mas_right);
         make.height.mas_equalTo(15);
     }];
-    _codeLabel.text = @"F6PGG0G6";
     
     UIButton *copyButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [copyButton setTitle:@"复制" forState:UIControlStateNormal];
@@ -109,23 +107,23 @@
     }];
     
     
-    _codeText = [UITextField new];
-    _codeText.placeholder = @"请输入对方推广码";
-    _codeText.font = [UIFont systemFontOfSize:15];
-    _codeText.textColor = [UIColor colorWithHexString:@"#333333"];
-    [self.view addSubview:_codeText];
-    [_codeText mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_codeLabel.mas_bottom).mas_offset(10);
-        make.left.equalTo(tipLabel);
-    }];
-    
-    UIButton *bindButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [bindButton setTitle:@"复制" forState:UIControlStateNormal];
-    [self.view addSubview:bindButton];
-    [bindButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(_codeText);
-        make.right.equalTo(label);
-    }];
+//    _codeText = [UITextField new];
+//    _codeText.placeholder = @"请输入对方推广码";
+//    _codeText.font = [UIFont systemFontOfSize:15];
+//    _codeText.textColor = [UIColor colorWithHexString:@"#333333"];
+//    [self.view addSubview:_codeText];
+//    [_codeText mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_codeLabel.mas_bottom).mas_offset(10);
+//        make.left.equalTo(tipLabel);
+//    }];
+//
+//    UIButton *bindButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [bindButton setTitle:@"复制" forState:UIControlStateNormal];
+//    [self.view addSubview:bindButton];
+//    [bindButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(_codeText);
+//        make.right.equalTo(label);
+//    }];
 }
 
 - (void)copyButtonAction {

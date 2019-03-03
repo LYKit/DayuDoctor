@@ -9,22 +9,28 @@
 #import "DYZNewsTableController.h"
 #import "DYZNewsTableCell.h"
 #import "APINewsList.h"
-#import "ZFNoramlViewController.h"
 
 @interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) NSMutableArray *models;
 @property (nonatomic, strong) APINewsList *request;
 @property (nonatomic, strong) ResponseNewsList *response;
 @end
 
 @implementation DYZNewsTableController
-
+- (NSMutableArray *)models {
+    if (_models == nil) {
+        _models = [NSMutableArray new];
+    }
+    return _models;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"资讯列表";
     
     _request = [APINewsList new];
+    _request.currPage = 1;
+    _request.pageSize = 20;
     
     [self setupTableView];
     [self requestNews];
@@ -35,6 +41,11 @@
     
     [_request startPostWithSuccessBlock:^(ResponseNewsList *response, NSDictionary *options) {
         _self.response = response;
+        if (_self.request.currPage == 1) {
+            [self.models removeAllObjects];
+        }
+        
+        [self.models addObjectsFromArray:response.content];
         [_self.tableView reloadData];
         [_self endRefreshing];
         
@@ -59,12 +70,12 @@
     
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        _self.request.currPage = 1;
+        _self.request.currPage = 1;
         [_self requestNews];
     }];
     
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-//        _self.request.currPage += 1;
+        _self.request.currPage += 1;
         [_self requestNews];
     }];
 }
@@ -77,24 +88,19 @@
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (_response.content.count) {
-        News *news = _response.content[indexPath.row];
+    if (self.models.count) {
+        News *news = self.models[indexPath.row];
         [cell setNews:news];
     }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _response.content.count;
+    return self.models.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    ZFNoramlViewController *vc = [ZFNoramlViewController new];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
-//    vc.hidesBottomBarWhenPushed = NO;
-    
-    [self openWebPageWithUrlString:_response.content[indexPath.row].url];
+    News *news = self.models[indexPath.row];
+    [self openWebPageWithUrlString:news.url];
 }
 @end

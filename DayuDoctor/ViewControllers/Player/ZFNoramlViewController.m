@@ -55,7 +55,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [self.view addSubview:self.containerView];
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
-        make.top.equalTo(self.view).mas_offset(y);
+        make.top.equalTo(self.view).mas_offset(0);
         make.left.right.equalTo(self.view);
         CGFloat h = kScreenWidth * 9 / 16;
         make.height.mas_equalTo(h);
@@ -69,7 +69,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     [self.view addSubview:self.downBtn];
     CGFloat bottom = IS_IPHONE_X ? 34 : 0;
     [self.downBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-bottom);
+        make.bottom.mas_equalTo(-(bottom + 50));
         make.left.mas_equalTo(0);
         make.width.mas_equalTo(kScreenWidth / 2);
         make.height.mas_equalTo(50);
@@ -77,7 +77,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     
     [self.view addSubview:self.fileBtn];
     [self.fileBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-bottom);
+        make.bottom.mas_equalTo(-(bottom + 50));
         make.left.equalTo(self.downBtn.mas_right);
         make.width.mas_equalTo(kScreenWidth / 2);
         make.height.mas_equalTo(50);
