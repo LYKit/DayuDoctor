@@ -52,15 +52,19 @@
                                                     initWithRootViewController:thirdViewController];
     
     UIViewController *fourNavigationController = nil;
-    if ([DYZMemberManager sharedMemberManger].token.length) {
-        DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
-        fourNavigationController = [[UINavigationController alloc]
-                                                      initWithRootViewController:fourViewController];
-    } else {
-        DYZLoginController *fourViewController = [[DYZLoginController alloc] init];
-        fourNavigationController = [[UINavigationController alloc]
-                                                      initWithRootViewController:fourViewController];
-    }
+    DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
+    fourNavigationController = [[UINavigationController alloc]
+                                initWithRootViewController:fourViewController];
+
+//    if ([DYZMemberManager sharedMemberManger].token.length) {
+//        DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
+//        fourNavigationController = [[UINavigationController alloc]
+//                                                      initWithRootViewController:fourViewController];
+//    } else {
+//        DYZLoginController *fourViewController = [[DYZLoginController alloc] init];
+//        fourNavigationController = [[UINavigationController alloc]
+//                                                      initWithRootViewController:fourViewController];
+//    }
 
     [self customizeTabBarForController];
     [self setViewControllers:@[firstNavigationController,
