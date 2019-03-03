@@ -14,28 +14,47 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) APICoursesList *request;
 @property (nonatomic, strong) ResponseCoursesList *response;
+@property (nonatomic, strong) NSMutableArray *models;
 
 @end
 
 @implementation DYZCoursesTableController
 
+- (NSMutableArray *)models {
+    if (_models == nil) {
+        _models = [NSMutableArray new];
+    }
+    return _models;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"我的课程";
+    [self setupTableView];
 
-
-    self.navigationItem.title = @"啥答案撒所多";
-    
     _request = [APICoursesList new];
+    _request.currPage = 1;
+    _request.pageSize = 20;
+    
+    [self myCourseRequest];
+    
+}
+
+- (void)myCourseRequest {
     
     __weak typeof(self) _self = self;
-    
     [_request startPostWithSuccessBlock:^(ResponseCoursesList *response, NSDictionary *options) {
         _self.response = response;
+        
+        if (_self.request.currPage == 1) {
+            [self.models removeAllObjects];
+        }
+        [self.models addObjectsFromArray:_response.content];
         [_self.tableView reloadData];
+        [self endRefreshing];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        [self endRefreshing];
     }];
-    
-    [self setupTableView];
 }
 
 - (void)setupTableView {
@@ -51,19 +70,45 @@
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+    
+    
+    __weak typeof(self) _self = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _self.request.currPage = 1;
+        [_self myCourseRequest];
+    }];
+    
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        _self.request.currPage += 1;
+        [_self myCourseRequest];
+    }];
+    
 }
 
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZCoursesTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (_response.content.count) {
-        Course *course = _response.content[indexPath.row];
+    if (self.models.count) {
+        Course *course = self.models[indexPath.row];
         [cell setCourse:course];
     }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _response.content.count;
+    return self.models.count;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Course *model = self.models[indexPath.row];
+    [self openWebPageWithUrlString:model.url];
+}
+
+- (void)endRefreshing {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
+
 @end

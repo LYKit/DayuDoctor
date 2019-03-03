@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 
     // 禁用自动偏移
     self.modalPresentationCapturesStatusBarAppearance = NO;

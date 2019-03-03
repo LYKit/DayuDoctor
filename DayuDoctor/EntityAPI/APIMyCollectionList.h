@@ -25,6 +25,9 @@
 @property (nonatomic, copy) NSString *buynum;
 @property (nonatomic, copy) NSString *url;
 
+//列表标记选择
+@property (nonatomic, assign) BOOL isSelected;
+
 @end
 
 @interface ResponseMyCollectionList : LYResponseObject

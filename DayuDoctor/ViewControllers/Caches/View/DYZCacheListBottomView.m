@@ -13,7 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (!self) return nil;
-    
+    self.backgroundColor = [UIColor whiteColor];
     
     _selectedButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_selectedButton setTitle:@"全选" forState:UIControlStateNormal];
@@ -27,7 +27,7 @@
     
     
     _deleteButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_deleteButton setTitle:@"取消" forState:UIControlStateNormal];
+    [_deleteButton setTitle:@"删除" forState:UIControlStateNormal];
     [self addSubview:_deleteButton];
     [_deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self);

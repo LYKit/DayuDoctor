@@ -8,9 +8,9 @@
 
 #import "DYZCacheParentController.h"
 #import "DYZCachedListController.h"
-#import "DYZCachingListController.h"
 #import "YCDownloadUtils.h"
 #import "VideoCacheController.h"
+#import "DYZCachedListController.h"
 
 @interface DYZCacheParentController ()
 @end
@@ -81,7 +81,7 @@
             return caching;
         }break;
         case 1: {
-            DYZCachingListController *newsList = [DYZCachingListController new];
+            DYZCachedListController *newsList = [DYZCachedListController new];
             return newsList;
         }break;
     }

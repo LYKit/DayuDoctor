@@ -10,9 +10,9 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 #import "DYZCachingCell.h"
-#import "HSDownloadManager.h"
+#import "YCDownloadManager.h"
 #import "DYZCacheListBottomView.h"
-
+#import "VideoCacheListCell.h"
 
 
 @interface DYZCachedListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -31,7 +31,8 @@
     [self setupMemoryLabel];
     [self setupTableView];
     
-    self.models = [[HSDownloadManager sharedInstance].lodingModels mutableCopy];
+    self.models = [[YCDownloadManager finishList] mutableCopy];
+    [self.tableView reloadData];
 }
 
 - (void)setupTableView {
@@ -42,10 +43,10 @@
     [self.view addSubview:_tableView];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
-    [_tableView registerClass:[DYZCachingCell class] forCellReuseIdentifier:@"cell"];
+    [_tableView registerClass:[VideoCacheListCell class] forCellReuseIdentifier:@"cell"];
     ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_pasueButton.mas_bottom).mas_offset(5);
+        make.top.equalTo(_editButton.mas_bottom).mas_offset(5);
         make.left.right.equalTo(self.view);
         CGFloat bottom = IS_IPHONE_X ? 34 : 0;
         make.bottom.equalTo(self.view).mas_offset(-bottom);
@@ -87,20 +88,20 @@
           forControlEvents:UIControlEventTouchUpInside];
     
 
-    _pasueButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _pasueButton.layer.cornerRadius = 5;
-    _pasueButton.layer.masksToBounds = YES;
-    _pasueButton.backgroundColor = [UIColor blackColor];
-    _pasueButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    [_pasueButton setTitle:@"全部暂停" forState:UIControlStateNormal];
-    [_pasueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.view addSubview:_pasueButton];
-    [_pasueButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_editButton);
-        make.right.equalTo(_editButton.mas_left).mas_offset(-10);
-        make.width.mas_equalTo(100);
-    }];
-    [_pasueButton addTarget:self action:@selector(pauseAction:) forControlEvents:UIControlEventTouchUpInside];
+//    _pasueButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    _pasueButton.layer.cornerRadius = 5;
+//    _pasueButton.layer.masksToBounds = YES;
+//    _pasueButton.backgroundColor = [UIColor blackColor];
+//    _pasueButton.titleLabel.font = [UIFont systemFontOfSize:15];
+//    [_pasueButton setTitle:@"全部暂停" forState:UIControlStateNormal];
+//    [_pasueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [self.view addSubview:_pasueButton];
+//    [_pasueButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(_editButton);
+//        make.right.equalTo(_editButton.mas_left).mas_offset(-10);
+//        make.width.mas_equalTo(100);
+//    }];
+//    [_pasueButton addTarget:self action:@selector(pauseAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)editAction {
@@ -126,14 +127,14 @@
 
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    DYZCachingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    HSSessionModel *model = self.models[indexPath.row];
-//    [cell setModel:model];
+    VideoCacheListCell *cell = [VideoCacheListCell videoCacheListCellWithTableView:tableView];
+    YCDownloadItem *item = self.models[indexPath.row];
+    cell.item = item;
+    item.delegate = cell;
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
     return self.models.count;
 }
 
@@ -145,6 +146,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [VideoCacheListCell rowHeight];
+}
+
 
 
 /*

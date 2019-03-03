@@ -112,7 +112,6 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
     
     [self.cacheVideoList removeAllObjects];
     [self.cacheVideoList addObjectsFromArray:[YCDownloadManager downloadList]];
-    [self.cacheVideoList addObjectsFromArray:[YCDownloadManager finishList]];
     [self.tableView reloadData];
     self.navigationItem.rightBarButtonItem.enabled = self.cacheVideoList.count>0;
 }

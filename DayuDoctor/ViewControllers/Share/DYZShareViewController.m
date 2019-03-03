@@ -8,6 +8,7 @@
 
 #import "DYZShareViewController.h"
 #import "DYZShareButton.h"
+#import <JSHAREService.h>
 
 @interface DYZShareViewController ()
 @property (nonatomic, strong) UIImageView *qrImgView;
@@ -43,38 +44,21 @@
         make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
     
-    
-//    DYZShareButton *shareButton = [DYZShareButton new];
-//    shareButton.imageView.backgroundColor = [UIColor yellowColor];
-//    shareButton.titleLabel.text = @"新浪微博";
-//    [self.view addSubview:shareButton];
-//    [shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(_qrImgView.mas_bottom).mas_offset(10);
-//        make.left.mas_equalTo(70);
-//        make.width.mas_equalTo(70);
-//        make.height.mas_equalTo(70);
-//    }];
-//    shareButton.titleLabel.backgroundColor = [UIColor greenColor];
-//    shareButton.backgroundColor = [UIColor redColor];
-//    [shareButton addTarget:self
-//                    action:@selector(shareAction)
-//          forControlEvents:UIControlEventTouchUpInside];
-    
     NSMutableArray *buttons = [NSMutableArray new];
     NSArray *titles = @[@"新浪微博", @"微信好友", @"微信朋友圈", @"短信"];
     for (NSInteger i = 0; i < 4; ++i) {
         DYZShareButton *button = [DYZShareButton new];
+        button.userInteractionEnabled = YES;
         NSString *title = titles[i];
         button.titleLabel.text = title;
         [self.view addSubview:button];
         [buttons addObject:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_qrImgView.mas_bottom).mas_offset(30);
+            make.height.mas_equalTo(70);
         }];
         button.tag = i;
-        [button addTarget:self
-                   action:@selector(buttonAction:)
-         forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
 
     [buttons mas_distributeViewsAlongAxis:MASAxisTypeHorizontal
@@ -84,10 +68,20 @@
 
 }
 
+- (void)shareToWeiBo {
+    JSHAREMessage *message = [JSHAREMessage message];
+    message.text = @"JShare SDK 支持主流社交平台、帮助开发者轻松实现社会化功能！";
+    message.platform = JSHAREPlatformSinaWeibo;
+    message.mediaType = JSHAREText;
+    [JSHAREService share:message handler:^(JSHAREState state, NSError *error) {
+        NSLog(@"分享回调");
+    }];
+}
+
 - (void)buttonAction:(DYZShareButton *)button {
     switch (button.tag) {
         case 0: {
-            
+            [self shareToWeiBo];
         } break;
             
         case 1: {

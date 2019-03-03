@@ -25,6 +25,9 @@ PODS:
     - AXPracticalHUD
     - NJKWebViewProgress
   - CYLTabBarController (1.17.20)
+  - JCore (1.2.6)
+  - JShare (1.6.0):
+    - JCore (~> 1.2)
   - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.15.7)
@@ -54,6 +57,7 @@ DEPENDENCIES:
   - AFNetworking
   - AXWebViewController
   - CYLTabBarController
+  - JShare
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -74,6 +78,8 @@ SPEC REPOS:
     - AXPracticalHUD
     - AXWebViewController
     - CYLTabBarController
+    - JCore
+    - JShare
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -92,6 +98,8 @@ SPEC CHECKSUMS:
   AXPracticalHUD: 821d170b31e050c426ef8754b07b4264a8b1d861
   AXWebViewController: 96566c473fce2806f4da696132b31777f5404c9f
   CYLTabBarController: 376fc15463c582cd5a24a7e9d46a578243bd5b12
+  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JShare: 47cf1b3389ff09c333f0599d57be9f7fe1b43073
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
@@ -102,6 +110,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 00292c75ee52f5c2e4056c4fe911aa7697f5559f
 
-PODFILE CHECKSUM: f5f337e4648f0b1d180d46649189c0072c9b29b1
+PODFILE CHECKSUM: 33dc7aa4eed0e7e7fa06eb44ac9e8a983e3cfbca
 
 COCOAPODS: 1.5.0

@@ -12,12 +12,20 @@
 
 @interface DYZClassCourseController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *models;
 @property (nonatomic, strong) APICourseClassify *request;
 @property (nonatomic, strong) ResponseCourseClassify *response;
 
 @end
 
 @implementation DYZClassCourseController
+
+- (NSMutableArray *)models {
+    if (_models == nil) {
+        _models = [NSMutableArray new];
+    }
+    return _models;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +34,7 @@
     [self setupTableView];
     _request = [APICourseClassify new];
     _request.currPage = 1;
-    _request.pageSize = 5;
+    _request.pageSize = 20;
     _request.classifyId = _classify.classID;
     [self requestClassifyClass];
 }
@@ -36,9 +44,12 @@
     
     [_request startPostWithSuccessBlock:^(ResponseCourseClassify *response, NSDictionary *options) {
         _self.response = response;
+        if (_self.request.currPage == 1) {
+            [_self.models removeAllObjects];
+        }
+        [self.models addObjectsFromArray:_response.content];
         [_self.tableView reloadData];
         [_self endRefreshing];
-        
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         [_self endRefreshing];
     }];
@@ -60,12 +71,12 @@
     
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        //        _self.request.currPage = 1;
+        _self.request.currPage = 1;
         [_self requestClassifyClass];
     }];
     
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        //        _self.request.currPage += 1;
+        _self.request.currPage += 1;
         [_self requestClassifyClass];
     }];
 }
@@ -78,21 +89,21 @@
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DYZClassCourseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    if (_response.content.count) {
-        ClassifyCourse *cousre = _response.content[indexPath.row];
+    if (self.models.count) {
+        ClassifyCourse *cousre = self.models[indexPath.row];
         [cell setClassifyCourse:cousre];
     }
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _response.content.count;
+    return self.models.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    ClassifyCourse *model = _response.content[indexPath.row];
+    ClassifyCourse *model = self.models[indexPath.row];
     [self openWebPageWithUrlString:model.url];
 }
 
