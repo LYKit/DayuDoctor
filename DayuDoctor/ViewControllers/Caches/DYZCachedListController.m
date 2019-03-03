@@ -10,7 +10,7 @@
 #include <sys/param.h>
 #include <sys/mount.h>
 #import "DYZCachingCell.h"
-#import "HSDownloadManager.h"
+#import "YCDownloadManager.h"
 #import "DYZCacheListBottomView.h"
 
 
@@ -31,7 +31,7 @@
     [self setupMemoryLabel];
     [self setupTableView];
     
-    self.models = [[HSDownloadManager sharedInstance].lodingModels mutableCopy];
+    self.models = [[YCDownloadManager finishList] mutableCopy];
 }
 
 - (void)setupTableView {
@@ -133,7 +133,6 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
     return self.models.count;
 }
 
