@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIReservations : LYRequestObject
-@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, assign) NSInteger currPage;
 @property (nonatomic, assign) NSInteger pageSize;
 
 

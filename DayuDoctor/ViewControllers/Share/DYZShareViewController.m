@@ -9,6 +9,7 @@
 #import "DYZShareViewController.h"
 #import "DYZShareButton.h"
 #import <JSHAREService.h>
+#import "ZFNoramlViewController.h"
 
 @interface DYZShareViewController ()
 @property (nonatomic, strong) UIImageView *qrImgView;
@@ -85,7 +86,8 @@
         } break;
             
         case 1: {
-            
+            ZFNoramlViewController *vc = [ZFNoramlViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
         } break;
 
         case 2: {

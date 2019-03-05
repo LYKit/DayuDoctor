@@ -15,42 +15,69 @@
 
 @interface DYZVMeetController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *models;
 @property (nonatomic, strong) ResponseReservations *responseReservations;
-
-
+@property (nonatomic, strong) APIReservations *request;
 @end
 
 @implementation DYZVMeetController
 
+- (NSMutableArray *)models {
+    if (_models == nil) {
+        _models = [NSMutableArray new];
+    }
+    return _models;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的预约";
+    self.tableView.rowHeight = 100;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
     [self.tableView registerNib:[UINib nibWithNibName:kDYZMeetingCell bundle:nil] forCellReuseIdentifier:kDYZMeetingCell];
     
+    
+    _request = [APIReservations new];
+    _request.currPage = 1;
+    _request.pageSize = 20;
+
+    __weak typeof(self) _self = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _self.request.currPage = 1;
+        [_self loadData];
+    }];
+    
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        _self.request.currPage += 1;
+        [_self loadData];
+    }];
+
     [self loadData];
 }
 
 
 - (void)loadData {
-    APIReservations *request = [APIReservations new];
-    request.page = 1;
-    request.pageSize = 20;
     __weak typeof(self) weakSelf = self;
-    [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-        weakSelf.responseReservations = responseObject;
-        [weakSelf.tableView reloadData];
-    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+    [_request startPostWithSuccessBlock:^(ResponseReservations *responseObject, NSDictionary *options) {
         
+        if (_request.currPage == 1) {
+            [self.models removeAllObjects];
+        }
+        
+        [self.models addObjectsFromArray:responseObject.list];
+        [weakSelf.tableView reloadData];
+        [weakSelf endRefreshing];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        [weakSelf endRefreshing];
     }];
 }
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _responseReservations.list.count;
+    return self.models.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,7 +86,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DYZMeetingCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZMeetingCell forIndexPath:indexPath];
-    Reservations *model = _responseReservations.list[indexPath.row];
+    Reservations *model = self.models[indexPath.row];
     cell.model = model;
     __weak typeof(self) weakSelf = self;
     cell.cancelBlock = ^{
@@ -75,7 +102,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     DYZMeetDetailController *detail = [DYZMeetDetailController new];
-    detail.rid = _responseReservations.list[indexPath.row].rid;
+    Reservations *model = self.models[indexPath.row];
+    detail.rid = model.rid;
     [self.navigationController pushViewController:detail animated:YES];
 }
 
@@ -95,6 +123,10 @@
     }];
 }
 
+- (void)endRefreshing {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
 
 
 @end
