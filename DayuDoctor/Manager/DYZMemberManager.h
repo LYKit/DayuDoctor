@@ -34,6 +34,12 @@ typedef struct {
 
 + (void)aotuLogin;
 
++ (void)loginSuccess;
+
++ (void)outLogin;
+
++ (BOOL)isLogin;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -25,7 +25,7 @@ PODS:
     - AXPracticalHUD
     - NJKWebViewProgress
   - CYLTabBarController (1.17.20)
-  - JCore (1.2.6)
+  - JCore (1.2.5)
   - JShare (1.6.0):
     - JCore (~> 1.2)
   - Masonry (1.1.0)
@@ -98,7 +98,7 @@ SPEC CHECKSUMS:
   AXPracticalHUD: 821d170b31e050c426ef8754b07b4264a8b1d861
   AXWebViewController: 96566c473fce2806f4da696132b31777f5404c9f
   CYLTabBarController: 376fc15463c582cd5a24a7e9d46a578243bd5b12
-  JCore: cae516dd2bf1a73b578ce6e1065abd49e709e0f7
+  JCore: 14706de2640b25fb77dbd02332696491407f37c9
   JShare: 47cf1b3389ff09c333f0599d57be9f7fe1b43073
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a

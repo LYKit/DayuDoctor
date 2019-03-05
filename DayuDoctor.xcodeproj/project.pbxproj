@@ -152,6 +152,10 @@
 		C1E54A69222BE0290053D229 /* APIVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A68222BE0290053D229 /* APIVersion.m */; };
 		C1E54A6D222BE9DD0053D229 /* DYZVersionContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A6B222BE9DD0053D229 /* DYZVersionContentCell.m */; };
 		C1E54A6E222BE9DD0053D229 /* DYZVersionContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E54A6C222BE9DD0053D229 /* DYZVersionContentCell.xib */; };
+		C1E54A71222C074E0053D229 /* UINavigationController+HideTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A70222C074E0053D229 /* UINavigationController+HideTabBar.m */; };
+		C1E54A74222C07630053D229 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A73222C07630053D229 /* NSObject+Swizzle.m */; };
+		C1E54A7A222D4C040053D229 /* APIOrderList.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A79222D4C040053D229 /* APIOrderList.m */; };
+		C1E54A7D222E21E30053D229 /* DYZWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A7C222E21E30053D229 /* DYZWebViewController.m */; };
 		C1E8B78B221D4970003CC670 /* APIFAQS.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B78A221D4970003CC670 /* APIFAQS.m */; };
 		C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B78F221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m */; };
 		C1E8B796221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8B791221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m */; };
@@ -463,6 +467,14 @@
 		C1E54A6A222BE9DD0053D229 /* DYZVersionContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZVersionContentCell.h; sourceTree = "<group>"; };
 		C1E54A6B222BE9DD0053D229 /* DYZVersionContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVersionContentCell.m; sourceTree = "<group>"; };
 		C1E54A6C222BE9DD0053D229 /* DYZVersionContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZVersionContentCell.xib; sourceTree = "<group>"; };
+		C1E54A6F222C074E0053D229 /* UINavigationController+HideTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HideTabBar.h"; sourceTree = "<group>"; };
+		C1E54A70222C074E0053D229 /* UINavigationController+HideTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HideTabBar.m"; sourceTree = "<group>"; };
+		C1E54A72222C07620053D229 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		C1E54A73222C07630053D229 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
+		C1E54A78222D4C040053D229 /* APIOrderList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIOrderList.h; sourceTree = "<group>"; };
+		C1E54A79222D4C040053D229 /* APIOrderList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIOrderList.m; sourceTree = "<group>"; };
+		C1E54A7B222E21E30053D229 /* DYZWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZWebViewController.h; sourceTree = "<group>"; };
+		C1E54A7C222E21E30053D229 /* DYZWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZWebViewController.m; sourceTree = "<group>"; };
 		C1E8B789221D4970003CC670 /* APIFAQS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIFAQS.h; sourceTree = "<group>"; };
 		C1E8B78A221D4970003CC670 /* APIFAQS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIFAQS.m; sourceTree = "<group>"; };
 		C1E8B78D221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
@@ -723,6 +735,8 @@
 				C1E54A68222BE0290053D229 /* APIVersion.m */,
 				0DBEA308222BD714005E0F72 /* APIDeleteCollection.h */,
 				0DBEA309222BD714005E0F72 /* APIDeleteCollection.m */,
+				C1E54A78222D4C040053D229 /* APIOrderList.h */,
+				C1E54A79222D4C040053D229 /* APIOrderList.m */,
 			);
 			path = EntityAPI;
 			sourceTree = "<group>";
@@ -1110,6 +1124,12 @@
 				C1C9BB90221512DB0059B3B5 /* DYZHTTPHeader.m */,
 				C1E54A47222A8D7A0053D229 /* UIViewController+DYZWebView.h */,
 				C1E54A48222A8D7A0053D229 /* UIViewController+DYZWebView.m */,
+				C1E54A6F222C074E0053D229 /* UINavigationController+HideTabBar.h */,
+				C1E54A70222C074E0053D229 /* UINavigationController+HideTabBar.m */,
+				C1E54A72222C07620053D229 /* NSObject+Swizzle.h */,
+				C1E54A73222C07630053D229 /* NSObject+Swizzle.m */,
+				C1E54A7B222E21E30053D229 /* DYZWebViewController.h */,
+				C1E54A7C222E21E30053D229 /* DYZWebViewController.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1464,6 +1484,7 @@
 				C1C9BB542212D25C0059B3B5 /* DYZSearchController.m in Sources */,
 				0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */,
 				C1E54A3E222A6A790053D229 /* DYZStaticURL.m in Sources */,
+				C1E54A74222C07630053D229 /* NSObject+Swizzle.m in Sources */,
 				C1E8CEDC22229B3F003CC670 /* UIColor+VTMagic.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C1E54A49222A8D7A0053D229 /* UIViewController+DYZWebView.m in Sources */,
@@ -1507,6 +1528,7 @@
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				C1E54A69222BE0290053D229 /* APIVersion.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
+				C1E54A7A222D4C040053D229 /* APIOrderList.m in Sources */,
 				0DBEA30A222BD714005E0F72 /* APIDeleteCollection.m in Sources */,
 				0D5176582225AC3600A8A1D9 /* YCDownloadItem.m in Sources */,
 				0DD6131821F87C9900C97464 /* DYZMineCell.m in Sources */,
@@ -1519,11 +1541,13 @@
 				0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */,
 				C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */,
 				0DDA159022227501005F6E76 /* DYZCachingCell.m in Sources */,
+				C1E54A7D222E21E30053D229 /* DYZWebViewController.m in Sources */,
 				0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */,
 				C1C9BB91221512DB0059B3B5 /* DYZHTTPHeader.m in Sources */,
 				C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */,
 				0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */,
 				C1AA2180221D401200CC262C /* DYZQACell.m in Sources */,
+				C1E54A71222C074E0053D229 /* UINavigationController+HideTabBar.m in Sources */,
 				0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
@@ -1616,9 +1640,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: XiaoGang Zhou (B4QFSVNR53)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1675,9 +1701,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: XiaoGang Zhou (B4QFSVNR53)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1704,7 +1732,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRE3P3ZM5;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -1712,7 +1740,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DayuDoctor.DayuDoctor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dy.DayuDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1727,7 +1755,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPRE3P3ZM5;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -1735,7 +1763,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DayuDoctor.DayuDoctor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dy.DayuDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

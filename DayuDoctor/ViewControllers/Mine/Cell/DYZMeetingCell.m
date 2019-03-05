@@ -30,9 +30,9 @@
 - (void)setModel:(Reservations *)model {
     _model = model;
     if ([model.status isEqualToString:@"0"]) {
-        _btnStatus.layer.borderColor = [UIColor grayColor].CGColor;
+        _btnStatus.layer.borderColor = [UIColor colorWithHexString:@"333333"].CGColor;
         [_btnStatus setTitle:@"取消预约" forState:UIControlStateNormal];
-        [_btnStatus setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_btnStatus setTitleColor:[UIColor colorWithHexString:@"333333"] forState:UIControlStateNormal];
         _btnStatus.enabled = YES;
     } else if ([model.status isEqualToString:@"1"]) {
         _btnStatus.layer.borderColor = [UIColor colorWithHexString:@"cfb789"].CGColor;

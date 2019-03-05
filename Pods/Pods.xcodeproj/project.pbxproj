@@ -970,7 +970,6 @@
 		9F62416D5E47C5C1687DC9F0DE7FB0C6 /* YYTextParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextParser.m; path = YYKit/Text/String/YYTextParser.m; sourceTree = "<group>"; };
 		9FCE44D36FB52497CE6CD29DDBCBBEA6 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
 		9FE9DDFCAAEDB76B9F33787CF20E2E13 /* Pods-DayuDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DayuDoctor.debug.xcconfig"; sourceTree = "<group>"; };
-		A0AF04435DE1310BD7013E024E94A34A /* libjcore-ios-1.2.6.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = "libjcore-ios-1.2.6.a"; sourceTree = "<group>"; };
 		A26320E196A63888F67F5453CF0C00D3 /* YYTextSelectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextSelectionView.m; path = YYKit/Text/Component/YYTextSelectionView.m; sourceTree = "<group>"; };
 		A269826BDDD426C6D86569B20EC2B771 /* UIView+Toast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Toast.m"; path = "Toast/UIView+Toast.m"; sourceTree = "<group>"; };
 		A2B45F4FC3627FA7920ED3E9B5631D66 /* ZFSmallFloatControlView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFSmallFloatControlView.h; path = ZFPlayer/Classes/ControlView/ZFSmallFloatControlView.h; sourceTree = "<group>"; };
@@ -1145,6 +1144,7 @@
 		FD127D60602A5F645F5458206D6D240F /* YYThreadSafeDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYThreadSafeDictionary.h; path = YYKit/Utility/YYThreadSafeDictionary.h; sourceTree = "<group>"; };
 		FD1C07522E3E30E4932156A7CE0A4861 /* ZFPlayerControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFPlayerControlView.m; path = ZFPlayer/Classes/ControlView/ZFPlayerControlView.m; sourceTree = "<group>"; };
 		FD986C7F321110CF8795AB436118942A /* AXNavigationBackItemInjection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AXNavigationBackItemInjection-dummy.m"; sourceTree = "<group>"; };
+		FDD065DE2AB0EA20D6AA2920E699A729 /* libjcore-ios-1.2.5.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = "libjcore-ios-1.2.5.a"; sourceTree = "<group>"; };
 		FDF2589D5ED916823AFF4283E3187FDF /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+ZFCache.m"; path = "ZFPlayer/Classes/ControlView/UIImageView+ZFCache.m"; sourceTree = "<group>"; };
 		FE09F3D962EBEC7A45BE80666D883688 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		FE4D7475CC4368119AE680AE90F9A32D /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
@@ -1467,14 +1467,6 @@
 				04D9FF7A8BE13B7FAACB01ABDDD5DD9F /* UIWebView+AFNetworking.m */,
 			);
 			name = UIKit;
-			sourceTree = "<group>";
-		};
-		2A1065C279B4C168CE79C669F571E948 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A0AF04435DE1310BD7013E024E94A34A /* libjcore-ios-1.2.6.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		332EC0764F5E85015AA60A916C233238 /* Core */ = {
@@ -1904,7 +1896,7 @@
 		B3BDEDEC264E42AFF7797033AA0C010C /* JCore */ = {
 			isa = PBXGroup;
 			children = (
-				2A1065C279B4C168CE79C669F571E948 /* Frameworks */,
+				BE49504D7B3383B80DE60C8FF5ED0667 /* Frameworks */,
 			);
 			name = JCore;
 			path = JCore;
@@ -1930,6 +1922,14 @@
 				6A09257113847713F0B9758BAE3B5F2C /* NSThread+YYAdd.m */,
 			);
 			name = "no-arc";
+			sourceTree = "<group>";
+		};
+		BE49504D7B3383B80DE60C8FF5ED0667 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDD065DE2AB0EA20D6AA2920E699A729 /* libjcore-ios-1.2.5.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BF551835FD5A8707FB95CB8936A1A370 /* Core */ = {

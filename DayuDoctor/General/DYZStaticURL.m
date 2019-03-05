@@ -25,3 +25,10 @@ NSString *const kEmergencyURL = @"";
 NSString *const kPayCenterURL = @"http://39.96.167.96:8080/h5/uc/recharge";
 // 我的积分
 NSString *const kMineScoreURL = @"http://39.96.167.96:8080/h5/uc/points";
+// 报名的收银台
+NSString *const kPayMethodURL = @"http://39.96.167.96:8080/h5/signup/pay?token=token&amount=";
+
+
+
+
+

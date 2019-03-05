@@ -49,7 +49,7 @@
         if (responseObject.resultcode.integerValue == 0) {
             [DYZMemberManager sharedMemberManger].token = responseObject.token;
             [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPassword.text];
-            [weakSelf loginSuccess];
+            [DYZMemberManager loginSuccess];
             [weakSelf.navigationController popViewControllerAnimated:NO];
         } else {
             [weakSelf.view makeToast:responseObject.resultmsg];
@@ -59,9 +59,6 @@
     }];
 }
 
-- (void)loginSuccess {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccesStatus object:nil];
-}
 
 - (IBAction)didPressedFind:(id)sender {
     [self.navigationController pushViewController:[DYZUpdatePwdController new] animated:YES];

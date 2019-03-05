@@ -21,7 +21,7 @@
 
 
 + (NSDictionary *)replacedParamsDictionary {
-    return @{@"id" : @"rid"};
+    return @{@"rid" : @"id"};
 }
 
 @end

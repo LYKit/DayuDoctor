@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (DYZWebView)
+@interface UIViewController (DYZWebView) 
 
 - (void)openWebPageWithUrlString:(NSString *)urlString;
 

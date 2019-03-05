@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "DYZMemberManager.h"
 #import "FrameworkService/YCDownloadSession/YCDownloadManager.h"
 #import "VideoListInfoModel.h"
 #import <JShare/JSHAREService.h>
+#import "DYZMainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -20,14 +20,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     //注册通知
     if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
         [application registerUserNotificationSettings:settings];
     }
 
-    [DYZMemberManager aotuLogin];
+    
+
     [self setUpDownload];
     
     //极光分享
@@ -49,6 +50,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadTaskFinishedNoti:) name:kDownloadTaskFinishedNoti object:nil];
 }
 #pragma mark notificaton
+//- (void)reloadRootView {
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    DYZMainTabBarController  *root = [[DYZMainTabBarController alloc]init];
+//    self.window.rootViewController = root;
+//    [self.window makeKeyWindow];
+//}
 
 - (void)downloadTaskFinishedNoti:(NSNotification *)noti{
     YCDownloadItem *item = noti.object;

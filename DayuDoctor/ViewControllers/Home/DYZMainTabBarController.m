@@ -25,9 +25,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self createTabBar];
     [self customizeTabBarAppearance];
+
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [DYZMemberManager aotuLogin];
+    });
+
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"guideIsShow"]) {
         NSArray *imageNameArray = @[@"guide1.jpg",@"guide2.jpg",@"guide3.jpg",@"guide4.jpg"];
@@ -35,8 +40,21 @@
         [self.view addSubview:guidePage];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"guideIsShow"];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadView) name:kLoginSuccesStatus object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadView) name:kOutLoginSuccesStatus object:nil];
 }
 
+- (void)reloadView {
+    UIViewController *fourController = nil;
+    if ([DYZMemberManager sharedMemberManger].token.length) {
+        fourController = [[DYZMineViewController alloc] init];
+    } else {
+        fourController = [[DYZLoginController alloc] init];
+    }
+    UINavigationController *fourVC = (UINavigationController *)self.viewControllers[3];
+    fourVC.viewControllers = @[fourController];
+}
 
 
 

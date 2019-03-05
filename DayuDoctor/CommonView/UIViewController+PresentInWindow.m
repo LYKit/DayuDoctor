@@ -7,7 +7,6 @@
 //
 
 #import "UIViewController+PresentInWindow.h"
-
 @implementation UIViewController (PresentInWindow)
 
 - (void)presentInWindow

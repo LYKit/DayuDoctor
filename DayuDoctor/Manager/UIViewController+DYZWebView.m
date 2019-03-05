@@ -8,11 +8,13 @@
 
 #import "UIViewController+DYZWebView.h"
 #import "AXWebViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
+#import "DYZWebViewController.h"
 
-@implementation UIViewController (DYZWebView)
+@implementation UIViewController (DYZWebView) 
 
 - (void)openWebPageWithUrlString:(NSString *)urlString {
-    AXWebViewController *vc = [[AXWebViewController alloc] initWithAddress:urlString];
+    DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:urlString];
     vc.hidesBottomBarWhenPushed = YES;
     vc.showsBackgroundLabel = NO;
     vc.showsToolBar = NO;
@@ -25,6 +27,7 @@
 - (void)didPressedBack {
     
 }
+
 
 
 

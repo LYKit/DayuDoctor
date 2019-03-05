@@ -20,6 +20,8 @@
 #import "APIUserInfo.h"
 #import "DYZMessageController.h"
 #import "DYZUpdateController.h"
+#import "DYZOrderController.h"
+
 
 typedef enum : NSUInteger {
     enumOptionCourse = 0,   // 课程
@@ -149,7 +151,8 @@ typedef enum : NSUInteger {
             [self openWebPageWithUrlString:kPayCenterURL];
         } break;
         case enumOptionOrder: {
-
+            DYZOrderController *vc = [DYZOrderController new];
+            [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionCollection: {
             DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
@@ -185,10 +188,9 @@ typedef enum : NSUInteger {
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionOut: {
-            __weak typeof(self) weakSelf = self;
             UIAlertController *sheetAlert = [UIAlertController alertControllerWithTitle:@"您是否要退出登录" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
             UIAlertAction *action = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-                [weakSelf outLogin];
+                [DYZMemberManager outLogin];
             }];
             UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
             [sheetAlert addAction:action];
@@ -203,13 +205,7 @@ typedef enum : NSUInteger {
 
 
 /// MARK: fuction
-- (void)outLogin {
-    [DYZMemberManager clearMemberInfo];
-//    if (![DYZMemberManager sharedMemberManger].token.length) {
-//        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
-//    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:kOutLoginSuccesStatus object:nil];
-}
+
 
 
 

@@ -54,7 +54,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 120;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -63,7 +63,9 @@
     cell.model = model;
     __weak typeof(self) weakSelf = self;
     cell.cancelBlock = ^{
-        [weakSelf didPressedCancel:model.rid];
+        [LYAlertView showAerltViewWithTitle:@"提示" message:@"是否要取消预约" cancelButtonTtitle:@"返回" ensuerButtonTitle:@"确定" onSureUsingBlock:^{
+            [weakSelf didPressedCancel:model.rid];
+        } onCancelUsingBlock:nil];
     };
     return cell;
 }
@@ -83,8 +85,11 @@
     APIOrderCancel *request = [APIOrderCancel new];
     request.rid = rid;
     __weak typeof(self) weakSelf = self;
-    [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-        [weakSelf.tableView reloadData];
+    [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
+        if (responseObject.resultcode.integerValue == 0) {
+            [weakSelf loadData];
+            [weakSelf.view makeToast:@"取消成功"];
+        }
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];

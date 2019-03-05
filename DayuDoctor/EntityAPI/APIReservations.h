@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *doctorName;
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *orderDate;
-@property (nonatomic, copy) NSString *status; // 0 预约， 1 已完成 -1 已取消
+@property (nonatomic, copy) NSString *status; // 0 预约中， 1 已完成 -1 已取消
 
 
 @end

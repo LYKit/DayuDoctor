@@ -34,39 +34,48 @@
     [super viewDidLoad];
     self.navigationItem.title = @"报名";
     [self loadData];
-    
+    _bgPerfect.hidden = YES;
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"perfectInformation" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:kLoginSuccesStatus object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:kOutLoginSuccesStatus object:nil];
 }
 
 - (void)loadData {
-    __weak typeof(self) weakSelf = self;
-    [[APISignUpDetail new] startPostWithSuccessBlock:^(ResponseSignUpDetail *responseObject, NSDictionary *options) {
-        weakSelf.detail = responseObject.detail;
-        [weakSelf refreshData];
-    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        
-    }];
+    if ([DYZMemberManager isLogin]) {
+        __weak typeof(self) weakSelf = self;
+        [[APISignUpDetail new] startPostWithSuccessBlock:^(ResponseSignUpDetail *responseObject, NSDictionary *options) {
+            weakSelf.detail = responseObject.detail;
+            [weakSelf refreshData];
+        } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+            [weakSelf refreshData];
+        }];
+    } else {
+        [self refreshData];
+    }
 }
 
 - (void)refreshData {
-    if ([_detail.flag boolValue]) {
-        _lblName.text = _detail.name;
-        _lblPhone.text = _detail.telephone;
-        _lblAddress.text = _detail.address;
-        _lblEmail.text = _detail.email;
-        _lblGood.text = _detail.goodtypes;
-        _lblMoney.text = [NSString stringWithFormat:@"报名费：%@",_detail.amount];
-        _lblRemark.text = _detail.remark.length ? [NSString stringWithFormat:@"备注：%@",_detail.remark] : @"备注：擅长科目为报名科目";
-        _bgPerfect.hidden = YES;
+    _lblName.text = _detail.name;
+    _lblPhone.text = _detail.telephone;
+    _lblAddress.text = _detail.address;
+    _lblEmail.text = _detail.email;
+    _lblGood.text = _detail.goodtypes;
+    _lblMoney.text = [NSString stringWithFormat:@"报名费：%@",_detail.amount];
+    _lblRemark.text = _detail.remark.length ? [NSString stringWithFormat:@"备注：%@",_detail.remark] : @"备注：擅长科目为报名科目";
+    _bgPerfect.hidden = YES;
+    if (![_detail.flag boolValue]) {
+        _bgPerfect.hidden = NO;
         [_btnBgPerfect setTitle:@"点击这里完善资料" forState:UIControlStateNormal];
-    } else {
+    } else if (![DYZMemberManager isLogin]) {
         _bgPerfect.hidden = NO;
         [_btnBgPerfect setTitle:@"点击前往登录" forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)didPressApply:(id)sender {
-    
+    NSString *url = [NSString stringWithFormat:@"%@%@",kPayMethodURL,_detail.amount];
+    [self openWebPageWithUrlString:url];
 }
 
 - (IBAction)didPressedperfect:(id)sender {
@@ -77,7 +86,7 @@
         self.hidesBottomBarWhenPushed = NO;
     } else {
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
-        tab.selectedIndex = 3;
+        [tab setSelectedIndex:3];
     }
 }
 

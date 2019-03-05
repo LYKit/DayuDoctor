@@ -62,9 +62,24 @@ NSString * const kOutLoginSuccesStatus = @"outLoginSuccesStatus";
         if (responseObject.resultcode.integerValue == 0) {
             [DYZMemberManager sharedMemberManger].token = responseObject.token;
         }
+        [DYZMemberManager loginSuccess];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
 }
 
++ (void)loginSuccess {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccesStatus object:nil];
+}
+
+
++ (void)outLogin {
+    [DYZMemberManager clearMemberInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOutLoginSuccesStatus object:nil];
+}
+
+
++ (BOOL)isLogin {
+    return [DYZMemberManager sharedMemberManger].token.length;
+}
 @end
