@@ -24,9 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *courseId;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *img;
-@property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *status; // 0 未支付  1已支付
 @property (nonatomic, copy) NSString *url;
-@property (nonatomic, copy) NSString *payurl;
+@property (nonatomic, copy) NSString *payUrl;
 
 @end
 

@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DYZApplyController">
             <connections>
                 <outlet property="bgPerfect" destination="12j-6S-H0b" id="ooP-TL-uPX"/>
+                <outlet property="btnApply" destination="gfs-ho-4UB" id="Ueg-fN-xCT"/>
                 <outlet property="btnBgPerfect" destination="hkn-k1-RTg" id="cDB-FJ-Ll8"/>
                 <outlet property="lblAddress" destination="Xaa-Ou-zwJ" id="iPn-iE-fWU"/>
                 <outlet property="lblEmail" destination="dD1-Y8-mSX" id="vqC-71-cX7"/>

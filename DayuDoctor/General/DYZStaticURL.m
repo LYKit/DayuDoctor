@@ -18,9 +18,9 @@ NSString *const kNBServeURL = @"http://39.96.167.96:8080/h5/yg/gdyl";
 NSString *const kSexServeURL = @"http://39.96.167.96:8080/h5/yg/tsfw";
 // 医馆介绍
 NSString *const kAboutURL = @"http://39.96.167.96:8080/h5/yg/about";
-// 线上急症
-NSString *const kEmergencyURL = @"";
 
+// 聊天
+NSString *const kChatURL = @"http://zixun.dyzy58.com/liaotian.html";
 // 充值中心
 NSString *const kPayCenterURL = @"http://39.96.167.96:8080/h5/uc/recharge";
 // 我的积分

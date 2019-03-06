@@ -11,13 +11,17 @@
 #import "DYZSearchCollectionCell.h"
 #import "UIView+CALayerRelation.h"
 #import "DYZSearchListController.h"
+#import "UIImage+YYAdd.h"
+#import "DYZCacheParentController.h"
+#import "APISearchClear.h"
 
 @interface DYZSearchController () <UISearchBarDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *btnBack;
 
-@property (nonatomic, strong) NSArray *recordList;
+@property (nonatomic, strong) NSMutableArray *recordList;
 
 @end
 
@@ -33,14 +37,20 @@
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:kDYZSearchCollectionCell bundle:nil] forCellWithReuseIdentifier:kDYZSearchCollectionCell];
     
+    UIImage *image = [UIImage imageNamed:@"back"];
+    [self.btnBack setImage:image forState:UIControlStateNormal];
+    
     __weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [weakSelf.searchBar becomeFirstResponder];
     });
+    
 }
 
 
 - (void)loadData {
+    [self.recordList removeAllObjects];
+
     APISearchRecord *request = [APISearchRecord new];
     request.currPage = 1;
     request.pageSize = 10;
@@ -54,10 +64,17 @@
 }
 
 - (IBAction)didPressedDownload:(id)sender {
+    DYZCacheParentController *vc = [DYZCacheParentController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)didPressedClear:(id)sender {
-    
+    __weak typeof(self) weakSelf = self;
+    [[APISearchClear new] startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
+        [weakSelf loadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
 
 - (IBAction)didPressedBack:(id)sender {
@@ -78,7 +95,7 @@
     for (UIView *view in self.searchBar.subviews) {
         for (UIView *subViews in view.subviews) {
             if ([subViews isKindOfClass:[UITextField class]]) {
-                [subViews setRadius:20.0];
+                [subViews setRadius:15.0];
                 subViews.backgroundColor = [UIColor whiteColor];//输入框背景色
                 if (@available(iOS 11.0, *)) {
                     subViews.frame = CGRectMake(0, 7, self.searchBar.frame.size.width, 40);

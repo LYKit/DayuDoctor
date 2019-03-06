@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblRemark;
 @property (weak, nonatomic) IBOutlet UIView *bgPerfect;
 @property (weak, nonatomic) IBOutlet UIButton *btnBgPerfect;
+@property (weak, nonatomic) IBOutlet UIButton *btnApply;
 
 @property (nonatomic, strong) SignUpDetail *detail;
 
@@ -33,12 +34,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"报名";
-    [self loadData];
     _bgPerfect.hidden = YES;
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"perfectInformation" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:kLoginSuccesStatus object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:kOutLoginSuccesStatus object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadData];
 }
 
 - (void)loadData {
@@ -71,19 +76,22 @@
         _bgPerfect.hidden = NO;
         [_btnBgPerfect setTitle:@"点击前往登录" forState:UIControlStateNormal];
     }
+    
+    if ([_detail.signup boolValue]) {
+        [_btnApply setTitle:@"已报名" forState:UIControlStateNormal];
+        [_btnApply setBackgroundColor:[UIColor colorWithHexString:@"d7d7d7"]];
+        _btnApply.enabled = NO;
+    }
 }
 
 - (IBAction)didPressApply:(id)sender {
-    NSString *url = [NSString stringWithFormat:@"%@%@",kPayMethodURL,_detail.amount];
-    [self openWebPageWithUrlString:url];
+    [self openWebPageWithUrlString:_detail.payUrl];
 }
 
 - (IBAction)didPressedperfect:(id)sender {
     if ([DYZMemberManager sharedMemberManger].token.length) {
-        self.hidesBottomBarWhenPushed = YES;
         DYZUserInfoEditorController *vc = [DYZUserInfoEditorController new];
         [self.navigationController pushViewController:vc animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
     } else {
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
         [tab setSelectedIndex:3];

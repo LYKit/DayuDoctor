@@ -133,7 +133,6 @@ typedef enum : NSUInteger {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.hidesBottomBarWhenPushed = YES;
     switch (indexPath.row) {
         case enumOptionCourse: {
             DYZCoursesTableController *vc = [DYZCoursesTableController new];
@@ -174,7 +173,7 @@ typedef enum : NSUInteger {
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionService: {
-            [self openWebPageWithUrlString:kEmergencyURL];
+            [self openWebPageWithUrlString:kChatURL];
         } break;
         case enumOptionUpdate: {
             [self.versionController presentInWindow];
@@ -200,7 +199,6 @@ typedef enum : NSUInteger {
         default:
             break;
     }
-    self.hidesBottomBarWhenPushed = NO;
 }
 
 

@@ -101,6 +101,8 @@ typedef enum : NSUInteger {
     self.magicView.sliderColor = [UIColor whiteColor];
     self.magicView.layoutStyle = VTLayoutStyleDivide;
     self.magicView.switchStyle = VTSwitchStyleDefault;
+    self.magicView.sliderOffset = -10;
+    self.magicView.sliderWidth = 45;
     self.magicView.navigationHeight = IS_IPHONE_X ? 88.f+60 : 64+60;
     self.magicView.navigationInset = UIEdgeInsetsMake(64, 10, 0, 0);
     self.magicView.dataSource = self;
@@ -132,16 +134,12 @@ typedef enum : NSUInteger {
 
 - (void)downloadDidClick {
     DYZCacheParentController *vc = [DYZCacheParentController new];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    vc.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)messageDidClick {
     DYZMessageController *vc = [DYZMessageController new];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    vc.hidesBottomBarWhenPushed = NO;
 }
 
 

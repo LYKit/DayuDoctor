@@ -19,8 +19,9 @@ extern NSString *const kNBServeURL;
 extern NSString *const kSexServeURL;
 // 医馆介绍
 extern NSString *const kAboutURL;
-// 线上急症
-extern NSString *const kEmergencyURL;
+
+// 聊天
+extern NSString *const kChatURL;
 
 // 充值中心
 extern NSString *const kPayCenterURL;

@@ -27,5 +27,10 @@
 @end
 
 @implementation ResponseOrderList
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"list" : [OrderModel class],
+             };
+}
 
 @end

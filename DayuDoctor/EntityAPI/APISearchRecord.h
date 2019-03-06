@@ -23,6 +23,6 @@
 
 @interface ResponseSearchRecord : LYResponseObject
 @property (nonatomic, copy) NSString *total;
-@property (nonatomic, strong) NSArray *record;
+@property (nonatomic, strong) NSMutableArray *record;
 
 @end

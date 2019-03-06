@@ -50,16 +50,16 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
-
     [self registerView];
-    [self createBaseView];
     [self loadData];
+    
+    __weak typeof(self) weakSelf = self;
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+    }];
 }
 
-- (void)createBaseView {
-    
-}
+
 
 - (void)registerView {
     [self.collectionView registerNib:[UINib nibWithNibName:kClassifyCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kClassifyCollectionCell];
@@ -78,8 +78,9 @@ typedef enum : NSUInteger {
     [request startPostWithSuccessBlock:^(ResponseClassify *responseObject, NSDictionary *options) {
         weakSelf.classifyList = responseObject.classifies;
         [weakSelf.collectionView reloadData];
+        [weakSelf.collectionView.mj_header endRefreshing];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        
+        [weakSelf.collectionView.mj_header endRefreshing];
     }];
     
     // 推荐视频接口
@@ -102,6 +103,8 @@ typedef enum : NSUInteger {
     
     // 资讯
     APINewsList *requestNews = [APINewsList new];
+    requestNews.pageSize = 20;
+    requestNews.currPage = 1;
     [requestNews startPostWithSuccessBlock:^(ResponseNewsList *responseObject, NSDictionary *options) {
         weakSelf.newsList = responseObject.content;
         [weakSelf.collectionView reloadData];
@@ -182,7 +185,7 @@ typedef enum : NSUInteger {
             return CGSizeMake(SCREEN_WIDTH, 40);
         } break;
         case enumClassifySection:{
-            return CGSizeMake(70, 75);
+            return CGSizeMake(60, 75);
         } break;
         case enumVideoRecommendSection:{
             CGFloat width = (SCREEN_WIDTH-20-20-1)/3.0;
@@ -241,9 +244,7 @@ typedef enum : NSUInteger {
             } else {
                 DYZClassCourseController *vc = [DYZClassCourseController new];
                 vc.classify = classify;
-                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
-                vc.hidesBottomBarWhenPushed = NO;
             }
         } break;
         case enumVideoRecommendSection:{

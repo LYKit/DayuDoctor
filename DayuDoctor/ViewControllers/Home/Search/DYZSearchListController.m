@@ -12,7 +12,7 @@
 
 @interface DYZSearchListController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray *seachList;
+@property (nonatomic, strong) NSArray<SearchModel *> *seachList;
 
 
 @end
@@ -71,6 +71,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self openWebPageWithUrlString:_seachList[indexPath.row].url];
 }
 
 

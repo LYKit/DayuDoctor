@@ -56,7 +56,7 @@
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
         if (responseObject.resultcode.integerValue == 0) {
-            [weakSelf.view makeToast:@"成功，文案待定"];
+            [weakSelf.view makeToast:@"报名成功"];
         } else {
             [weakSelf.view makeToast:responseObject.resultmsg];
         }

@@ -8,6 +8,8 @@
 
 #import "DYZBaseViewController.h"
 
+
+
 @interface DYZBaseViewController ()
 
 @end
@@ -23,6 +25,9 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.navigationController.navigationBar.translucent = NO;
-
 }
+
+
+
+
 @end

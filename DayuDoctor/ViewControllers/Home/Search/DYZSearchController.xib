@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DYZSearchController">
             <connections>
+                <outlet property="btnBack" destination="S12-nJ-BVF" id="50l-M8-q11"/>
                 <outlet property="collectionView" destination="vwD-Ky-3NI" id="bkp-Tr-5Gb"/>
                 <outlet property="searchBar" destination="7tP-W8-f12" id="9dA-W4-e4s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,26 +27,29 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="请输入搜索内容" translatesAutoresizingMaskIntoConstraints="NO" id="7tP-W8-f12">
-                            <rect key="frame" x="50" y="0.0" width="275" height="73"/>
+                            <rect key="frame" x="45" y="8" width="285" height="56"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S12-nJ-BVF">
-                            <rect key="frame" x="10" y="24" width="22.5" height="25"/>
+                            <rect key="frame" x="15" y="23.5" width="22.5" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="1lX-nX-oK6"/>
                                 <constraint firstAttribute="width" secondItem="S12-nJ-BVF" secondAttribute="height" multiplier="27:30" id="VWV-cD-tEZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" backgroundImage="back"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" backgroundImage="back">
+                                <color key="titleColor" red="0.36470588240000001" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
                                 <action selector="didPressedBack:" destination="-1" eventType="touchUpInside" id="Lp1-hi-Cqg"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejy-s7-egt">
-                            <rect key="frame" x="345" y="27" width="20" height="19"/>
+                            <rect key="frame" x="339" y="26" width="16" height="16"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="20" id="Urj-Km-n4f"/>
-                                <constraint firstAttribute="width" secondItem="Ejy-s7-egt" secondAttribute="height" multiplier="33:31" id="mRS-j7-OeD"/>
+                                <constraint firstAttribute="width" constant="16" id="Urj-Km-n4f"/>
+                                <constraint firstAttribute="width" secondItem="Ejy-s7-egt" secondAttribute="height" multiplier="1:1" id="mRS-j7-OeD"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" backgroundImage="icon_download"/>
@@ -56,15 +60,14 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="7tP-W8-f12" firstAttribute="centerY" secondItem="S12-nJ-BVF" secondAttribute="centerY" id="6J3-9C-Dm5"/>
                         <constraint firstAttribute="height" constant="64" id="GRY-id-qbX"/>
-                        <constraint firstAttribute="trailing" secondItem="Ejy-s7-egt" secondAttribute="trailing" constant="10" id="Ham-nf-zHy"/>
-                        <constraint firstItem="S12-nJ-BVF" firstAttribute="leading" secondItem="Lh5-6H-QGy" secondAttribute="leading" constant="10" id="euZ-QM-ejY"/>
-                        <constraint firstAttribute="trailing" secondItem="7tP-W8-f12" secondAttribute="trailing" constant="50" id="f2A-PH-0eA"/>
-                        <constraint firstItem="Ejy-s7-egt" firstAttribute="centerY" secondItem="7tP-W8-f12" secondAttribute="centerY" id="fHk-B2-whF"/>
-                        <constraint firstAttribute="bottom" secondItem="S12-nJ-BVF" secondAttribute="bottom" constant="15" id="khF-cV-dmd"/>
-                        <constraint firstItem="7tP-W8-f12" firstAttribute="top" secondItem="Lh5-6H-QGy" secondAttribute="top" id="rnh-pJ-hYT"/>
-                        <constraint firstItem="7tP-W8-f12" firstAttribute="leading" secondItem="Lh5-6H-QGy" secondAttribute="leading" constant="50" id="y9S-cn-8ow"/>
+                        <constraint firstAttribute="trailing" secondItem="Ejy-s7-egt" secondAttribute="trailing" constant="20" id="Ham-nf-zHy"/>
+                        <constraint firstAttribute="bottom" secondItem="7tP-W8-f12" secondAttribute="bottom" id="dds-Ya-BNI"/>
+                        <constraint firstItem="S12-nJ-BVF" firstAttribute="leading" secondItem="Lh5-6H-QGy" secondAttribute="leading" constant="15" id="euZ-QM-ejY"/>
+                        <constraint firstAttribute="trailing" secondItem="7tP-W8-f12" secondAttribute="trailing" constant="45" id="f2A-PH-0eA"/>
+                        <constraint firstItem="S12-nJ-BVF" firstAttribute="centerY" secondItem="7tP-W8-f12" secondAttribute="centerY" id="maV-7X-qvN"/>
+                        <constraint firstItem="Ejy-s7-egt" firstAttribute="centerY" secondItem="7tP-W8-f12" secondAttribute="centerY" constant="-2" id="qq0-RY-jcV"/>
+                        <constraint firstItem="7tP-W8-f12" firstAttribute="leading" secondItem="Lh5-6H-QGy" secondAttribute="leading" constant="45" id="y9S-cn-8ow"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-Ml-Fzy">
@@ -76,11 +79,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete" translatesAutoresizingMaskIntoConstraints="NO" id="Enr-ue-6Rd">
-                            <rect key="frame" x="340" y="12.5" width="25" height="25"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lajitong" translatesAutoresizingMaskIntoConstraints="NO" id="Enr-ue-6Rd">
+                            <rect key="frame" x="351.5" y="16.5" width="13.5" height="17"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="gYQ-HA-gII"/>
-                                <constraint firstAttribute="height" constant="25" id="pVY-aQ-Ynl"/>
+                                <constraint firstAttribute="width" secondItem="Enr-ue-6Rd" secondAttribute="height" multiplier="109:139" id="FUS-EW-KUY"/>
+                                <constraint firstAttribute="height" constant="17" id="pVY-aQ-Ynl"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-n5-QWh">
@@ -126,11 +129,12 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="71.200000000000003" y="68.815592203898049"/>
         </view>
     </objects>
     <resources>
-        <image name="back" width="60" height="60"/>
-        <image name="delete" width="40" height="46"/>
-        <image name="icon_download" width="66" height="62"/>
+        <image name="back" width="21" height="21"/>
+        <image name="icon_download" width="60" height="63"/>
+        <image name="lajitong" width="109" height="139"/>
     </resources>
 </document>

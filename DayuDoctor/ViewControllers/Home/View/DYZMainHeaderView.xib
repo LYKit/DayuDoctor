@@ -19,27 +19,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-Sr-ajy">
                     <rect key="frame" x="0.0" y="0.0" width="352" height="64"/>
                     <subviews>
-                        <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="请输入搜索内容" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-6N-fK3">
-                            <rect key="frame" x="50" y="0.0" width="252" height="73"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2G-Eq-UHU">
-                            <rect key="frame" x="10" y="24" width="20" height="25"/>
+                            <rect key="frame" x="15" y="27.5" width="17" height="18"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="height" multiplier="27:34" id="bt0-fd-vUK"/>
-                                <constraint firstAttribute="width" constant="20" id="cfW-dP-8Vv"/>
+                                <constraint firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="height" multiplier="60:64" id="bt0-fd-vUK"/>
+                                <constraint firstAttribute="width" constant="17" id="cfW-dP-8Vv"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" backgroundImage="icon_message"/>
+                            <state key="normal" backgroundImage="icon_news"/>
                             <connections>
                                 <action selector="didPressedMessage:" destination="iN0-l3-epB" eventType="touchUpInside" id="X4Q-TO-cL2"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBL-6F-zUi">
-                            <rect key="frame" x="322" y="27" width="20" height="19"/>
+                            <rect key="frame" x="325" y="27.5" width="17" height="18"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="FBL-6F-zUi" secondAttribute="height" multiplier="33:31" id="Y52-oC-S82"/>
-                                <constraint firstAttribute="width" constant="20" id="dT2-y7-3Ru"/>
+                                <constraint firstAttribute="width" secondItem="FBL-6F-zUi" secondAttribute="height" multiplier="60:63" id="Y52-oC-S82"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" backgroundImage="icon_download"/>
@@ -47,28 +42,54 @@
                                 <action selector="didPressedDownload:" destination="iN0-l3-epB" eventType="touchUpInside" id="hos-yJ-PNI"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHK-Fu-7av">
-                            <rect key="frame" x="262" y="24.5" width="25" height="24"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isf-AG-Ara">
+                            <rect key="frame" x="52" y="19" width="253" height="35"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73n-YM-Gfb">
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="35"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="didPressedSearch:" destination="iN0-l3-epB" eventType="touchUpInside" id="9go-mR-Woi"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入搜索内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvk-t4-KvZ">
+                                    <rect key="frame" x="15" y="10" width="86" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.36470588240000001" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_search" translatesAutoresizingMaskIntoConstraints="NO" id="PC8-Jw-flV">
+                                    <rect key="frame" x="221" y="9" width="17" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="PC8-Jw-flV" secondAttribute="height" multiplier="1:1" id="UU4-u7-CbF"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93754407066570267" green="0.94083948542313489" blue="0.95072572969543145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="25" id="N2Z-Tv-wOi"/>
-                                <constraint firstAttribute="width" secondItem="LHK-Fu-7av" secondAttribute="height" multiplier="35:34" id="NGs-vm-3HN"/>
+                                <constraint firstItem="Qvk-t4-KvZ" firstAttribute="centerY" secondItem="Isf-AG-Ara" secondAttribute="centerY" id="7aP-3v-c3F"/>
+                                <constraint firstItem="73n-YM-Gfb" firstAttribute="top" secondItem="Isf-AG-Ara" secondAttribute="top" id="9bj-t2-J6F"/>
+                                <constraint firstItem="PC8-Jw-flV" firstAttribute="centerY" secondItem="Isf-AG-Ara" secondAttribute="centerY" id="GSZ-F7-bNF"/>
+                                <constraint firstAttribute="trailing" secondItem="73n-YM-Gfb" secondAttribute="trailing" id="LBm-zm-qoF"/>
+                                <constraint firstItem="Qvk-t4-KvZ" firstAttribute="leading" secondItem="Isf-AG-Ara" secondAttribute="leading" constant="15" id="YU5-aG-vTg"/>
+                                <constraint firstItem="73n-YM-Gfb" firstAttribute="leading" secondItem="Isf-AG-Ara" secondAttribute="leading" id="c8f-vG-OhX"/>
+                                <constraint firstAttribute="trailing" secondItem="PC8-Jw-flV" secondAttribute="trailing" constant="15" id="di1-Cl-QiV"/>
+                                <constraint firstAttribute="bottom" secondItem="73n-YM-Gfb" secondAttribute="bottom" id="peM-uj-pL8"/>
+                                <constraint firstAttribute="height" constant="35" id="ril-sw-62x"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" backgroundImage="icon_search"/>
-                        </button>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="4UN-6N-fK3" firstAttribute="leading" secondItem="1L4-Sr-ajy" secondAttribute="leading" constant="50" id="1wb-8x-wkn"/>
-                        <constraint firstAttribute="trailing" secondItem="4UN-6N-fK3" secondAttribute="trailing" constant="50" id="DqI-Mo-lZ4"/>
-                        <constraint firstAttribute="bottom" secondItem="B2G-Eq-UHU" secondAttribute="bottom" constant="15" id="Fxo-gm-TeX"/>
-                        <constraint firstItem="FBL-6F-zUi" firstAttribute="centerY" secondItem="4UN-6N-fK3" secondAttribute="centerY" id="ISi-0y-cxz"/>
-                        <constraint firstItem="LHK-Fu-7av" firstAttribute="centerY" secondItem="4UN-6N-fK3" secondAttribute="centerY" id="cWY-4V-Fkb"/>
-                        <constraint firstItem="LHK-Fu-7av" firstAttribute="trailing" secondItem="4UN-6N-fK3" secondAttribute="trailing" constant="-15" id="egw-nC-2aL"/>
-                        <constraint firstItem="4UN-6N-fK3" firstAttribute="top" secondItem="1L4-Sr-ajy" secondAttribute="top" id="gUn-CP-UO1"/>
-                        <constraint firstItem="4UN-6N-fK3" firstAttribute="centerY" secondItem="B2G-Eq-UHU" secondAttribute="centerY" id="mxU-9D-Opa"/>
+                        <constraint firstItem="PC8-Jw-flV" firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="width" id="F5h-Lm-IaF"/>
+                        <constraint firstItem="Isf-AG-Ara" firstAttribute="leading" secondItem="B2G-Eq-UHU" secondAttribute="trailing" constant="20" id="Vaj-un-a3F"/>
+                        <constraint firstItem="FBL-6F-zUi" firstAttribute="leading" secondItem="Isf-AG-Ara" secondAttribute="trailing" constant="20" id="kRI-BE-z4x"/>
                         <constraint firstAttribute="trailing" secondItem="FBL-6F-zUi" secondAttribute="trailing" constant="10" id="nMJ-BW-hJi"/>
-                        <constraint firstItem="B2G-Eq-UHU" firstAttribute="leading" secondItem="1L4-Sr-ajy" secondAttribute="leading" constant="10" id="zWH-Ig-JPS"/>
+                        <constraint firstItem="FBL-6F-zUi" firstAttribute="centerY" secondItem="B2G-Eq-UHU" secondAttribute="centerY" id="r10-oo-hNJ"/>
+                        <constraint firstItem="Isf-AG-Ara" firstAttribute="centerY" secondItem="B2G-Eq-UHU" secondAttribute="centerY" id="uKF-Db-vXZ"/>
+                        <constraint firstAttribute="bottom" secondItem="Isf-AG-Ara" secondAttribute="bottom" constant="10" id="uUn-9F-qVX"/>
+                        <constraint firstItem="FBL-6F-zUi" firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="width" id="vWp-os-nQH"/>
+                        <constraint firstItem="B2G-Eq-UHU" firstAttribute="leading" secondItem="1L4-Sr-ajy" secondAttribute="leading" constant="15" id="zWH-Ig-JPS"/>
                     </constraints>
                 </view>
             </subviews>
@@ -84,14 +105,14 @@
             <connections>
                 <outlet property="btnDownload" destination="FBL-6F-zUi" id="e1V-Iw-jId"/>
                 <outlet property="btnMessage" destination="B2G-Eq-UHU" id="66H-gc-hp9"/>
-                <outlet property="searchBar" destination="4UN-6N-fK3" id="5B2-VN-MWy"/>
+                <outlet property="viewSearch" destination="Isf-AG-Ara" id="Msz-pr-J2F"/>
             </connections>
             <point key="canvasLocation" x="120" y="-151.12443778110946"/>
         </view>
     </objects>
     <resources>
-        <image name="icon_download" width="66" height="62"/>
-        <image name="icon_message" width="54" height="68"/>
-        <image name="icon_search" width="70" height="68"/>
+        <image name="icon_download" width="60" height="63"/>
+        <image name="icon_news" width="60" height="64"/>
+        <image name="icon_search" width="60" height="60"/>
     </resources>
 </document>

@@ -28,6 +28,7 @@
 @property (nonatomic, copy) NSString *amount;   // 报名费
 @property (nonatomic, copy) NSString *remark;   // 备注
 @property (nonatomic, copy) NSString *img;
+@property (nonatomic, copy) NSString *payUrl;
 
 
 @end

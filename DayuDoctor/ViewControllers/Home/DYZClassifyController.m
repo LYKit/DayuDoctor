@@ -60,7 +60,7 @@
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(70, 75);
+    return CGSizeMake(60, 75);
 }
 
 
@@ -69,9 +69,7 @@
     DYZClassCourseController *vc = [DYZClassCourseController new];
     ClassifyModel *classify = self.classifyList[indexPath.item];
     vc.classify = classify;
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    vc.hidesBottomBarWhenPushed = NO;
 }
 
 @end

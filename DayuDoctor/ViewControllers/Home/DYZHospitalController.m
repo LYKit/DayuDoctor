@@ -32,12 +32,9 @@
 - (IBAction)didPressedAppointment:(id)sender {
 
     AXWebViewController *vc = [[AXWebViewController alloc] initWithAddress:kAppointmentURL];
-    vc.hidesBottomBarWhenPushed = YES;
     vc.showsBackgroundLabel = NO;
     vc.navigationType = AXWebViewControllerNavigationBarItem;
     [self.navigationController pushViewController:vc animated:YES];
-    vc.hidesBottomBarWhenPushed = NO;
-
 }
 
 // 医馆介绍
@@ -62,7 +59,7 @@
 
 // 线上急症
 - (IBAction)didPressedemergency:(id)sender {
-    [self openWebPageWithUrlString:kEmergencyURL];
+    [self openWebPageWithUrlString:kChatURL];
 }
 
 

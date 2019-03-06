@@ -13,6 +13,7 @@
 #import "DYZApplyController.h"
 #import "DHGuidePageHUD.h"
 #import "DYZLoginController.h"
+#import "DYZBaseNavigationController.h"
 
 
 @interface DYZMainTabBarController ()
@@ -52,7 +53,7 @@
     } else {
         fourController = [[DYZLoginController alloc] init];
     }
-    UINavigationController *fourVC = (UINavigationController *)self.viewControllers[3];
+    DYZBaseNavigationController *fourVC = (DYZBaseNavigationController *)self.viewControllers[3];
     fourVC.viewControllers = @[fourController];
 }
 
@@ -60,29 +61,19 @@
 
 - (void)createTabBar {
     DYZMainViewController *firstViewController = [[DYZMainViewController alloc] init];
-    UIViewController *firstNavigationController = [[UINavigationController alloc]
+    UIViewController *firstNavigationController = [[DYZBaseNavigationController alloc]
                                                    initWithRootViewController:firstViewController];
     DYZClassifyController *secondViewController = [[DYZClassifyController alloc] init];
-    UIViewController *secondNavigationController = [[UINavigationController alloc]
+    UIViewController *secondNavigationController = [[DYZBaseNavigationController alloc]
                                                     initWithRootViewController:secondViewController];
     DYZApplyController *thirdViewController = [[DYZApplyController alloc] init];
-    UIViewController *thirdNavigationController = [[UINavigationController alloc]
+    UIViewController *thirdNavigationController = [[DYZBaseNavigationController alloc]
                                                     initWithRootViewController:thirdViewController];
     
     UIViewController *fourNavigationController = nil;
     DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
-    fourNavigationController = [[UINavigationController alloc]
+    fourNavigationController = [[DYZBaseNavigationController alloc]
                                 initWithRootViewController:fourViewController];
-
-//    if ([DYZMemberManager sharedMemberManger].token.length) {
-//        DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
-//        fourNavigationController = [[UINavigationController alloc]
-//                                                      initWithRootViewController:fourViewController];
-//    } else {
-//        DYZLoginController *fourViewController = [[DYZLoginController alloc] init];
-//        fourNavigationController = [[UINavigationController alloc]
-//                                                      initWithRootViewController:fourViewController];
-//    }
 
     [self customizeTabBarForController];
     [self setViewControllers:@[firstNavigationController,
@@ -94,20 +85,20 @@
 - (void)customizeTabBarForController {
     
     NSDictionary *dict1 = @{CYLTabBarItemTitle : @"首页",
-                            CYLTabBarItemImage : @"ico_logo_offline_36",
-                            CYLTabBarItemSelectedImage : @"ico_logo_online_36",
+                            CYLTabBarItemImage : @"icon_home",
+                            CYLTabBarItemSelectedImage : @"icon_home2",
                             };
     NSDictionary *dict2 = @{CYLTabBarItemTitle : @"分类",
-                            CYLTabBarItemImage : @"ico_rec_nor",
-                            CYLTabBarItemSelectedImage : @"ico_rec_pre",
+                            CYLTabBarItemImage : @"icon_catgory",
+                            CYLTabBarItemSelectedImage : @"icon_catgory2",
                             };
     NSDictionary *dict3 = @{CYLTabBarItemTitle : @"报名",
-                            CYLTabBarItemImage : @"ico_send_nor",
-                            CYLTabBarItemSelectedImage : @"ico_send_pre",
+                            CYLTabBarItemImage : @"icon_signup",
+                            CYLTabBarItemSelectedImage : @"icon_signup2",
                             };
     NSDictionary *dict4 = @{CYLTabBarItemTitle : @"我的",
-                            CYLTabBarItemImage : @"order_btn_gray_nor",
-                            CYLTabBarItemSelectedImage : @"order_btn_blue_p",
+                            CYLTabBarItemImage : @"icon_me",
+                            CYLTabBarItemSelectedImage : @"icon_me2",
                             };
     
     NSArray *tabBarItemsAttributes = @[dict1,dict2,dict3,dict4];
