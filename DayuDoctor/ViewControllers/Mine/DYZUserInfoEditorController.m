@@ -66,8 +66,8 @@
     request.name = _txtName.text;
     request.telephone = _txtPhone.text;
     request.email = _txtEmail.text;
-    request.address = @"北京";
-    request.goodtypes = @"开发";
+    request.address = _txtAddress.text;
+    request.goodtypes = _txtGoodtypes.text;
     request.img = @"123";
 #warning  需处理
     __weak typeof(self) weakSelf = self;
