@@ -45,14 +45,15 @@ static LYRequestManager *_sharedClient;
 
 
 
-- (NSURLSessionDataTask *)POSTHTTPBody:(NSString *)URLString
+- (NSURLSessionDataTask *)RequestHTTPBody:(NSString *)URLString
+                                   method:(NSString *)method
                     parameters:(NSDictionary *)parameters
                       progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
                        success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                        failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure
 {
     NSError *serializationError = nil;
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&serializationError];
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&serializationError];
     
     NSString *json = [parameters jsonStringEncoded];
     NSData *body  =[json dataUsingEncoding:NSUTF8StringEncoding];

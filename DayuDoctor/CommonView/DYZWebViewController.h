@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithWebUrlString:(NSString *)urlString;
 
+@property (nonatomic, weak) UIViewController *fromController;
+
 @end
 
 NS_ASSUME_NONNULL_END

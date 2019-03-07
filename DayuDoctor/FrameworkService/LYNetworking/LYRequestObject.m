@@ -99,7 +99,7 @@
     [self.requestManager configHeaderParams:_headerParams];
     [self.requestManager configHeaderParams:[DYZHTTPHeader commonHeader]];
 
-    self.requestTask = [_requestManager POSTHTTPBody:_interfaceURL parameters:parameterdic progress:^(NSProgress * _Nonnull uploadProgress) {
+    self.requestTask = [_requestManager RequestHTTPBody:_interfaceURL method:method parameters:parameterdic progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);
         }

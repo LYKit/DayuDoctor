@@ -10,6 +10,8 @@
 
 @interface ZFNoramlViewController : UIViewController
 
+@property (nonatomic, copy) NSString *videoId;
+
 
 @end
 

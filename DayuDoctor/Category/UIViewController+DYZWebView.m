@@ -15,6 +15,7 @@
 
 - (void)openWebPageWithUrlString:(NSString *)urlString {
     DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:urlString];
+    vc.fromController = self;
     vc.showsBackgroundLabel = NO;
     vc.showsToolBar = NO;
     vc.navigationType = AXWebViewControllerNavigationBarItem;

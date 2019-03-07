@@ -19,9 +19,6 @@
         SEL newSel1 = @selector(dyz_viewWillAppear:);
         [self swizzleInstanceSelector:orgSel1 withNewSelector:newSel1];
         
-//        SEL orgSel2 = @selector(viewWillDisappear:);
-//        SEL newSel2 = @selector(dyz_viewWillDisappear:);
-//        [self swizzleInstanceSelector:orgSel2 withNewSelector:newSel2];
     });
 }
 

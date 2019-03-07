@@ -27,8 +27,9 @@ extern NSString *const kChatURL;
 extern NSString *const kPayCenterURL;
 // 我的积分
 extern NSString *const kMineScoreURL;
-// 报名的收银台
-extern NSString *const kPayMethodURL;
+
+// 播放视频和下载视频的url
+extern NSString *const kVideoURL;
 
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "DYZWebViewController.h"
+#import "ZFNoramlViewController.h"
 
 @interface DYZWebViewController () <WKScriptMessageHandler>
 @property (nonatomic, strong) WKUserContentController *userController;
@@ -38,6 +39,10 @@
     if ([message.name isEqualToString:@"playVideo"]) {
         NSDictionary *params = message.body;
         NSLog(@"%@",params[@"videoId"]);
+        
+        ZFNoramlViewController *vc = [ZFNoramlViewController new];
+        vc.videoId = params[@"videoId"];
+        [_fromController.navigationController pushViewController:vc animated:YES];
     }
 }
 

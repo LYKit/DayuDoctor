@@ -26,6 +26,8 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 @property (nonatomic, strong) UIButton *downBtn;
 @property (nonatomic, strong) UIButton *fileBtn;
 @property (nonatomic, strong) NSArray <NSURL *>*assetURLs;
+@property (nonatomic, copy) NSString *videoUrl;
+
 @end
 
 @implementation ZFNoramlViewController
@@ -147,12 +149,12 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 //        item.enableSpeed = true;
 //        [YCDownloadManager startDownloadWithItem:item];
 //    }
-    NSString *url = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h";
-    url = @"http://vd1.bdstatic.com/mda-hippg2tb6m76yzn5/mda-hippg2tb6m76yzn5.mp4?playlist=%5B%22hd%22%2C%22sc%22%5D&auth_key=1506245036-0-0-ad4426cc88fef724b489fd33f2346aef&bcevod_channel=pae_search";
+//    NSString *url = @"https://www.apple.com/105/media/cn/mac/family/2018/46c4b917_abfd_45a3_9b51_4e3054191797/films/bruce/mac-bruce-tpl-cn-2018_1280x720h";
+//    url = @"http://vd1.bdstatic.com/mda-hippg2tb6m76yzn5/mda-hippg2tb6m76yzn5.mp4?playlist=%5B%22hd%22%2C%22sc%22%5D&auth_key=1506245036-0-0-ad4426cc88fef724b489fd33f2346aef&bcevod_channel=pae_search";
     VideoListInfoModel *model = [VideoListInfoModel new];
     model.title = @"test";
-    model.video_url = url;
-    YCDownloadItem *item = [[YCDownloadItem alloc] initWithUrl:url fileId:@"1000"];
+    model.video_url = _videoUrl;
+    YCDownloadItem *item = [[YCDownloadItem alloc] initWithUrl:_videoUrl fileId:@"1000"];
     item.enableSpeed = YES;
     item.extraData = [VideoListInfoModel dateWithInfoModel:model];
     [YCDownloadManager startDownloadWithItem:item];
@@ -254,6 +256,11 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
         [_downBtn addTarget:self action:@selector(downClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _downBtn;
+}
+
+- (void)setVideoId:(NSString *)videoId {
+    _videoId = videoId;
+    _videoUrl = [NSString stringWithFormat:@"%@id=%@",kVideoURL,videoId];
 }
 
 @end
