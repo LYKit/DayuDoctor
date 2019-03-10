@@ -49,11 +49,14 @@
     
     NSMutableArray *buttons = [NSMutableArray new];
     NSArray *titles = @[@"新浪微博", @"微信好友", @"微信朋友圈", @"短信"];
+    NSArray *images = @[@"icon_weibo.jpg", @"icon_wechat.jpg", @"icon_friend.jpg", @"icon_sms.jpg"];
     for (NSInteger i = 0; i < titles.count; ++i) {
         DYZShareButton *button = [DYZShareButton new];
         button.userInteractionEnabled = YES;
         NSString *title = titles[i];
         button.titleLabel.text = title;
+        UIImage *image = [UIImage imageNamed:images[i]];
+        button.imageView.image = image;
         [self.view addSubview:button];
         [buttons addObject:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {

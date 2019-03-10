@@ -38,9 +38,14 @@
     
     self.requestMessage.currPage = 1;
     self.requestMessage.pageSize = 20;
+    self.requestMessage.dataSource = self.models;
+    self.requestMessage.noResultView = self.tableView;
     
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
         _self.requestMessage.currPage = 1;
         [_self loadData];
     }];
@@ -64,9 +69,7 @@
         }
         [weakSelf.models addObjectsFromArray:responseObject.list];
         [weakSelf.tableView reloadData];
-        [self endRefreshing];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [self endRefreshing];
     }];
 }
 
@@ -95,12 +98,6 @@
         _requestMessage = [APIMessage new];
     }
     return _requestMessage;
-}
-
-
-- (void)endRefreshing {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
 }
 
 @end

@@ -27,9 +27,10 @@
     [self setupView];
     _request = [APIRecomcode new];
     
-    [_request startGetWithSuccessBlock:^(ResponseRecomcode *responseObject, NSDictionary *options) {
+    [_request startPostWithSuccessBlock:^(ResponseRecomcode *responseObject, NSDictionary *options) {
         _response = responseObject;
         _codeLabel.text = _response.recomcode;
+        _hasPromotLabel.text = [NSString stringWithFormat:@"您已经推广%@人", _response.num];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];

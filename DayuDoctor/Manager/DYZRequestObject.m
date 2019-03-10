@@ -29,6 +29,9 @@
             if (response.resultcode.integerValue == 0) {
                 if (self.noResultView) {
                     id container = response.resultDict[@"content"];
+                    if (!container) {
+                        container = response.resultDict[@"list"];
+                    }
                     if ([container isKindOfClass:[NSArray class]]) {
                         NSArray *content = (NSArray *)container;
                         if (content.count < 20) { //没有更多数据
@@ -57,13 +60,13 @@
         }
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         fail(error,options);
-        if (self.noResultView) {
-            _isError = YES;
-            [self endRefreshing];
-            [self showNoMoreDataView];
-        } else {
-            [weakSelf showErrorDescription:error.description];
-        }
+//        if (self.noResultView) {
+//            _isError = YES;
+//            [self endRefreshing];
+////            [self showNoMoreDataView];
+//        } else {
+//        }
+        [weakSelf showErrorDescription:error.description];
     }];
     
 }
@@ -109,17 +112,24 @@
 
 - (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
     UIView *view = [UIView new];
-    view.backgroundColor = [UIColor greenColor];
     [scrollView addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(scrollView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    if (_isError) {
-        view.backgroundColor = [UIColor redColor];
-    } else {
-        view.backgroundColor = [UIColor greenColor];
-    }
+//    if (_isError) {
+//        view.backgroundColor = [UIColor redColor];
+//    } else {
+//        view.backgroundColor = [UIColor greenColor];
+//    }
+    UIImage *image = [UIImage imageNamed:@"icon_noresult.jpg"];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [view addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(view);
+        make.size.mas_equalTo(image.size);
+    }];
+    
     return view;
 }
 

@@ -34,6 +34,9 @@
     
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
         _self.requestQA.currPage = 1;
         [_self loadData];
     }];
@@ -46,6 +49,8 @@
     
     self.requestQA.currPage = 1;
     self.requestQA.pageSize = 20;
+    self.requestQA.dataSource = self.models;
+    self.requestQA.noResultView = self.tableView;
 
     [self loadData];
 }
@@ -58,16 +63,10 @@
         }
         [self.models addObjectsFromArray:responseObject.list];
         [weakSelf.tableView reloadData];
-        [self endRefreshing];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [self endRefreshing];
     }];
 }
 
-- (void)endRefreshing {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-}
 
 /// MARK: tableview'delegate
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
