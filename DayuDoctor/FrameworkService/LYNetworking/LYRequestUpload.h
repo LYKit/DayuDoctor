@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LYRequestUpload : LYRequestObject
 
-//@property (nonatomic, strong) UIImage *upIMG;
-//@property (nonatomic, copy) NSString *fileName;
-//@property (nonatomic, copy) NSString *mimeType;
+@property (nonatomic, strong) UIImage *uploadImage;
+@property (nonatomic, copy) NSString *file;
+@property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, copy) NSString *mimeType;
 
 @end
 

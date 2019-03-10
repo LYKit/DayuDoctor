@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *goodtypes; // 小二中医这些
 @property (nonatomic, copy) NSString *flag; // 是否提交资料
 @property (nonatomic, copy) NSString *signup; // 是否报名
+@property (nonatomic, copy) NSString *img;
 
 @end
 

@@ -52,6 +52,7 @@
                 } else {
                     LYNetworkError *customError = [LYErrorConfig networkError:nil rspCode:response.resultcode.integerValue];
                     fail(customError, nil);
+                    [weakSelf showErrorDescription:response.resultmsg];
                 }
             }
             [self endRefreshing];
@@ -60,12 +61,6 @@
         }
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         fail(error,options);
-//        if (self.noResultView) {
-//            _isError = YES;
-//            [self endRefreshing];
-////            [self showNoMoreDataView];
-//        } else {
-//        }
         [weakSelf showErrorDescription:error.description];
     }];
     
@@ -116,18 +111,15 @@
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(scrollView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
-    
-//    if (_isError) {
-//        view.backgroundColor = [UIColor redColor];
-//    } else {
-//        view.backgroundColor = [UIColor greenColor];
-//    }
+
     UIImage *image = [UIImage imageNamed:@"icon_noresult.jpg"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [view addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(view);
         make.size.mas_equalTo(image.size);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(84);
     }];
     
     return view;

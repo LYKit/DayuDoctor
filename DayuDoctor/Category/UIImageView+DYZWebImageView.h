@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+WebCache.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)sd_setImageWithURLString:(nullable NSString *)urlString;
 
+- (void)sd_setImageWithURLString:(nullable NSString *)urlString completed:(nullable SDExternalCompletionBlock)completedBlock;
 @end
 
 NS_ASSUME_NONNULL_END

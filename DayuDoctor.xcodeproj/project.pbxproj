@@ -57,7 +57,6 @@
 		C11C645D21F890D7000D0CB7 /* APIHomeCourseList.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C645C21F890D7000D0CB7 /* APIHomeCourseList.m */; };
 		C11C646421F98991000D0CB7 /* APIHomeBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C646321F98991000D0CB7 /* APIHomeBanner.m */; };
 		C123DAD52234D2F8000E5C85 /* APIUploadImg.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAD42234D2F8000E5C85 /* APIUploadImg.m */; };
-		C123DAD82235077A000E5C85 /* LYRequestManager2.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAD62235077A000E5C85 /* LYRequestManager2.m */; };
 		C123DAE622351026000E5C85 /* ShowPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DADA22351026000E5C85 /* ShowPickerView.m */; };
 		C123DAE722351026000E5C85 /* GLCoderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DADE22351026000E5C85 /* GLCoderObject.m */; };
 		C123DAE822351026000E5C85 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DADF22351026000E5C85 /* CityModel.m */; };
@@ -356,8 +355,6 @@
 		C11C646321F98991000D0CB7 /* APIHomeBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIHomeBanner.m; sourceTree = "<group>"; };
 		C123DAD32234D2F8000E5C85 /* APIUploadImg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIUploadImg.h; sourceTree = "<group>"; };
 		C123DAD42234D2F8000E5C85 /* APIUploadImg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIUploadImg.m; sourceTree = "<group>"; };
-		C123DAD62235077A000E5C85 /* LYRequestManager2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYRequestManager2.m; path = DayuDoctor/FrameworkService/LYRequestManager2.m; sourceTree = SOURCE_ROOT; };
-		C123DAD72235077A000E5C85 /* LYRequestManager2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYRequestManager2.h; path = DayuDoctor/FrameworkService/LYRequestManager2.h; sourceTree = SOURCE_ROOT; };
 		C123DADA22351026000E5C85 /* ShowPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPickerView.m; sourceTree = "<group>"; };
 		C123DADB22351026000E5C85 /* ShowPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPickerView.h; sourceTree = "<group>"; };
 		C123DADD22351026000E5C85 /* DistrictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictModel.h; sourceTree = "<group>"; };
@@ -1128,8 +1125,6 @@
 			children = (
 				C13A5E9421EDD2E400493EE7 /* LYRequestManager.h */,
 				C13A5E9321EDD2E400493EE7 /* LYRequestManager.m */,
-				C123DAD72235077A000E5C85 /* LYRequestManager2.h */,
-				C123DAD62235077A000E5C85 /* LYRequestManager2.m */,
 				C108B56D22317EB9002AC7BD /* LYRequestUpload.h */,
 				C108B56E22317EB9002AC7BD /* LYRequestUpload.m */,
 				C13A5E6921EDCF0D00493EE7 /* LYErrorConfig.h */,
@@ -1876,7 +1871,6 @@
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C123DAEB22351026000E5C85 /* ProvinceModel.m in Sources */,
 				C1E8CEB4222273AC003CC670 /* UIView+CALayerRelation.m in Sources */,
-				C123DAD82235077A000E5C85 /* LYRequestManager2.m in Sources */,
 				C199DBCC222FBE8200183098 /* UIViewController+GKCategory.m in Sources */,
 				C1C9BB672212D4100059B3B5 /* DYZFaceTeachController.m in Sources */,
 				C1C9BB5D2212D3000059B3B5 /* DYZQAViewController.m in Sources */,
@@ -2220,7 +2214,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3WG4X3PL2V;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -2244,7 +2238,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3WG4X3PL2V;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
