@@ -45,6 +45,9 @@
 		0DF2D8C522244D3000CCF1F1 /* DYZShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2D8C422244D3000CCF1F1 /* DYZShareButton.m */; };
 		0DF2D8C922245CE600CCF1F1 /* DYZCacheListBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2D8C822245CE600CCF1F1 /* DYZCacheListBottomView.m */; };
 		A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */; };
+		C108B56622316504002AC7BD /* DYZRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C108B56522316504002AC7BD /* DYZRequestObject.m */; };
+		C108B569223179EA002AC7BD /* LXFPhotoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C108B568223179EA002AC7BD /* LXFPhotoHelper.m */; };
+		C108B56F22317EB9002AC7BD /* LYRequestUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = C108B56E22317EB9002AC7BD /* LYRequestUpload.m */; };
 		C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */; };
 		C11C643B21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C11C643921F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib */; };
 		C11C643F21F85BC7000D0CB7 /* DYZNewsRollCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C643D21F85BC7000D0CB7 /* DYZNewsRollCollectionCell.m */; };
@@ -319,6 +322,12 @@
 		0DF2D8C722245CE600CCF1F1 /* DYZCacheListBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCacheListBottomView.h; sourceTree = "<group>"; };
 		0DF2D8C822245CE600CCF1F1 /* DYZCacheListBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCacheListBottomView.m; sourceTree = "<group>"; };
 		305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.release.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.release.xcconfig"; sourceTree = "<group>"; };
+		C108B56422316504002AC7BD /* DYZRequestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZRequestObject.h; sourceTree = "<group>"; };
+		C108B56522316504002AC7BD /* DYZRequestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZRequestObject.m; sourceTree = "<group>"; };
+		C108B567223179EA002AC7BD /* LXFPhotoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXFPhotoHelper.h; sourceTree = "<group>"; };
+		C108B568223179EA002AC7BD /* LXFPhotoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXFPhotoHelper.m; sourceTree = "<group>"; };
+		C108B56D22317EB9002AC7BD /* LYRequestUpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYRequestUpload.h; sourceTree = "<group>"; };
+		C108B56E22317EB9002AC7BD /* LYRequestUpload.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYRequestUpload.m; sourceTree = "<group>"; };
 		C11C643721F85BB1000D0CB7 /* DYZHeadImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZHeadImageCollectionCell.h; sourceTree = "<group>"; };
 		C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZHeadImageCollectionCell.m; sourceTree = "<group>"; };
 		C11C643921F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZHeadImageCollectionCell.xib; sourceTree = "<group>"; };
@@ -781,6 +790,8 @@
 		0D8683C121F47809002E255A /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
+				C108B567223179EA002AC7BD /* LXFPhotoHelper.h */,
+				C108B568223179EA002AC7BD /* LXFPhotoHelper.m */,
 				C199DC00222FD30500183098 /* Aspects */,
 				C199DBF3222FD30500183098 /* AXIndicatorView */,
 				C199DBEC222FD30400183098 /* AXNavigationBackItemInjection */,
@@ -1055,6 +1066,8 @@
 			children = (
 				C13A5E9421EDD2E400493EE7 /* LYRequestManager.h */,
 				C13A5E9321EDD2E400493EE7 /* LYRequestManager.m */,
+				C108B56D22317EB9002AC7BD /* LYRequestUpload.h */,
+				C108B56E22317EB9002AC7BD /* LYRequestUpload.m */,
 				C13A5E6921EDCF0D00493EE7 /* LYErrorConfig.h */,
 				C13A5E5B21EDCF0D00493EE7 /* LYErrorConfig.m */,
 				C13A5E6C21EDCF0D00493EE7 /* LYInterfaceConfig.h */,
@@ -1481,6 +1494,8 @@
 				C1C9BB8D221512AF0059B3B5 /* DYZMemberManager.m */,
 				C1C9BB8F221512DB0059B3B5 /* DYZHTTPHeader.h */,
 				C1C9BB90221512DB0059B3B5 /* DYZHTTPHeader.m */,
+				C108B56422316504002AC7BD /* DYZRequestObject.h */,
+				C108B56522316504002AC7BD /* DYZRequestObject.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1846,6 +1861,7 @@
 				C199DBC9222FBE8200183098 /* UIBarButtonItem+GKCategory.m in Sources */,
 				0D4BB9022219664A007B37F8 /* DYZVipRightsController.m in Sources */,
 				0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */,
+				C108B569223179EA002AC7BD /* LXFPhotoHelper.m in Sources */,
 				C1C9BB7E2213C2A40059B3B5 /* APILogin.m in Sources */,
 				C1C9BB542212D25C0059B3B5 /* DYZSearchController.m in Sources */,
 				0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */,
@@ -1855,6 +1871,7 @@
 				C1E8CEDC22229B3F003CC670 /* UIColor+VTMagic.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C199DBCD222FBE8200183098 /* GKNavigationBar.m in Sources */,
+				C108B56622316504002AC7BD /* DYZRequestObject.m in Sources */,
 				C199DB98222EACDF00183098 /* DYZOrderInfoCell.m in Sources */,
 				C1E54A49222A8D7A0053D229 /* UIViewController+DYZWebView.m in Sources */,
 				C17E4CCC21F9BB7F0094CC99 /* DYZVideoReusableView.m in Sources */,
@@ -1872,6 +1889,7 @@
 				C199DBC5222FBE8200183098 /* GKBaseTransitionAnimation.m in Sources */,
 				0D8683EC21F492A7002E255A /* DYZNewsTableCell.m in Sources */,
 				0D5176552225AC3600A8A1D9 /* YCDownloader.m in Sources */,
+				C108B56F22317EB9002AC7BD /* LYRequestUpload.m in Sources */,
 				C1C9BB3B2212C1450059B3B5 /* DYZLoginController.m in Sources */,
 				C1E8B796221D5EC5003CC670 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				C199DC21222FD30500183098 /* AXSpinningWaitCursor.m in Sources */,

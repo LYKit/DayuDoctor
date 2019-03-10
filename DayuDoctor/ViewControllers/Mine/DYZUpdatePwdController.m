@@ -32,7 +32,7 @@ static NSInteger const countDownSecond = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = [DYZMemberManager sharedMemberManger].token.length?  @"修改密码" : @"忘记密码";
+    self.title = [DYZMemberManager isLogin] ?  @"修改密码" : @"忘记密码";
     _index = 0;
 }
 
@@ -56,14 +56,12 @@ static NSInteger const countDownSecond = 60;
     request.userpwd = _txtPwdAgain.text;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseUpdatePwd *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [DYZMemberManager sharedMemberManger].token = responseObject.token;
-            [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPwd.text];
-            [weakSelf.view makeToast:@"修改成功"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakSelf.navigationController popViewControllerAnimated:YES];
-            });
-        }
+        [DYZMemberManager sharedMemberManger].token = responseObject.token;
+        [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPwd.text];
+        [weakSelf.view makeToast:@"修改成功"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -79,9 +77,7 @@ static NSInteger const countDownSecond = 60;
         self.requestCode.mobile = _txtUserName.text;
         __weak typeof(self) weakSelf = self;
         [self.requestCode startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-            if (responseObject.resultcode.integerValue == 0) {
-                [weakSelf sendCodeCountDown];
-            }
+            [weakSelf sendCodeCountDown];
         } failBlock:^(LYNetworkError *error, NSDictionary *options) {
             
         }];

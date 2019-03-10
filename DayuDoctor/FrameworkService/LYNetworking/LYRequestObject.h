@@ -38,4 +38,10 @@
 @property (assign, nonatomic) BOOL isCache;
 
 
+
+
+
+
+
+
 @end

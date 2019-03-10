@@ -6,13 +6,13 @@
 //  Copyright © 2019年 大禹中医. All rights reserved.
 //
 
-#import "LYRequestObject.h"
+#import "DYZRequestObject.h"
 #import "LYResponseObject.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APIVersion : LYRequestObject
+@interface APIVersion : DYZRequestObject
 @property (nonatomic, copy) NSString *version;
 
 

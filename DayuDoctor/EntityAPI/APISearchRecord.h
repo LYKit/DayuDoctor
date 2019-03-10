@@ -6,11 +6,11 @@
 //  Copyright © 2019年 大禹中医. All rights reserved.
 //
 
-#import "LYRequestObject.h"
+#import "DYZRequestObject.h"
 #import "LYResponseObject.h"
 
 
-@interface APISearchRecord : LYRequestObject
+@interface APISearchRecord : DYZRequestObject
 
 @property (nonatomic, assign) NSInteger currPage;
 @property (nonatomic, assign) NSInteger pageSize;

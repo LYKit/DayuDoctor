@@ -35,6 +35,8 @@
     _txtAddress.textLeftOffset = 20;
 
     _constraintOfBgWidth.constant = kScreenWidth;
+    
+    
 }
 
 
@@ -55,14 +57,13 @@
     request.address = _txtAddress.text;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [weakSelf.view makeToast:@"报名成功"];
-        } else {
-            [weakSelf.view makeToast:responseObject.resultmsg];
-        }
+        [weakSelf.view makeToast:@"报名成功"];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [weakSelf.view makeToast:error.description];
+        
     }];
 }
 
+- (IBAction)didPressedReturnKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
 @end

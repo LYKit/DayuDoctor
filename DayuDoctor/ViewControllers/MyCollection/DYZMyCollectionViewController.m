@@ -117,9 +117,7 @@
         [self.models removeObjectsInArray:courses];
         [self.tableView reloadData];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [self.view makeToast:@"取消关注失败"
-                    duration:1
-                    position:CSToastPositionCenter];
+        
     }];
 }
 

@@ -69,7 +69,7 @@
     _lblMoney.text = [NSString stringWithFormat:@"报名费：%@",_detail.amount];
     _lblRemark.text = _detail.remark.length ? [NSString stringWithFormat:@"备注：%@",_detail.remark] : @"备注：擅长科目为报名科目";
     _bgPerfect.hidden = YES;
-    if (![_detail.flag boolValue]) {
+    if ([_detail.flag isEqualToString:@"0"]) {
         _bgPerfect.hidden = NO;
         [_btnBgPerfect setTitle:@"点击这里完善资料" forState:UIControlStateNormal];
     } else if (![DYZMemberManager isLogin]) {
@@ -89,7 +89,7 @@
 }
 
 - (IBAction)didPressedperfect:(id)sender {
-    if ([DYZMemberManager sharedMemberManger].token.length) {
+    if ([DYZMemberManager isLogin]) {
         DYZUserInfoEditorController *vc = [DYZUserInfoEditorController new];
         [self.navigationController pushViewController:vc animated:YES];
     } else {

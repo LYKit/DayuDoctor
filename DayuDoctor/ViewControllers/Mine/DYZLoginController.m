@@ -46,14 +46,10 @@
     request.userpwd = _txtPassword.text;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseLogin *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [DYZMemberManager sharedMemberManger].token = responseObject.token;
-            [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPassword.text];
-            [DYZMemberManager loginSuccess];
-            [weakSelf.navigationController popViewControllerAnimated:NO];
-        } else {
-            [weakSelf.view makeToast:responseObject.resultmsg];
-        }
+        [DYZMemberManager sharedMemberManger].token = responseObject.token;
+        [DYZMemberManager saveMemberInfo:weakSelf.txtUserName.text password:weakSelf.txtPassword.text];
+        [DYZMemberManager loginSuccess];
+        [weakSelf.navigationController popViewControllerAnimated:NO];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];

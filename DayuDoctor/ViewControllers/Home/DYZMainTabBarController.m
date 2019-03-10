@@ -48,7 +48,7 @@
 
 - (void)reloadView {
     UIViewController *fourController = nil;
-    if ([DYZMemberManager sharedMemberManger].token.length) {
+    if ([DYZMemberManager isLogin]) {
         fourController = [[DYZMineViewController alloc] init];
     } else {
         fourController = [[DYZLoginController alloc] init];
@@ -71,7 +71,7 @@
                                                     initWithRootViewController:thirdViewController];
     
     UIViewController *fourNavigationController = nil;
-    DYZMineViewController *fourViewController = [[DYZMineViewController alloc] init];
+    DYZLoginController *fourViewController = [[DYZLoginController alloc] init];
     fourNavigationController = [[DYZBaseNavigationController alloc]
                                 initWithRootViewController:fourViewController];
 
@@ -85,20 +85,20 @@
 - (void)customizeTabBarForController {
     
     NSDictionary *dict1 = @{CYLTabBarItemTitle : @"首页",
-                            CYLTabBarItemImage : @"icon_home",
-                            CYLTabBarItemSelectedImage : @"icon_home2",
+                            CYLTabBarItemImage : @"33",
+                            CYLTabBarItemSelectedImage : @"3",
                             };
     NSDictionary *dict2 = @{CYLTabBarItemTitle : @"分类",
-                            CYLTabBarItemImage : @"icon_catgory",
-                            CYLTabBarItemSelectedImage : @"icon_catgory2",
+                            CYLTabBarItemImage : @"22",
+                            CYLTabBarItemSelectedImage : @"2",
                             };
     NSDictionary *dict3 = @{CYLTabBarItemTitle : @"报名",
-                            CYLTabBarItemImage : @"icon_signup",
-                            CYLTabBarItemSelectedImage : @"icon_signup2",
+                            CYLTabBarItemImage : @"44",
+                            CYLTabBarItemSelectedImage : @"4",
                             };
     NSDictionary *dict4 = @{CYLTabBarItemTitle : @"我的",
-                            CYLTabBarItemImage : @"icon_me",
-                            CYLTabBarItemSelectedImage : @"icon_me2",
+                            CYLTabBarItemImage : @"11",
+                            CYLTabBarItemSelectedImage : @"1",
                             };
     
     NSArray *tabBarItemsAttributes = @[dict1,dict2,dict3,dict4];

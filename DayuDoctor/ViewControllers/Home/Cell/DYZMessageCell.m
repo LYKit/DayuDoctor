@@ -31,7 +31,7 @@
 - (void)setModel:(Message *)model {
     _model = model;
     _lblTitle.text = _model.title;
-    _lblContent.text = _model.content;
+    _lblContent.text = _model.createTime;
 }
 
 @end

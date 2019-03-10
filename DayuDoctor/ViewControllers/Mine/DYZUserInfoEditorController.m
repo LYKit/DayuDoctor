@@ -9,6 +9,7 @@
 #import "DYZUserInfoEditorController.h"
 #import "APIUpdateUserInfo.h"
 #import "APIUserInfo.h"
+#import "LXFPhotoHelper.h"
 
 @interface DYZUserInfoEditorController () 
 
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtGoodtypes;
 
 @property (nonatomic, strong) ResponseUserInfo *responseUserInfo;
+@property (nonatomic, strong) UIImage *selectImage;
 
 
 @end
@@ -83,9 +85,19 @@
     [self.view.window endEditing:YES];
 }
 
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+- (IBAction)didPressedPhoto:(id)sender {
+    __weak typeof(self) weakSelf = self;
+    [[LXFPhotoHelper creatWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary config:nil] getSourceWithSelectImageBlock:^(id data) {
+        [weakSelf selectedImage:data];
+        weakSelf.selectImage = data;
+    }];
+    
 }
+
+- (void)selectedImage:(UIImage *)image {
+    _imgPhoto.image = image;
+}
+
+
 
 @end

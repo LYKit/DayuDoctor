@@ -99,6 +99,9 @@
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVV-3Z-Fjy">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                            <connections>
+                                <action selector="didPressedPhoto:" destination="-1" eventType="touchUpInside" id="X8E-iz-2Jo"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

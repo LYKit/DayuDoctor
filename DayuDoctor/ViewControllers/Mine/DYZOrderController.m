@@ -131,11 +131,9 @@
     APICancelOrder *request = [APICancelOrder new];
     request.transId = transId;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.intValue == 0) {
-            [weakSelf.view makeToast:@"取消成功"];
-            weakSelf.requestOrderList.currPage = 1;
-            [weakSelf loadData];
-        }
+        [weakSelf.view makeToast:@"取消成功"];
+        weakSelf.requestOrderList.currPage = 1;
+        [weakSelf loadData];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
