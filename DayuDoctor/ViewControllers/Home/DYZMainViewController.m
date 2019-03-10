@@ -75,9 +75,9 @@ typedef enum : NSUInteger {
     requestBanner.noResultView = self.view;
     
     
-    [NOresuView ShowInView:self.UIView  request:(LYRequestObject *)request];
-    
-    [NOresuView hide];
+//    [NOresuView ShowInView:self.UIView  request:(LYRequestObject *)request];
+//    
+//    [NOresuView hide];
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.bannerList = responseObject.banners;
         

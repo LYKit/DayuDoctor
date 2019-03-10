@@ -10,8 +10,9 @@
 #import "DYZShareButton.h"
 #import <JSHAREService.h>
 #import "ZFNoramlViewController.h"
+#import <MessageUI/MessageUI.h>
 
-@interface DYZShareViewController ()
+@interface DYZShareViewController ()<MFMessageComposeViewControllerDelegate>
 @property (nonatomic, strong) UIImageView *qrImgView;
 
 @end
@@ -44,10 +45,11 @@
         make.centerX.equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
+    _qrImgView.image = [UIImage imageNamed:@"1.png"];
     
     NSMutableArray *buttons = [NSMutableArray new];
     NSArray *titles = @[@"新浪微博", @"微信好友", @"微信朋友圈", @"短信"];
-    for (NSInteger i = 0; i < 4; ++i) {
+    for (NSInteger i = 0; i < titles.count; ++i) {
         DYZShareButton *button = [DYZShareButton new];
         button.userInteractionEnabled = YES;
         NSString *title = titles[i];
@@ -69,35 +71,96 @@
 
 }
 
-- (void)shareToWeiBo {
+- (NSData *)getQRCodeData {
+    NSData *imgData = [_qrImgView.image imageDataRepresentation];
+    return imgData;
+}
+
+- (void)shareToPlatform:(JSHAREPlatform)platform {
     JSHAREMessage *message = [JSHAREMessage message];
     message.text = @"JShare SDK 支持主流社交平台、帮助开发者轻松实现社会化功能！";
-    message.platform = JSHAREPlatformSinaWeibo;
-    message.mediaType = JSHAREText;
+    message.platform = platform;
+    message.mediaType = JSHAREImage;
+    message.image = [self getQRCodeData];
     [JSHAREService share:message handler:^(JSHAREState state, NSError *error) {
         NSLog(@"分享回调");
+        if (!error) {
+            [self.view makeToast:@"分享成功"
+                        duration:1
+                        position:CSToastPositionCenter];
+        }
     }];
+}
+
+- (void)shareToMessage {
+    if([MFMessageComposeViewController canSendText]) {
+        MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+        controller.messageComposeDelegate = self;
+//        controller.recipients = @[weakSelf.detailModel.Telphone];//收信人
+//        //            controller.body = body;//短信内容
+//        controller.messageComposeDelegate = weakSelf;
+        NSString *body = @"一起使用大舜中医";
+        NSString *sub = @"subobject";
+        BOOL isSuccess = [controller addAttachmentData:[self getQRCodeData]
+                                        typeIdentifier:@"image/jpg"
+                                              filename:@"1.png"];
+        controller.body = body;
+        controller.subject = sub;
+        if (!isSuccess) {
+            NSLog(@"添加图片失败");
+        }
+        [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
+                                                        message:@"该设备不支持短信功能"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller
+                 didFinishWithResult:(MessageComposeResult)result {
+    switch (result) {
+        case MessageComposeResultCancelled:
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            break;
+        case MessageComposeResultSent:
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            [self.view makeToast:@"分享成功"
+                        duration:1
+                        position:CSToastPositionCenter];
+            break;
+        case MessageComposeResultFailed:
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            [self.view makeToast:@"分享失败"
+                        duration:1
+                        position:CSToastPositionCenter];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)buttonAction:(DYZShareButton *)button {
     switch (button.tag) {
         case 0: {
-            [self shareToWeiBo];
+            [self shareToPlatform:JSHAREPlatformSinaWeibo];
         } break;
             
         case 1: {
-            ZFNoramlViewController *vc = [ZFNoramlViewController new];
-            [self.navigationController pushViewController:vc animated:YES];
+            [self shareToPlatform:JSHAREPlatformWechatSession];
         } break;
 
         case 2: {
-            
+            [self shareToPlatform:JSHAREPlatformWechatTimeLine];
         } break;
 
         case 3: {
-            
+            [self shareToMessage];
         } break;
-
             
         default:
             break;

@@ -34,6 +34,10 @@
     
     [self setupTableView];
     [self requestNews];
+    
+    
+    _request.noResultView = _tableView;
+    _request.dataSource = self.models;
 }
 
 - (void)requestNews {
@@ -47,10 +51,8 @@
         
         [self.models addObjectsFromArray:response.content];
         [_self.tableView reloadData];
-        [_self endRefreshing];
-        
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [_self endRefreshing];
+
     }];
 }
 
@@ -70,6 +72,9 @@
     
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
         _self.request.currPage = 1;
         [_self requestNews];
     }];
@@ -78,11 +83,6 @@
         _self.request.currPage += 1;
         [_self requestNews];
     }];
-}
-
-- (void)endRefreshing {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
 }
 
 #pragma tableView delegate

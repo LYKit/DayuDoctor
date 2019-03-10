@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DYZRequestObject : LYRequestObject
 
 @property (nonatomic, strong) UIView *noResultView;
-
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
