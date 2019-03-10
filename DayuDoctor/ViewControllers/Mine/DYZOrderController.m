@@ -34,8 +34,14 @@
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
     [self loadData];
     
+    _requestOrderList.dataSource = self.dataList;
+    _requestOrderList.noResultView = _tableView;
+    
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
         _self.requestOrderList.currPage = 1;
         [_self loadData];
     }];
@@ -56,20 +62,14 @@
         }
         [weakSelf.dataList addObjectsFromArray:weakSelf.responeOrderList.list];
         [weakSelf.tableView reloadData];
-        [weakSelf endRefreshing];
+
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [weakSelf endRefreshing];
+
     }];
 }
 
-- (void)endRefreshing {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-}
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataList.count;
+    return self.dataList.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,7 +78,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DYZOrderInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZOrderInfoCell forIndexPath:indexPath];
-    OrderModel *model = _dataList[indexPath.row];
+    OrderModel *model = self.dataList[indexPath.row];
     cell.model = model;
     __weak typeof(self) weakSelf = self;
     cell.cancelBlock = ^{
@@ -92,7 +92,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self openWebPageWithUrlString:_dataList[indexPath.row].url];
+    [self openWebPageWithUrlString:self.dataList[indexPath.row].url];
 }
 
 

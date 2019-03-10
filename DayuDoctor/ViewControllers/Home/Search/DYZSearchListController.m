@@ -12,7 +12,8 @@
 
 @interface DYZSearchListController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSArray<SearchModel *> *seachList;
+@property (nonatomic, strong) NSMutableArray<SearchModel *> *seachList;
+@property (nonatomic, strong) APISearchList *request;
 
 
 @end
@@ -24,13 +25,28 @@
     
     self.tableView = [UITableView new];
     [self.view addSubview:_tableView];
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:kDYZSearchListCell bundle:nil] forCellReuseIdentifier:kDYZSearchListCell];
+    
+    __weak typeof(self) _self = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
+        _self.request.currPage = 1;
+        [_self loadData];
+    }];
+    
+    _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        _self.request.currPage += 1;
+        [_self loadData];
+    }];
+
     
     [self loadData];
 }
@@ -45,9 +61,15 @@
     request.pageSize = 10;
     request.currPage = 1;
     request.keywords = _keyword;
+    request.dataSource = self.seachList;
+    request.noResultView = self.tableView;
+    _request = request;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseSearchList *responseObject, NSDictionary *options) {
-        weakSelf.seachList = responseObject.content;
+        if (request.currPage == 1) {
+            [self.seachList removeAllObjects];
+        }
+        [self.seachList addObjectsFromArray:responseObject.content];
         [weakSelf.tableView reloadData];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         

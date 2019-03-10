@@ -42,9 +42,14 @@
     _request = [APIReservations new];
     _request.currPage = 1;
     _request.pageSize = 20;
+    _request.dataSource = self.models;
+    _request.noResultView = self.tableView;
 
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
         _self.request.currPage = 1;
         [_self loadData];
     }];
@@ -57,7 +62,6 @@
     [self loadData];
 }
 
-
 - (void)loadData {
     __weak typeof(self) weakSelf = self;
     [_request startPostWithSuccessBlock:^(ResponseReservations *responseObject, NSDictionary *options) {
@@ -68,9 +72,8 @@
         
         [self.models addObjectsFromArray:responseObject.list];
         [weakSelf.tableView reloadData];
-        [weakSelf endRefreshing];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [weakSelf endRefreshing];
+
     }];
 }
 
@@ -119,11 +122,6 @@
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
-}
-
-- (void)endRefreshing {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
 }
 
 

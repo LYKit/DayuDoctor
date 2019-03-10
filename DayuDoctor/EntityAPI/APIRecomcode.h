@@ -15,5 +15,6 @@
 
 @interface ResponseRecomcode : LYResponseObject
 @property (nonatomic, copy) NSString *recomcode;
+@property (nonatomic, copy) NSString *num;
 
 @end

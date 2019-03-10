@@ -293,6 +293,7 @@
 		0D5620CE221A431E00C5D508 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
 		0D72798321F96571001C0768 /* APICoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICoursesList.h; sourceTree = "<group>"; };
 		0D72798421F96571001C0768 /* APICoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICoursesList.m; sourceTree = "<group>"; };
+		0D7AEFD8223512E700F0468D /* DayuDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayuDoctor.entitlements; sourceTree = "<group>"; };
 		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
 		0D8683C821F47FF7002E255A /* DYZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZBaseViewController.m; sourceTree = "<group>"; };
 		0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYZCoursesTableController.m; sourceTree = "<group>"; };
@@ -1050,6 +1051,7 @@
 		C13A5DE621EDC4DC00493EE7 /* DayuDoctor */ = {
 			isa = PBXGroup;
 			children = (
+				0D7AEFD8223512E700F0468D /* DayuDoctor.entitlements */,
 				0D8683C121F47809002E255A /* CommonView */,
 				0D8683C221F4780A002E255A /* EntityAPI */,
 				C1C9BB8B221512750059B3B5 /* Manager */,
@@ -1707,6 +1709,11 @@
 				TargetAttributes = {
 					C13A5DE321EDC4DC00493EE7 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					C13A5DFB21EDC4DE00493EE7 = {
 						CreatedOnToolsVersion = 10.1;
@@ -2213,7 +2220,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4QFSVNR53;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -2237,7 +2244,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4QFSVNR53;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;

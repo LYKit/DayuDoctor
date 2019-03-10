@@ -17,8 +17,8 @@
     
     
     _imageView = [UIImageView new];
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self addSubview:_imageView];
-    _imageView.backgroundColor = [UIColor purpleColor];
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self);
         make.centerX.equalTo(self);

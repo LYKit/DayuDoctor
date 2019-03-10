@@ -74,7 +74,6 @@ typedef enum : NSUInteger {
     APIHomeBanner *requestBanner = [APIHomeBanner new];
     requestBanner.noResultView = self.view;
     
-
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.bannerList = responseObject.banners;
         

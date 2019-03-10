@@ -41,6 +41,10 @@
 
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (_self.tableView.mj_footer.state == MJRefreshStateNoMoreData) {
+            [_self.tableView.mj_footer resetNoMoreData];
+        }
+
         _self.requestFace.currPage = 1;
         [_self loadDefaultData];
     }];
@@ -52,6 +56,8 @@
     
     self.requestFace.currPage = 1;
     self.requestFace.pageSize = 20;
+    self.requestFace.dataSource = self.models;
+    self.requestFace.noResultView = self.tableView;
 
     [self loadDefaultData];
 }
@@ -66,9 +72,7 @@
         
         [self.models addObjectsFromArray:_responseFace.content];
         [weakSelf.tableView reloadData];
-        [self endRefreshing];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        [self endRefreshing];
     }];
     
     
@@ -92,7 +96,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
