@@ -53,9 +53,7 @@ static NSInteger const countDownSecond = 60;
     request.userpwd = _txtPwdAgain.text;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -74,9 +72,7 @@ static NSInteger const countDownSecond = 60;
         self.requestCode.mobile = _txtUserName.text;
         __weak typeof(self) weakSelf = self;
         [self.requestCode startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-            if (responseObject.resultcode.integerValue == 0) {
-                [weakSelf sendCodeCountDown];
-            }
+            [weakSelf sendCodeCountDown];
         } failBlock:^(LYNetworkError *error, NSDictionary *options) {
             
         }];

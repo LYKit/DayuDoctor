@@ -6,10 +6,10 @@
 //  Copyright © 2019 大禹中医. All rights reserved.
 //
 
-#import "LYRequestObject.h"
+#import "DYZRequestObject.h"
 
 
-@interface APICourseClassify : LYRequestObject
+@interface APICourseClassify : DYZRequestObject
 @property (nonatomic, assign) NSInteger currPage;
 @property (nonatomic, assign) NSInteger pageSize;
 @property (nonatomic, copy) NSString *classifyId;

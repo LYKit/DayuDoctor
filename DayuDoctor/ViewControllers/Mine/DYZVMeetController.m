@@ -114,10 +114,8 @@
     request.rid = rid;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [weakSelf loadData];
-            [weakSelf.view makeToast:@"取消成功"];
-        }
+        [weakSelf loadData];
+        [weakSelf.view makeToast:@"取消成功"];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];

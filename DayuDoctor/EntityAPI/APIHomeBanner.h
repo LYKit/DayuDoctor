@@ -6,11 +6,11 @@
 //  Copyright © 2019年 大禹中医. All rights reserved.
 //
 
-#import "LYRequestObject.h"
+#import "DYZRequestObject.h"
 #import "LYResponseObject.h"
 
 
-@interface APIHomeBanner : LYRequestObject
+@interface APIHomeBanner : DYZRequestObject
 
 
 

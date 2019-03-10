@@ -59,9 +59,7 @@ NSString * const kOutLoginSuccesStatus = @"outLoginSuccesStatus";
     request.mobile = mobile;
     request.userpwd = password;
     [request startPostWithSuccessBlock:^(ResponseLogin *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [DYZMemberManager sharedMemberManger].token = responseObject.token;
-        }
+        [DYZMemberManager sharedMemberManger].token = responseObject.token;
         [DYZMemberManager loginSuccess];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
@@ -80,6 +78,6 @@ NSString * const kOutLoginSuccesStatus = @"outLoginSuccesStatus";
 
 
 + (BOOL)isLogin {
-    return [DYZMemberManager sharedMemberManger].token.length;
+    return [DYZMemberManager sharedMemberManger].token.length? YES : NO;
 }
 @end

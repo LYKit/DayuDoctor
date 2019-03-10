@@ -6,10 +6,10 @@
 //  Copyright © 2019年 大禹中医. All rights reserved.
 //
 
-#import "LYRequestObject.h"
+#import "DYZRequestObject.h"
 
 
-@interface APIOrderCancel : LYRequestObject
+@interface APIOrderCancel : DYZRequestObject
 
 @property (nonatomic, copy) NSString *rid;
 

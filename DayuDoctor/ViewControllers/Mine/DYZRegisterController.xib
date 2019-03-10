@@ -27,30 +27,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="ivC-IG-tB7">
-                    <rect key="frame" x="70.5" y="104" width="234" height="106"/>
+                    <rect key="frame" x="70.5" y="79" width="234" height="106"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="234" id="9w7-Xd-w3W"/>
                         <constraint firstAttribute="width" secondItem="ivC-IG-tB7" secondAttribute="height" multiplier="117:53" id="f3d-D4-ZxR"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bky-4d-nDp">
-                    <rect key="frame" x="67.5" y="240" width="240" height="40"/>
+                    <rect key="frame" x="72.5" y="195" width="230" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ch4-xn-nxb"/>
-                        <constraint firstAttribute="width" constant="240" id="uPn-iU-3Nr"/>
+                        <constraint firstAttribute="width" constant="230" id="uPn-iU-3Nr"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6yx-HN-iDC">
-                    <rect key="frame" x="67.5" y="290" width="240" height="40"/>
+                    <rect key="frame" x="72.5" y="245" width="230" height="40"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7E-zx-5NZ">
-                    <rect key="frame" x="67.5" y="510" width="240" height="40"/>
+                    <rect key="frame" x="72.5" y="465" width="230" height="40"/>
                     <color key="backgroundColor" red="0.1450980392" green="0.066666666669999999" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="x6t-ty-GTo"/>
@@ -63,25 +63,25 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqV-AL-nyN">
-                    <rect key="frame" x="67.5" y="340" width="240" height="40"/>
+                    <rect key="frame" x="72.5" y="295" width="230" height="40"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再出输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-qW-ADD">
-                    <rect key="frame" x="67.5" y="390" width="240" height="40"/>
+                    <rect key="frame" x="72.5" y="345" width="230" height="40"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="推荐码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eS-7c-NRc">
-                    <rect key="frame" x="67.5" y="440" width="240" height="40"/>
+                    <rect key="frame" x="72.5" y="395" width="230" height="40"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-lh-0ka">
-                    <rect key="frame" x="118.5" y="590" width="138" height="30"/>
+                    <rect key="frame" x="118.5" y="525" width="138" height="30"/>
                     <state key="normal" title="已有账号，马上登录">
                         <color key="titleColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -90,7 +90,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-JN-Ypz">
-                    <rect key="frame" x="229.5" y="296" width="73" height="28"/>
+                    <rect key="frame" x="224.5" y="251" width="73" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="scE-b4-v2g"/>
                     </constraints>
@@ -111,13 +111,13 @@
                 <constraint firstItem="4eS-7c-NRc" firstAttribute="width" secondItem="bky-4d-nDp" secondAttribute="width" id="1U3-TJ-baG"/>
                 <constraint firstItem="4eS-7c-NRc" firstAttribute="top" secondItem="GY8-qW-ADD" secondAttribute="bottom" constant="10" id="4T8-RY-gbV"/>
                 <constraint firstItem="4eS-7c-NRc" firstAttribute="height" secondItem="bky-4d-nDp" secondAttribute="height" id="9lz-iN-DEv"/>
-                <constraint firstItem="bky-4d-nDp" firstAttribute="top" secondItem="ivC-IG-tB7" secondAttribute="bottom" constant="30" id="C5o-Je-sW0"/>
+                <constraint firstItem="bky-4d-nDp" firstAttribute="top" secondItem="ivC-IG-tB7" secondAttribute="bottom" constant="10" id="C5o-Je-sW0"/>
                 <constraint firstItem="dqV-AL-nyN" firstAttribute="height" secondItem="bky-4d-nDp" secondAttribute="height" id="CDi-vE-Bh1"/>
                 <constraint firstItem="4eS-7c-NRc" firstAttribute="centerX" secondItem="bky-4d-nDp" secondAttribute="centerX" id="FNm-xT-qrL"/>
                 <constraint firstItem="GY8-qW-ADD" firstAttribute="top" secondItem="dqV-AL-nyN" secondAttribute="bottom" constant="10" id="HJP-cT-HNH"/>
                 <constraint firstItem="V7E-zx-5NZ" firstAttribute="centerX" secondItem="bky-4d-nDp" secondAttribute="centerX" id="MW6-eA-j37"/>
                 <constraint firstItem="V7E-zx-5NZ" firstAttribute="top" secondItem="4eS-7c-NRc" secondAttribute="bottom" constant="30" id="O8t-no-W5h"/>
-                <constraint firstItem="ivC-IG-tB7" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="40" id="Oiu-LT-yYa"/>
+                <constraint firstItem="ivC-IG-tB7" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="15" id="Oiu-LT-yYa"/>
                 <constraint firstItem="6yx-HN-iDC" firstAttribute="height" secondItem="bky-4d-nDp" secondAttribute="height" id="R6J-vX-2M6"/>
                 <constraint firstItem="GY8-qW-ADD" firstAttribute="height" secondItem="bky-4d-nDp" secondAttribute="height" id="UHz-2m-c5B"/>
                 <constraint firstItem="6yx-HN-iDC" firstAttribute="width" secondItem="bky-4d-nDp" secondAttribute="width" id="YyR-hE-6Dm"/>
@@ -129,7 +129,7 @@
                 <constraint firstItem="dqV-AL-nyN" firstAttribute="top" secondItem="6yx-HN-iDC" secondAttribute="bottom" constant="10" id="nC5-R1-uBz"/>
                 <constraint firstItem="bky-4d-nDp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nP8-bd-H3t"/>
                 <constraint firstItem="V7E-zx-5NZ" firstAttribute="width" secondItem="bky-4d-nDp" secondAttribute="width" id="qca-YS-UsI"/>
-                <constraint firstItem="Ych-lh-0ka" firstAttribute="top" secondItem="V7E-zx-5NZ" secondAttribute="bottom" constant="40" id="sJh-m3-Rmo"/>
+                <constraint firstItem="Ych-lh-0ka" firstAttribute="top" secondItem="V7E-zx-5NZ" secondAttribute="bottom" constant="20" id="sJh-m3-Rmo"/>
                 <constraint firstItem="Ych-lh-0ka" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wOD-Vh-D0D"/>
                 <constraint firstItem="RjB-JN-Ypz" firstAttribute="centerY" secondItem="6yx-HN-iDC" secondAttribute="centerY" id="wf8-2G-8z6"/>
                 <constraint firstItem="6yx-HN-iDC" firstAttribute="centerX" secondItem="bky-4d-nDp" secondAttribute="centerX" id="xVz-7X-xlR"/>

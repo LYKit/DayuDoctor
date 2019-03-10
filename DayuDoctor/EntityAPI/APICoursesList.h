@@ -6,11 +6,12 @@
 //  Copyright © 2019 大禹中医. All rights reserved.
 //
 
-#import "LYRequestObject.h"
+#import "DYZRequestObject.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APICoursesList : LYRequestObject
+@interface APICoursesList : DYZRequestObject
 @property (nonatomic, assign) NSInteger currPage;
 @property (nonatomic, assign) NSInteger pageSize;
 @end
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface ResponseCoursesList : NSObject
+@interface ResponseCoursesList : LYResponseObject
 @property (nonatomic, copy) NSString *total;
 @property (nonatomic, strong) NSArray<Course *> *content;
 @end
