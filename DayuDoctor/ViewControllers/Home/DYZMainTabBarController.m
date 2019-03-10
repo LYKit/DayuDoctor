@@ -36,7 +36,7 @@
 
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"guideIsShow"]) {
-        NSArray *imageNameArray = @[@"guide1.jpg",@"guide2.jpg",@"guide3.jpg",@"guide4.jpg"];
+        NSArray *imageNameArray = @[@"guide-1",@"guide-2",@"guide-3",@"guide-4"];
         DHGuidePageHUD *guidePage = [[DHGuidePageHUD alloc] dh_initWithFrame:self.view.frame imageNameArray:imageNameArray buttonIsHidden:YES];
         [self.view addSubview:guidePage];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"guideIsShow"];

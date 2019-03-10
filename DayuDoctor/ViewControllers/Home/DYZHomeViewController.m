@@ -94,6 +94,7 @@ typedef enum : NSUInteger {
     
     // Banners
     APIHomeBanner *requestBanner = [APIHomeBanner new];
+    requestBanner.type = @"0";
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.bannerList = responseObject.banners;
         [weakSelf.collectionView reloadData];

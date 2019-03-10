@@ -9,14 +9,18 @@
 #import "DYZJoinController.h"
 #import "LYTextField.h"
 #import "APIJoin.h"
+#import "ShowPickerView.h"
+#import "APIHomeBanner.h"
+#import "DYZHeadImageView.h"
 
 
-@interface DYZJoinController ()
+@interface DYZJoinController () <ShowPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet LYTextField *txtName;
 @property (weak, nonatomic) IBOutlet LYTextField *txtGender;
 @property (weak, nonatomic) IBOutlet LYTextField *txtPhone;
 @property (weak, nonatomic) IBOutlet LYTextField *txtArea;
 @property (weak, nonatomic) IBOutlet LYTextField *txtAddress;
+@property (weak, nonatomic) IBOutlet DYZHeadImageView *headImageView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintOfBgWidth;
 
@@ -36,7 +40,15 @@
 
     _constraintOfBgWidth.constant = kScreenWidth;
     
-    
+    // Banners
+    __weak typeof(self) weakSelf = self;
+    APIHomeBanner *requestBanner = [APIHomeBanner new];
+    requestBanner.type = @"4";
+    [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
+        weakSelf.headImageView.bannerList = responseObject.banners;
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
 
 
@@ -57,7 +69,7 @@
     request.address = _txtAddress.text;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-        [weakSelf.view makeToast:@"报名成功"];
+        [weakSelf.view makeToast:@"加盟成功"];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -65,5 +77,21 @@
 
 - (IBAction)didPressedReturnKeyboard:(id)sender {
     [self.view endEditing:YES];
+}
+
+
+
+
+- (IBAction)didPressedCity:(id)sender {
+    ShowPickerView *areaPickerView = [[ShowPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    areaPickerView.delegate = self;
+    [areaPickerView showPicker];
+    [self.view endEditing:YES];
+}
+
+#pragma mark == ShowPickerViewDelegate
+- (void)showPickerViewDone:(NSString *)chooseTitle chooseId:(NSString *)chooseId
+{
+    _txtArea.text = chooseTitle;
 }
 @end

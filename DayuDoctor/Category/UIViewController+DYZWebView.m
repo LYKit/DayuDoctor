@@ -14,7 +14,15 @@
 @implementation UIViewController (DYZWebView) 
 
 - (void)openWebPageWithUrlString:(NSString *)urlString {
-    DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:urlString];
+    NSString *newUrlString = @"";
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (url.query.length) {
+        newUrlString = [NSString stringWithFormat:@"%@&token%@",urlString,[DYZMemberManager sharedMemberManger].token];
+    } else {
+        newUrlString = [NSString stringWithFormat:@"%@?token%@",urlString,[DYZMemberManager sharedMemberManger].token];
+    }
+    
+    DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:newUrlString];
     vc.fromController = self;
     vc.showsBackgroundLabel = NO;
     vc.showsToolBar = NO;

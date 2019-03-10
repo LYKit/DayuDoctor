@@ -9,12 +9,15 @@
 #import "DYZQAViewController.h"
 #import "APIFAQS.h"
 #import "DYZQACell.h"
-
+#import "APIHomeBanner.h"
+#import "DYZHeadImageCell.h"
 
 @interface DYZQAViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *models;
 @property (nonatomic, strong) APIFAQS *requestQA;
+@property (nonatomic, strong) NSMutableArray *bannerList;
+
 @end
 
 @implementation DYZQAViewController
@@ -31,7 +34,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:kDYZQACell bundle:nil] forCellReuseIdentifier:kDYZQACell];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:kDYZHeadImageCell bundle:nil] forCellReuseIdentifier:kDYZHeadImageCell];
+
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         _self.requestQA.currPage = 1;
@@ -62,6 +66,16 @@
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         [self endRefreshing];
     }];
+    
+    // Banners
+    APIHomeBanner *requestBanner = [APIHomeBanner new];
+    requestBanner.type = @"3";
+    [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
+        weakSelf.bannerList = responseObject.banners;
+        [weakSelf.tableView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
 
 - (void)endRefreshing {
@@ -70,11 +84,21 @@
 }
 
 /// MARK: tableview'delegate
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
     return self.models.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 150;
+    }
     __weak typeof(self) weakSelf = self;
     return [tableView fd_heightForCellWithIdentifier:kDYZQACell cacheByIndexPath:indexPath configuration:^(DYZQACell *cell) {
         cell.model = weakSelf.models[indexPath.row];
@@ -82,11 +106,23 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        DYZHeadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZHeadImageCell forIndexPath:indexPath];
+        cell.bannerList = self.bannerList;
+        return cell;
+    }
     DYZQACell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZQACell forIndexPath:indexPath];
     cell.model = self.models[indexPath.row];
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
+}
 
 - (APIFAQS *)requestQA {
     if (!_requestQA) {
@@ -95,30 +131,4 @@
     return _requestQA;
 }
 
-#warning  需删除
-//- (NSArray *)listQA {
-//    if (!_listQA) {
-//        NSMutableArray *array = [NSMutableArray array];
-//        {
-//            FAQSModel *model = [FAQSModel new];
-//            model.question = @"范德萨范德萨发的萨芬大";
-//            model.answer = @"范德萨范德萨发的萨芬大fdsff发的萨芬大范德萨阿范德萨发的方方达发送 方方达";
-//            [array addObject:model];
-//        }
-//        {
-//            FAQSModel *model = [FAQSModel new];
-//            model.question = @"范德萨范德萨发的萨芬大发生范德萨发范德萨范德萨范德萨范德萨a";
-//            model.answer = @"范德萨范德萨发的萨芬大";
-//            [array addObject:model];
-//        }
-//        {
-//            FAQSModel *model = [FAQSModel new];
-//            model.question = @"范德萨范德萨发的萨芬大";
-//            model.answer = @"范德萨范德萨发的萨芬大";
-//            [array addObject:model];
-//        }
-//        _listQA = array;
-//    }
-//    return _listQA;
-//}
 @end

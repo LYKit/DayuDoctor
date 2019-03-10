@@ -72,10 +72,11 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 
-@property (nonatomic, strong) NSArray<MineOption *> *optionsList;
+@property (nonatomic, strong) NSMutableArray<MineOption *> *optionsList;
 @property (nonatomic, strong) DYZUpdateController *versionController;
 
 @property (nonatomic, strong) ResponseUserInfo *responseUserInfo;
+@property (nonatomic, strong) ResponseVersion *responseVersion;
 
 
 @end
@@ -97,9 +98,6 @@ typedef enum : NSUInteger {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    if (![DYZMemberManager sharedMemberManger].token.length) {
-//        [self.navigationController pushViewController:[DYZLoginController new] animated:NO];
-//    }
 }
 
 
@@ -108,6 +106,22 @@ typedef enum : NSUInteger {
     __weak typeof(self) weakSelf = self;
     [[APIUserInfo new] startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
         weakSelf.responseUserInfo = responseObject;
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+    
+    
+    // 版本更新
+    APIVersion *request = [APIVersion new];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    request.version =  [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    
+    [request startPostWithSuccessBlock:^(ResponseVersion *responseObject, NSDictionary *options) {
+        weakSelf.responseVersion = responseObject;
+        if ([weakSelf.responseVersion.detail.canShowUpdate boolValue]) {
+            [weakSelf addItemOption:[MineOption createOption:@"版本更新" pos:enumOptionUpdate]];
+        }
+        [weakSelf.tableView reloadData];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -176,10 +190,11 @@ typedef enum : NSUInteger {
             [self openWebPageWithUrlString:kChatURL];
         } break;
         case enumOptionUpdate: {
+            self.versionController.versionInfo = self.responseVersion.detail;
             [self.versionController presentInWindow];
         } break;
         case enumOptionPhone: {
-            NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"tel://%@",@"10010"];
+            NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"tel://%@",@"010-65155685"];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
         } break;
         case enumOptionChangePwd: {
@@ -220,10 +235,10 @@ typedef enum : NSUInteger {
     _status.text = @"已登录";
     _userName.text = _responseUserInfo.detail.name.length ? _responseUserInfo.detail.name : [DYZMemberManager getMemberInfo].mobile;
 }
-- (NSArray *)optionsList { // 修改位置即调整枚举顺序
+- (NSMutableArray *)optionsList { // 修改位置即调整枚举顺序
     if (!_optionsList) {
-        NSArray *array =
-  @[
+        _optionsList =
+  [@[
     [MineOption createOption:@"退出" pos:enumOptionOut],
     [MineOption createOption:@"我的课程" pos:enumOptionCourse],
     [MineOption createOption:@"我的预约" pos:enumOptionAppoint],
@@ -236,17 +251,21 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"系统消息" pos:enumOptionMessage],
     [MineOption createOption:@"分享" pos:enumOptionShare],
     [MineOption createOption:@"在线客服" pos:enumOptionService],
-    [MineOption createOption:@"版本更新" pos:enumOptionUpdate],
     [MineOption createOption:@"修改密码" pos:enumOptionChangePwd],
     [MineOption createOption:@"联系客服" pos:enumOptionPhone],
-    ];
-        _optionsList = [array sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
-            return obj1.pos > obj2.pos;
-        }];
+    ] mutableCopy];
     }
+    
     return _optionsList;
 }
 
+- (void)addItemOption:(MineOption *)option {
+    [self.optionsList addObject:option];
+    
+    _optionsList = [[_optionsList sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
+        return obj1.pos > obj2.pos;
+    }] mutableCopy];
+}
 
 @end
 

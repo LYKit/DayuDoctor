@@ -8,6 +8,7 @@
 
 #import "DYZNewsTableController.h"
 #import "DYZNewsTableCell.h"
+#import "DYZHeadImageCell.h"
 #import "APINewsList.h"
 
 @interface DYZNewsTableController()<UITableViewDelegate, UITableViewDataSource>
@@ -15,6 +16,8 @@
 @property (nonatomic, strong) NSMutableArray *models;
 @property (nonatomic, strong) APINewsList *request;
 @property (nonatomic, strong) ResponseNewsList *response;
+@property (nonatomic, strong) NSMutableArray *bannerList;
+
 @end
 
 @implementation DYZNewsTableController
@@ -34,6 +37,17 @@
     
     [self setupTableView];
     [self requestNews];
+    
+    // Banners
+    __weak typeof(self) weakSelf = self;
+    APIHomeBanner *requestBanner = [APIHomeBanner new];
+    requestBanner.type = @"1";
+    [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
+        weakSelf.bannerList = responseObject.banners;
+        [weakSelf.tableView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
 
 - (void)requestNews {
@@ -63,6 +77,7 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
     [_tableView registerClass:[DYZNewsTableCell class] forCellReuseIdentifier:@"cell"];
+    [_tableView registerNib:[UINib nibWithNibName:kDYZHeadImageCell bundle:nil] forCellReuseIdentifier:kDYZHeadImageCell];
     ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
@@ -87,6 +102,11 @@
 
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        DYZHeadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZHeadImageCell forIndexPath:indexPath];
+        cell.bannerList = self.bannerList;
+        return cell;
+    }
     DYZNewsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     if (self.models.count) {
         News *news = self.models[indexPath.row];
@@ -96,11 +116,29 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
     return self.models.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 150;
+    }
+    return 100;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return;
+    }
     News *news = self.models[indexPath.row];
     [self openWebPageWithUrlString:news.url];
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 @end

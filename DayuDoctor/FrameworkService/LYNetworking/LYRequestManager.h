@@ -12,6 +12,7 @@
 @interface LYRequestManager : AFHTTPSessionManager
 
 + (instancetype)sharedClient;
++ (instancetype)sharedClientNew;
 
 - (void)configHeaderParams:(NSMutableDictionary *)params;
 

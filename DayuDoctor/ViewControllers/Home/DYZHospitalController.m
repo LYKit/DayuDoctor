@@ -7,10 +7,13 @@
 //
 
 #import "DYZHospitalController.h"
+#import "APIHomeBanner.h"
+#import "DYZHeadImageView.h"
 
 @interface DYZHospitalController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintOfBgWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintOfMainHeight;
+@property (weak, nonatomic) IBOutlet DYZHeadImageView *headImageView;
 
 @end
 
@@ -22,6 +25,16 @@
     _constraintOfBgWidth.constant = kScreenWidth;
     
     _constraintOfMainHeight.constant = kScreenHeight * (180.0/568.0);
+    
+    // Banners
+    __weak typeof(self) weakSelf = self;
+    APIHomeBanner *requestBanner = [APIHomeBanner new];
+    requestBanner.type = @"5";
+    [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
+        weakSelf.headImageView.bannerList = responseObject.banners;
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
 }
 
 
@@ -30,11 +43,7 @@
 
 // 预约名师
 - (IBAction)didPressedAppointment:(id)sender {
-
-    AXWebViewController *vc = [[AXWebViewController alloc] initWithAddress:kAppointmentURL];
-    vc.showsBackgroundLabel = NO;
-    vc.navigationType = AXWebViewControllerNavigationBarItem;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self openWebPageWithUrlString:kAppointmentURL];
 }
 
 // 医馆介绍

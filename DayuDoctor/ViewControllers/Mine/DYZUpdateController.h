@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APIVersion.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DYZUpdateController : UIViewController
 
+@property (nonatomic, strong) VersionInfo *versionInfo;
 
 @end
 

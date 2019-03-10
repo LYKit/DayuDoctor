@@ -10,8 +10,10 @@
 #import "APIUpdateUserInfo.h"
 #import "APIUserInfo.h"
 #import "LXFPhotoHelper.h"
+#import "APIUploadImg.h"
+#import "ShowPickerView.h"
 
-@interface DYZUserInfoEditorController () 
+@interface DYZUserInfoEditorController ()  <ShowPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgPhoto;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
@@ -64,21 +66,39 @@
 }
 
 - (IBAction)didPressedSubmit:(id)sender {
-    APIUpdateUserInfo *request = [APIUpdateUserInfo new];
-    request.name = _txtName.text;
-    request.telephone = _txtPhone.text;
-    request.email = _txtEmail.text;
-    request.address = _txtAddress.text;
-    request.goodtypes = _txtGoodtypes.text;
-    request.img = @"123";
-#warning  需处理
-    __weak typeof(self) weakSelf = self;
-    [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
-        [weakSelf.navigationController popViewControllerAnimated:YES];
+    APIUploadImg *upload = [APIUploadImg new];
+//    upload.upIMG = self.selectImage;
+    upload.file = UIImageJPEGRepresentation(self.selectImage,0.1f);
+//    upload.fileName = @"1.jpg";
+//    upload.mimeType = @"image/jpeg";
+    
+//    upload.Value = UIImageJPEGRepresentation(self.selectImage,0.1f);
+//    upload.key = @"userPhoto";
+//    upload.form = @"image/jpeg";
+    
+    [upload startUpLoadImgWithSuccessBlock:^(id responseObject, NSDictionary *options) {
+        
+    } progress:^(NSProgress *uploadProgress) {
+        
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
+    
+//    APIUpdateUserInfo *request = [APIUpdateUserInfo new];
+//    request.name = _txtName.text;
+//    request.telephone = _txtPhone.text;
+//    request.email = _txtEmail.text;
+//    request.address = _txtAddress.text;
+//    request.goodtypes = _txtGoodtypes.text;
+//    request.img = @"123";
+//#warning  需处理
+//    __weak typeof(self) weakSelf = self;
+//    [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
+//        [weakSelf.navigationController popViewControllerAnimated:YES];
+//    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+//
+//    }];
 }
 
 - (IBAction)didPressedReturnKeyboard:(id)sender {
@@ -99,5 +119,16 @@
 }
 
 
+- (IBAction)didPressedCity:(id)sender {
+    ShowPickerView *areaPickerView = [[ShowPickerView alloc] initWithFrame:self.view.bounds];
+    areaPickerView.delegate = self;
+    [areaPickerView showPicker];
+    [self.view endEditing:YES];
+}
 
+#pragma mark == ShowPickerViewDelegate
+- (void)showPickerViewDone:(NSString *)chooseTitle chooseId:(NSString *)chooseId
+{
+    _txtAddress.text = chooseTitle;
+}
 @end

@@ -11,6 +11,7 @@
 
 
 @interface APIHomeBanner : DYZRequestObject
+@property (nonatomic, copy) NSString *type; // 0课程，1资讯，2面授，3答疑，4加盟，5医馆
 
 
 

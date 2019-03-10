@@ -54,4 +54,16 @@ typedef void(^LYRequestProgressBlock)(NSProgress *uploadProgress);
 
 
 
+
+/**
+ 上传操作
+
+ @param success 成功回调
+ @param progress 进度
+ @param fail 识别
+ */
+- (void)startUpLoadImgWithSuccessBlock:(LYRequestSuccessBlock)success
+                              progress:(LYRequestProgressBlock)progress
+                             failBlock:(LYRequestFailBlock)fail;
+
 @end

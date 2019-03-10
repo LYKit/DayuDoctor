@@ -9,12 +9,15 @@
 #import "DYZFaceTeachController.h"
 #import "DYZFaceTeachCell.h"
 #import "APIFaceTeach.h"
+#import "APIHomeBanner.h"
+#import "DYZHeadImageCell.h"
 
 @interface DYZFaceTeachController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *models;
 @property (nonatomic, strong) APIFaceTeach *requestFace;
 @property (nonatomic, strong) ResponseFaceTeach *responseFace;
+@property (nonatomic, strong) NSMutableArray *bannerList;
 
 
 @end
@@ -34,6 +37,7 @@
     self.tableView.dataSource = self;
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
     [self.tableView registerNib:[UINib nibWithNibName:kDYZFaceTeachCell bundle:nil] forCellReuseIdentifier:kDYZFaceTeachCell];
+    [self.tableView registerNib:[UINib nibWithNibName:kDYZHeadImageCell bundle:nil] forCellReuseIdentifier:kDYZHeadImageCell];
 
     __weak typeof(self) _self = self;
     _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -66,6 +70,18 @@
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         [self endRefreshing];
     }];
+    
+    
+    // Banners
+    APIHomeBanner *requestBanner = [APIHomeBanner new];
+    requestBanner.type = @"2";
+    [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
+        weakSelf.bannerList = responseObject.banners;
+        [weakSelf.tableView reloadData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+
 }
 
 - (void)endRefreshing {
@@ -73,16 +89,31 @@
     [self.tableView.mj_footer endRefreshing];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
     return self.models.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 150;
+    }
     return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        DYZHeadImageCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZHeadImageCell forIndexPath:indexPath];
+        cell.bannerList = self.bannerList;
+        return cell;
+    }
     DYZFaceTeachCell *cell = [tableView dequeueReusableCellWithIdentifier:kDYZFaceTeachCell forIndexPath:indexPath];
     cell.model = self.models[indexPath.row];
     return cell;
@@ -91,6 +122,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0) {
+        return;
+    }
     FaceTeachModel *model = self.models[indexPath.row];
     [self openWebPageWithUrlString:model.url];
 }

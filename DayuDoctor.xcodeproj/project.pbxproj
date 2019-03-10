@@ -56,6 +56,17 @@
 		C11C645A21F8752A000D0CB7 /* UIImageView+DYZWebImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C645921F8752A000D0CB7 /* UIImageView+DYZWebImageView.m */; };
 		C11C645D21F890D7000D0CB7 /* APIHomeCourseList.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C645C21F890D7000D0CB7 /* APIHomeCourseList.m */; };
 		C11C646421F98991000D0CB7 /* APIHomeBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C11C646321F98991000D0CB7 /* APIHomeBanner.m */; };
+		C123DAD52234D2F8000E5C85 /* APIUploadImg.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAD42234D2F8000E5C85 /* APIUploadImg.m */; };
+		C123DAD82235077A000E5C85 /* LYRequestManager2.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAD62235077A000E5C85 /* LYRequestManager2.m */; };
+		C123DAE622351026000E5C85 /* ShowPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DADA22351026000E5C85 /* ShowPickerView.m */; };
+		C123DAE722351026000E5C85 /* GLCoderObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DADE22351026000E5C85 /* GLCoderObject.m */; };
+		C123DAE822351026000E5C85 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DADF22351026000E5C85 /* CityModel.m */; };
+		C123DAE922351026000E5C85 /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = C123DAE022351026000E5C85 /* city.json */; };
+		C123DAEA22351026000E5C85 /* DistrictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAE322351026000E5C85 /* DistrictModel.m */; };
+		C123DAEB22351026000E5C85 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAE422351026000E5C85 /* ProvinceModel.m */; };
+		C123DAEF22352548000E5C85 /* DYZHeadImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAED22352547000E5C85 /* DYZHeadImageCell.m */; };
+		C123DAF022352548000E5C85 /* DYZHeadImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C123DAEE22352548000E5C85 /* DYZHeadImageCell.xib */; };
+		C123DAF4223529CA000E5C85 /* DYZHeadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C123DAF2223529C9000E5C85 /* DYZHeadImageView.m */; };
 		C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */; };
 		C13A5DEF21EDC4DC00493EE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13A5DED21EDC4DC00493EE7 /* Main.storyboard */; };
 		C13A5DF121EDC4DE00493EE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13A5DF021EDC4DE00493EE7 /* Assets.xcassets */; };
@@ -342,6 +353,26 @@
 		C11C645C21F890D7000D0CB7 /* APIHomeCourseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIHomeCourseList.m; sourceTree = "<group>"; };
 		C11C646221F98991000D0CB7 /* APIHomeBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIHomeBanner.h; sourceTree = "<group>"; };
 		C11C646321F98991000D0CB7 /* APIHomeBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIHomeBanner.m; sourceTree = "<group>"; };
+		C123DAD32234D2F8000E5C85 /* APIUploadImg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIUploadImg.h; sourceTree = "<group>"; };
+		C123DAD42234D2F8000E5C85 /* APIUploadImg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIUploadImg.m; sourceTree = "<group>"; };
+		C123DAD62235077A000E5C85 /* LYRequestManager2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LYRequestManager2.m; path = DayuDoctor/FrameworkService/LYRequestManager2.m; sourceTree = SOURCE_ROOT; };
+		C123DAD72235077A000E5C85 /* LYRequestManager2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LYRequestManager2.h; path = DayuDoctor/FrameworkService/LYRequestManager2.h; sourceTree = SOURCE_ROOT; };
+		C123DADA22351026000E5C85 /* ShowPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPickerView.m; sourceTree = "<group>"; };
+		C123DADB22351026000E5C85 /* ShowPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPickerView.h; sourceTree = "<group>"; };
+		C123DADD22351026000E5C85 /* DistrictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistrictModel.h; sourceTree = "<group>"; };
+		C123DADE22351026000E5C85 /* GLCoderObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCoderObject.m; sourceTree = "<group>"; };
+		C123DADF22351026000E5C85 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		C123DAE022351026000E5C85 /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		C123DAE122351026000E5C85 /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		C123DAE222351026000E5C85 /* GLCoderObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCoderObject.h; sourceTree = "<group>"; };
+		C123DAE322351026000E5C85 /* DistrictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistrictModel.m; sourceTree = "<group>"; };
+		C123DAE422351026000E5C85 /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
+		C123DAE522351026000E5C85 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		C123DAEC22352547000E5C85 /* DYZHeadImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYZHeadImageCell.h; sourceTree = "<group>"; };
+		C123DAED22352547000E5C85 /* DYZHeadImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYZHeadImageCell.m; sourceTree = "<group>"; };
+		C123DAEE22352548000E5C85 /* DYZHeadImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYZHeadImageCell.xib; sourceTree = "<group>"; };
+		C123DAF1223529C9000E5C85 /* DYZHeadImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYZHeadImageView.h; sourceTree = "<group>"; };
+		C123DAF2223529C9000E5C85 /* DYZHeadImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYZHeadImageView.m; sourceTree = "<group>"; };
 		C13A5DE421EDC4DC00493EE7 /* DayuDoctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayuDoctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13A5DE721EDC4DC00493EE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C13A5DE821EDC4DC00493EE7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -801,6 +832,7 @@
 				C199DBA0222FBE8200183098 /* GKNavigationBarViewController */,
 				C1E8CEC022229B3B003CC670 /* VTMagic */,
 				C1E8CE862220F162003CC670 /* DHGuidePageHUD */,
+				C123DAD922351026000E5C85 /* ShowPickerView */,
 				C1C9BB89221426AD0059B3B5 /* LYAlertView.h */,
 				C1C9BB88221426AC0059B3B5 /* LYAlertView.m */,
 				C1F1B96F222A5DDC005D3A5A /* LYTextField.h */,
@@ -876,6 +908,8 @@
 				C199DB9B222EB7B400183098 /* APICancelOrder.m */,
 				C199DC2F223014E800183098 /* APISearchClear.h */,
 				C199DC30223014E800183098 /* APISearchClear.m */,
+				C123DAD32234D2F8000E5C85 /* APIUploadImg.h */,
+				C123DAD42234D2F8000E5C85 /* APIUploadImg.m */,
 			);
 			path = EntityAPI;
 			sourceTree = "<group>";
@@ -963,6 +997,32 @@
 				305D416D9155427EF958CAE3 /* Pods-DayuDoctor.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C123DAD922351026000E5C85 /* ShowPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C123DADC22351026000E5C85 /* Model */,
+				C123DADB22351026000E5C85 /* ShowPickerView.h */,
+				C123DADA22351026000E5C85 /* ShowPickerView.m */,
+			);
+			path = ShowPickerView;
+			sourceTree = "<group>";
+		};
+		C123DADC22351026000E5C85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C123DAE022351026000E5C85 /* city.json */,
+				C123DAE522351026000E5C85 /* CityModel.h */,
+				C123DADF22351026000E5C85 /* CityModel.m */,
+				C123DADD22351026000E5C85 /* DistrictModel.h */,
+				C123DAE322351026000E5C85 /* DistrictModel.m */,
+				C123DAE222351026000E5C85 /* GLCoderObject.h */,
+				C123DADE22351026000E5C85 /* GLCoderObject.m */,
+				C123DAE122351026000E5C85 /* ProvinceModel.h */,
+				C123DAE422351026000E5C85 /* ProvinceModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C13A5DDB21EDC4DC00493EE7 = {
@@ -1066,6 +1126,8 @@
 			children = (
 				C13A5E9421EDD2E400493EE7 /* LYRequestManager.h */,
 				C13A5E9321EDD2E400493EE7 /* LYRequestManager.m */,
+				C123DAD72235077A000E5C85 /* LYRequestManager2.h */,
+				C123DAD62235077A000E5C85 /* LYRequestManager2.m */,
 				C108B56D22317EB9002AC7BD /* LYRequestUpload.h */,
 				C108B56E22317EB9002AC7BD /* LYRequestUpload.m */,
 				C13A5E6921EDCF0D00493EE7 /* LYErrorConfig.h */,
@@ -1431,6 +1493,11 @@
 				C1BCDB9321F84AD500CDF3EB /* DYZVideoCollectionCell.h */,
 				C1BCDB9421F84AD500CDF3EB /* DYZVideoCollectionCell.m */,
 				C1BCDB9521F84AD500CDF3EB /* DYZVideoCollectionCell.xib */,
+				C123DAEC22352547000E5C85 /* DYZHeadImageCell.h */,
+				C123DAED22352547000E5C85 /* DYZHeadImageCell.m */,
+				C123DAEE22352548000E5C85 /* DYZHeadImageCell.xib */,
+				C123DAF1223529C9000E5C85 /* DYZHeadImageView.h */,
+				C123DAF2223529C9000E5C85 /* DYZHeadImageView.m */,
 				C11C643721F85BB1000D0CB7 /* DYZHeadImageCollectionCell.h */,
 				C11C643821F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m */,
 				C11C643921F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib */,
@@ -1679,6 +1746,7 @@
 				C199DB99222EACDF00183098 /* DYZOrderInfoCell.xib in Resources */,
 				C1C9BB4B2212CE6B0059B3B5 /* DYZUpdatePwdController.xib in Resources */,
 				C17E4CD221F9C1F70094CC99 /* DYZApplyController.xib in Resources */,
+				C123DAF022352548000E5C85 /* DYZHeadImageCell.xib in Resources */,
 				C1AA2181221D401200CC262C /* DYZQACell.xib in Resources */,
 				C1C9BB5E2212D3000059B3B5 /* DYZQAViewController.xib in Resources */,
 				C199DBE3222FD11700183098 /* AXWebViewController.bundle in Resources */,
@@ -1698,6 +1766,7 @@
 				C1E8CEB922227B7A003CC670 /* DYZSearchListCell.xib in Resources */,
 				C1E54A43222A6ED70053D229 /* DYZHospitalController.xib in Resources */,
 				C1C9BB632212D36B0059B3B5 /* DYZJoinController.xib in Resources */,
+				C123DAE922351026000E5C85 /* city.json in Resources */,
 				C199DC1F222FD30500183098 /* AXIndicatorView.bundle in Resources */,
 				C183E63F221BDDAB00A2D380 /* DYZMeetDetailController.xib in Resources */,
 				C1BCDB5B21F704A300CDF3EB /* DYZMainHeaderView.xib in Resources */,
@@ -1798,7 +1867,9 @@
 				C199DBEB222FD1FF00183098 /* NJKWebViewProgressView.m in Sources */,
 				C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */,
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
+				C123DAEB22351026000E5C85 /* ProvinceModel.m in Sources */,
 				C1E8CEB4222273AC003CC670 /* UIView+CALayerRelation.m in Sources */,
+				C123DAD82235077A000E5C85 /* LYRequestManager2.m in Sources */,
 				C199DBCC222FBE8200183098 /* UIViewController+GKCategory.m in Sources */,
 				C1C9BB672212D4100059B3B5 /* DYZFaceTeachController.m in Sources */,
 				C1C9BB5D2212D3000059B3B5 /* DYZQAViewController.m in Sources */,
@@ -1811,6 +1882,7 @@
 				C1E8CEAC22210641003CC670 /* APISearchRecord.m in Sources */,
 				C199DBCF222FBE8200183098 /* GKNavigationBarViewController.m in Sources */,
 				C1E54A55222BB0EE0053D229 /* DYZOrderController.m in Sources */,
+				C123DAEF22352548000E5C85 /* DYZHeadImageCell.m in Sources */,
 				0D4BB90622197354007B37F8 /* DYZShareViewController.m in Sources */,
 				C1E8CE8D2220F162003CC670 /* DHGifImageOperation.m in Sources */,
 				C1BCDB8521F7262700CDF3EB /* DYZApplyController.m in Sources */,
@@ -1850,6 +1922,7 @@
 				C1C9BB812213C2B40059B3B5 /* APIRegister.m in Sources */,
 				C199DBE4222FD11700183098 /* AXWebViewController.m in Sources */,
 				C183E63E221BDDAB00A2D380 /* DYZMeetDetailController.m in Sources */,
+				C123DAEA22351026000E5C85 /* DistrictModel.m in Sources */,
 				C1C9BB6C2212D4FC0059B3B5 /* DYZMineInfoController.m in Sources */,
 				C199DBCA222FBE8200183098 /* UIScrollView+GKCategory.m in Sources */,
 				C199DBC4222FBE8200183098 /* GKPopTransitionAnimation.m in Sources */,
@@ -1880,6 +1953,8 @@
 				C1AA2175221BF16200CC262C /* DYZMeetDetailCell.m in Sources */,
 				C11C646421F98991000D0CB7 /* APIHomeBanner.m in Sources */,
 				0DF2D8C522244D3000CCF1F1 /* DYZShareButton.m in Sources */,
+				C123DAF4223529CA000E5C85 /* DYZHeadImageView.m in Sources */,
+				C123DAE622351026000E5C85 /* ShowPickerView.m in Sources */,
 				C199DBC3222FBE8200183098 /* GKDelegateHandler.m in Sources */,
 				C1E8CEDD22229B3F003CC670 /* VTMagicView.m in Sources */,
 				C13A5E8B21EDCF0D00493EE7 /* LYRequestObject.m in Sources */,
@@ -1917,6 +1992,7 @@
 				C1E8CE8E2220F162003CC670 /* DHGuidePageHUD.m in Sources */,
 				C1C9BB592212D2890059B3B5 /* DYZSearchListController.m in Sources */,
 				C199DC29222FD30500183098 /* AXPracticalHUDAnimator.m in Sources */,
+				C123DAE722351026000E5C85 /* GLCoderObject.m in Sources */,
 				C1C9BB872213C42A0059B3B5 /* APISendCode.m in Sources */,
 				C1C9BB622212D36B0059B3B5 /* DYZJoinController.m in Sources */,
 				0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */,
@@ -1927,6 +2003,7 @@
 				C1F1B970222A5DDC005D3A5A /* LYTextField.m in Sources */,
 				C183E636221BCFF700A2D380 /* DYZMeetingCell.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
+				C123DAE822351026000E5C85 /* CityModel.m in Sources */,
 				C1E54A69222BE0290053D229 /* APIVersion.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
 				C1E54A7A222D4C040053D229 /* APIOrderList.m in Sources */,
@@ -1950,6 +2027,7 @@
 				C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */,
 				0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */,
 				C1AA2180221D401200CC262C /* DYZQACell.m in Sources */,
+				C123DAD52234D2F8000E5C85 /* APIUploadImg.m in Sources */,
 				0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,

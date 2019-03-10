@@ -139,9 +139,10 @@
                                 <constraint firstAttribute="height" constant="1" id="G7s-yI-5y6"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="输入姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-l4-ZcM">
-                            <rect key="frame" x="261.5" y="14.5" width="73.5" height="21"/>
-                            <attributedString key="attributedText"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="输入姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-l4-ZcM">
+                            <rect key="frame" x="269.5" y="16" width="65.5" height="18"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
@@ -173,9 +174,10 @@
                                 <constraint firstAttribute="height" constant="1" id="R3n-qj-YGg"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="输入电话" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WrL-FO-oeA">
-                            <rect key="frame" x="261.5" y="14.5" width="73.5" height="21"/>
-                            <attributedString key="attributedText"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="输入电话" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WrL-FO-oeA">
+                            <rect key="frame" x="269.5" y="16" width="65.5" height="18"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
@@ -207,9 +209,10 @@
                                 <constraint firstAttribute="height" constant="1" id="McL-Oh-ZwH"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="输入邮箱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lr9-R4-UbG">
-                            <rect key="frame" x="261.5" y="14.5" width="73.5" height="21"/>
-                            <attributedString key="attributedText"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="输入邮箱" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lr9-R4-UbG">
+                            <rect key="frame" x="265.5" y="15" width="69.5" height="20"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
@@ -241,19 +244,30 @@
                                 <constraint firstAttribute="height" constant="1" id="e8H-ew-XqV"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="选择地区" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Lz-wm-swV">
-                            <rect key="frame" x="261.5" y="14.5" width="73.5" height="21"/>
-                            <attributedString key="attributedText"/>
+                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="选择地区" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Lz-wm-swV">
+                            <rect key="frame" x="265.5" y="15" width="69.5" height="20"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-Mk-5Qt">
+                            <rect key="frame" x="55" y="0.0" width="320" height="49"/>
+                            <connections>
+                                <action selector="didPressedCity:" destination="-1" eventType="touchUpInside" id="geY-h7-8v7"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="f6d-Mk-5Qt" secondAttribute="trailing" id="8Nf-Vs-8at"/>
                         <constraint firstAttribute="trailing" secondItem="0Lz-wm-swV" secondAttribute="trailing" constant="40" id="8Xy-62-3GB"/>
                         <constraint firstItem="beN-aL-ToT" firstAttribute="centerY" secondItem="pOK-UU-rRS" secondAttribute="centerY" id="DI4-br-hHB"/>
+                        <constraint firstItem="f6d-Mk-5Qt" firstAttribute="leading" secondItem="beN-aL-ToT" secondAttribute="trailing" id="Fxe-GQ-bcX"/>
+                        <constraint firstItem="f6d-Mk-5Qt" firstAttribute="top" secondItem="pOK-UU-rRS" secondAttribute="top" id="HZj-sc-0Aj"/>
                         <constraint firstAttribute="height" constant="50" id="MVd-oa-E1V"/>
                         <constraint firstItem="beN-aL-ToT" firstAttribute="leading" secondItem="pOK-UU-rRS" secondAttribute="leading" constant="20" id="Pbx-Ml-di9"/>
                         <constraint firstAttribute="trailing" secondItem="C7M-ot-or8" secondAttribute="trailing" id="Qcb-2G-Dh2"/>
+                        <constraint firstItem="C7M-ot-or8" firstAttribute="top" secondItem="f6d-Mk-5Qt" secondAttribute="bottom" id="WtW-eB-Llp"/>
                         <constraint firstItem="0Lz-wm-swV" firstAttribute="centerY" secondItem="pOK-UU-rRS" secondAttribute="centerY" id="chB-wV-AIg"/>
                         <constraint firstItem="C7M-ot-or8" firstAttribute="leading" secondItem="pOK-UU-rRS" secondAttribute="leading" id="gYY-Pl-1W8"/>
                         <constraint firstAttribute="bottom" secondItem="C7M-ot-or8" secondAttribute="bottom" id="kNv-fC-cR7"/>
@@ -275,9 +289,10 @@
                                 <constraint firstAttribute="height" constant="1" id="Oxx-eK-fT1"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="选择擅长" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFK-Te-28I">
-                            <rect key="frame" x="261.5" y="14.5" width="73.5" height="21"/>
-                            <attributedString key="attributedText"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="选择擅长" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFK-Te-28I">
+                            <rect key="frame" x="269.5" y="16" width="65.5" height="18"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>

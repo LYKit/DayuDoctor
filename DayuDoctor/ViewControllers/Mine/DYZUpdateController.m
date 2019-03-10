@@ -24,8 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCancel;
 @property (weak, nonatomic) IBOutlet UIButton *btnOk;
 
-@property (nonatomic, strong) VersionInfo *versionInfo;
-
 
 @end
 
@@ -44,7 +42,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadData];
 }
 
 
@@ -67,21 +64,6 @@
     _lblName.text = _versionInfo.name;
     _lblVersion.text = _versionInfo.version;
     _lblSize.text = _versionInfo.size;
-}
-
-- (void)loadData {
-    APIVersion *request = [APIVersion new];
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    request.version =  [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    
-    __weak typeof(self) weakSelf = self;
-    [request startPostWithSuccessBlock:^(ResponseVersion *responseObject, NSDictionary *options) {
-        weakSelf.versionInfo = responseObject.detail;
-        [weakSelf refreshData];
-        [weakSelf.tableView reloadData];
-    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-        
-    }];
 }
 
 
@@ -120,4 +102,9 @@
     }
 }
 
+
+- (void)setVersionInfo:(VersionInfo *)versionInfo {
+    _versionInfo = versionInfo;
+    [self.tableView reloadData];
+}
 @end
