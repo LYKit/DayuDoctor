@@ -133,7 +133,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
                        [NSURL URLWithString:@"http://tb-video.bdstatic.com/tieba-smallvideo/5_6d3243c354755b781f6cc80f60756ee5.mp4"],
                        [NSURL URLWithString:@"http://tb-video.bdstatic.com/tieba-movideo/11233547_ac127ce9e993877dce0eebceaa04d6c2_593d93a619b0.mp4"]];
     
-    self.player.assetURLs = self.assetURLs;
+    self.player.assetURLs = @[[NSURL URLWithString:_videoUrl]];
 }
 
 - (void)downClick:(UIButton *)sender {

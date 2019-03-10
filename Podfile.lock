@@ -15,7 +15,10 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - CYLTabBarController (1.17.20)
+  - DZNEmptyDataSet (1.8.1)
   - JCore (1.2.5)
+  - JPush (3.1.1.1):
+    - JCore (~> 1.2.5)
   - JShare (1.6.0):
     - JCore (~> 1.2)
   - Masonry (1.1.0)
@@ -41,6 +44,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - CYLTabBarController
+  - DZNEmptyDataSet
+  - JPush
   - JShare
   - Masonry
   - MBProgressHUD
@@ -57,7 +62,9 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - CYLTabBarController
+    - DZNEmptyDataSet
     - JCore
+    - JPush
     - JShare
     - Masonry
     - MBProgressHUD
@@ -71,7 +78,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CYLTabBarController: 376fc15463c582cd5a24a7e9d46a578243bd5b12
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   JCore: 14706de2640b25fb77dbd02332696491407f37c9
+  JPush: 25dd9013fbe106082c14f9f30a82364ee98852fb
   JShare: 47cf1b3389ff09c333f0599d57be9f7fe1b43073
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -82,6 +91,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZFPlayer: 00292c75ee52f5c2e4056c4fe911aa7697f5559f
 
-PODFILE CHECKSUM: 89a63fa7a13d81f73e366bfd4807c7b11583d440
+PODFILE CHECKSUM: 8a03f3c1b558179fc3a04334ecd67cc4d52e6712
 
 COCOAPODS: 1.5.0
