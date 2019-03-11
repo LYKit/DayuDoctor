@@ -7,11 +7,19 @@
 //
 
 #import "LYRequestUpload.h"
+#import "LYResponseObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIUploadImg : LYRequestUpload
-@property (nonatomic, strong) NSData *file;
+
+
+@end
+
+
+@interface ResponseUploadImg : LYResponseObject
+@property (nonatomic, copy) NSString *img;
+
 
 @end
 

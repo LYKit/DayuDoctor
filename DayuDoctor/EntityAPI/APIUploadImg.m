@@ -15,14 +15,21 @@
     self = [super init];
     if (self) {
         self.interfaceURL = InterfaceURL(@"/file/user/image");
+        self.mimeType = @"image/png";
+        self.file = @"file";
     }
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]*1000];
+    self.fileName = [NSString stringWithFormat:@"%@.png",timeSp];
     return self;
 }
 
-- (Class)responseName {
-    return [ResponseCommon class];
-}
 
+
+@end
+
+
+
+@implementation ResponseUploadImg
 
 
 @end

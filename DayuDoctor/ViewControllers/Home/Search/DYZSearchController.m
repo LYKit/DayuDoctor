@@ -118,6 +118,8 @@
     DYZSearchListController *searchList = [DYZSearchListController new];
     searchList.keyword = keyword;
     [self.navigationController pushViewController:searchList animated:YES];
+    
+    [self loadData];
 }
 
 

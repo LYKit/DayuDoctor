@@ -24,31 +24,12 @@ static LYRequestManager *_sharedClient;
         [_sharedClient.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         [_sharedClient.requestSerializer setValue:@"" forHTTPHeaderField:@"Authentication"];
 
-        _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",@"application/xml",@"text/json",@"text/javascript",@"text/html", @"text/plain",@"multipart/form-data",@"application/x-www-form-urlencoded",@"image/jpeg", @"image/png"]];
+        _sharedClient.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",@"application/xml",@"text/json",@"text/javascript",@"text/html", @"text/plain"]];
 
     }
     return _sharedClient;
 }
 
-static LYRequestManager *manager = nil;
-
-+ (instancetype)sharedClientNew
-{
-    if (!manager) {
-        manager = [LYRequestManager manager];
-        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-        manager.securityPolicy.allowInvalidCertificates=YES;
-        manager.securityPolicy.validatesDomainName = NO;
-        manager.requestSerializer.HTTPShouldHandleCookies=YES;
-        manager.requestSerializer.timeoutInterval = 30;
-//        [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//        [manager.requestSerializer setValue:@"" forHTTPHeaderField:@"Authentication"];
-        
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",@"application/xml",@"text/json",@"text/javascript",@"text/html", @"text/plain"]];
-        
-    }
-    return manager;
-}
 
 - (void)configHeaderParams:(NSMutableDictionary *)params {
     for (NSString *key in params.allKeys) {

@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYParserManager.m"
-            timestampString = "569992257.488288"
+            timestampString = "573923709.155736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/News/DYZNewsTableController.m"
-            timestampString = "573911008.954138"
+            timestampString = "573924611.0534821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -115,7 +115,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/News/DYZNewsTableController.m"
-            timestampString = "573911008.954267"
+            timestampString = "573924611.053581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -131,7 +131,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZHomeViewController.m"
-            timestampString = "573911008.954326"
+            timestampString = "573924611.053633"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
@@ -147,7 +147,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZHomeViewController.m"
-            timestampString = "573911008.9543689"
+            timestampString = "573924611.053673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -259,7 +259,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Mine/DYZMineViewController.m"
-            timestampString = "573911008.95469"
+            timestampString = "573924611.053885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -275,7 +275,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Mine/DYZMineViewController.m"
-            timestampString = "573911008.954803"
+            timestampString = "573924611.053938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -291,7 +291,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Mine/DYZMineViewController.m"
-            timestampString = "573911008.954891"
+            timestampString = "573924611.053987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -402,38 +402,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-            timestampString = "573911008.955187"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-didPressedSubmit:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-            timestampString = "573911008.955295"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-didPressedSubmit:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZApplyController.m"
             timestampString = "573650956.60887"
             startingColumnNumber = "9223372036854775807"
@@ -511,11 +479,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/Search/DYZSearchController.m"
-            timestampString = "573637484.385597"
+            timestampString = "573924611.054286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -531,7 +499,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZMainViewController.m"
-            timestampString = "573911008.955626"
+            timestampString = "573924611.054599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -552,7 +520,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "-loadData"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -627,7 +595,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Mine/DYZLoginController.m"
-            timestampString = "573668224.659552"
+            timestampString = "573924611.054791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -643,7 +611,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZMainTabBarController.m"
-            timestampString = "573911008.955901"
+            timestampString = "573924611.054837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -755,7 +723,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZHomeViewController.m"
-            timestampString = "573911008.956107"
+            timestampString = "573924611.055046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -771,7 +739,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestObject.m"
-            timestampString = "573911008.956157"
+            timestampString = "573924611.055089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -787,7 +755,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestObject.m"
-            timestampString = "573911008.956201"
+            timestampString = "573924611.055136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -802,60 +770,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-            timestampString = "573911008.9562449"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-didPressedSubmit:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DYZUserInfoEditorController didPressedSubmit:]"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-                  timestampString = "573888695.552615"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "249">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[DYZUserInfoEditorController didPressedSubmit:]_block_invoke"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-                  timestampString = "573888695.55488"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "83">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestManager.m"
-            timestampString = "573911008.956302"
+            timestampString = "573924611.055182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-RequestHTTPBody:method:parameters:progress:success:failure:"
             landmarkType = "7">
          </BreakpointContent>
@@ -867,7 +787,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestObject.m"
-            timestampString = "573911008.956383"
+            timestampString = "573924611.055267"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -879,123 +799,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-            timestampString = "573911008.956422"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-didPressedSubmit:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[DYZUserInfoEditorController didPressedSubmit:]_block_invoke_2"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-                  timestampString = "573911009.100821"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[DYZUserInfoEditorController didPressedSubmit:]_block_invoke_3"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-                  timestampString = "573911009.103144"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "83">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-            timestampString = "573911008.95647"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-didPressedSubmit:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-            timestampString = "573911008.956513"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-didPressedSubmit:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[DYZUserInfoEditorController didPressedSubmit:]_block_invoke"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-                  timestampString = "573911009.1134371"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "83">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[DYZUserInfoEditorController didPressedSubmit:]_block_invoke_2"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/ViewControllers/Mine/DYZUserInfoEditorController.m"
-                  timestampString = "573911009.115749"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestManager.m"
-            timestampString = "573911008.95656"
+            timestampString = "573924611.05531"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -1010,152 +818,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestManager.m"
-            timestampString = "573911008.956618"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "+sharedClientNew"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-            timestampString = "573911008.956672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-requestWithSuccessBlock:progress:failBlock:method:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__69-[LYRequestUpload requestWithSuccessBlock:progress:failBlock:method:]_block_invoke_3"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-                  timestampString = "573911009.120667"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "77">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__69-[LYRequestUpload requestWithSuccessBlock:progress:failBlock:method:]_block_invoke_4"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-                  timestampString = "573911009.1228679"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "83">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-            timestampString = "573911008.9567159"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-startUpLoadImgWithSuccessBlock:progress:failBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-            timestampString = "573911008.9567569"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-startUpLoadImgWithSuccessBlock:progress:failBlock:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-            timestampString = "573911008.956795"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-startUpLoadImgWithSuccessBlock:progress:failBlock:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LYRequestUpload startUpLoadImgWithSuccessBlock:progress:failBlock:]"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-                  timestampString = "573911009.143406"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "469">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[LYRequestUpload startUpLoadImgWithSuccessBlock:progress:failBlock:]"
-                  moduleName = "DayuDoctor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
-                  timestampString = "573911009.1463161"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "556">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZJoinController.m"
-            timestampString = "573911008.9568371"
+            timestampString = "573924611.055378"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -1171,7 +835,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Mine/DYZMineViewController.m"
-            timestampString = "573911008.95688"
+            timestampString = "573924611.055421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -1187,7 +851,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Mine/DYZMineViewController.m"
-            timestampString = "573911008.956923"
+            timestampString = "573924611.055462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "263"
@@ -1209,6 +873,101 @@
             startingLineNumber = "68"
             endingLineNumber = "68"
             landmarkName = "-loadDefaultData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
+            timestampString = "573924611.055539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-startUpLoadImgWithSuccessBlock:progress:failBlock:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LYRequestUpload startUpLoadImgWithSuccessBlock:progress:failBlock:]"
+                  moduleName = "DayuDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
+                  timestampString = "573915165.645541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "1224">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__69-[LYRequestUpload startUpLoadImgWithSuccessBlock:progress:failBlock:]_block_invoke"
+                  moduleName = "DayuDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
+                  timestampString = "573915165.647893"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "DayuDoctor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhaoxueliang/DayuDoctor/DayuDoctor/FrameworkService/LYNetworking/LYRequestUpload.m"
+                  timestampString = "573915165.650228"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/ViewControllers/Home/Search/DYZSearchController.m"
+            timestampString = "573924625.383383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-searchBarClicked:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/ViewControllers/Home/Search/DYZSearchController.m"
+            timestampString = "573924634.791664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-collectionView:layout:sizeForItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

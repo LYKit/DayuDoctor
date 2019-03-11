@@ -7,7 +7,6 @@
 //
 
 #import "UIImageView+DYZWebImageView.h"
-#import "UIImageView+WebCache.h"
 
 @implementation UIImageView (DYZWebImageView)
 
@@ -15,6 +14,14 @@
     NSURL *url = [NSURL URLWithString:urlString];
     if (url) {
         [self sd_setImageWithURL:url];
+    }
+}
+
+- (void)sd_setImageWithURLString:(nullable NSString *)urlString completed:(nullable SDExternalCompletionBlock)completedBlock
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (url) {
+        [self sd_setImageWithURL:url completed:completedBlock];
     }
 }
 @end

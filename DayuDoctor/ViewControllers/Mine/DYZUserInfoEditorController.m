@@ -48,6 +48,13 @@
 }
 
 - (void)loadDefaultData {
+    if (_responseUserInfo.detail.img.length) {
+        __weak typeof(self) weakSelf = self;
+        [_imgPhoto sd_setImageWithURLString:_responseUserInfo.detail.img completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            weakSelf.selectImage = image;
+        }];
+    }
+    
     if (_responseUserInfo.detail.name.length) {
         _txtName.text = _responseUserInfo.detail.name;
     }
@@ -66,40 +73,47 @@
 }
 
 - (IBAction)didPressedSubmit:(id)sender {
+    if (!_imgPhoto.image || !_selectImage) {
+        [self.view makeToast:@"用户头像不能为空"];
+        return;
+    }
+    
+    __weak typeof(self) weakSelf = self;
     APIUploadImg *upload = [APIUploadImg new];
-//    upload.upIMG = self.selectImage;
-    upload.file = UIImageJPEGRepresentation(self.selectImage,0.1f);
-//    upload.fileName = @"1.jpg";
-//    upload.mimeType = @"image/jpeg";
-    
-//    upload.Value = UIImageJPEGRepresentation(self.selectImage,0.1f);
-//    upload.key = @"userPhoto";
-//    upload.form = @"image/jpeg";
-    
-    [upload startUpLoadImgWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-        
+    upload.uploadImage = self.selectImage;
+    [upload startUpLoadImgWithSuccessBlock:^(ResponseUploadImg *responseObject, NSDictionary *options) {
+        if (responseObject.resultcode.integerValue == 0) {
+            [weakSelf submitUserInfo:responseObject.img];
+        }
     } progress:^(NSProgress *uploadProgress) {
-        
+
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+
+    }];
+    
+
+}
+
+
+- (void)submitUserInfo:(NSString *)imgUrl {
+    APIUpdateUserInfo *request = [APIUpdateUserInfo new];
+    request.name = _txtName.text;
+    request.telephone = _txtPhone.text;
+    request.email = _txtEmail.text;
+    request.address = _txtAddress.text;
+    request.goodtypes = _txtGoodtypes.text;
+    request.img = imgUrl;
+    
+    __weak typeof(self) weakSelf = self;
+    [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
+        [weakSelf.view makeToast:@"提交成功"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
+        [weakSelf.navigationController popViewControllerAnimated:YES];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
-    
-//    APIUpdateUserInfo *request = [APIUpdateUserInfo new];
-//    request.name = _txtName.text;
-//    request.telephone = _txtPhone.text;
-//    request.email = _txtEmail.text;
-//    request.address = _txtAddress.text;
-//    request.goodtypes = _txtGoodtypes.text;
-//    request.img = @"123";
-//#warning  需处理
-//    __weak typeof(self) weakSelf = self;
-//    [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
-//        [weakSelf.navigationController popViewControllerAnimated:YES];
-//    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-//
-//    }];
 }
+
 
 - (IBAction)didPressedReturnKeyboard:(id)sender {
     [self.view.window endEditing:YES];
