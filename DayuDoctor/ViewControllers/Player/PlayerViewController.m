@@ -23,16 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+ 
     self.view.backgroundColor = [UIColor whiteColor];
-    self.originalFrame = CGRectMake(0, 64, self.view.bounds.size.width, 200);
+    CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    self.originalFrame = CGRectMake(0, 0, self.view.bounds.size.width, 200);
     self.player = [[WMPlayer alloc] init];
     self.player.delegate = self;
+    self.player.backBtnStyle = BackBtnStyleNone;
     [self.view addSubview:_player];
-    VideoListInfoModel *infoMo = [VideoListInfoModel infoWithData:self.playerItem.extraData];
-    self.title = infoMo.title;
+    
+    NSURL *url = nil;
+    if (_playMode == PlayerModeLocal) {
+        url = [NSURL fileURLWithPath:self.playerItem.savePath];
+        VideoListInfoModel *infoMo = [VideoListInfoModel infoWithData:self.playerItem.extraData];
+        self.title = infoMo.title;
+    } else if (_playMode == PlayerModeOnline) {
+        NSString *urlstring = [NSString stringWithFormat:@"%@id=%@",kVideoURL, self.onlineURL];
+        url = [NSURL URLWithString:urlstring];
+    } else {
+        url = [NSURL URLWithString:@""];
+    }
     
     //保存路径需要转换为url路径，才能播放
-    NSURL *url = [NSURL fileURLWithPath:self.playerItem.savePath];
     NSLog(@"[playViewVC] videoUrl:%@", url);
     
     WMPlayerModel *model = [[WMPlayerModel alloc] init];
@@ -103,11 +115,11 @@
     [super viewWillLayoutSubviews];
     if (self.isFullScreen){
             
-        [self.navigationController setNavigationBarHidden:true];
+//        [self.navigationController setNavigationBarHidden:true];
         self.player.frame = self.view.bounds;
         self.player.isFullscreen = true;
     }else{
-        [self.navigationController setNavigationBarHidden:false];
+//        [self.navigationController setNavigationBarHidden:false];
         self.player.frame = self.originalFrame;
         self.player.isFullscreen = false;
     }

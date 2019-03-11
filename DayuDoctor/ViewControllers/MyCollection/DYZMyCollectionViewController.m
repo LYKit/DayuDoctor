@@ -9,7 +9,6 @@
 #import "DYZMyCollectionViewController.h"
 #import "APIMyCollectionList.h"
 #import "DYZMyCollectionCell.h"
-#import "ZFNoramlViewController.h"
 #import "DYZCacheListBottomView.h"
 #import "APIDeleteCollection.h"
 #import <Toast.h>

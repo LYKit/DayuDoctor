@@ -9,7 +9,6 @@
 #import "DYZShareViewController.h"
 #import "DYZShareButton.h"
 #import <JSHAREService.h>
-#import "ZFNoramlViewController.h"
 #import <MessageUI/MessageUI.h>
 
 @interface DYZShareViewController ()<MFMessageComposeViewControllerDelegate>
