@@ -8,6 +8,7 @@
 
 #import "DYZWebViewController.h"
 #import "ZFNoramlViewController.h"
+#import "PlayerViewController.h"
 
 @interface DYZWebViewController () <WKScriptMessageHandler>
 @property (nonatomic, strong) WKUserContentController *userController;
@@ -40,8 +41,9 @@
         NSDictionary *params = message.body;
         NSLog(@"%@",params[@"videoId"]);
         
-        ZFNoramlViewController *vc = [ZFNoramlViewController new];
-        vc.videoId = params[@"videoId"];
+        PlayerViewController *vc = [PlayerViewController new];
+        vc.onlineURL = params[@"videoId"];
+        vc.playMode = PlayerModeOnline;
         [_fromController.navigationController pushViewController:vc animated:YES];
     }
 }
