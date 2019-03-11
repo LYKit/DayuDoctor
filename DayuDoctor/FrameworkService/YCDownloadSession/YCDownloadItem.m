@@ -188,7 +188,6 @@ NSString * const kDownloadTaskFinishedNoti = @"kDownloadTaskFinishedNoti";
             [weakSelf downloadStatusChanged:YCDownloadStatusFailed downloadTask:nil];
             NSLog(@"[Item completionHandler] move file failed error: %@ \nlocalPath: %@ \nsavePath:%@", saveError,localPath,self.savePath);
         }
-        
     };
 }
 

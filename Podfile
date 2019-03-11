@@ -16,5 +16,6 @@ pod 'ZFPlayer/ControlView', '~> 3.0'
 pod 'JShare'
 pod 'JPush'
 pod 'DZNEmptyDataSet'
+pod 'WMPlayer'
 end
 

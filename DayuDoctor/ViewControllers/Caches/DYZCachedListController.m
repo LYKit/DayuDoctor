@@ -13,6 +13,7 @@
 #import "YCDownloadManager.h"
 #import "DYZCacheListBottomView.h"
 #import "VideoCacheListCell.h"
+#import "ZFNoramlViewController.h"
 
 
 @interface DYZCachedListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -144,7 +145,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    YCDownloadItem *item = self.models[indexPath.row];
+    ZFNoramlViewController *vc = [ZFNoramlViewController new];
+    vc.localPath = item.savePath;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
