@@ -9,12 +9,20 @@
 #import "PlayerViewController.h"
 #import "WMPlayer.h"
 #import "VideoListInfoModel.h"
+#import "GKCommon.h"
+#import "YCDownloadManager.h"
+#import "VideoCacheController.h"
+#import "VideoListInfoModel.h"
+
 
 @interface PlayerViewController ()<WMPlayerDelegate>
 
 @property (nonatomic, strong) WMPlayer *player;
 @property (nonatomic, assign) CGRect originalFrame;
 @property (nonatomic, assign) BOOL isFullScreen;
+@property (nonatomic, strong) UIButton *downloadButton;
+@property (nonatomic, strong) UIButton *directoryButton;
+@property (nonatomic, strong) NSString *url;
 
 @end
 
@@ -40,10 +48,10 @@
     } else if (_playMode == PlayerModeOnline) {
         NSString *urlstring = [NSString stringWithFormat:@"%@id=%@",kVideoURL, self.onlineURL];
         url = [NSURL URLWithString:urlstring];
+        _url = urlstring;
     } else {
         url = [NSURL URLWithString:@""];
     }
-    
     //保存路径需要转换为url路径，才能播放
     NSLog(@"[playViewVC] videoUrl:%@", url);
     
@@ -51,6 +59,9 @@
     model.videoURL = url;
     _player.playerModel = model;
     [_player play];
+    
+    
+    [self setupView];
 }
 
 - (void)dealloc {
@@ -58,6 +69,63 @@
     [_player removeFromSuperview];
 }
 
+- (UIButton *)getButton {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    UIColor *color = [UIColor colorWithHexString:@"#e34c48"];
+    [button setTitleColor:color
+                 forState:UIControlStateNormal];
+    return button;
+}
+
+- (void)directoryButtonAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)downloadButtonAction {
+    VideoListInfoModel *model = [VideoListInfoModel new];
+    model.title = [NSString stringWithFormat:@"test - %@", self.onlineURL];
+    model.video_url = _url;
+    YCDownloadItem *item = [[YCDownloadItem alloc] initWithUrl:_url fileId:@"1000"];
+    item.enableSpeed = YES;
+    item.extraData = [VideoListInfoModel dateWithInfoModel:model];
+    [YCDownloadManager startDownloadWithItem:item];
+}
+
+- (void)setupView {
+    CGFloat bottom = 0;
+    if (GK_IS_iPhoneX) {
+        bottom = 34;
+    }
+    self.downloadButton = [self getButton];
+    self.downloadButton.layer.borderColor = [[UIColor colorWithHexString:@"#e34c48"] CGColor];
+    self.downloadButton.layer.borderWidth = 0.5;
+    [self.downloadButton setTitle:@"下载" forState:UIControlStateNormal];
+    [self.view addSubview:self.downloadButton];
+    [self.downloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.width.mas_equalTo(kScreenWidth / 2);
+        make.height.mas_equalTo(50);
+        make.bottom.equalTo(self.view).mas_offset(-bottom);
+    }];
+    [self.downloadButton addTarget:self
+                            action:@selector(downloadButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    self.directoryButton = [self getButton];
+    self.directoryButton.layer.borderColor = [[UIColor colorWithHexString:@"#e34c48"] CGColor];
+    self.directoryButton.layer.borderWidth = 0.5;
+    [self.directoryButton setTitle:@"目录" forState:UIControlStateNormal];
+    [self.view addSubview:self.directoryButton];
+    [self.directoryButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.downloadButton.mas_right).mas_offset(-1);
+        make.width.mas_equalTo(kScreenWidth / 2 + 1);
+        make.height.mas_equalTo(50);
+        make.bottom.equalTo(self.view).mas_offset(-bottom);
+    }];
+    [self.directoryButton addTarget:self
+                            action:@selector(directoryButtonAction) forControlEvents:UIControlEventTouchUpInside];
+
+}
 
 #pragma mark rotate
 
