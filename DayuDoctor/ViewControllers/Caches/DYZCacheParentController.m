@@ -90,6 +90,8 @@
 
 - (void)setupDeviceMemoryLabel {
     _memoryLabel = [UILabel new];
+    _memoryLabel.font = [UIFont systemFontOfSize:12];
+    _memoryLabel.textColor = [UIColor colorWithHexString:@"#666666"];
     _memoryLabel.text = [self freeDiskSpaceInBytes];
     [self.magicView addSubview:_memoryLabel];
     [_memoryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
