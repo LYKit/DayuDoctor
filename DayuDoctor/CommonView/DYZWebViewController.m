@@ -9,6 +9,8 @@
 #import "DYZWebViewController.h"
 #import "ZFNoramlViewController.h"
 #import "PlayerViewController.h"
+#import "DYZVipRightsController.h"
+#import "DYZClassCourseController.h"
 
 @interface DYZWebViewController () <WKScriptMessageHandler>
 @property (nonatomic, strong) WKUserContentController *userController;
@@ -34,6 +36,8 @@
 
 - (void)addScriptMessageHandler:(WKUserContentController *)userController {
     [userController addScriptMessageHandler:self name:@"playVideo"];
+    [userController addScriptMessageHandler:self name:@"toMyRights"];
+    [userController addScriptMessageHandler:self name:@"toHomeCategory"];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
@@ -46,6 +50,16 @@
         vc.playMode = PlayerModeOnline;
         [_fromController.navigationController pushViewController:vc animated:YES];
     }
+    
+    if ([message.name isEqualToString:@"toMyRights"]) {
+        DYZVipRightsController *vc = [DYZVipRightsController new];
+        [_fromController.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if ([message.name isEqualToString:@"toHomeCategory"]) {
+        DYZClassCourseController *vc = [DYZClassCourseController new];
+        [_fromController.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 
@@ -53,6 +67,7 @@
 
 - (void)dealloc{
     [self.userController removeScriptMessageHandlerForName:@"playVideo"];
+    [self.userController removeScriptMessageHandlerForName:@"toHomeCategory"];
 }
 
 @end

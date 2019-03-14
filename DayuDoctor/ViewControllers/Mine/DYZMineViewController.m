@@ -21,6 +21,7 @@
 #import "DYZMessageController.h"
 #import "DYZUpdateController.h"
 #import "DYZOrderController.h"
+#import "DYZMemberManager.h"
 
 
 typedef enum : NSUInteger {
@@ -176,6 +177,8 @@ typedef enum : NSUInteger {
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionScore: {
+//            NSString *token = [[DYZMemberManager sharedMemberManger] token];
+//            NSString *urlString = [NSString stringWithFormat:@"%@?token=%@", kMineScoreURL, token];
             [self openWebPageWithUrlString:kMineScoreURL];
         } break;
         case enumOptionMessage: {
