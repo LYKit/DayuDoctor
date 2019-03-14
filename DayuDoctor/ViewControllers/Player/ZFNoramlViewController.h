@@ -12,6 +12,8 @@
 
 @property (nonatomic, copy) NSString *videoId;
 
+@property (nonatomic, strong) NSString *localPath;
+
 
 @end
 

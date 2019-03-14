@@ -25,6 +25,7 @@
 		0D5620D0221A431E00C5D508 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CA221A431E00C5D508 /* NSString+Hash.m */; };
 		0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5620CE221A431E00C5D508 /* HSDownloadManager.m */; };
 		0D72798521F96571001C0768 /* APICoursesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D72798421F96571001C0768 /* APICoursesList.m */; };
+		0D7AEFDE2235404600F0468D /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7AEFDC2235404600F0468D /* PlayerViewController.m */; };
 		0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683C821F47FF7002E255A /* DYZBaseViewController.m */; };
 		0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */; };
 		0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8683D821F48E08002E255A /* DYZBaseTableViewCell.m */; };
@@ -293,6 +294,8 @@
 		0D72798321F96571001C0768 /* APICoursesList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICoursesList.h; sourceTree = "<group>"; };
 		0D72798421F96571001C0768 /* APICoursesList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICoursesList.m; sourceTree = "<group>"; };
 		0D7AEFD8223512E700F0468D /* DayuDoctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DayuDoctor.entitlements; sourceTree = "<group>"; };
+		0D7AEFDC2235404600F0468D /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		0D7AEFDD2235404600F0468D /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		0D8683C721F47FF7002E255A /* DYZBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZBaseViewController.h; sourceTree = "<group>"; };
 		0D8683C821F47FF7002E255A /* DYZBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZBaseViewController.m; sourceTree = "<group>"; };
 		0D8683D121F48C9C002E255A /* DYZCoursesTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYZCoursesTableController.m; sourceTree = "<group>"; };
@@ -964,6 +967,8 @@
 		0DD6131021F84FE200C97464 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				0D7AEFDD2235404600F0468D /* PlayerViewController.h */,
+				0D7AEFDC2235404600F0468D /* PlayerViewController.m */,
 				0DD6131121F850DB00C97464 /* ZFNoramlViewController.h */,
 				0DD6131221F850DB00C97464 /* ZFNoramlViewController.m */,
 			);
@@ -1838,11 +1843,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/WMPlayer/WMPlayer/WMPlayer.bundle",
 				"${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WMPlayer.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ZFPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1945,6 +1952,7 @@
 				C1E8CEDC22229B3F003CC670 /* UIColor+VTMagic.m in Sources */,
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C199DBCD222FBE8200183098 /* GKNavigationBar.m in Sources */,
+				0D7AEFDE2235404600F0468D /* PlayerViewController.m in Sources */,
 				C108B56622316504002AC7BD /* DYZRequestObject.m in Sources */,
 				C199DB98222EACDF00183098 /* DYZOrderInfoCell.m in Sources */,
 				C1E54A49222A8D7A0053D229 /* UIViewController+DYZWebView.m in Sources */,
@@ -2214,7 +2222,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4QFSVNR53;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -2238,7 +2246,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B4QFSVNR53;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;

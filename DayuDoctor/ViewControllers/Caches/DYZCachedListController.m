@@ -13,6 +13,7 @@
 #import "YCDownloadManager.h"
 #import "DYZCacheListBottomView.h"
 #import "VideoCacheListCell.h"
+#import "PlayerViewController.h"
 
 
 @interface DYZCachedListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -144,7 +145,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    YCDownloadItem *item = self.models[indexPath.row];
+    PlayerViewController *playerVC = [[PlayerViewController alloc] init];
+    playerVC.playerItem = item;
+    [self.navigationController pushViewController:playerVC animated:true];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

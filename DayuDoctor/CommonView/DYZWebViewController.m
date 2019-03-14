@@ -8,6 +8,9 @@
 
 #import "DYZWebViewController.h"
 #import "ZFNoramlViewController.h"
+#import "PlayerViewController.h"
+#import "DYZVipRightsController.h"
+#import "DYZClassCourseController.h"
 
 @interface DYZWebViewController () <WKScriptMessageHandler>
 @property (nonatomic, strong) WKUserContentController *userController;
@@ -42,8 +45,19 @@
         NSDictionary *params = message.body;
         NSLog(@"%@",params[@"videoId"]);
         
-        ZFNoramlViewController *vc = [ZFNoramlViewController new];
-        vc.videoId = params[@"videoId"];
+        PlayerViewController *vc = [PlayerViewController new];
+        vc.onlineURL = params[@"videoId"];
+        vc.playMode = PlayerModeOnline;
+        [_fromController.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if ([message.name isEqualToString:@"toMyRights"]) {
+        DYZVipRightsController *vc = [DYZVipRightsController new];
+        [_fromController.navigationController pushViewController:vc animated:YES];
+    }
+    
+    if ([message.name isEqualToString:@"toHomeCategory"]) {
+        DYZClassCourseController *vc = [DYZClassCourseController new];
         [_fromController.navigationController pushViewController:vc animated:YES];
     }
 }
@@ -53,6 +67,7 @@
 
 - (void)dealloc{
     [self.userController removeScriptMessageHandlerForName:@"playVideo"];
+    [self.userController removeScriptMessageHandlerForName:@"toHomeCategory"];
 }
 
 @end
