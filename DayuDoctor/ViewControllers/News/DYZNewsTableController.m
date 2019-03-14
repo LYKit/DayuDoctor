@@ -44,7 +44,7 @@
     // Banners
     __weak typeof(self) weakSelf = self;
     APIHomeBanner *requestBanner = [APIHomeBanner new];
-    requestBanner.type = @"1";
+    requestBanner.type = @"11";
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.bannerList = responseObject.banners;
         [weakSelf.tableView reloadData];

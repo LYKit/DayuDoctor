@@ -33,6 +33,8 @@
 
 - (void)addScriptMessageHandler:(WKUserContentController *)userController {
     [userController addScriptMessageHandler:self name:@"playVideo"];
+    [userController addScriptMessageHandler:self name:@"toMyRights"];
+    [userController addScriptMessageHandler:self name:@"toHomeCategory"];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{

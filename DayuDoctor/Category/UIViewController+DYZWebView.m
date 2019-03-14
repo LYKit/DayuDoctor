@@ -17,9 +17,9 @@
     NSString *newUrlString = @"";
     NSURL *url = [NSURL URLWithString:urlString];
     if (url.query.length) {
-        newUrlString = [NSString stringWithFormat:@"%@&token%@",urlString,[DYZMemberManager sharedMemberManger].token];
+        newUrlString = [NSString stringWithFormat:@"%@&token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
     } else {
-        newUrlString = [NSString stringWithFormat:@"%@?token%@",urlString,[DYZMemberManager sharedMemberManger].token];
+        newUrlString = [NSString stringWithFormat:@"%@?token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
     }
     
     DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:newUrlString];

@@ -29,7 +29,7 @@
     // Banners
     __weak typeof(self) weakSelf = self;
     APIHomeBanner *requestBanner = [APIHomeBanner new];
-    requestBanner.type = @"5";
+    requestBanner.type = @"14";
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.headImageView.bannerList = responseObject.banners;
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {

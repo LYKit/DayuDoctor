@@ -72,7 +72,7 @@
     
     // Banners
     APIHomeBanner *requestBanner = [APIHomeBanner new];
-    requestBanner.type = @"3";
+    requestBanner.type = @"13";
     [requestBanner startPostWithSuccessBlock:^(ResponseHomeBanner *responseObject, NSDictionary *options) {
         weakSelf.bannerList = responseObject.banners;
         [weakSelf.tableView reloadData];
