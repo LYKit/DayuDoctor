@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
     enumOptionPay,          // 充值中心
     enumOptionOrder,        // 我的订单
     enumOptionCollection,   // 收藏
+    enumOptionApply,        // 我的报名
     enumOptionMember,       // 会员权益
     enumOptionScore,        // 我的积分
     enumOptionMessage,      // 系统消息
@@ -126,7 +127,7 @@ typedef enum : NSUInteger {
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
-    
+
 }
 
 
@@ -172,13 +173,15 @@ typedef enum : NSUInteger {
             DYZMyCollectionViewController *vc = [DYZMyCollectionViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         } break;
+        case enumOptionApply: {
+            UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+            [tab setSelectedIndex:2];
+        } break;
         case enumOptionMember: {
             DYZVipRightsController *vc = [DYZVipRightsController new];
             [self.navigationController pushViewController:vc animated:YES];
         } break;
         case enumOptionScore: {
-//            NSString *token = [[DYZMemberManager sharedMemberManger] token];
-//            NSString *urlString = [NSString stringWithFormat:@"%@?token=%@", kMineScoreURL, token];
             [self openWebPageWithUrlString:kMineScoreURL];
         } break;
         case enumOptionMessage: {
@@ -237,6 +240,7 @@ typedef enum : NSUInteger {
     _responseUserInfo = responseUserInfo;
     _status.text = @"已登录";
     _userName.text = _responseUserInfo.detail.name.length ? _responseUserInfo.detail.name : [DYZMemberManager getMemberInfo].mobile;
+    [_headImage sd_setImageWithURLString:_responseUserInfo.detail.img];
 }
 - (NSMutableArray *)optionsList { // 修改位置即调整枚举顺序
     if (!_optionsList) {
@@ -249,6 +253,7 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"充值中心" pos:enumOptionPay],
     [MineOption createOption:@"我的订单" pos:enumOptionOrder],
     [MineOption createOption:@"我的收藏" pos:enumOptionCollection],
+    [MineOption createOption:@"我的报名" pos:enumOptionApply],
     [MineOption createOption:@"会员权益" pos:enumOptionMember],
     [MineOption createOption:@"我的积分" pos:enumOptionScore],
     [MineOption createOption:@"系统消息" pos:enumOptionMessage],

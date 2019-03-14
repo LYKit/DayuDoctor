@@ -211,6 +211,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CollectionCourse *course = self.models[indexPath.row];
     course.isSelected = YES;
+    if (!_isEditing) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self openWebPageWithUrlString:course.url];
+    }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
