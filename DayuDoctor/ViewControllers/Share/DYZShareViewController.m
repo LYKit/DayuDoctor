@@ -44,7 +44,7 @@
         make.centerX.equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
-    _qrImgView.image = [UIImage imageNamed:@"1.png"];
+    _qrImgView.image = [UIImage imageNamed:@"qrimg.jpeg"];
     
     NSMutableArray *buttons = [NSMutableArray new];
     NSArray *titles = @[@"新浪微博", @"微信好友", @"微信朋友圈", @"短信"];
@@ -79,8 +79,19 @@
 }
 
 - (void)shareToPlatform:(JSHAREPlatform)platform {
+    if (   platform == JSHAREPlatformWechatSession
+        || platform == JSHAREPlatformWechatTimeLine) {
+        if ([JSHAREService isWeChatInstalled] == NO) {
+            [self.view makeToast:@"没有安装微信"
+                        duration:1
+                        position:CSToastPositionCenter];
+            return;
+        }
+    }
     JSHAREMessage *message = [JSHAREMessage message];
-    message.text = @"JShare SDK 支持主流社交平台、帮助开发者轻松实现社会化功能！";
+    message.title = @"大禹中元分享";
+    message.text = @"我发现了一块非常好用的APP：大禹中元，快来下载使用吧";
+    message.url = @"www.dyzy58.com";
     message.platform = platform;
     message.mediaType = JSHAREImage;
     message.image = [self getQRCodeData];
@@ -98,16 +109,11 @@
     if([MFMessageComposeViewController canSendText]) {
         MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
         controller.messageComposeDelegate = self;
-//        controller.recipients = @[weakSelf.detailModel.Telphone];//收信人
-//        //            controller.body = body;//短信内容
-//        controller.messageComposeDelegate = weakSelf;
-        NSString *body = @"一起使用大舜中医";
-        NSString *sub = @"subobject";
+        NSString *body = @"我发现了一块非常好用的APP：大禹中元，快来下载使用吧 www.dyzy58.com";
         BOOL isSuccess = [controller addAttachmentData:[self getQRCodeData]
                                         typeIdentifier:@"image/jpg"
                                               filename:@"1.png"];
         controller.body = body;
-        controller.subject = sub;
         if (!isSuccess) {
             NSLog(@"添加图片失败");
         }

@@ -78,6 +78,10 @@
     }
 }
 
+- (UIButton * _Nonnull)extracted {
+    return _bottomView.deleteButton;
+}
+
 - (void)setupBottomView {
     CGFloat bottom = IS_IPHONE_X ? 34 : 0;
     bottom += 20;
@@ -92,7 +96,7 @@
     
     [_bottomView.selectedButton addTarget:self
                                    action:@selector(selectedButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [_bottomView.deleteButton addTarget:self
+    [[self extracted] addTarget:self
                                  action:@selector(deleteAction)
                        forControlEvents:UIControlEventTouchUpInside];
     

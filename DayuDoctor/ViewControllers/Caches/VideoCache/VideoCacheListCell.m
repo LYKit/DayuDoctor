@@ -34,8 +34,8 @@
         cell = [[NSBundle mainBundle] loadNibNamed:@"VideoCacheListCell" owner:nil options:nil].firstObject;
     }
     return cell;
-    
 }
+
 
 + (CGFloat)rowHeight {
     return 84.0f;

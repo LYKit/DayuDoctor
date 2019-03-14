@@ -10,6 +10,7 @@
 #import "VideoCacheListCell.h"
 #import "YCDownloadManager.h"
 #import "DYZCacheListBottomView.h"
+#import "PlayerViewController.h"
 
 static NSString * const kDefinePauseAllTitle = @"暂停所有";
 static NSString * const kDefineStartAllTitle = @"开始所有";
@@ -48,6 +49,11 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
         make.bottom.equalTo(self.view).mas_offset(-bottom);
     }];
     _bottomView.hidden = YES;
+    [_bottomView.selectedButton addTarget:self
+                                   action:@selector(selecteAll:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_bottomView.deleteButton addTarget:self
+                                 action:@selector(deleteAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupOperateButton {
@@ -76,7 +82,7 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
     _pasueButton.layer.masksToBounds = YES;
     _pasueButton.backgroundColor = [UIColor blackColor];
     _pasueButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    [_pasueButton setTitle:@"全部暂停" forState:UIControlStateNormal];
+    [_pasueButton setTitle:@"全部开始" forState:UIControlStateNormal];
     [_pasueButton setTitle:@"全部暂停" forState:UIControlStateSelected];
     [_pasueButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:_pasueButton];
@@ -143,6 +149,7 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
         CGFloat bottom = IS_IPHONE_X ? 34 : 0;
         make.bottom.equalTo(self.view).mas_offset(-bottom);
     }];
+    [_tableView registerNib:[UINib nibWithNibName:@"VideoCacheListCell" bundle:nil] forCellReuseIdentifier:@"VideoCacheListCell"];
     
     [self setupBottomView];
 }
@@ -164,9 +171,9 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
 
 #pragma mark - uitableview datasource & delegate
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return YES;
+//}
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 //
@@ -187,8 +194,7 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
 //
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    VideoCacheListCell *cell = [VideoCacheListCell videoCacheListCellWithTableView:tableView];
+    VideoCacheListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCacheListCell"];
     YCDownloadItem *item = self.cacheVideoList[indexPath.row];
     cell.item = item;
     item.delegate = cell;
@@ -206,7 +212,8 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (tableView.isEditing) {
-        
+        YCDownloadItem *item = self.cacheVideoList[indexPath.row];
+        item.isSelected = YES;
     } else {
         YCDownloadItem *item = self.cacheVideoList[indexPath.row];
         if (item.downloadStatus == YCDownloadStatusDownloading) {
@@ -218,26 +225,56 @@ static NSString * const kDefineStartAllTitle = @"开始所有";
         }else if (item.downloadStatus == YCDownloadStatusWaiting){
             [YCDownloadManager pauseDownloadWithItem:item];
         }else if (item.downloadStatus == YCDownloadStatusFinished){
-            //        PlayerViewController *playerVC = [[PlayerViewController alloc] init];
-            //        playerVC.playerItem = item;
-            //        [self.navigationController pushViewController:playerVC animated:true];
+            PlayerViewController *playerVC = [[PlayerViewController alloc] init];
+            playerVC.playerItem = item;
+            playerVC.playMode = PlayerModeLocal;
+            [self.navigationController pushViewController:playerVC animated:true];
         }
         [self.tableView reloadData];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    CollectionCourse *course = self.models[indexPath.row];
-//    course.isSelected = NO;
+    YCDownloadItem *item = self.cacheVideoList[indexPath.row];
+    item.isSelected = NO;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    CollectionCourse *course = self.models[indexPath.row];
-//    course.isSelected = YES;
-//}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+}
 
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
-//}
+- (void)selecteAll:(UIButton *)button {
+    button.selected = !button.selected;
+    if (button.selected) {
+        for (NSInteger i = 0; i < self.cacheVideoList.count; ++i) {
+            YCDownloadItem *item = self.cacheVideoList[i];
+            item.isSelected = YES;
+            NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+            [self.tableView selectRowAtIndexPath:path animated:NO scrollPosition:UITableViewScrollPositionNone];
+        }
+    } else {
+        for (NSInteger i = 0; i < self.cacheVideoList.count; ++i) {
+            YCDownloadItem *item = self.cacheVideoList[i];
+            item.isSelected = YES;
+            NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+            [self.tableView deselectRowAtIndexPath:path animated:NO];
+        }
+    }
+}
+
+- (void)deleteAction {
+    NSMutableArray *array = [NSMutableArray new];
+    for (YCDownloadItem *item in self.cacheVideoList) {
+        if (item.isSelected) {
+            [YCDownloadManager stopDownloadWithItem:item];
+            [array addObject:item];
+        }
+    }
+    [self.cacheVideoList removeObjectsInArray:array];
+    [self.tableView reloadData];
+    if (self.cacheVideoList.count == 0) {
+        self.bottomView.selectedButton.selected = NO;
+    }
+}
 
 @end

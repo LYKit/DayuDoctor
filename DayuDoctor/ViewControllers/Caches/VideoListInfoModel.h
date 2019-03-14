@@ -21,6 +21,7 @@
 @property (nonatomic, assign) NSInteger file_size;
 
 
+
 + (NSMutableArray <VideoListInfoModel *> *)getVideoListInfo:(NSArray <NSDictionary *>*)listInfos;
 
 + (NSData *)dateWithInfoModel:(VideoListInfoModel *)mo;

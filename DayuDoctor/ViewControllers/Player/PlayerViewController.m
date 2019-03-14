@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIButton *downloadButton;
 @property (nonatomic, strong) UIButton *directoryButton;
 @property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) UIButton *backButton;
 
 @end
 
@@ -71,7 +72,8 @@
 
 - (UIButton *)getButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    UIColor *color = [UIColor colorWithHexString:@"#e34c48"];
+    button.backgroundColor = [UIColor lightGrayColor];
+    UIColor *color = [UIColor blackColor];
     [button setTitleColor:color
                  forState:UIControlStateNormal];
     return button;
@@ -92,19 +94,35 @@
 }
 
 - (void)setupView {
-    CGFloat bottom = 0;
+    CGFloat bottom = 20;
     if (GK_IS_iPhoneX) {
         bottom = 34;
     }
+    
+    CGFloat width = (kScreenWidth - 20 - 2 * 20) / 3;
+    self.backButton = [self getButton];
+    [self.backButton setTitle:@"返回" forState:UIControlStateNormal];
+    [self.view addSubview:self.backButton];
+    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(10);
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(40);
+        make.bottom.equalTo(self.view).mas_offset(-bottom);
+    }];
+    [self.backButton addTarget:self
+                        action:@selector(directoryButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [self.directoryButton addTarget:self
+                             action:@selector(directoryButtonAction) forControlEvents:UIControlEventTouchUpInside];
+
     self.downloadButton = [self getButton];
-    self.downloadButton.layer.borderColor = [[UIColor colorWithHexString:@"#e34c48"] CGColor];
-    self.downloadButton.layer.borderWidth = 0.5;
     [self.downloadButton setTitle:@"下载" forState:UIControlStateNormal];
     [self.view addSubview:self.downloadButton];
     [self.downloadButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.width.mas_equalTo(kScreenWidth / 2);
-        make.height.mas_equalTo(50);
+        make.left.equalTo(self.backButton.mas_right).mas_offset(20);
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(40);
         make.bottom.equalTo(self.view).mas_offset(-bottom);
     }];
     [self.downloadButton addTarget:self
@@ -112,14 +130,12 @@
     
     
     self.directoryButton = [self getButton];
-    self.directoryButton.layer.borderColor = [[UIColor colorWithHexString:@"#e34c48"] CGColor];
-    self.directoryButton.layer.borderWidth = 0.5;
     [self.directoryButton setTitle:@"目录" forState:UIControlStateNormal];
     [self.view addSubview:self.directoryButton];
     [self.directoryButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.downloadButton.mas_right).mas_offset(-1);
-        make.width.mas_equalTo(kScreenWidth / 2 + 1);
-        make.height.mas_equalTo(50);
+        make.left.equalTo(self.downloadButton.mas_right).mas_offset(20);
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(40);
         make.bottom.equalTo(self.view).mas_offset(-bottom);
     }];
     [self.directoryButton addTarget:self
@@ -159,8 +175,14 @@
 - (void)setFullScreen:(BOOL)isFullScreen {
     
     if (isFullScreen) {
+        self.backButton.hidden = YES;
+        self.directoryButton.hidden = YES;
+        self.downloadButton.hidden = YES;
         [self rotateOrientation:UIInterfaceOrientationLandscapeRight];
     }else{
+        self.backButton.hidden = NO;
+        self.directoryButton.hidden = NO;
+        self.downloadButton.hidden = NO;
         [self rotateOrientation:UIInterfaceOrientationPortrait];
     }
 }

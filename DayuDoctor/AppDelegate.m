@@ -125,9 +125,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     YCDConfig *config = [YCDConfig new];
     config.saveRootPath = path;
     config.uid = @"100006";
-    config.maxTaskCount = 2;
+    config.maxTaskCount = 5;
     config.taskCachekMode = YCDownloadTaskCacheModeKeep;
-    config.launchAutoResumeDownload = true;
+    config.launchAutoResumeDownload = NO;
     [YCDownloadManager mgrWithConfig:config];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downloadTaskFinishedNoti:) name:kDownloadTaskFinishedNoti object:nil];
@@ -167,15 +167,14 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 - (void)setupJShare {
     JSHARELaunchConfig *config = [[JSHARELaunchConfig alloc] init];
-    config.appKey = @"AppKey copied from JiGuang Portal application";
-    config.SinaWeiboAppKey = @"374535501";
-    config.SinaWeiboAppSecret = @"baccd12c166f1df96736b51ffbf600a2";
-    config.SinaRedirectUri = @"https://www.jiguang.cn";
-    config.QQAppId = @"1105864531";
-    config.QQAppKey = @"glFYjkHQGSOCJHMC";
-    config.WeChatAppId = @"wxa2ea563906227379";
-    config.WeChatAppSecret = @"bb63c0a06bf0ee7f633a5bc44304d110";
-    config.JChatProAuth = @"a7e2ce002d1a071a6ca9f37d";
+    config.appKey = @"2c6b06c01f725ea06dcfa4d4";
+    config.SinaWeiboAppKey = @"1714466028";
+    config.SinaWeiboAppSecret = @"29ca4b8d61066fe2633384e30b417758 ";
+    config.SinaRedirectUri = @"www.dyzy58.com";
+
+    config.WeChatAppId = @"wx098e3cd73bbf8284";
+    config.WeChatAppSecret = @"13415d4eae7c872186ab5a6de72ff7a3";
+    
     [JSHAREService setupWithConfig:config];
     [JSHAREService setDebug:YES];
 }
