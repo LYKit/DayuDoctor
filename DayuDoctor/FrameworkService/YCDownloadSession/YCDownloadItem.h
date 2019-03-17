@@ -57,5 +57,9 @@ typedef NS_ENUM(NSUInteger, YCDownloadStatus) {
 /**文件沙盒保存路径*/
 @property (nonatomic, copy, readonly, nonnull) NSString *savePath;
 
+
+//UI 用于选中
+@property (nonatomic, assign) BOOL isSelected;
+
 @end
 

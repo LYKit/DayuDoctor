@@ -44,7 +44,7 @@
     [self.view addSubview:_tableView];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, -3);
-    [_tableView registerClass:[VideoCacheListCell class] forCellReuseIdentifier:@"cell"];
+    [_tableView registerNib:[UINib nibWithNibName:@"VideoCacheListCell" bundle:nil] forCellReuseIdentifier:@"VideoCacheListCell"];
     ADJUST_SCROLLVIEW_INSET_NEVER(self, self.tableView);
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_editButton.mas_bottom).mas_offset(5);
@@ -67,6 +67,12 @@
         make.bottom.equalTo(self.view).mas_offset(-bottom);
     }];
     _bottomView.hidden = YES;
+    
+    [_bottomView.selectedButton addTarget:self
+                                   action:@selector(selecteAll:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_bottomView.deleteButton addTarget:self
+                                 action:@selector(deleteAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupMemoryLabel {
@@ -76,6 +82,7 @@
     _editButton.layer.masksToBounds = YES;
     _editButton.backgroundColor = [UIColor blackColor];
     [_editButton setTitle:@"编辑" forState:UIControlStateNormal];
+    [_editButton setTitle:@"取消编辑" forState:UIControlStateSelected];
     _editButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [_editButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:_editButton];
@@ -85,7 +92,7 @@
         make.width.mas_equalTo(90);
     }];
     [_editButton addTarget:self
-                    action:@selector(editAction)
+                    action:@selector(editAction:)
           forControlEvents:UIControlEventTouchUpInside];
     
 
@@ -105,8 +112,9 @@
 //    [_pasueButton addTarget:self action:@selector(pauseAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)editAction {
+- (void)editAction:(UIButton *)button {
     [self.tableView setEditing:!self.tableView.editing animated:YES];
+    button.selected = !button.selected;
     
     BOOL isEditing = self.tableView.editing;
     if (isEditing) {
@@ -128,7 +136,7 @@
 
 #pragma tableView delegate
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    VideoCacheListCell *cell = [VideoCacheListCell videoCacheListCellWithTableView:tableView];
+    VideoCacheListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCacheListCell"];
     YCDownloadItem *item = self.models[indexPath.row];
     cell.item = item;
     item.delegate = cell;
@@ -140,21 +148,65 @@
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleNone;
+    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    YCDownloadItem *item = self.models[indexPath.row];
-    PlayerViewController *playerVC = [[PlayerViewController alloc] init];
-    playerVC.playerItem = item;
-    [self.navigationController pushViewController:playerVC animated:true];
+    
+    if (tableView.isEditing) {
+        YCDownloadItem *item = self.models[indexPath.row];
+        item.isSelected = YES;
+    } else {
+        YCDownloadItem *item = self.models[indexPath.row];
+        PlayerViewController *playerVC = [[PlayerViewController alloc] init];
+        playerVC.playerItem = item;
+        playerVC.playMode = PlayerModeLocal;
+        [self.navigationController pushViewController:playerVC animated:true];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [VideoCacheListCell rowHeight];
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YCDownloadItem *item = self.models[indexPath.row];
+    item.isSelected = NO;
+}
+
+- (void)selecteAll:(UIButton *)button {
+    button.selected = !button.selected;
+    if (button.selected) {
+        for (NSInteger i = 0; i < self.models.count; ++i) {
+            YCDownloadItem *item = self.models[i];
+            item.isSelected = YES;
+            NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+            [self.tableView selectRowAtIndexPath:path animated:NO scrollPosition:UITableViewScrollPositionNone];
+        }
+    } else {
+        for (NSInteger i = 0; i < self.models.count; ++i) {
+            YCDownloadItem *item = self.models[i];
+            item.isSelected = YES;
+            NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+            [self.tableView deselectRowAtIndexPath:path animated:NO];
+        }
+    }
+}
+
+- (void)deleteAction {
+    NSMutableArray *array = [NSMutableArray new];
+    for (YCDownloadItem *item in self.models) {
+        if (item.isSelected) {
+            [YCDownloadManager stopDownloadWithItem:item];
+            [array addObject:item];
+        }
+    }
+    [self.models removeObjectsInArray:array];
+    [self.tableView reloadData];
+    if (self.models.count == 0) {
+        self.bottomView.selectedButton.selected = NO;
+    }
+}
 
 
 /*

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoCacheListCell" rowHeight="84" id="KHc-cV-BJx" customClass="VideoCacheListCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="VideoCacheListCell" rowHeight="84" id="KHc-cV-BJx" customClass="VideoCacheListCell">
             <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KHc-cV-BJx" id="KkF-PE-0Bi">
