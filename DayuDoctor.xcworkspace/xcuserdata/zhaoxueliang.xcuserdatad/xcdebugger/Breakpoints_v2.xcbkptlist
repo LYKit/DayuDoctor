@@ -819,7 +819,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Home/DYZJoinController.m"
-            timestampString = "574154156.500723"
+            timestampString = "574311704.32621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -993,13 +993,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/Category/UIViewController+DYZWebView.m"
-            timestampString = "574156834.219514"
+            filePath = "DayuDoctor/ViewControllers/MyCollection/DYZMyCollectionViewController.m"
+            timestampString = "574240496.13359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-openWebPageWithUrlString:"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1009,13 +1009,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DayuDoctor/ViewControllers/MyCollection/DYZMyCollectionViewController.m"
-            timestampString = "574240496.13359"
+            filePath = "DayuDoctor/Category/UIViewController+DYZWebView.m"
+            timestampString = "574311704.326489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-openWebPageWithUrlString:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

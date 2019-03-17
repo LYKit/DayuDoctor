@@ -11,7 +11,6 @@
 // IP地址
 extern NSString * const HostUrl;
 
-
 /**
  @param host 地址
  @param interface 接口地址
@@ -24,7 +23,6 @@ extern NSString *RequestURL (NSString *host,NSString *interface);
  @return 完整的请求url， host默认HostUrl
  */
 extern NSString *InterfaceURL (NSString *path);
-
 
 /**
  @param path 服务器地址

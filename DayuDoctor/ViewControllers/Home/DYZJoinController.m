@@ -69,7 +69,7 @@
     request.address = _txtAddress.text;
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(ResponseCommon *responseObject, NSDictionary *options) {
-        [weakSelf.view makeToast:@"加盟成功"];
+        [weakSelf.view makeToast:@"提交成功"];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];

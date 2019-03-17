@@ -73,25 +73,24 @@
 }
 
 - (IBAction)didPressedSubmit:(id)sender {
-    if (!_imgPhoto.image || !_selectImage) {
+    if (_selectImage) {
+        __weak typeof(self) weakSelf = self;
+        APIUploadImg *upload = [APIUploadImg new];
+        upload.uploadImage = self.selectImage;
+        [upload startUpLoadImgWithSuccessBlock:^(ResponseUploadImg *responseObject, NSDictionary *options) {
+            if (responseObject.resultcode.integerValue == 0) {
+                [weakSelf submitUserInfo:responseObject.img];
+            }
+        } progress:^(NSProgress *uploadProgress) {
+            
+        } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+            
+        }];
+    } else if (_responseUserInfo.detail.img.length) {
+        [self submitUserInfo:_responseUserInfo.detail.img];
+    } else {
         [self.view makeToast:@"用户头像不能为空"];
-        return;
     }
-    
-    __weak typeof(self) weakSelf = self;
-    APIUploadImg *upload = [APIUploadImg new];
-    upload.uploadImage = self.selectImage;
-    [upload startUpLoadImgWithSuccessBlock:^(ResponseUploadImg *responseObject, NSDictionary *options) {
-        if (responseObject.resultcode.integerValue == 0) {
-            [weakSelf submitUserInfo:responseObject.img];
-        }
-    } progress:^(NSProgress *uploadProgress) {
-
-    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
-
-    }];
-    
-
 }
 
 
@@ -106,9 +105,8 @@
     
     __weak typeof(self) weakSelf = self;
     [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
-        [weakSelf.view makeToast:@"提交成功"];
+        [weakSelf.view makeToast:@"修改成功"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
-        [weakSelf.navigationController popViewControllerAnimated:YES];
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -125,6 +123,9 @@
         [weakSelf selectedImage:data];
         weakSelf.selectImage = data;
     }];
+    
+}
+- (IBAction)didPressedShanchang:(id)sender {
     
 }
 

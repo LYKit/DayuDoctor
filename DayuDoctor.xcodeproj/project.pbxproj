@@ -2266,6 +2266,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				INFOPLIST_FILE = DayuDoctorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2284,6 +2285,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4QFSVNR53;
 				INFOPLIST_FILE = DayuDoctorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

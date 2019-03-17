@@ -276,6 +276,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXC-QY-Kpx" userLabel="擅长">
                     <rect key="frame" x="0.0" y="320" width="375" height="50"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKA-E3-ZBf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                            <connections>
+                                <action selector="didPressedShanchang:" destination="-1" eventType="touchUpInside" id="ojQ-kX-etz"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="擅长" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beJ-nT-zpp">
                             <rect key="frame" x="20" y="14.5" width="35" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -289,7 +295,7 @@
                                 <constraint firstAttribute="height" constant="1" id="Oxx-eK-fT1"/>
                             </constraints>
                         </view>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="选择擅长" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFK-Te-28I">
+                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="选择擅长" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFK-Te-28I">
                             <rect key="frame" x="269.5" y="16" width="65.5" height="18"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -305,7 +311,11 @@
                         <constraint firstItem="RFK-Te-28I" firstAttribute="centerY" secondItem="AXC-QY-Kpx" secondAttribute="centerY" id="DKm-Sk-1gd"/>
                         <constraint firstAttribute="trailing" secondItem="smD-8R-ihU" secondAttribute="trailing" id="Hz1-Eo-QMR"/>
                         <constraint firstAttribute="bottom" secondItem="smD-8R-ihU" secondAttribute="bottom" id="J2r-rA-uIO"/>
+                        <constraint firstItem="nKA-E3-ZBf" firstAttribute="top" secondItem="AXC-QY-Kpx" secondAttribute="top" id="MC6-fk-kM7"/>
+                        <constraint firstAttribute="trailing" secondItem="nKA-E3-ZBf" secondAttribute="trailing" id="SYr-5b-PUh"/>
                         <constraint firstAttribute="height" constant="50" id="e4O-5q-nGo"/>
+                        <constraint firstItem="smD-8R-ihU" firstAttribute="top" secondItem="nKA-E3-ZBf" secondAttribute="bottom" id="pig-iH-euc"/>
+                        <constraint firstItem="nKA-E3-ZBf" firstAttribute="leading" secondItem="AXC-QY-Kpx" secondAttribute="leading" id="rLL-9j-g1T"/>
                     </constraints>
                 </view>
             </subviews>
