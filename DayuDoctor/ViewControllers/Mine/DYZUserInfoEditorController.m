@@ -12,8 +12,10 @@
 #import "LXFPhotoHelper.h"
 #import "APIUploadImg.h"
 #import "ShowPickerView.h"
+#import "APIClassifyAll.h"
+#import "ZHPickView.h"
 
-@interface DYZUserInfoEditorController ()  <ShowPickerViewDelegate>
+@interface DYZUserInfoEditorController ()  <ShowPickerViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgPhoto;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;
@@ -23,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtGoodtypes;
 
 @property (nonatomic, strong) ResponseUserInfo *responseUserInfo;
+@property (nonatomic, strong) NSMutableArray<ClassifyModel *> *classifyList;
+@property (nonatomic, strong) NSArray *arrayNames;
 @property (nonatomic, strong) UIImage *selectImage;
 
 
@@ -42,6 +46,13 @@
     [[APIUserInfo new] startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
         weakSelf.responseUserInfo = responseObject;
         [weakSelf loadDefaultData];
+    } failBlock:^(LYNetworkError *error, NSDictionary *options) {
+        
+    }];
+    
+    APIClassifyAll *request = [APIClassifyAll new];
+    [request startPostWithSuccessBlock:^(ResponseClassify *responseObject, NSDictionary *options) {
+        weakSelf.classifyList = responseObject.classifies;
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -107,6 +118,9 @@
     [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
         [weakSelf.view makeToast:@"修改成功"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        });
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
@@ -126,7 +140,13 @@
     
 }
 - (IBAction)didPressedShanchang:(id)sender {
-    
+    ZHPickView *pickView = [[ZHPickView alloc] init];
+    [pickView setDataViewWithItem:self.arrayNames title:@"擅长选择"];
+    [pickView showPickView:self];
+    __weak typeof(self) weakSelf = self;
+    pickView.block = ^(NSString *selectedStr) {
+        weakSelf.txtGoodtypes.text = selectedStr;
+    };
 }
 
 - (void)selectedImage:(UIImage *)image {
@@ -146,4 +166,16 @@
 {
     _txtAddress.text = chooseTitle;
 }
+
+
+
+- (void)setClassifyList:(NSMutableArray<ClassifyModel *> *)classifyList {
+    _classifyList = classifyList;
+    NSMutableArray *array = [NSMutableArray array];
+    [_classifyList enumerateObjectsUsingBlock:^(ClassifyModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [array addObject:obj.name];
+    }];
+    _arrayNames = array;
+}
+
 @end

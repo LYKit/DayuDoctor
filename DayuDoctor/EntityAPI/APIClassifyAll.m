@@ -7,7 +7,6 @@
 //
 
 #import "APIClassifyAll.h"
-#import "APIClassify.h"
 
 @implementation APIClassifyAll
 - (instancetype)init

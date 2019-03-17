@@ -16,7 +16,9 @@
 - (void)openWebPageWithUrlString:(NSString *)urlString {
     NSString *newUrlString = @"";
     NSURL *url = [NSURL URLWithString:urlString];
-    if (url.query.length) {
+    if ([urlString containsString:@"token"]) {
+        newUrlString = urlString;
+    } else if (url.query.length) {
         newUrlString = [NSString stringWithFormat:@"%@&token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
     } else {
         newUrlString = [NSString stringWithFormat:@"%@?token=%@",urlString,[DYZMemberManager sharedMemberManger].token];

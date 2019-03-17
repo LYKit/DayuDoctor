@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="btnBack" destination="S12-nJ-BVF" id="50l-M8-q11"/>
                 <outlet property="collectionView" destination="vwD-Ky-3NI" id="bkp-Tr-5Gb"/>
+                <outlet property="constraintOfTop" destination="HzS-cj-tcE" id="iSr-gw-k7B"/>
                 <outlet property="searchBar" destination="7tP-W8-f12" id="9dA-W4-e4s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

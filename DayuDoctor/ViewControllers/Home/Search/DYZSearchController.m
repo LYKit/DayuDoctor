@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *btnBack;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintOfTop;
 
 @property (nonatomic, strong) NSMutableArray *recordList;
 
@@ -32,6 +33,7 @@
     [self createBaseView];
     [self loadData];
     
+    self.constraintOfTop.constant = IS_IPHONE_X ? 24: 0;
     self.searchBar.delegate = self;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;

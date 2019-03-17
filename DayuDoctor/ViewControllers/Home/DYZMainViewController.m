@@ -106,7 +106,7 @@ typedef enum : NSUInteger {
     self.magicView.sliderOffset = -10;
     self.magicView.sliderWidth = 45;
     self.magicView.navigationHeight = IS_IPHONE_X ? 88.f+60 : 64+60;
-    self.magicView.navigationInset = UIEdgeInsetsMake(64, 10, 0, 0);
+    self.magicView.navigationInset = UIEdgeInsetsMake(IS_IPHONE_X ? 88 : 64, 10, 0, 0);
     self.magicView.dataSource = self;
     self.magicView.delegate = self;
     [self.magicView reloadData];

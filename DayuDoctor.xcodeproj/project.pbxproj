@@ -136,6 +136,7 @@
 		C199DC2D222FD30500183098 /* AXGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C199DC17222FD30500183098 /* AXGradientProgressView.m */; };
 		C199DC2E222FD30500183098 /* AXPracticalHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C199DC19222FD30500183098 /* AXPracticalHUD.m */; };
 		C199DC31223014E800183098 /* APISearchClear.m in Sources */ = {isa = PBXBuildFile; fileRef = C199DC30223014E800183098 /* APISearchClear.m */; };
+		C1A2069D223EAB9000F24D75 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A2069B223EAB9000F24D75 /* ZHPickView.m */; };
 		C1AA2175221BF16200CC262C /* DYZMeetDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AA2173221BF16200CC262C /* DYZMeetDetailCell.m */; };
 		C1AA2176221BF16200CC262C /* DYZMeetDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AA2174221BF16200CC262C /* DYZMeetDetailCell.xib */; };
 		C1AA217C221BF87400CC262C /* APISignUpDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AA217B221BF87400CC262C /* APISignUpDetail.m */; };
@@ -507,6 +508,8 @@
 		C199DC19222FD30500183098 /* AXPracticalHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXPracticalHUD.m; sourceTree = "<group>"; };
 		C199DC2F223014E800183098 /* APISearchClear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APISearchClear.h; sourceTree = "<group>"; };
 		C199DC30223014E800183098 /* APISearchClear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APISearchClear.m; sourceTree = "<group>"; };
+		C1A2069B223EAB9000F24D75 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
+		C1A2069C223EAB9000F24D75 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		C1AA2172221BF16200CC262C /* DYZMeetDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMeetDetailCell.h; sourceTree = "<group>"; };
 		C1AA2173221BF16200CC262C /* DYZMeetDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMeetDetailCell.m; sourceTree = "<group>"; };
 		C1AA2174221BF16200CC262C /* DYZMeetDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZMeetDetailCell.xib; sourceTree = "<group>"; };
@@ -836,6 +839,8 @@
 				C123DAD922351026000E5C85 /* ShowPickerView */,
 				C1C9BB89221426AD0059B3B5 /* LYAlertView.h */,
 				C1C9BB88221426AC0059B3B5 /* LYAlertView.m */,
+				C1A2069C223EAB9000F24D75 /* ZHPickView.h */,
+				C1A2069B223EAB9000F24D75 /* ZHPickView.m */,
 				C1F1B96F222A5DDC005D3A5A /* LYTextField.h */,
 				C1F1B96E222A5DDC005D3A5A /* LYTextField.m */,
 				C1E54A7B222E21E30053D229 /* DYZWebViewController.h */,
@@ -2043,6 +2048,7 @@
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
 				C1E8CEDA22229B3F003CC670 /* VTMenuBar.m in Sources */,
 				0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */,
+				C1A2069D223EAB9000F24D75 /* ZHPickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

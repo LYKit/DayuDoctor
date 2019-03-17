@@ -38,6 +38,7 @@
     [userController addScriptMessageHandler:self name:@"playVideo"];
     [userController addScriptMessageHandler:self name:@"toMyRights"];
     [userController addScriptMessageHandler:self name:@"toHomeCategory"];
+    [userController addScriptMessageHandler:self name:@"toLogin"];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
@@ -49,16 +50,15 @@
         vc.onlineURL = params[@"videoId"];
         vc.playMode = PlayerModeOnline;
         [_fromController.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if ([message.name isEqualToString:@"toMyRights"]) {
+    } else if ([message.name isEqualToString:@"toMyRights"]) {
         DYZVipRightsController *vc = [DYZVipRightsController new];
         [_fromController.navigationController pushViewController:vc animated:YES];
-    }
-    
-    if ([message.name isEqualToString:@"toHomeCategory"]) {
+    } else if ([message.name isEqualToString:@"toHomeCategory"]) {
         DYZClassCourseController *vc = [DYZClassCourseController new];
         [_fromController.navigationController pushViewController:vc animated:YES];
+    } else if ([message.name isEqualToString:@"toLogin"]) {
+        UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+        [tab setSelectedIndex:3];
     }
 }
 
