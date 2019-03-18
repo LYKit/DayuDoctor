@@ -262,6 +262,10 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"修改密码" pos:enumOptionChangePwd],
     [MineOption createOption:@"联系客服" pos:enumOptionPhone],
     ] mutableCopy];
+        
+        _optionsList = [[_optionsList sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
+            return obj1.pos > obj2.pos;
+        }] mutableCopy];
     }
     
     return _optionsList;
