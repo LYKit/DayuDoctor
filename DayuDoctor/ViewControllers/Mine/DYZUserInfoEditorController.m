@@ -60,10 +60,7 @@
 
 - (void)loadDefaultData {
     if (_responseUserInfo.detail.img.length) {
-        __weak typeof(self) weakSelf = self;
-        [_imgPhoto sd_setImageWithURLString:_responseUserInfo.detail.img completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            weakSelf.selectImage = image;
-        }];
+        [_imgPhoto sd_setImageWithURLString:_responseUserInfo.detail.img];
     }
     
     if (_responseUserInfo.detail.name.length) {
@@ -118,7 +115,7 @@
     [request startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
         [weakSelf.view makeToast:@"修改成功"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"perfectInformation" object:nil];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.navigationController popViewControllerAnimated:YES];
         });
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
