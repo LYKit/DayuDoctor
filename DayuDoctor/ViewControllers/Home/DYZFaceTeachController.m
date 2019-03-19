@@ -36,6 +36,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZFaceTeachCell bundle:nil] forCellReuseIdentifier:kDYZFaceTeachCell];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZHeadImageCell bundle:nil] forCellReuseIdentifier:kDYZHeadImageCell];
 

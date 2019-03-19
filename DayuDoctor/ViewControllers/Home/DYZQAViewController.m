@@ -33,6 +33,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZQACell bundle:nil] forCellReuseIdentifier:kDYZQACell];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZHeadImageCell bundle:nil] forCellReuseIdentifier:kDYZHeadImageCell];
 

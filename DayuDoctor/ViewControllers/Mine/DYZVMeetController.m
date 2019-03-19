@@ -35,6 +35,7 @@
     self.tableView.rowHeight = 100;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
     [self.tableView registerNib:[UINib nibWithNibName:kDYZMeetingCell bundle:nil] forCellReuseIdentifier:kDYZMeetingCell];
     

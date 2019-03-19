@@ -30,6 +30,7 @@
     self.title = @"我的订单";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZOrderInfoCell bundle:nil] forCellReuseIdentifier:kDYZOrderInfoCell];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
     [self loadData];

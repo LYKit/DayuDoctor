@@ -30,6 +30,7 @@
     }];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:kDYZSearchListCell bundle:nil] forCellReuseIdentifier:kDYZSearchListCell];
     

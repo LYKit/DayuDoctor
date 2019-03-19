@@ -34,6 +34,7 @@
     self.tableView.rowHeight = 80;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZMessageCell bundle:nil] forCellReuseIdentifier:kDYZMessageCell];
     
     self.requestMessage.currPage = 1;

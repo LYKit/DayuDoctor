@@ -27,6 +27,7 @@
     self.title = @"我的预约";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:kDYZMeetDetailCell bundle:nil] forCellReuseIdentifier:kDYZMeetDetailCell];
     [self loadData];
 }
