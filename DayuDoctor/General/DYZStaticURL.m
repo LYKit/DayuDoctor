@@ -20,7 +20,7 @@ NSString *const kSexServeURL = @"http://39.96.167.96:8080/h5/yg/tsfw";
 NSString *const kAboutURL = @"http://39.96.167.96:8080/h5/yg/about";
 
 // 聊天
-NSString *const kChatURL = @"http://zixun.dyzy58.com/php/app.php?widget-mobile";
+NSString *const kChatURL = @"http://zixun.dyzy58.com/index.php?p=link&sp=1&ssp=cn";
 // 充值中心
 NSString *const kPayCenterURL = @"http://39.96.167.96:8080/h5/uc/recharge";
 // 我的积分
