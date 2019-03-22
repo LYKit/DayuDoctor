@@ -27,7 +27,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [application setApplicationIconBadgeNumber:0]; //清除角标
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];//清除APP所有通知消息
+
     //注册通知
     if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
@@ -222,6 +224,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    [application setApplicationIconBadgeNumber:0]; //清除角标
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];//清除APP所有通知消息
 }
 
 
