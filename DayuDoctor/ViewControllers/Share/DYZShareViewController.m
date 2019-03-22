@@ -88,13 +88,15 @@
             return;
         }
     }
+    NSString *iconName = [[[[NSBundle mainBundle] infoDictionary]valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
+    UIImage *icon = [UIImage imageNamed:iconName];
     JSHAREMessage *message = [JSHAREMessage message];
     message.title = @"大禹中元分享";
     message.text = @"我发现了一块非常好用的APP：大禹中元，快来下载使用吧";
     message.url = @"www.dyzy58.com";
     message.platform = platform;
-    message.mediaType = JSHAREImage;
-    message.image = [self getQRCodeData];
+    message.mediaType = JSHARELink;
+    message.image = [icon imageDataRepresentation];
     [JSHAREService share:message handler:^(JSHAREState state, NSError *error) {
         NSLog(@"分享回调");
         if (!error) {
