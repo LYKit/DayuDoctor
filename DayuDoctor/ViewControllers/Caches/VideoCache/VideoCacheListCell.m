@@ -50,10 +50,10 @@
 - (void)setItem:(YCDownloadItem *)item {
     
     _item = item;
-//    VideoListInfoModel *mo = [VideoListInfoModel infoWithData:item.extraData];
-//    self.titleLbl.text = mo.title;
-//    [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:mo.cover_url]];
-//    [self changeSizeLblDownloadedSize:item.downloadedSize totalSize:item.fileSize];
+    VideoListInfoModel *mo = [VideoListInfoModel infoWithData:item.extraData];
+    self.titleLbl.text = mo.title;
+    [self.coverImgView sd_setImageWithURL:[NSURL URLWithString:mo.cover_url]];
+    [self changeSizeLblDownloadedSize:item.downloadedSize totalSize:item.fileSize];
     [self setDownloadStatus:item.downloadStatus];
     self.speedLbl.hidden = !item.enableSpeed;
 }

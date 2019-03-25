@@ -21,5 +21,6 @@ typedef NS_ENUM(NSUInteger, PlayerMode) {
 
 @property (nonatomic, assign) PlayerMode playMode;
 @property (nonatomic, strong) NSString *onlineURL;
+@property (nonatomic, strong) NSString *videoName;
 
 @end

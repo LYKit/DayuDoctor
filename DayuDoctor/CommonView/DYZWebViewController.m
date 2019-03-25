@@ -48,6 +48,7 @@
         
         PlayerViewController *vc = [PlayerViewController new];
         vc.onlineURL = params[@"videoId"];
+        vc.videoName = params[@"videoName"];
         vc.playMode = PlayerModeOnline;
         [_fromController.navigationController pushViewController:vc animated:YES];
     } else if ([message.name isEqualToString:@"toMyRights"]) {

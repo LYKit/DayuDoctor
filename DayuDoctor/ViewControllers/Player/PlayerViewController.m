@@ -85,7 +85,7 @@
 
 - (void)downloadButtonAction {
     VideoListInfoModel *model = [VideoListInfoModel new];
-    model.title = [NSString stringWithFormat:@"test - %@", self.onlineURL];
+    model.title = [NSString stringWithFormat:@"%@ - %@", self.videoName, self.onlineURL];
     model.video_url = _url;
     YCDownloadItem *item = [[YCDownloadItem alloc] initWithUrl:_url fileId:@"1000"];
     item.enableSpeed = YES;
