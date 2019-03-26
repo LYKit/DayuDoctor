@@ -2232,7 +2232,7 @@
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8577ZAN82;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -2258,7 +2258,7 @@
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8577ZAN82;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
