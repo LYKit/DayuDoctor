@@ -107,6 +107,10 @@ typedef NS_ENUM(NSInteger, AXWebViewControllerNavigationType) {
 ///
 /// @param error a failed loading error.
 - (void)webViewController:(AXWebViewController *)webViewController didFailLoadWithError:(NSError *)error;
+
+- (BOOL)p_webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+
+- (BOOL)p_webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
 @end
 
 AX_WEB_VIEW_CONTROLLER_AVAILABLITY;

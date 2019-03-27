@@ -11,10 +11,11 @@
 #import "PlayerViewController.h"
 #import "DYZVipRightsController.h"
 #import "DYZClassCourseController.h"
+#import <AlipaySDK/AlipaySDK.h>
 #import <JSHAREService.h>
 #import <MessageUI/MessageUI.h>
 
-@interface DYZWebViewController () <WKScriptMessageHandler>
+@interface DYZWebViewController () <WKScriptMessageHandler,AXWebViewControllerDelegate>
 @property (nonatomic, strong) WKUserContentController *userController;
 
 
@@ -30,6 +31,7 @@
         WKUserContentController *userController = [[WKUserContentController alloc] init];
         configuration.userContentController = userController;
         self.userController = userController;
+        self.delegate = self;
         [self addScriptMessageHandler:userController];
     }
     return self;
@@ -88,6 +90,50 @@
     }
 }
 
+- (BOOL)p_webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    //新版本的H5拦截支付对老版本的获取订单串和订单支付接口进行合并，推荐使用该接口
+    __weak typeof(self) weakSelf = self;
+    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[request.URL absoluteString] fromScheme:@"dayudoctor" callback:^(NSDictionary *result) {
+        // 处理支付结果
+        NSLog(@"%@", result);
+        // isProcessUrlPay 代表 支付宝已经处理该URL
+        if ([result[@"isProcessUrlPay"] boolValue]) {
+            // returnUrl 代表 第三方App需要跳转的成功页URL
+            NSString* urlStr = result[@"returnUrl"];
+            [weakSelf loadWithUrlStr:urlStr];
+        }
+    }];
+    
+    if (isIntercepted) {
+        return NO;
+    }
+    return YES;
+}
+
+
+- (BOOL)p_webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[navigationAction.request.URL absoluteString] fromScheme:@"dayudoctor" callback:^(NSDictionary *result) {
+        // 处理支付结果
+        NSLog(@"%@", result);
+        // isProcessUrlPay 代表 支付宝已经处理该URL
+        if ([result[@"isProcessUrlPay"] boolValue]) {
+            // returnUrl 代表 第三方App需要跳转的成功页URL
+            NSString* urlStr = result[@"returnUrl"];
+            [weakSelf loadWithUrlStr:urlStr];
+        }
+    }];
+    
+    if (isIntercepted) {
+        return NO;
+    }
+    return YES;
+}
+
+
 - (void)shareToPlatform:(JSHAREPlatform)platform
                   title:(NSString *)title
                 content:(NSString *)content
@@ -119,7 +165,17 @@
         }
     }];
 }
-
+- (void)loadWithUrlStr:(NSString*)urlStr
+{
+    if (urlStr.length > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSURLRequest *webRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]
+                                                        cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                    timeoutInterval:30];
+            [self.webView loadRequest:webRequest];
+        });
+    }
+}
 
 
 - (void)dealloc{
