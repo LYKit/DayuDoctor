@@ -16,13 +16,18 @@
 - (void)openWebPageWithUrlString:(NSString *)urlString {
     NSString *newUrlString = @"";
     NSURL *url = [NSURL URLWithString:urlString];
-    if ([urlString containsString:@"token"]) {
-        newUrlString = urlString;
-    } else if (url.query.length) {
-        newUrlString = [NSString stringWithFormat:@"%@&token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
+    if ([DYZMemberManager sharedMemberManger].token.length) {
+        if ([urlString containsString:@"token"]) {
+            newUrlString = urlString;
+        } else if (url.query.length) {
+            newUrlString = [NSString stringWithFormat:@"%@&token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
+        } else {
+            newUrlString = [NSString stringWithFormat:@"%@?token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
+        }
     } else {
-        newUrlString = [NSString stringWithFormat:@"%@?token=%@",urlString,[DYZMemberManager sharedMemberManger].token];
+        newUrlString = urlString;
     }
+    
     
     DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:newUrlString];
     vc.fromController = self;

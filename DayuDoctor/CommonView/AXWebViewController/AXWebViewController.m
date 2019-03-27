@@ -1294,6 +1294,14 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 }
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    BOOL allow = YES;
+    if ([_delegate respondsToSelector:@selector(p_webView:decidePolicyForNavigationAction:decisionHandler:)]) {
+       allow = [_delegate p_webView:webView decidePolicyForNavigationAction:navigationAction decisionHandler:decisionHandler];
+    }
+    if (!allow) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
     // Disable all the '_blank' target in page's target.
     if (!navigationAction.targetFrame.isMainFrame) {
         [webView evaluateJavaScript:@"var a = document.getElementsByTagName('a');for(var i=0;i<a.length;i++){a[i].setAttribute('target','');}" completionHandler:nil];
@@ -1460,6 +1468,9 @@ BOOL AX_WEB_VIEW_CONTROLLER_iOS10_0_AVAILABLE() { return AX_WEB_VIEW_CONTROLLER_
 #else
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    if ([_delegate respondsToSelector:@selector(p_webView:shouldStartLoadWithRequest:navigationType:)]) {
+        [_delegate p_webView:webView shouldStartLoadWithRequest:request navigationType:navigationType];
+    }
     // URL actions
     if ([request.URL.absoluteString isEqualToString:kAX404NotFoundURLKey] || [request.URL.absoluteString isEqualToString:kAXNetworkErrorURLKey]) {
         [self loadURL:_URL]; return NO;

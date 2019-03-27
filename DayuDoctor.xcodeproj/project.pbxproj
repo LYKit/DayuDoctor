@@ -236,6 +236,18 @@
 		C1E8CEDC22229B3F003CC670 /* UIColor+VTMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8CECF22229B3B003CC670 /* UIColor+VTMagic.m */; };
 		C1E8CEDD22229B3F003CC670 /* VTMagicView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8CED022229B3B003CC670 /* VTMagicView.m */; };
 		C1E8CEDE22229B3F003CC670 /* UIViewController+VTMagic.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E8CED122229B3B003CC670 /* UIViewController+VTMagic.m */; };
+		C1EDFF342249F50700C835D0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF332249F50700C835D0 /* CFNetwork.framework */; };
+		C1EDFF362249F50D00C835D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF352249F50D00C835D0 /* Foundation.framework */; };
+		C1EDFF382249F51300C835D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF372249F51300C835D0 /* UIKit.framework */; };
+		C1EDFF3A2249F51700C835D0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF392249F51700C835D0 /* SystemConfiguration.framework */; };
+		C1EDFF3C2249F51E00C835D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF3B2249F51E00C835D0 /* CoreGraphics.framework */; };
+		C1EDFF3E2249F52600C835D0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF3D2249F52600C835D0 /* CoreMotion.framework */; };
+		C1EDFF412249F52E00C835D0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF3F2249F52E00C835D0 /* CoreText.framework */; };
+		C1EDFF422249F52E00C835D0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF402249F52E00C835D0 /* CoreTelephony.framework */; };
+		C1EDFF442249F54200C835D0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF432249F54200C835D0 /* libc++.tbd */; };
+		C1EDFF462249F54700C835D0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF452249F54700C835D0 /* libz.tbd */; };
+		C1EDFF4F2249F60D00C835D0 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1EDFF4D2249F60D00C835D0 /* AlipaySDK.bundle */; };
+		C1EDFF502249F60D00C835D0 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF4E2249F60D00C835D0 /* AlipaySDK.framework */; };
 		C1F1B970222A5DDC005D3A5A /* LYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F1B96E222A5DDC005D3A5A /* LYTextField.m */; };
 /* End PBXBuildFile section */
 
@@ -685,6 +697,18 @@
 		C1E8CED322229B3B003CC670 /* VTMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMenuBar.h; sourceTree = "<group>"; };
 		C1E8CED422229B3B003CC670 /* VTMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMagic.h; sourceTree = "<group>"; };
 		C1E8CED522229B3B003CC670 /* VTMagicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTMagicController.h; sourceTree = "<group>"; };
+		C1EDFF332249F50700C835D0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C1EDFF352249F50D00C835D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C1EDFF372249F51300C835D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C1EDFF392249F51700C835D0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C1EDFF3B2249F51E00C835D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C1EDFF3D2249F52600C835D0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		C1EDFF3F2249F52E00C835D0 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C1EDFF402249F52E00C835D0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		C1EDFF432249F54200C835D0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C1EDFF452249F54700C835D0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C1EDFF4D2249F60D00C835D0 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		C1EDFF4E2249F60D00C835D0 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		C1F1B96E222A5DDC005D3A5A /* LYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTextField.m; sourceTree = "<group>"; };
 		C1F1B96F222A5DDC005D3A5A /* LYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTextField.h; sourceTree = "<group>"; };
 		E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayuDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,6 +719,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EDFF462249F54700C835D0 /* libz.tbd in Frameworks */,
+				C1EDFF442249F54200C835D0 /* libc++.tbd in Frameworks */,
+				C1EDFF412249F52E00C835D0 /* CoreText.framework in Frameworks */,
+				C1EDFF422249F52E00C835D0 /* CoreTelephony.framework in Frameworks */,
+				C1EDFF3E2249F52600C835D0 /* CoreMotion.framework in Frameworks */,
+				C1EDFF502249F60D00C835D0 /* AlipaySDK.framework in Frameworks */,
+				C1EDFF3C2249F51E00C835D0 /* CoreGraphics.framework in Frameworks */,
+				C1EDFF3A2249F51700C835D0 /* SystemConfiguration.framework in Frameworks */,
+				C1EDFF382249F51300C835D0 /* UIKit.framework in Frameworks */,
+				C1EDFF362249F50D00C835D0 /* Foundation.framework in Frameworks */,
+				C1EDFF342249F50700C835D0 /* CFNetwork.framework in Frameworks */,
 				A490023BE2A885CCA7A4A7FC /* libPods-DayuDoctor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1123,6 +1158,7 @@
 		C13A5E2021EDCC9900493EE7 /* FrameworkService */ = {
 			isa = PBXGroup;
 			children = (
+				C1EDFF4C2249F60D00C835D0 /* AlipaySDK */,
 				0D5176462225AC3600A8A1D9 /* YCDownloadSession */,
 				0D5620C7221A431E00C5D508 /* HSDownloadManager */,
 				C13A5E5921EDCF0D00493EE7 /* LYNetworking */,
@@ -1636,9 +1672,28 @@
 			path = VTMagic;
 			sourceTree = "<group>";
 		};
+		C1EDFF4C2249F60D00C835D0 /* AlipaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				C1EDFF4D2249F60D00C835D0 /* AlipaySDK.bundle */,
+				C1EDFF4E2249F60D00C835D0 /* AlipaySDK.framework */,
+			);
+			path = AlipaySDK;
+			sourceTree = "<group>";
+		};
 		DE64592D20BE65AAC0C144F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1EDFF452249F54700C835D0 /* libz.tbd */,
+				C1EDFF432249F54200C835D0 /* libc++.tbd */,
+				C1EDFF402249F52E00C835D0 /* CoreTelephony.framework */,
+				C1EDFF3F2249F52E00C835D0 /* CoreText.framework */,
+				C1EDFF3D2249F52600C835D0 /* CoreMotion.framework */,
+				C1EDFF3B2249F51E00C835D0 /* CoreGraphics.framework */,
+				C1EDFF392249F51700C835D0 /* SystemConfiguration.framework */,
+				C1EDFF372249F51300C835D0 /* UIKit.framework */,
+				C1EDFF352249F50D00C835D0 /* Foundation.framework */,
+				C1EDFF332249F50700C835D0 /* CFNetwork.framework */,
 				E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */,
 			);
 			name = Frameworks;
@@ -1800,6 +1855,7 @@
 				C1AA2176221BF16200CC262C /* DYZMeetDetailCell.xib in Resources */,
 				C199DC28222FD30500183098 /* AXPracticalHUD.bundle in Resources */,
 				C1E54A6E222BE9DD0053D229 /* DYZVersionContentCell.xib in Resources */,
+				C1EDFF4F2249F60D00C835D0 /* AlipaySDK.bundle in Resources */,
 				C1E54A56222BB0EE0053D229 /* DYZOrderController.xib in Resources */,
 				C11C643B21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.xib in Resources */,
 				C11C644021F85BC7000D0CB7 /* DYZNewsRollCollectionCell.xib in Resources */,
@@ -2233,6 +2289,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8577ZAN82;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -2259,6 +2319,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8577ZAN82;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
