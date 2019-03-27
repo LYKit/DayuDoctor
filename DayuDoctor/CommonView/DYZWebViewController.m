@@ -133,7 +133,7 @@
     return YES;
 }
 
-    
+
 - (void)shareToPlatform:(JSHAREPlatform)platform
                   title:(NSString *)title
                 content:(NSString *)content
