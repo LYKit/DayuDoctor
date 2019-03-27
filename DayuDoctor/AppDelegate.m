@@ -200,7 +200,12 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 //仅支持 iOS9 以上系统，iOS8 及以下系统不会回调
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-    [JSHAREService handleOpenUrl:url];
+    NSString *platform = options[UIApplicationOpenURLOptionsSourceApplicationKey];
+    if ([platform isEqualToString:@"com.alipay.iphoneclient"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"AliPayResult" object:nil];
+    } else {
+        [JSHAREService handleOpenUrl:url];
+    }
     return YES;
 }
 

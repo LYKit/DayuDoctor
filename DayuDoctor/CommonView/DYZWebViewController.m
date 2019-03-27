@@ -18,7 +18,6 @@
 @interface DYZWebViewController () <WKScriptMessageHandler,AXWebViewControllerDelegate>
 @property (nonatomic, strong) WKUserContentController *userController;
 
-
 @end
 
 @implementation DYZWebViewController
@@ -33,10 +32,23 @@
         self.userController = userController;
         self.delegate = self;
         [self addScriptMessageHandler:userController];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(payResult)
+                                                     name:@"AliPayResult"
+                                                   object:nil];
     }
     return self;
 }
 
+- (void)payResult {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.URL];
+        [DYZWebViewController clearWebCacheCompletion:^{
+            [self.webView reload];
+        }];
+    });
+}
 
 - (void)addScriptMessageHandler:(WKUserContentController *)userController {
     [userController addScriptMessageHandler:self name:@"playVideo"];
@@ -113,7 +125,6 @@
 
 
 - (BOOL)p_webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
     __weak typeof(self) weakSelf = self;
     
     BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[navigationAction.request.URL absoluteString] fromScheme:@"dayudoctor" callback:^(NSDictionary *result) {
@@ -132,6 +143,11 @@
     }
     return YES;
 }
+
+- (void)webViewController:(AXWebViewController *)webViewController didFailLoadWithError:(NSError *)error {
+
+}
+
 
 
 - (void)shareToPlatform:(JSHAREPlatform)platform
@@ -181,6 +197,7 @@
 - (void)dealloc{
     [self.userController removeScriptMessageHandlerForName:@"playVideo"];
     [self.userController removeScriptMessageHandlerForName:@"toHomeCategory"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
