@@ -12,6 +12,8 @@
 #import "DYZVipRightsController.h"
 #import "DYZClassCourseController.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import <JSHAREService.h>
+#import <MessageUI/MessageUI.h>
 
 @interface DYZWebViewController () <WKScriptMessageHandler,AXWebViewControllerDelegate>
 @property (nonatomic, strong) WKUserContentController *userController;
@@ -41,6 +43,7 @@
     [userController addScriptMessageHandler:self name:@"toMyRights"];
     [userController addScriptMessageHandler:self name:@"toHomeCategory"];
     [userController addScriptMessageHandler:self name:@"toLogin"];
+    [userController addScriptMessageHandler:self name:@"nativeShare"];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
@@ -62,6 +65,28 @@
     } else if ([message.name isEqualToString:@"toLogin"]) {
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
         [tab setSelectedIndex:3];
+    } else if ([message.name isEqualToString:@"nativeShare"]) {
+        NSDictionary *params = message.body;
+        NSString *url = params[@"url"];
+        NSString *type = params[@"type"];
+        NSString *title = params[@"title"];
+        NSString *content = params[@"content"];
+        
+        JSHAREPlatform platform = 0;
+        if ([type isEqualToString:@"weibo"]) {
+            platform = JSHAREPlatformSinaWeibo;
+        } else if ([type isEqualToString:@"wechat"]) {
+            platform = JSHAREPlatformWechatSession;
+        } else if ([type isEqualToString:@"wechatmoments"]) {
+            platform = JSHAREPlatformWechatTimeLine;
+        } else {
+            
+        }
+        
+        [self shareToPlatform:platform
+                        title:title
+                      content:content
+                          url:url];
     }
 }
 
@@ -86,6 +111,7 @@
     return YES;
 }
 
+
 - (BOOL)p_webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
     __weak typeof(self) weakSelf = self;
@@ -107,6 +133,38 @@
     return YES;
 }
 
+    
+- (void)shareToPlatform:(JSHAREPlatform)platform
+                  title:(NSString *)title
+                content:(NSString *)content
+                    url:(NSString *)url {
+    if (   platform == JSHAREPlatformWechatSession
+        || platform == JSHAREPlatformWechatTimeLine) {
+        if ([JSHAREService isWeChatInstalled] == NO) {
+            [self.view makeToast:@"没有安装微信"
+                        duration:1
+                        position:CSToastPositionCenter];
+            return;
+        }
+    }
+    NSString *iconName = [[[[NSBundle mainBundle] infoDictionary]valueForKeyPath:@"CFBundleIcons.CFBundlePrimaryIcon.CFBundleIconFiles"] lastObject];
+    UIImage *icon = [UIImage imageNamed:iconName];
+    JSHAREMessage *message = [JSHAREMessage message];
+    message.title = title;
+    message.text = content;
+    message.url = url;
+    message.platform = platform;
+    message.mediaType = JSHARELink;
+    message.image = [icon imageDataRepresentation];
+    [JSHAREService share:message handler:^(JSHAREState state, NSError *error) {
+        NSLog(@"分享回调");
+        if (!error) {
+            [self.view makeToast:@"分享成功"
+                        duration:1
+                        position:CSToastPositionCenter];
+        }
+    }];
+}
 - (void)loadWithUrlStr:(NSString*)urlStr
 {
     if (urlStr.length > 0) {

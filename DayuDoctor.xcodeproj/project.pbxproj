@@ -2293,6 +2293,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
 				);
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
@@ -2323,6 +2324,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
 				);
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DayuDoctor/General/PrefixHeader.pch;
 				INFOPLIST_FILE = DayuDoctor/Info.plist;
