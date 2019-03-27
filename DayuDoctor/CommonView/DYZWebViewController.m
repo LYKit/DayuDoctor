@@ -17,6 +17,7 @@
 
 @interface DYZWebViewController () <WKScriptMessageHandler,AXWebViewControllerDelegate>
 @property (nonatomic, strong) WKUserContentController *userController;
+@property (nonatomic, strong) NSString *detailUrl;
 
 @end
 
@@ -32,22 +33,9 @@
         self.userController = userController;
         self.delegate = self;
         [self addScriptMessageHandler:userController];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(payResult)
-                                                     name:@"AliPayResult"
-                                                   object:nil];
     }
+    _detailUrl = urlString;
     return self;
-}
-
-- (void)payResult {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSURLRequest *request = [NSURLRequest requestWithURL:self.URL];
-        [DYZWebViewController clearWebCacheCompletion:^{
-            [self.webView reload];
-        }];
-    });
 }
 
 - (void)addScriptMessageHandler:(WKUserContentController *)userController {
@@ -189,6 +177,21 @@
                                                         cachePolicy:NSURLRequestReturnCacheDataElseLoad
                                                     timeoutInterval:30];
             [self.webView loadRequest:webRequest];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                NSURLRequest *webRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:_detailUrl]
+                                                            cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                        timeoutInterval:30];
+                [DYZWebViewController clearWebCacheCompletion:^{
+                    [self.webView loadRequest:webRequest];
+                    NSArray *backList = self.webView.backForwardList.backList;
+                    for (WKBackForwardListItem *item in backList) {
+                        if ([item.URL.absoluteString isEqualToString:_detailUrl]) {
+                            [self.webView goToBackForwardListItem:item];
+                        }
+                    }
+                }];
+            });
         });
     }
 }
@@ -197,7 +200,6 @@
 - (void)dealloc{
     [self.userController removeScriptMessageHandlerForName:@"playVideo"];
     [self.userController removeScriptMessageHandlerForName:@"toHomeCategory"];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

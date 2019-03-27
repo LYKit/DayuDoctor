@@ -2288,7 +2288,7 @@
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8577ZAN82;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
@@ -2318,7 +2318,7 @@
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8577ZAN82;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
