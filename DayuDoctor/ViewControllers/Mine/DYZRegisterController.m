@@ -43,6 +43,8 @@ static NSInteger const countDownSecond = 60;
 
 
 - (IBAction)didPressedRegister:(id)sender {
+    [self.view.window endEditing:YES];
+
     if (!_txtUserName.text.length || !_txtPwd.text.length || !_txtPwdAgain.text.length || !_txtCode.text.length) {
         return;
     }

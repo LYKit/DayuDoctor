@@ -8,7 +8,7 @@
 #import "LYInterfaceConfig.h"
 #import "NSString+Additions.h"
 
-NSString * const HostUrl    = @"http://39.96.167.96:8080";
+NSString * const HostUrl    = @"http://www.dyzy58.com";
 NSString * const ImgHostUrl = @"";
 
 

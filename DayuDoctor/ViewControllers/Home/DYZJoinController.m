@@ -53,6 +53,8 @@
 
 
 - (IBAction)didPressedJoin:(id)sender {
+    [self.view.window endEditing:YES];
+
     if (!_txtName.text.length ||
         !_txtGender.text.length ||
         !_txtPhone.text.length ||

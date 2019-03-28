@@ -122,6 +122,9 @@
         if ([result[@"isProcessUrlPay"] boolValue]) {
             // returnUrl 代表 第三方App需要跳转的成功页URL
             NSString* urlStr = result[@"returnUrl"];
+            if (!urlStr.length) {
+                urlStr = weakSelf.detailUrl;
+            }
             [weakSelf loadWithUrlStr:urlStr];
         }
     }];
@@ -177,7 +180,13 @@
                                                         cachePolicy:NSURLRequestReturnCacheDataElseLoad
                                                     timeoutInterval:30];
             [self.webView loadRequest:webRequest];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            CGFloat time = 0;
+            if ([urlStr isEqualToString:_detailUrl]) {
+                time = 0.5;
+            } else {
+                time = 2;
+            }
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
                 NSURLRequest *webRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:_detailUrl]
                                                             cachePolicy:NSURLRequestReturnCacheDataElseLoad
@@ -188,6 +197,7 @@
                     for (WKBackForwardListItem *item in backList) {
                         if ([item.URL.absoluteString isEqualToString:_detailUrl]) {
                             [self.webView goToBackForwardListItem:item];
+                            break;
                         }
                     }
                 }];

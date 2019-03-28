@@ -40,7 +40,7 @@
 
 
 - (IBAction)didPressedLogin:(id)sender {
-    
+    [self.view.window endEditing:YES];
     APILogin *request = [APILogin new];
     request.mobile = _txtUserName.text;
     request.userpwd = _txtPassword.text;
