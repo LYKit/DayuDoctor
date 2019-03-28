@@ -735,11 +735,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestObject.m"
-            timestampString = "575435358.21296"
+            timestampString = "575443005.941321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -755,7 +755,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/FrameworkService/LYNetworking/LYRequestObject.m"
-            timestampString = "575435358.2134711"
+            timestampString = "575443005.942529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "123"
@@ -1153,7 +1153,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/CommonView/AXWebViewController/AXWebViewController.m"
-            timestampString = "575277609.7104909"
+            timestampString = "575444397.388383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1471"
@@ -1169,7 +1169,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/CommonView/DYZWebViewController.m"
-            timestampString = "575435358.2141629"
+            timestampString = "575444694.542731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -1185,12 +1185,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/CommonView/DYZWebViewController.m"
-            timestampString = "575435358.214214"
+            timestampString = "575444694.5430959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
             endingLineNumber = "120"
             landmarkName = "-p_webView:decidePolicyForNavigationAction:decisionHandler:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/CommonView/DYZWebViewController.m"
+            timestampString = "575444694.543332"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-loadWithUrlStr:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/CommonView/AXWebViewController/AXWebViewController.m"
+            timestampString = "575444397.389383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1402"
+            endingLineNumber = "1402"
+            landmarkName = "-webView:didFailProvisionalNavigation:withError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/CommonView/AXWebViewController/AXWebViewController.m"
+            timestampString = "575444397.389477"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1415"
+            endingLineNumber = "1415"
+            landmarkName = "-webView:didFailNavigation:withError:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/CommonView/AXWebViewController/AXWebViewController.m"
+            timestampString = "575444397.3895611"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1583"
+            endingLineNumber = "1583"
+            landmarkName = "-webView:didFailLoadWithError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

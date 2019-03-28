@@ -115,7 +115,7 @@
 - (BOOL)p_webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     __weak typeof(self) weakSelf = self;
     
-    BOOL isIntercepted = [[AlipaySDK defaultService] payInterceptorWithUrl:[navigationAction.request.URL absoluteString] fromScheme:@"dayudoctor" callback:^(NSDictionary *result) {
+    [[AlipaySDK defaultService] payInterceptorWithUrl:[navigationAction.request.URL absoluteString] fromScheme:@"dayudoctor" callback:^(NSDictionary *result) {
         // 处理支付结果
         NSLog(@"%@", result);
         // isProcessUrlPay 代表 支付宝已经处理该URL
@@ -129,9 +129,6 @@
         }
     }];
     
-    if (isIntercepted) {
-        return NO;
-    }
     return YES;
 }
 
