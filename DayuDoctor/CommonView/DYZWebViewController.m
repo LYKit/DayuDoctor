@@ -33,6 +33,12 @@
         self.userController = userController;
         self.delegate = self;
         [self addScriptMessageHandler:userController];
+        
+        // 缓存
+        NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        NSString *cookiesFolderPath = [libraryPath stringByAppendingString:@"/Cookies"];
+        NSError *errors;
+        [[NSFileManager defaultManager] removeItemAtPath:cookiesFolderPath error:&errors];
     }
     _detailUrl = urlString;
     return self;
@@ -60,8 +66,8 @@
         DYZVipRightsController *vc = [DYZVipRightsController new];
         [_fromController.navigationController pushViewController:vc animated:YES];
     } else if ([message.name isEqualToString:@"toHomeCategory"]) {
-        DYZClassCourseController *vc = [DYZClassCourseController new];
-        [_fromController.navigationController pushViewController:vc animated:YES];
+        UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+        [tab setSelectedIndex:1];
     } else if ([message.name isEqualToString:@"toLogin"]) {
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
         [tab setSelectedIndex:3];

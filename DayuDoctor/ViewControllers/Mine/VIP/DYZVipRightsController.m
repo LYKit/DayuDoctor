@@ -106,7 +106,7 @@
         make.centerY.equalTo(_codeLabel);
         make.right.equalTo(label);
     }];
-    
+    [copyButton addTarget:self action:@selector(copyButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
 //    _codeText = [UITextField new];
 //    _codeText.placeholder = @"请输入对方推广码";
@@ -130,7 +130,10 @@
 - (void)copyButtonAction {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = _codeLabel.text;
+    [self.view makeToast:@"已复制"];
 }
+
+
 
 
 @end
