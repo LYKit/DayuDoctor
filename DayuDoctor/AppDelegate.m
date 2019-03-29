@@ -19,6 +19,7 @@
 #endif
 #import <AdSupport/AdSupport.h>
 #import <AlipaySDK/AlipaySDK.h>
+#import "NSDictionary+URLQuery.h"
 
 @interface AppDelegate ()<JPUSHRegisterDelegate>
 
@@ -251,6 +252,17 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([url.scheme isEqualToString:@"dyzy"] && [url.host isEqualToString:@"webpage"]) {
+        NSDictionary *param = [NSDictionary dictionaryWithURLQuery:url.query];
+        NSString *urlpage = param[@"webUrl"];
+        if (urlpage.length) {
+            __weak typeof(self) weakSelf = self;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [[weakSelf currentViewController] openWebPageWithUrlString:urlpage];
+            });
+        }
+        return YES;
+    }
     [self alipayResult:url];
     return YES;
 }
@@ -263,8 +275,71 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 //9.0后的方法
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    if ([url.scheme isEqualToString:@"dyzy"] && [url.host isEqualToString:@"webpage"]) {
+        NSDictionary *param = [NSDictionary dictionaryWithURLQuery:url.query];
+        NSString *urlpage = param[@"webUrl"];
+        if (urlpage.length) {
+            __weak typeof(self) weakSelf = self;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [[weakSelf currentViewController] openWebPageWithUrlString:urlpage];
+            });
+        }
+        return YES;
+    }
+
     [self alipayResult:url];
     return YES;
+}
+
+// 获取当前显示的Controller
+- (UIViewController *)currentViewController {
+    
+    // Find best view controller
+    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    return [self findBestViewController:viewController];
+}
+
+- (UIViewController*)findBestViewController:(UIViewController*)vc {
+    
+    if (vc.presentedViewController) {
+        
+        // Return presented view controller
+        return [self findBestViewController:vc.presentedViewController];
+        
+    } else if ([vc isKindOfClass:[UISplitViewController class]]) {
+        
+        // Return right hand side
+        UISplitViewController* svc = (UISplitViewController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self findBestViewController:svc.viewControllers.lastObject];
+        else
+            return vc;
+        
+    } else if ([vc isKindOfClass:[UINavigationController class]]) {
+        
+        // Return top view
+        UINavigationController* svc = (UINavigationController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self findBestViewController:svc.topViewController];
+        else
+            return vc;
+        
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        
+        // Return visible view
+        UITabBarController* svc = (UITabBarController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self findBestViewController:svc.selectedViewController];
+        else
+            return vc;
+        
+    } else {
+        
+        // Unknown view controller type, return last child view controller
+        return vc;
+        
+    }
+    
 }
 
 

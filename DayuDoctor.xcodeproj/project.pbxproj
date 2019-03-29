@@ -156,6 +156,7 @@
 		C1BCDB9221F84AC200CDF3EB /* DYZClassifyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB9021F84AC200CDF3EB /* DYZClassifyCollectionCell.xib */; };
 		C1BCDB9621F84AD500CDF3EB /* DYZVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1BCDB9421F84AD500CDF3EB /* DYZVideoCollectionCell.m */; };
 		C1BCDB9721F84AD500CDF3EB /* DYZVideoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BCDB9521F84AD500CDF3EB /* DYZVideoCollectionCell.xib */; };
+		C1C06D48224DD2C8000C0F5E /* NSDictionary+URLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C06D46224DD2C7000C0F5E /* NSDictionary+URLQuery.m */; };
 		C1C9BB3B2212C1450059B3B5 /* DYZLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB392212C1450059B3B5 /* DYZLoginController.m */; };
 		C1C9BB3C2212C1450059B3B5 /* DYZLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BB3A2212C1450059B3B5 /* DYZLoginController.xib */; };
 		C1C9BB402212CBAA0059B3B5 /* DYZRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BB3E2212CBAA0059B3B5 /* DYZRegisterController.m */; };
@@ -555,6 +556,8 @@
 		C1BCDB9321F84AD500CDF3EB /* DYZVideoCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZVideoCollectionCell.h; sourceTree = "<group>"; };
 		C1BCDB9421F84AD500CDF3EB /* DYZVideoCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZVideoCollectionCell.m; sourceTree = "<group>"; };
 		C1BCDB9521F84AD500CDF3EB /* DYZVideoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZVideoCollectionCell.xib; sourceTree = "<group>"; };
+		C1C06D46224DD2C7000C0F5E /* NSDictionary+URLQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLQuery.m"; sourceTree = "<group>"; };
+		C1C06D47224DD2C7000C0F5E /* NSDictionary+URLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URLQuery.h"; sourceTree = "<group>"; };
 		C1C9BB382212C1450059B3B5 /* DYZLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZLoginController.h; sourceTree = "<group>"; };
 		C1C9BB392212C1450059B3B5 /* DYZLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZLoginController.m; sourceTree = "<group>"; };
 		C1C9BB3A2212C1450059B3B5 /* DYZLoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZLoginController.xib; sourceTree = "<group>"; };
@@ -1151,6 +1154,8 @@
 				C1E54A73222C07630053D229 /* NSObject+Swizzle.m */,
 				C199DBD4222FCC7900183098 /* UIViewController+DYZBackItem.h */,
 				C199DBD5222FCC7900183098 /* UIViewController+DYZBackItem.m */,
+				C1C06D47224DD2C7000C0F5E /* NSDictionary+URLQuery.h */,
+				C1C06D46224DD2C7000C0F5E /* NSDictionary+URLQuery.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2008,6 +2013,7 @@
 				0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */,
 				C108B569223179EA002AC7BD /* LXFPhotoHelper.m in Sources */,
 				C1C9BB7E2213C2A40059B3B5 /* APILogin.m in Sources */,
+				C1C06D48224DD2C8000C0F5E /* NSDictionary+URLQuery.m in Sources */,
 				C1C9BB542212D25C0059B3B5 /* DYZSearchController.m in Sources */,
 				0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */,
 				C1E54A3E222A6A790053D229 /* DYZStaticURL.m in Sources */,
