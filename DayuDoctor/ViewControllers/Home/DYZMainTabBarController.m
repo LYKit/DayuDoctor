@@ -29,11 +29,7 @@
     [self createTabBar];
     [self customizeTabBarAppearance];
 
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [DYZMemberManager aotuLogin];
-    });
-
+    [DYZMemberManager aotuLogin];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"guideIsShow"]) {
         NSArray *imageNameArray = @[@"guide-1",@"guide-2",@"guide-3",@"guide-4"];
