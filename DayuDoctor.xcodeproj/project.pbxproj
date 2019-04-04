@@ -249,6 +249,27 @@
 		C1EDFF462249F54700C835D0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF452249F54700C835D0 /* libz.tbd */; };
 		C1EDFF4F2249F60D00C835D0 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1EDFF4D2249F60D00C835D0 /* AlipaySDK.bundle */; };
 		C1EDFF502249F60D00C835D0 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EDFF4E2249F60D00C835D0 /* AlipaySDK.framework */; };
+		C1F17A3E2254860E00E1DF80 /* UIViewController+ZCMURLRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A122254860D00E1DF80 /* UIViewController+ZCMURLRoute.m */; };
+		C1F17A3F2254860E00E1DF80 /* UIViewController+ZCMURLRouteCallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A152254860D00E1DF80 /* UIViewController+ZCMURLRouteCallBack.m */; };
+		C1F17A402254860E00E1DF80 /* NSString+URLCode.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A1A2254860D00E1DF80 /* NSString+URLCode.m */; };
+		C1F17A412254860E00E1DF80 /* NSURL+URLWithStringEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A1F2254860D00E1DF80 /* NSURL+URLWithStringEncode.m */; };
+		C1F17A422254860E00E1DF80 /* NSURL+ZCMURLChar.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A202254860D00E1DF80 /* NSURL+ZCMURLChar.m */; };
+		C1F17A432254860E00E1DF80 /* NSString+RemoveUnderscoreAndInitials.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A212254860D00E1DF80 /* NSString+RemoveUnderscoreAndInitials.m */; };
+		C1F17A442254860E00E1DF80 /* NSDictionary+URLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A232254860D00E1DF80 /* NSDictionary+URLQuery.m */; };
+		C1F17A452254860E00E1DF80 /* ZCMURLRouteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A262254860D00E1DF80 /* ZCMURLRouteConfig.m */; };
+		C1F17A462254860E00E1DF80 /* ZCMURLRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A282254860D00E1DF80 /* ZCMURLRoute.m */; };
+		C1F17A472254860E00E1DF80 /* ZCMRouteScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A2C2254860D00E1DF80 /* ZCMRouteScheme.m */; };
+		C1F17A482254860E00E1DF80 /* ZCMURLRouteResult.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A2E2254860D00E1DF80 /* ZCMURLRouteResult.m */; };
+		C1F17A492254860E00E1DF80 /* ZCMURLBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A312254860D00E1DF80 /* ZCMURLBridge.m */; };
+		C1F17A4A2254860E00E1DF80 /* UIViewController+PO_RouteURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A332254860D00E1DF80 /* UIViewController+PO_RouteURL.m */; };
+		C1F17A4B2254860E00E1DF80 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A342254860D00E1DF80 /* NSObject+Swizzle.m */; };
+		C1F17A4C2254860E00E1DF80 /* ZCMURLRouteSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A352254860D00E1DF80 /* ZCMURLRouteSupport.m */; };
+		C1F17A4D2254860E00E1DF80 /* ZCMURLRouteHold.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A3B2254860D00E1DF80 /* ZCMURLRouteHold.m */; };
+		C1F17A51225489D700E1DF80 /* DYZRouteConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A50225489D700E1DF80 /* DYZRouteConfig.m */; };
+		C1F17A5422548F3900E1DF80 /* DyzyURLRoute.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1F17A5322548F3900E1DF80 /* DyzyURLRoute.plist */; };
+		C1F17A582254900400E1DF80 /* DYZApplyHold.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A572254900400E1DF80 /* DYZApplyHold.m */; };
+		C1F17A5B2254903800E1DF80 /* DYZWebPageHold.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A5A2254903800E1DF80 /* DYZWebPageHold.m */; };
+		C1F17A5E2255089A00E1DF80 /* DYZCurrentController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F17A5D2255089A00E1DF80 /* DYZCurrentController.m */; };
 		C1F1B970222A5DDC005D3A5A /* LYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F1B96E222A5DDC005D3A5A /* LYTextField.m */; };
 /* End PBXBuildFile section */
 
@@ -712,6 +733,52 @@
 		C1EDFF452249F54700C835D0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C1EDFF4D2249F60D00C835D0 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		C1EDFF4E2249F60D00C835D0 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		C1F17A112254860D00E1DF80 /* UIViewController+ZCMURLRouteCallBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZCMURLRouteCallBack.h"; sourceTree = "<group>"; };
+		C1F17A122254860D00E1DF80 /* UIViewController+ZCMURLRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZCMURLRoute.m"; sourceTree = "<group>"; };
+		C1F17A132254860D00E1DF80 /* ZCMURLRoutePushProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRoutePushProtocol.h; sourceTree = "<group>"; };
+		C1F17A142254860D00E1DF80 /* ZCMURLRoutePopProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRoutePopProtocol.h; sourceTree = "<group>"; };
+		C1F17A152254860D00E1DF80 /* UIViewController+ZCMURLRouteCallBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZCMURLRouteCallBack.m"; sourceTree = "<group>"; };
+		C1F17A162254860D00E1DF80 /* UIViewController+ZCMURLRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZCMURLRoute.h"; sourceTree = "<group>"; };
+		C1F17A172254860D00E1DF80 /* ZCMURLRouteCallBackProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteCallBackProtocol.h; sourceTree = "<group>"; };
+		C1F17A192254860D00E1DF80 /* NSDictionary+URLQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URLQuery.h"; sourceTree = "<group>"; };
+		C1F17A1A2254860D00E1DF80 /* NSString+URLCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCode.m"; sourceTree = "<group>"; };
+		C1F17A1B2254860D00E1DF80 /* NSString+RemoveUnderscoreAndInitials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RemoveUnderscoreAndInitials.h"; sourceTree = "<group>"; };
+		C1F17A1C2254860D00E1DF80 /* NSURL+ZCMURLChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ZCMURLChar.h"; sourceTree = "<group>"; };
+		C1F17A1E2254860D00E1DF80 /* NSURL+URLWithStringEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLWithStringEncode.h"; sourceTree = "<group>"; };
+		C1F17A1F2254860D00E1DF80 /* NSURL+URLWithStringEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLWithStringEncode.m"; sourceTree = "<group>"; };
+		C1F17A202254860D00E1DF80 /* NSURL+ZCMURLChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ZCMURLChar.m"; sourceTree = "<group>"; };
+		C1F17A212254860D00E1DF80 /* NSString+RemoveUnderscoreAndInitials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RemoveUnderscoreAndInitials.m"; sourceTree = "<group>"; };
+		C1F17A222254860D00E1DF80 /* NSString+URLCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCode.h"; sourceTree = "<group>"; };
+		C1F17A232254860D00E1DF80 /* NSDictionary+URLQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URLQuery.m"; sourceTree = "<group>"; };
+		C1F17A252254860D00E1DF80 /* ZCMURLRouteConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteConfig.h; sourceTree = "<group>"; };
+		C1F17A262254860D00E1DF80 /* ZCMURLRouteConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMURLRouteConfig.m; sourceTree = "<group>"; };
+		C1F17A282254860D00E1DF80 /* ZCMURLRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMURLRoute.m; sourceTree = "<group>"; };
+		C1F17A292254860D00E1DF80 /* ZCMURLRouteResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteResult.h; sourceTree = "<group>"; };
+		C1F17A2B2254860D00E1DF80 /* ZCMRouteScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMRouteScheme.h; sourceTree = "<group>"; };
+		C1F17A2C2254860D00E1DF80 /* ZCMRouteScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMRouteScheme.m; sourceTree = "<group>"; };
+		C1F17A2D2254860D00E1DF80 /* ZCMURLRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRoute.h; sourceTree = "<group>"; };
+		C1F17A2E2254860D00E1DF80 /* ZCMURLRouteResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMURLRouteResult.m; sourceTree = "<group>"; };
+		C1F17A302254860D00E1DF80 /* ZCMURLBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLBridge.h; sourceTree = "<group>"; };
+		C1F17A312254860D00E1DF80 /* ZCMURLBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMURLBridge.m; sourceTree = "<group>"; };
+		C1F17A332254860D00E1DF80 /* UIViewController+PO_RouteURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PO_RouteURL.m"; sourceTree = "<group>"; };
+		C1F17A342254860D00E1DF80 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
+		C1F17A352254860D00E1DF80 /* ZCMURLRouteSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMURLRouteSupport.m; sourceTree = "<group>"; };
+		C1F17A362254860D00E1DF80 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		C1F17A372254860D00E1DF80 /* UIViewController+PO_RouteURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PO_RouteURL.h"; sourceTree = "<group>"; };
+		C1F17A382254860D00E1DF80 /* ZCMURLRouteSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteSupport.h; sourceTree = "<group>"; };
+		C1F17A392254860D00E1DF80 /* ZCMURLRouteKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteKit.h; sourceTree = "<group>"; };
+		C1F17A3B2254860D00E1DF80 /* ZCMURLRouteHold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCMURLRouteHold.m; sourceTree = "<group>"; };
+		C1F17A3C2254860D00E1DF80 /* ZCMURLRouteHoldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteHoldProtocol.h; sourceTree = "<group>"; };
+		C1F17A3D2254860D00E1DF80 /* ZCMURLRouteHold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCMURLRouteHold.h; sourceTree = "<group>"; };
+		C1F17A4F225489D700E1DF80 /* DYZRouteConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZRouteConfig.h; sourceTree = "<group>"; };
+		C1F17A50225489D700E1DF80 /* DYZRouteConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZRouteConfig.m; sourceTree = "<group>"; };
+		C1F17A5322548F3900E1DF80 /* DyzyURLRoute.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DyzyURLRoute.plist; sourceTree = "<group>"; };
+		C1F17A562254900400E1DF80 /* DYZApplyHold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZApplyHold.h; sourceTree = "<group>"; };
+		C1F17A572254900400E1DF80 /* DYZApplyHold.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZApplyHold.m; sourceTree = "<group>"; };
+		C1F17A592254903800E1DF80 /* DYZWebPageHold.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZWebPageHold.h; sourceTree = "<group>"; };
+		C1F17A5A2254903800E1DF80 /* DYZWebPageHold.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZWebPageHold.m; sourceTree = "<group>"; };
+		C1F17A5C2255089A00E1DF80 /* DYZCurrentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZCurrentController.h; sourceTree = "<group>"; };
+		C1F17A5D2255089A00E1DF80 /* DYZCurrentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZCurrentController.m; sourceTree = "<group>"; };
 		C1F1B96E222A5DDC005D3A5A /* LYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTextField.m; sourceTree = "<group>"; };
 		C1F1B96F222A5DDC005D3A5A /* LYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTextField.h; sourceTree = "<group>"; };
 		E61D83DCA1C420396E061A2E /* libPods-DayuDoctor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DayuDoctor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1099,6 +1166,7 @@
 				0D7AEFD8223512E700F0468D /* DayuDoctor.entitlements */,
 				0D8683C121F47809002E255A /* CommonView */,
 				0D8683C221F4780A002E255A /* EntityAPI */,
+				C1F17A5222548F3900E1DF80 /* URLRoute */,
 				C1C9BB8B221512750059B3B5 /* Manager */,
 				C1BCDB5C21F7078500CDF3EB /* General */,
 				0D8683C421F4780A002E255A /* Utility */,
@@ -1163,6 +1231,7 @@
 		C13A5E2021EDCC9900493EE7 /* FrameworkService */ = {
 			isa = PBXGroup;
 			children = (
+				C1F17A0F2254860D00E1DF80 /* ZCMURLRoute */,
 				C1EDFF4C2249F60D00C835D0 /* AlipaySDK */,
 				0D5176462225AC3600A8A1D9 /* YCDownloadSession */,
 				0D5620C7221A431E00C5D508 /* HSDownloadManager */,
@@ -1605,12 +1674,14 @@
 		C1C9BB8B221512750059B3B5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				C1C9BB8C221512AF0059B3B5 /* DYZMemberManager.h */,
-				C1C9BB8D221512AF0059B3B5 /* DYZMemberManager.m */,
 				C1C9BB8F221512DB0059B3B5 /* DYZHTTPHeader.h */,
 				C1C9BB90221512DB0059B3B5 /* DYZHTTPHeader.m */,
+				C1C9BB8C221512AF0059B3B5 /* DYZMemberManager.h */,
+				C1C9BB8D221512AF0059B3B5 /* DYZMemberManager.m */,
 				C108B56422316504002AC7BD /* DYZRequestObject.h */,
 				C108B56522316504002AC7BD /* DYZRequestObject.m */,
+				C1F17A5C2255089A00E1DF80 /* DYZCurrentController.h */,
+				C1F17A5D2255089A00E1DF80 /* DYZCurrentController.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1684,6 +1755,144 @@
 				C1EDFF4E2249F60D00C835D0 /* AlipaySDK.framework */,
 			);
 			path = AlipaySDK;
+			sourceTree = "<group>";
+		};
+		C1F17A0F2254860D00E1DF80 /* ZCMURLRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A4F225489D700E1DF80 /* DYZRouteConfig.h */,
+				C1F17A50225489D700E1DF80 /* DYZRouteConfig.m */,
+				C1F17A392254860D00E1DF80 /* ZCMURLRouteKit.h */,
+				C1F17A2F2254860D00E1DF80 /* Bridge */,
+				C1F17A182254860D00E1DF80 /* Category */,
+				C1F17A242254860D00E1DF80 /* Config */,
+				C1F17A3A2254860D00E1DF80 /* Hold */,
+				C1F17A322254860D00E1DF80 /* TCTURLRouteSupport */,
+				C1F17A102254860D00E1DF80 /* UIViewController+TCTURLRoute */,
+				C1F17A272254860D00E1DF80 /* URLRoute */,
+			);
+			path = ZCMURLRoute;
+			sourceTree = "<group>";
+		};
+		C1F17A102254860D00E1DF80 /* UIViewController+TCTURLRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A162254860D00E1DF80 /* UIViewController+ZCMURLRoute.h */,
+				C1F17A122254860D00E1DF80 /* UIViewController+ZCMURLRoute.m */,
+				C1F17A112254860D00E1DF80 /* UIViewController+ZCMURLRouteCallBack.h */,
+				C1F17A152254860D00E1DF80 /* UIViewController+ZCMURLRouteCallBack.m */,
+				C1F17A172254860D00E1DF80 /* ZCMURLRouteCallBackProtocol.h */,
+				C1F17A142254860D00E1DF80 /* ZCMURLRoutePopProtocol.h */,
+				C1F17A132254860D00E1DF80 /* ZCMURLRoutePushProtocol.h */,
+			);
+			path = "UIViewController+TCTURLRoute";
+			sourceTree = "<group>";
+		};
+		C1F17A182254860D00E1DF80 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A192254860D00E1DF80 /* NSDictionary+URLQuery.h */,
+				C1F17A232254860D00E1DF80 /* NSDictionary+URLQuery.m */,
+				C1F17A1B2254860D00E1DF80 /* NSString+RemoveUnderscoreAndInitials.h */,
+				C1F17A212254860D00E1DF80 /* NSString+RemoveUnderscoreAndInitials.m */,
+				C1F17A222254860D00E1DF80 /* NSString+URLCode.h */,
+				C1F17A1A2254860D00E1DF80 /* NSString+URLCode.m */,
+				C1F17A1C2254860D00E1DF80 /* NSURL+ZCMURLChar.h */,
+				C1F17A202254860D00E1DF80 /* NSURL+ZCMURLChar.m */,
+				C1F17A1D2254860D00E1DF80 /* Private */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C1F17A1D2254860D00E1DF80 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A1E2254860D00E1DF80 /* NSURL+URLWithStringEncode.h */,
+				C1F17A1F2254860D00E1DF80 /* NSURL+URLWithStringEncode.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		C1F17A242254860D00E1DF80 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A252254860D00E1DF80 /* ZCMURLRouteConfig.h */,
+				C1F17A262254860D00E1DF80 /* ZCMURLRouteConfig.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		C1F17A272254860D00E1DF80 /* URLRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A2A2254860D00E1DF80 /* Private */,
+				C1F17A2D2254860D00E1DF80 /* ZCMURLRoute.h */,
+				C1F17A282254860D00E1DF80 /* ZCMURLRoute.m */,
+				C1F17A292254860D00E1DF80 /* ZCMURLRouteResult.h */,
+				C1F17A2E2254860D00E1DF80 /* ZCMURLRouteResult.m */,
+			);
+			path = URLRoute;
+			sourceTree = "<group>";
+		};
+		C1F17A2A2254860D00E1DF80 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A2B2254860D00E1DF80 /* ZCMRouteScheme.h */,
+				C1F17A2C2254860D00E1DF80 /* ZCMRouteScheme.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		C1F17A2F2254860D00E1DF80 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A302254860D00E1DF80 /* ZCMURLBridge.h */,
+				C1F17A312254860D00E1DF80 /* ZCMURLBridge.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		C1F17A322254860D00E1DF80 /* TCTURLRouteSupport */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A362254860D00E1DF80 /* NSObject+Swizzle.h */,
+				C1F17A342254860D00E1DF80 /* NSObject+Swizzle.m */,
+				C1F17A372254860D00E1DF80 /* UIViewController+PO_RouteURL.h */,
+				C1F17A332254860D00E1DF80 /* UIViewController+PO_RouteURL.m */,
+				C1F17A382254860D00E1DF80 /* ZCMURLRouteSupport.h */,
+				C1F17A352254860D00E1DF80 /* ZCMURLRouteSupport.m */,
+			);
+			path = TCTURLRouteSupport;
+			sourceTree = "<group>";
+		};
+		C1F17A3A2254860D00E1DF80 /* Hold */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A3D2254860D00E1DF80 /* ZCMURLRouteHold.h */,
+				C1F17A3B2254860D00E1DF80 /* ZCMURLRouteHold.m */,
+				C1F17A3C2254860D00E1DF80 /* ZCMURLRouteHoldProtocol.h */,
+			);
+			path = Hold;
+			sourceTree = "<group>";
+		};
+		C1F17A5222548F3900E1DF80 /* URLRoute */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A5522548FF100E1DF80 /* Hold */,
+				C1F17A5322548F3900E1DF80 /* DyzyURLRoute.plist */,
+			);
+			path = URLRoute;
+			sourceTree = "<group>";
+		};
+		C1F17A5522548FF100E1DF80 /* Hold */ = {
+			isa = PBXGroup;
+			children = (
+				C1F17A562254900400E1DF80 /* DYZApplyHold.h */,
+				C1F17A572254900400E1DF80 /* DYZApplyHold.m */,
+				C1F17A592254903800E1DF80 /* DYZWebPageHold.h */,
+				C1F17A5A2254903800E1DF80 /* DYZWebPageHold.m */,
+			);
+			path = Hold;
 			sourceTree = "<group>";
 		};
 		DE64592D20BE65AAC0C144F1 /* Frameworks */ = {
@@ -1835,6 +2044,7 @@
 				C1BCDB8D21F810B700CDF3EB /* DYZHomeViewController.xib in Resources */,
 				C1E8CEB1222111F8003CC670 /* DYZSearchCollectionCell.xib in Resources */,
 				0D53177322276B3300951DA2 /* VideoCacheListCell.xib in Resources */,
+				C1F17A5422548F3900E1DF80 /* DyzyURLRoute.plist in Resources */,
 				C1C9BB6D2212D4FC0059B3B5 /* DYZMineInfoController.xib in Resources */,
 				C1E8CE8C2220F162003CC670 /* GuideImage.bundle in Resources */,
 				C13A5DF121EDC4DE00493EE7 /* Assets.xcassets in Resources */,
@@ -1936,6 +2146,7 @@
 				0D53177222276B3300951DA2 /* VideoCacheListCell.m in Sources */,
 				C183E642221BE42300A2D380 /* APIOrdersDetail.m in Sources */,
 				C199DC31223014E800183098 /* APISearchClear.m in Sources */,
+				C1F17A3E2254860E00E1DF80 /* UIViewController+ZCMURLRoute.m in Sources */,
 				C1E8B78B221D4970003CC670 /* APIFAQS.m in Sources */,
 				C1E8CEA92221043C003CC670 /* DYZFlowLayout.m in Sources */,
 				C199DC2D222FD30500183098 /* AXGradientProgressView.m in Sources */,
@@ -1943,6 +2154,7 @@
 				0D5620CF221A431E00C5D508 /* HSSessionModel.m in Sources */,
 				0D5176542225AC3600A8A1D9 /* YCDownloadManager.m in Sources */,
 				C199DBEB222FD1FF00183098 /* NJKWebViewProgressView.m in Sources */,
+				C1F17A422254860E00E1DF80 /* NSURL+ZCMURLChar.m in Sources */,
 				C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */,
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
 				C123DAEB22351026000E5C85 /* ProvinceModel.m in Sources */,
@@ -1952,6 +2164,7 @@
 				C1C9BB5D2212D3000059B3B5 /* DYZQAViewController.m in Sources */,
 				C1E8CEBF2222918B003CC670 /* NSString+SizeWithFont.m in Sources */,
 				C1BCDB9121F84AC200CDF3EB /* DYZClassifyCollectionCell.m in Sources */,
+				C1F17A5E2255089A00E1DF80 /* DYZCurrentController.m in Sources */,
 				C1BCDB6721F712E700CDF3EB /* DYZMainTabBarController.m in Sources */,
 				C1E54A6D222BE9DD0053D229 /* DYZVersionContentCell.m in Sources */,
 				C199DB9C222EB7B400183098 /* APICancelOrder.m in Sources */,
@@ -1967,9 +2180,11 @@
 				0D53177722276B6900951DA2 /* VideoListInfoModel.m in Sources */,
 				C1E8CEB822227B7A003CC670 /* DYZSearchListCell.m in Sources */,
 				C1BCDB4F21F6C80D00CDF3EB /* DYZHomeViewController.m in Sources */,
+				C1F17A5B2254903800E1DF80 /* DYZWebPageHold.m in Sources */,
 				0DDA159F2222B7A8005F6E76 /* APIRecomcode.m in Sources */,
 				C13A5E8621EDCF0D00493EE7 /* LYInterfaceConfig.m in Sources */,
 				C1E8B797221D5EC5003CC670 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
+				C1F17A402254860E00E1DF80 /* NSString+URLCode.m in Sources */,
 				C1E8CED822229B3F003CC670 /* VTContentView.m in Sources */,
 				0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */,
 				0D53177422276B3300951DA2 /* VideoCacheController.m in Sources */,
@@ -1978,7 +2193,9 @@
 				C1E8CEB0222111F8003CC670 /* DYZSearchCollectionCell.m in Sources */,
 				0D8683DC21F48E2A002E255A /* DYZCoursesTableCell.m in Sources */,
 				C13A5E9221EDD0CC00493EE7 /* NSString+Additions.m in Sources */,
+				C1F17A3F2254860E00E1DF80 /* UIViewController+ZCMURLRouteCallBack.m in Sources */,
 				C199DBEA222FD1FF00183098 /* NJKWebViewProgress.m in Sources */,
+				C1F17A51225489D700E1DF80 /* DYZRouteConfig.m in Sources */,
 				C199DC1E222FD30500183098 /* AXBreachedAnnulusIndicatorView.m in Sources */,
 				C11C645D21F890D7000D0CB7 /* APIHomeCourseList.m in Sources */,
 				0D5176562225AC3600A8A1D9 /* YCDownloadUtils.m in Sources */,
@@ -2009,12 +2226,14 @@
 				0D4BB8F8221905E7007B37F8 /* DYZMyCollectionViewController.m in Sources */,
 				0D72798521F96571001C0768 /* APICoursesList.m in Sources */,
 				C199DBC9222FBE8200183098 /* UIBarButtonItem+GKCategory.m in Sources */,
+				C1F17A432254860E00E1DF80 /* NSString+RemoveUnderscoreAndInitials.m in Sources */,
 				0D4BB9022219664A007B37F8 /* DYZVipRightsController.m in Sources */,
 				0D8683D921F48E08002E255A /* DYZBaseTableViewCell.m in Sources */,
 				C108B569223179EA002AC7BD /* LXFPhotoHelper.m in Sources */,
 				C1C9BB7E2213C2A40059B3B5 /* APILogin.m in Sources */,
 				C1C06D48224DD2C8000C0F5E /* NSDictionary+URLQuery.m in Sources */,
 				C1C9BB542212D25C0059B3B5 /* DYZSearchController.m in Sources */,
+				C1F17A412254860E00E1DF80 /* NSURL+URLWithStringEncode.m in Sources */,
 				0D5620D1221A431E00C5D508 /* HSDownloadManager.m in Sources */,
 				C1E54A3E222A6A790053D229 /* DYZStaticURL.m in Sources */,
 				C199DBC8222FBE8200183098 /* UIView+GKCategory.m in Sources */,
@@ -2023,6 +2242,7 @@
 				C13A5DE921EDC4DC00493EE7 /* AppDelegate.m in Sources */,
 				C199DBCD222FBE8200183098 /* GKNavigationBar.m in Sources */,
 				0D7AEFDE2235404600F0468D /* PlayerViewController.m in Sources */,
+				C1F17A462254860E00E1DF80 /* ZCMURLRoute.m in Sources */,
 				C108B56622316504002AC7BD /* DYZRequestObject.m in Sources */,
 				C199DB98222EACDF00183098 /* DYZOrderInfoCell.m in Sources */,
 				C1E54A49222A8D7A0053D229 /* UIViewController+DYZWebView.m in Sources */,
@@ -2051,10 +2271,13 @@
 				C199DC2A222FD30500183098 /* AXPracticalHUDContentView.m in Sources */,
 				C1C9BBA1221661880059B3B5 /* APIUserInfo.m in Sources */,
 				C199DC1A222FD30500183098 /* AXPopNavigationController.m in Sources */,
+				C1F17A4D2254860E00E1DF80 /* ZCMURLRouteHold.m in Sources */,
+				C1F17A582254900400E1DF80 /* DYZApplyHold.m in Sources */,
 				C199DB9F222FB54B00183098 /* DYZBaseNavigationController.m in Sources */,
 				C1E54A66222BDB700053D229 /* UIViewController+PresentInWindow.m in Sources */,
 				C199DBC6222FBE8200183098 /* UINavigationController+GKCategory.m in Sources */,
 				C1E8B795221D5EC5003CC670 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				C1F17A452254860E00E1DF80 /* ZCMURLRouteConfig.m in Sources */,
 				0D5176572225AC3600A8A1D9 /* YCDownloadTask.m in Sources */,
 				0DF2D8C922245CE600CCF1F1 /* DYZCacheListBottomView.m in Sources */,
 				C1E54A42222A6ED70053D229 /* DYZHospitalController.m in Sources */,
@@ -2069,6 +2292,7 @@
 				C199DBCB222FBE8200183098 /* UINavigationItem+GKCategory.m in Sources */,
 				C199DBD6222FCC7900183098 /* UIViewController+DYZBackItem.m in Sources */,
 				C1E8CE8E2220F162003CC670 /* DHGuidePageHUD.m in Sources */,
+				C1F17A4B2254860E00E1DF80 /* NSObject+Swizzle.m in Sources */,
 				C1C9BB592212D2890059B3B5 /* DYZSearchListController.m in Sources */,
 				C199DC29222FD30500183098 /* AXPracticalHUDAnimator.m in Sources */,
 				C123DAE722351026000E5C85 /* GLCoderObject.m in Sources */,
@@ -2078,9 +2302,13 @@
 				C199DC2B222FD30500183098 /* AXCircleProgressView.m in Sources */,
 				C1E54A4C222BA0770053D229 /* APIJoin.m in Sources */,
 				C1C9BB842213C2C50059B3B5 /* APIUpdatePwd.m in Sources */,
+				C1F17A482254860E00E1DF80 /* ZCMURLRouteResult.m in Sources */,
 				C199DBC7222FBE8200183098 /* UIViewController+GKRotation.m in Sources */,
 				C1F1B970222A5DDC005D3A5A /* LYTextField.m in Sources */,
+				C1F17A442254860E00E1DF80 /* NSDictionary+URLQuery.m in Sources */,
+				C1F17A492254860E00E1DF80 /* ZCMURLBridge.m in Sources */,
 				C183E636221BCFF700A2D380 /* DYZMeetingCell.m in Sources */,
+				C1F17A4C2254860E00E1DF80 /* ZCMURLRouteSupport.m in Sources */,
 				C1BCDB5221F6FEEA00CDF3EB /* UIDeviceHardware.m in Sources */,
 				C123DAE822351026000E5C85 /* CityModel.m in Sources */,
 				C1E54A69222BE0290053D229 /* APIVersion.m in Sources */,
@@ -2097,11 +2325,13 @@
 				C1C9BB4A2212CE6B0059B3B5 /* DYZUpdatePwdController.m in Sources */,
 				C17E4CD021F9BE840094CC99 /* APIClassifyAll.m in Sources */,
 				0D8683E921F49286002E255A /* DYZNewsTableController.m in Sources */,
+				C1F17A4A2254860E00E1DF80 /* UIViewController+PO_RouteURL.m in Sources */,
 				C199DC2E222FD30500183098 /* AXPracticalHUD.m in Sources */,
 				C13A5E8A21EDCF0D00493EE7 /* ResponseCommon.m in Sources */,
 				0DDA159022227501005F6E76 /* DYZCachingCell.m in Sources */,
 				C1E54A7D222E21E30053D229 /* DYZWebViewController.m in Sources */,
 				0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */,
+				C1F17A472254860E00E1DF80 /* ZCMRouteScheme.m in Sources */,
 				C1C9BB91221512DB0059B3B5 /* DYZHTTPHeader.m in Sources */,
 				C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */,
 				0DDA158C22226DC3005F6E76 /* DYZCacheParentController.m in Sources */,

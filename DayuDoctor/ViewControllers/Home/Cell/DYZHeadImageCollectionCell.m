@@ -8,9 +8,9 @@
 
 #import "DYZHeadImageCollectionCell.h"
 #import "SDCycleScrollView.h"
+#import "DYZCurrentController.h"
 
-
-@interface DYZHeadImageCollectionCell ()
+@interface DYZHeadImageCollectionCell () <SDCycleScrollViewDelegate>
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 
 @end
@@ -20,7 +20,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-//    self.headerImage.image = [UIImage imageNamed:@"homeHeader"];
     [self createBaseView];
 }
 
@@ -31,6 +30,7 @@
         make.edges.equalTo(self.contentView);
     }];
     
+    cycleScrollView.delegate = self;
     cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     cycleScrollView.currentPageDotColor = [UIColor whiteColor];
     cycleScrollView.autoScrollTimeInterval = 5;
@@ -49,5 +49,10 @@
     self.cycleScrollView.imageURLStringsGroup = urlArray;
 }
 
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    BannerModel *model = _bannerList[index];
+    [[DYZCurrentController currentViewController] openRouteURLString:model.jumpUrl options:nil];
+}
 
 @end

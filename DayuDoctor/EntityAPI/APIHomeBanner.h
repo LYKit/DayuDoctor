@@ -20,6 +20,9 @@
 
 @interface BannerModel : NSObject
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) NSInteger bannerIndex;
+@property (nonatomic, copy) NSString *jumpUrl;
 
 @end
 

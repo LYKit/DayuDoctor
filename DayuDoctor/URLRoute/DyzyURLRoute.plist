@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>https</key>
+	<dict>
+		<key>_hold</key>
+		<dict>
+			<key>_class</key>
+			<string>DYZWebPageHold</string>
+		</dict>
+	</dict>
+	<key>http</key>
+	<dict>
+		<key>_hold</key>
+		<dict>
+			<key>_class</key>
+			<string>DYZWebPageHold</string>
+		</dict>
+	</dict>
+	<key>dyzy</key>
+	<dict>
+		<key>appClient</key>
+		<dict>
+			<key>apply</key>
+			<dict>
+				<key>_description</key>
+				<string>报名</string>
+				<key>_hold</key>
+				<dict>
+					<key>_class</key>
+					<string>DYZApplyHold</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

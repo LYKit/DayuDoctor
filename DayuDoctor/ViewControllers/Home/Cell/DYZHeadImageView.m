@@ -8,9 +8,10 @@
 
 #import "DYZHeadImageView.h"
 #import "SDCycleScrollView.h"
+#import "DYZCurrentController.h"
 
 
-@interface DYZHeadImageView ()
+@interface DYZHeadImageView () <SDCycleScrollViewDelegate>
 @property (nonatomic, strong) SDCycleScrollView *cycleScrollView;
 
 @end
@@ -29,7 +30,7 @@
     [cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
-    
+    cycleScrollView.delegate = self;
     cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     cycleScrollView.currentPageDotColor = [UIColor whiteColor];
     cycleScrollView.autoScrollTimeInterval = 5;
@@ -48,6 +49,13 @@
     self.cycleScrollView.imageURLStringsGroup = urlArray;
     
 }
+
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    BannerModel *model = _bannerList[index];
+    [[DYZCurrentController currentViewController] openRouteURLString:model.jumpUrl options:nil];
+}
+
 
 
 @end
