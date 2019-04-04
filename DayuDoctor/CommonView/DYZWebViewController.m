@@ -32,6 +32,7 @@
         configuration.userContentController = userController;
         self.userController = userController;
         self.delegate = self;
+        self.enabledWebViewUIDelegate = YES;
         [self addScriptMessageHandler:userController];
         
         // 缓存
