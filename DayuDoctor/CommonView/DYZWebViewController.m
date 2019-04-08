@@ -69,9 +69,11 @@
     } else if ([message.name isEqualToString:@"toHomeCategory"]) {
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
         [tab setSelectedIndex:1];
+        [_fromController.navigationController popToRootViewControllerAnimated:NO];
     } else if ([message.name isEqualToString:@"toLogin"]) {
         UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
         [tab setSelectedIndex:3];
+        [_fromController.navigationController popToRootViewControllerAnimated:NO];
     } else if ([message.name isEqualToString:@"nativeShare"]) {
         NSDictionary *params = message.body;
         NSString *url = params[@"url"];
