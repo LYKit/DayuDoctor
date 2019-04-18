@@ -192,6 +192,8 @@
 		C1C9BBAC2216BBB80059B3B5 /* DYZUserInfoEditorController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BBAA2216BBB80059B3B5 /* DYZUserInfoEditorController.m */; };
 		C1C9BBAD2216BBB80059B3B5 /* DYZUserInfoEditorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1C9BBAB2216BBB80059B3B5 /* DYZUserInfoEditorController.xib */; };
 		C1C9BBB02217C28C0059B3B5 /* APIUpdateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C9BBAF2217C28C0059B3B5 /* APIUpdateUserInfo.m */; };
+		C1E53D432268A71E003AEC4B /* DYZHomeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E53D412268A71E003AEC4B /* DYZHomeBannerCell.m */; };
+		C1E53D442268A71E003AEC4B /* DYZHomeBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E53D422268A71E003AEC4B /* DYZHomeBannerCell.xib */; };
 		C1E54A3E222A6A790053D229 /* DYZStaticURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A3D222A6A790053D229 /* DYZStaticURL.m */; };
 		C1E54A42222A6ED70053D229 /* DYZHospitalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E54A40222A6ED70053D229 /* DYZHospitalController.m */; };
 		C1E54A43222A6ED70053D229 /* DYZHospitalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1E54A41222A6ED70053D229 /* DYZHospitalController.xib */; };
@@ -637,6 +639,9 @@
 		C1C9BBAB2216BBB80059B3B5 /* DYZUserInfoEditorController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZUserInfoEditorController.xib; sourceTree = "<group>"; };
 		C1C9BBAE2217C28C0059B3B5 /* APIUpdateUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIUpdateUserInfo.h; sourceTree = "<group>"; };
 		C1C9BBAF2217C28C0059B3B5 /* APIUpdateUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIUpdateUserInfo.m; sourceTree = "<group>"; };
+		C1E53D402268A71E003AEC4B /* DYZHomeBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZHomeBannerCell.h; sourceTree = "<group>"; };
+		C1E53D412268A71E003AEC4B /* DYZHomeBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZHomeBannerCell.m; sourceTree = "<group>"; };
+		C1E53D422268A71E003AEC4B /* DYZHomeBannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DYZHomeBannerCell.xib; sourceTree = "<group>"; };
 		C1E54A3C222A6A790053D229 /* DYZStaticURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZStaticURL.h; sourceTree = "<group>"; };
 		C1E54A3D222A6A790053D229 /* DYZStaticURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZStaticURL.m; sourceTree = "<group>"; };
 		C1E54A3F222A6ED70053D229 /* DYZHospitalController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZHospitalController.h; sourceTree = "<group>"; };
@@ -1630,6 +1635,9 @@
 				C1E54A5A222BBE260053D229 /* DYZMessageCell.h */,
 				C1E54A5B222BBE260053D229 /* DYZMessageCell.m */,
 				C1E54A5C222BBE260053D229 /* DYZMessageCell.xib */,
+				C1E53D402268A71E003AEC4B /* DYZHomeBannerCell.h */,
+				C1E53D412268A71E003AEC4B /* DYZHomeBannerCell.m */,
+				C1E53D422268A71E003AEC4B /* DYZHomeBannerCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2059,6 +2067,7 @@
 				C1C9BB502212D1F70059B3B5 /* DYZMessageController.xib in Resources */,
 				C183E637221BCFF700A2D380 /* DYZMeetingCell.xib in Resources */,
 				C1C9BBAD2216BBB80059B3B5 /* DYZUserInfoEditorController.xib in Resources */,
+				C1E53D442268A71E003AEC4B /* DYZHomeBannerCell.xib in Resources */,
 				C1C9BB9B221560130059B3B5 /* DYZFaceTeachCell.xib in Resources */,
 				C199DBCE222FBE8200183098 /* GKNavigationBarViewController.bundle in Resources */,
 				C1C9BB552212D25C0059B3B5 /* DYZSearchController.xib in Resources */,
@@ -2157,6 +2166,7 @@
 				C1F17A422254860E00E1DF80 /* NSURL+ZCMURLChar.m in Sources */,
 				C11C643A21F85BB1000D0CB7 /* DYZHeadImageCollectionCell.m in Sources */,
 				C13A5E8721EDCF0D00493EE7 /* LYParserManager.m in Sources */,
+				C1E53D432268A71E003AEC4B /* DYZHomeBannerCell.m in Sources */,
 				C123DAEB22351026000E5C85 /* ProvinceModel.m in Sources */,
 				C1E8CEB4222273AC003CC670 /* UIView+CALayerRelation.m in Sources */,
 				C199DBCC222FBE8200183098 /* UIViewController+GKCategory.m in Sources */,

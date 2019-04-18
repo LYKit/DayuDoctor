@@ -17,10 +17,12 @@
 #import "APIHomeBanner.h"
 #import "APINewsList.h"
 #import "DYZClassCourseController.h"//分类课程列表
+#import "DYZHomeBannerCell.h"
 
 typedef enum : NSUInteger {
     enumHeaderImageSection,
     enumNewsRollSection,
+    enumBannerSection,
     enumClassifySection,
     enumVideoRecommendSection
 } enumSectionType;
@@ -32,7 +34,6 @@ typedef enum : NSUInteger {
     UICollectionViewDelegateFlowLayout
 >
 
-@property (strong, nonatomic) IBOutlet UICollectionReusableView *headerView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) DYZNewsRollCollectionCell *rollCell;
 
@@ -65,7 +66,9 @@ typedef enum : NSUInteger {
     [self.collectionView registerNib:[UINib nibWithNibName:kClassifyCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kClassifyCollectionCell];
     [self.collectionView registerNib:[UINib nibWithNibName:kVideoCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kVideoCollectionCell];
     [self.collectionView registerNib:[UINib nibWithNibName:kHeadImageCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kHeadImageCollectionCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:kDYZHomeBannerCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kDYZHomeBannerCell];
     [self.collectionView registerNib:[UINib nibWithNibName:kNewsRolCollectionCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:kNewsRolCollectionCell];
+    
     [self.collectionView registerNib:[UINib nibWithNibName:kDYZVideoReusableView bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kDYZVideoReusableView];
 }
 
@@ -126,6 +129,9 @@ typedef enum : NSUInteger {
         case enumNewsRollSection: {
             return 1;
         } break;
+        case enumBannerSection: {
+            return 1;
+        } break;
         case enumClassifySection:{
             return self.classifyList.count > 10 ? 10 : self.classifyList.count;
         } break;
@@ -159,6 +165,10 @@ typedef enum : NSUInteger {
             self.rollCell = cell;
             return cell;
         } break;
+        case enumBannerSection: {
+            DYZHomeBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kDYZHomeBannerCell forIndexPath:indexPath];
+            return cell;
+        } break;
         case enumClassifySection:{
             DYZClassifyCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kClassifyCollectionCell forIndexPath:indexPath];
             cell.model = self.classifyList[indexPath.row];
@@ -184,6 +194,9 @@ typedef enum : NSUInteger {
         } break;
         case enumNewsRollSection: {
             return CGSizeMake(SCREEN_WIDTH, 40);
+        } break;
+        case enumBannerSection: {
+            return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH*(2.0/15.0));
         } break;
         case enumClassifySection:{
             return CGSizeMake(60, 75);
@@ -235,6 +248,18 @@ typedef enum : NSUInteger {
         case enumHeaderImageSection:
         case enumNewsRollSection: {
             [self openWebPageWithUrlString:_newsList[_rollCell.curIndex].url];
+        } break;
+        case enumBannerSection: {
+            if ([DYZMemberManager isLogin]) {
+                DYZClassCourseController *controller = [DYZClassCourseController new];
+                controller.classID = @"100";
+                [self.navigationController pushViewController:controller animated:YES];
+            } else {
+                [LYAlertView showAerltViewWithTitle:@"" message:@"您尚未登录，请前往登录" cancelButtonTtitle:@"取消" ensuerButtonTitle:@"去登录" onSureUsingBlock:^{
+                    UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+                    [tab setSelectedIndex:3];
+                } onCancelUsingBlock:nil];
+            }
         } break;
         case enumClassifySection:{
             ClassifyModel *classify = self.classifyList[indexPath.item];

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnMessage;
 @property (weak, nonatomic) IBOutlet UIButton *btnDownload;
 @property (weak, nonatomic) IBOutlet UIView *viewSearch;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constranitOfHeight;
 
 @end
 
@@ -24,6 +25,7 @@
     
     self.viewSearch.layer.masksToBounds = YES;
     self.viewSearch.layer.cornerRadius = 17;
+    self.constranitOfHeight.constant = IS_IPHONE_X ? 88 : 64;
 }
 
 + (DYZMainHeaderView *)createFromNib {

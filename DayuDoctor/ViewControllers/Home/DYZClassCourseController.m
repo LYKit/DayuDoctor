@@ -35,7 +35,7 @@
     _request = [APICourseClassify new];
     _request.currPage = 1;
     _request.pageSize = 20;
-    _request.classifyId = _classify.classID;
+    _request.classifyId = _classID ?: _classify.classID;
     _request.dataSource = self.models;
     _request.noResultView = self.tableView;
     [self requestClassifyClass];

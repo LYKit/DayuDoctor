@@ -9,6 +9,7 @@
 #import "DYZApplyController.h"
 #import "APISignUpDetail.h"
 #import "DYZUserInfoEditorController.h"
+#import "DYZClassCourseController.h"
 
 
 @interface DYZApplyController ()
@@ -18,8 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblEmail;
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
 @property (weak, nonatomic) IBOutlet UILabel *lblGood;
-@property (weak, nonatomic) IBOutlet UILabel *lblMoney;
-@property (weak, nonatomic) IBOutlet UILabel *lblRemark;
 @property (weak, nonatomic) IBOutlet UIView *bgPerfect;
 @property (weak, nonatomic) IBOutlet UIButton *btnBgPerfect;
 @property (weak, nonatomic) IBOutlet UIButton *btnApply;
@@ -66,8 +65,7 @@
     _lblAddress.text = _detail.address;
     _lblEmail.text = _detail.email;
     _lblGood.text = _detail.goodtypes;
-    _lblMoney.text = [NSString stringWithFormat:@"报名费：%@",_detail.amount];
-    _lblRemark.text = _detail.remark.length ? [NSString stringWithFormat:@"备注：%@",_detail.remark] : @"备注：擅长科目为报名科目";
+    
     _bgPerfect.hidden = YES;
     if ([_detail.flag isEqualToString:@"0"]) {
         _bgPerfect.hidden = NO;
@@ -76,16 +74,12 @@
         _bgPerfect.hidden = NO;
         [_btnBgPerfect setTitle:@"点击前往登录" forState:UIControlStateNormal];
     }
-    
-    if ([_detail.signup boolValue]) {
-        [_btnApply setTitle:@"已报名" forState:UIControlStateNormal];
-        [_btnApply setBackgroundColor:[UIColor colorWithHexString:@"d7d7d7"]];
-        _btnApply.enabled = NO;
-    }
 }
 
 - (IBAction)didPressApply:(id)sender {
-    [self openWebPageWithUrlString:_detail.payUrl];
+    DYZClassCourseController *controller = [DYZClassCourseController new];
+    controller.classID = @"100";
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)didPressedperfect:(id)sender {

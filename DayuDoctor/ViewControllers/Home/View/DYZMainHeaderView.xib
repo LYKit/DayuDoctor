@@ -13,14 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DYZMainHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="352" height="64"/>
+            <rect key="frame" x="0.0" y="0.0" width="352" height="124"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-Sr-ajy">
-                    <rect key="frame" x="0.0" y="0.0" width="352" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="352" height="124"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2G-Eq-UHU">
-                            <rect key="frame" x="15" y="27.5" width="17" height="18"/>
+                            <rect key="frame" x="15" y="87.5" width="17" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="height" multiplier="60:64" id="bt0-fd-vUK"/>
                                 <constraint firstAttribute="width" constant="17" id="cfW-dP-8Vv"/>
@@ -32,7 +32,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBL-6F-zUi">
-                            <rect key="frame" x="325" y="27.5" width="17" height="18"/>
+                            <rect key="frame" x="325" y="87.5" width="17" height="18"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="FBL-6F-zUi" secondAttribute="height" multiplier="60:63" id="Y52-oC-S82"/>
                             </constraints>
@@ -43,7 +43,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isf-AG-Ara">
-                            <rect key="frame" x="52" y="19" width="253" height="35"/>
+                            <rect key="frame" x="52" y="79" width="253" height="35"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73n-YM-Gfb">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="35"/>
@@ -78,10 +78,42 @@
                                 <constraint firstAttribute="height" constant="35" id="ril-sw-62x"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG9-qg-RAz">
+                            <rect key="frame" x="0.0" y="0.0" width="352" height="64"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大禹中医教育" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qk-oU-bEA">
+                                    <rect key="frame" x="25" y="30" width="302" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sK8-ez-Pyt">
+                                    <rect key="frame" x="0.0" y="63" width="352" height="1"/>
+                                    <color key="backgroundColor" red="0.73333333329999995" green="0.73725490199999999" blue="0.73725490199999999" alpha="0.62053189212328763" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="OHF-uP-bIt"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.84313725490196079" green="0.70980392156862748" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="sK8-ez-Pyt" firstAttribute="leading" secondItem="yG9-qg-RAz" secondAttribute="leading" id="211-LV-sSe"/>
+                                <constraint firstItem="sK8-ez-Pyt" firstAttribute="top" secondItem="7qk-oU-bEA" secondAttribute="bottom" constant="12.5" id="7xD-ru-qsi"/>
+                                <constraint firstItem="7qk-oU-bEA" firstAttribute="centerX" secondItem="yG9-qg-RAz" secondAttribute="centerX" id="9iq-Z8-Vjd"/>
+                                <constraint firstAttribute="trailing" secondItem="sK8-ez-Pyt" secondAttribute="trailing" id="CEx-Ot-ycU"/>
+                                <constraint firstAttribute="trailing" secondItem="7qk-oU-bEA" secondAttribute="trailing" constant="25" id="F5h-dn-bu0"/>
+                                <constraint firstAttribute="bottom" secondItem="sK8-ez-Pyt" secondAttribute="bottom" id="Jck-tW-jd2"/>
+                                <constraint firstItem="7qk-oU-bEA" firstAttribute="leading" secondItem="yG9-qg-RAz" secondAttribute="leading" constant="25" id="Qmf-db-pRf"/>
+                                <constraint firstAttribute="height" constant="64" id="hYf-2e-iUh"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yG9-qg-RAz" secondAttribute="trailing" id="E6P-Yo-eOe"/>
                         <constraint firstItem="PC8-Jw-flV" firstAttribute="width" secondItem="B2G-Eq-UHU" secondAttribute="width" id="F5h-Lm-IaF"/>
+                        <constraint firstItem="yG9-qg-RAz" firstAttribute="top" secondItem="1L4-Sr-ajy" secondAttribute="top" id="II9-Ij-QfI"/>
+                        <constraint firstItem="yG9-qg-RAz" firstAttribute="leading" secondItem="1L4-Sr-ajy" secondAttribute="leading" id="LoE-Tz-W33"/>
                         <constraint firstItem="Isf-AG-Ara" firstAttribute="leading" secondItem="B2G-Eq-UHU" secondAttribute="trailing" constant="20" id="Vaj-un-a3F"/>
                         <constraint firstItem="FBL-6F-zUi" firstAttribute="leading" secondItem="Isf-AG-Ara" secondAttribute="trailing" constant="20" id="kRI-BE-z4x"/>
                         <constraint firstAttribute="trailing" secondItem="FBL-6F-zUi" secondAttribute="trailing" constant="10" id="nMJ-BW-hJi"/>
@@ -105,9 +137,10 @@
             <connections>
                 <outlet property="btnDownload" destination="FBL-6F-zUi" id="e1V-Iw-jId"/>
                 <outlet property="btnMessage" destination="B2G-Eq-UHU" id="66H-gc-hp9"/>
+                <outlet property="constranitOfHeight" destination="hYf-2e-iUh" id="Ko6-ux-hbs"/>
                 <outlet property="viewSearch" destination="Isf-AG-Ara" id="Msz-pr-J2F"/>
             </connections>
-            <point key="canvasLocation" x="120" y="-151.12443778110946"/>
+            <point key="canvasLocation" x="120" y="-152.92353823088456"/>
         </view>
     </objects>
     <resources>

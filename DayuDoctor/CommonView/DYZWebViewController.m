@@ -14,6 +14,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import <JSHAREService.h>
 #import <MessageUI/MessageUI.h>
+#import "DYZUserInfoEditorController.h"
 
 @interface DYZWebViewController () <WKScriptMessageHandler,AXWebViewControllerDelegate>
 @property (nonatomic, strong) WKUserContentController *userController;
@@ -51,6 +52,7 @@
     [userController addScriptMessageHandler:self name:@"toHomeCategory"];
     [userController addScriptMessageHandler:self name:@"toLogin"];
     [userController addScriptMessageHandler:self name:@"nativeShare"];
+    [userController addScriptMessageHandler:self name:@"userInfoEditor"];
 }
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
@@ -96,6 +98,9 @@
                         title:title
                       content:content
                           url:url];
+    } else if ([message.name isEqualToString:@"userInfoEditor"]) {
+        DYZUserInfoEditorController *vc = [DYZUserInfoEditorController new];
+        [_fromController.navigationController pushViewController:vc animated:YES];
     }
 }
 

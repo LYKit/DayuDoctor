@@ -29,6 +29,10 @@ typedef enum : NSUInteger {
     enumMagicViewHospital,
 } enumMagicViewPage;
 
+#define kIPhoneXNaHeight 88+55
+#define kIPhoneNaHeight 64+55
+
+
 @interface DYZMainViewController () <DYZMainHeaderViewDelegate>
 @property (nonatomic, strong) DYZMainHeaderView *headerView;
 @property (nonatomic, strong) NSMutableArray *bannerList;
@@ -61,7 +65,7 @@ typedef enum : NSUInteger {
     [self.view addSubview:self.headerView];
     [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self.view);
-        make.height.mas_equalTo(IS_IPHONE_X ? 88:64);
+        make.height.mas_equalTo(IS_IPHONE_X ? kIPhoneXNaHeight:kIPhoneNaHeight);
     }];
 
 }
@@ -105,8 +109,8 @@ typedef enum : NSUInteger {
     self.magicView.switchStyle = VTSwitchStyleDefault;
     self.magicView.sliderOffset = -10;
     self.magicView.sliderWidth = 45;
-    self.magicView.navigationHeight = IS_IPHONE_X ? 88.f+60 : 64+60;
-    self.magicView.navigationInset = UIEdgeInsetsMake(IS_IPHONE_X ? 88 : 64, 10, 0, 0);
+    self.magicView.navigationHeight = IS_IPHONE_X ? kIPhoneXNaHeight+60 : kIPhoneNaHeight+60;
+    self.magicView.navigationInset = UIEdgeInsetsMake(IS_IPHONE_X ? kIPhoneXNaHeight : kIPhoneNaHeight, 10, 0, 0);
     self.magicView.dataSource = self;
     self.magicView.delegate = self;
     [self.magicView reloadData];
