@@ -9,6 +9,8 @@
 #import "DYZClassCourseController.h"
 #import "APICourseClassify.h"
 #import "DYZClassCourseCell.h"
+#import "DYZBaseNavigationController.h"
+#import "DYZApplyController.h"
 
 @interface DYZClassCourseController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -47,9 +49,14 @@
     });
 }
 
-- (void)backAction { // 定的什么鸡儿奇葩交互，还老不给钱，拖拖拖。
+- (void)backAction { // 定的什么鸡儿奇葩交互
     UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
-    [tab setSelectedIndex:0];
+    
+    if ([((DYZBaseNavigationController *)tab.selectedViewController).viewControllers[0] isKindOfClass:[DYZApplyController class]]) {
+        [tab setSelectedIndex:0];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)requestClassifyClass {
