@@ -38,12 +38,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:@"perfectInformation" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:kLoginSuccesStatus object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadData) name:kOutLoginSuccesStatus object:nil];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadData];
+    DYZClassCourseController *controller = [DYZClassCourseController new];
+    controller.classID = @"100";
+    [self.navigationController pushViewController:controller animated:NO];
 }
+
+
+
 
 - (void)loadData {
     if ([DYZMemberManager isLogin]) {

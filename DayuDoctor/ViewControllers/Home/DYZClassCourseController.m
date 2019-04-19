@@ -39,6 +39,17 @@
     _request.dataSource = self.models;
     _request.noResultView = self.tableView;
     [self requestClassifyClass];
+    
+    self.navigationItem.leftBarButtonItem = ({
+        UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+        left.tintColor = [UIColor colorWithHexString:@"666666"];
+        left;
+    });
+}
+
+- (void)backAction { // 定的什么鸡儿奇葩交互，还老不给钱，拖拖拖。
+    UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+    [tab setSelectedIndex:0];
 }
 
 - (void)requestClassifyClass {
