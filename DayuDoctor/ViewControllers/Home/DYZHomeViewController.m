@@ -196,7 +196,7 @@ typedef enum : NSUInteger {
             return CGSizeMake(SCREEN_WIDTH, 40);
         } break;
         case enumBannerSection: {
-            return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH*(2.0/15.0));
+            return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH*(114.0/750.0));
         } break;
         case enumClassifySection:{
             return CGSizeMake(60, 75);

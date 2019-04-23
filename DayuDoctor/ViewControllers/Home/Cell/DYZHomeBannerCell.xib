@@ -36,6 +36,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icon_signup" width="750" height="100"/>
+        <image name="icon_signup" width="750" height="114"/>
     </resources>
 </document>
