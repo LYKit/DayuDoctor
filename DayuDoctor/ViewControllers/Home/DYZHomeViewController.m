@@ -255,10 +255,8 @@ typedef enum : NSUInteger {
                 controller.classID = @"100";
                 [self.navigationController pushViewController:controller animated:YES];
             } else {
-                [LYAlertView showAerltViewWithTitle:@"" message:@"您尚未登录，请前往登录" cancelButtonTtitle:@"取消" ensuerButtonTitle:@"去登录" onSureUsingBlock:^{
-                    UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
-                    [tab setSelectedIndex:3];
-                } onCancelUsingBlock:nil];
+                UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+                [tab setSelectedIndex:3];
             }
         } break;
         case enumClassifySection:{
