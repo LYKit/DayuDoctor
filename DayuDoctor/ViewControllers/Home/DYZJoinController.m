@@ -63,6 +63,7 @@
         [self.view makeToast:@"请先填写加盟信息"];
         return;
     }
+    
     APIJoin *request = [APIJoin new];
     request.name = _txtName.text;
     request.sex = _txtGender.text;

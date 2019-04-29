@@ -250,14 +250,9 @@ typedef enum : NSUInteger {
             [self openWebPageWithUrlString:_newsList[_rollCell.curIndex].url];
         } break;
         case enumBannerSection: {
-            if ([DYZMemberManager isLogin]) {
-                DYZClassCourseController *controller = [DYZClassCourseController new];
-                controller.classID = @"100";
-                [self.navigationController pushViewController:controller animated:YES];
-            } else {
-                UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
-                [tab setSelectedIndex:3];
-            }
+            DYZClassCourseController *controller = [DYZClassCourseController new];
+            controller.classID = @"100";
+            [self.navigationController pushViewController:controller animated:YES];
         } break;
         case enumClassifySection:{
             ClassifyModel *classify = self.classifyList[indexPath.item];
