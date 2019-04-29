@@ -15,7 +15,7 @@
 #import "APIClassifyAll.h"
 #import "ZHPickView.h"
 
-@interface DYZUserInfoEditorController ()  <ShowPickerViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+@interface DYZUserInfoEditorController ()  <ShowPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgPhoto;
 @property (weak, nonatomic) IBOutlet UITextField *txtName;

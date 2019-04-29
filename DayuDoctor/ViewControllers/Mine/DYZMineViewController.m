@@ -100,10 +100,6 @@ typedef enum : NSUInteger {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-}
-
-
-- (void)loadData {
     
     __weak typeof(self) weakSelf = self;
     [[APIUserInfo new] startPostWithSuccessBlock:^(id responseObject, NSDictionary *options) {
@@ -111,8 +107,12 @@ typedef enum : NSUInteger {
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
-    
-    
+}
+
+
+- (void)loadData {
+    __weak typeof(self) weakSelf = self;
+
     // 版本更新
     APIVersion *request = [APIVersion new];
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
