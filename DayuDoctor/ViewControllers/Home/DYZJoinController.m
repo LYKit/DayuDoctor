@@ -54,6 +54,11 @@
 
 - (IBAction)didPressedJoin:(id)sender {
     [self.view.window endEditing:YES];
+    
+    if (![DYZMemberManager isLogin]) {
+        UITabBarController *tab = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;
+        [tab setSelectedIndex:3];
+    }
 
     if (!_txtName.text.length ||
         !_txtGender.text.length ||
