@@ -31,6 +31,14 @@
     } else {
         _selectImgView.highlighted = NO;
     }
+    
+    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+        _priceLabel.hidden = YES;
+        _amountLabel.hidden = YES;
+    } else {
+        _priceLabel.hidden = NO;
+        _amountLabel.hidden = NO;
+    }
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

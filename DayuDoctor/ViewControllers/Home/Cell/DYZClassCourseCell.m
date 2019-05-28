@@ -7,6 +7,7 @@
 //
 
 #import "DYZClassCourseCell.h"
+#import "DYZMemberManager.h"
 
 
 @interface DYZClassCourseCell()
@@ -25,6 +26,14 @@
     _teacherLabel.text = [NSString stringWithFormat:@"主讲人：%@", classCourse.teacher];
     _priceLabel.text = [NSString stringWithFormat:@"￥%@", classCourse.amount];
     _buyNumLabel.text = [NSString stringWithFormat:@"已购买人数 %@", classCourse.buynum];
+    
+    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+        _priceLabel.hidden = YES;
+        _buyNumLabel.hidden = YES;
+    } else {
+        _priceLabel.hidden = NO;
+        _buyNumLabel.hidden = NO;
+    }
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

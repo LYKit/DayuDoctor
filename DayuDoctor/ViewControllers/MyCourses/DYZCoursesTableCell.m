@@ -24,6 +24,12 @@
     } else {
         _descLabel.text = @"未购买";
     }
+    
+    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+        _descLabel.hidden = YES;
+    } else {
+        _descLabel.hidden = NO;
+    }
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {

@@ -45,7 +45,6 @@
         make.left.mas_equalTo(16);
         make.size.mas_equalTo(CGSizeMake(80, 80));
     }];
-    _imgView.backgroundColor = [UIColor greenColor];
     
     
     _label = [UILabel new];
@@ -57,8 +56,6 @@
         make.left.equalTo(_imgView.mas_right).mas_offset(5);
         make.right.mas_equalTo(-16);
     }];
-    _label.text = @"整蛊打发斯蒂芬";
-    _label.backgroundColor = [UIColor yellowColor];
     
     _statusLabel = [UILabel new];
     _statusLabel.font = [UIFont systemFontOfSize:13];
@@ -68,8 +65,6 @@
         make.bottom.equalTo(_imgView);
         make.left.right.equalTo(_label);
     }];
-    _statusLabel.text = @"dasfsadfafasfasfda";
-    _statusLabel.backgroundColor = [UIColor greenColor];
     
     
     

@@ -32,6 +32,14 @@
     _lblName.text = [NSString stringWithFormat:@"主讲人：%@",_model.teacher];
     _lblMoney.text = _model.amount;
     _lblCount.text = [NSString stringWithFormat:@"已购买人数%@",_model.buynum];
+    
+    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+        _lblMoney.hidden = YES;
+        _lblCount.hidden = YES;
+    } else {
+        _lblMoney.hidden = NO;
+        _lblCount.hidden = NO;
+    }
 }
 
 
