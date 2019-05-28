@@ -87,6 +87,18 @@
                         <action selector="didPressedRegister:" destination="-1" eventType="touchUpInside" id="uJd-BR-TNK"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBW-Sc-n2C">
+                    <rect key="frame" x="160.5" y="417" width="54" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="5FA-AW-2ur"/>
+                        <constraint firstAttribute="width" constant="54" id="V9p-mH-io3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="隐私协议"/>
+                    <connections>
+                        <action selector="pirvateProDidClick:" destination="-1" eventType="touchUpInside" id="8Em-93-jgB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <gestureRecognizers/>
@@ -105,9 +117,11 @@
                 <constraint firstItem="IfJ-Sy-Kji" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LMG-Z0-Zqx"/>
                 <constraint firstItem="Hr7-yK-amw" firstAttribute="centerY" secondItem="TyL-um-Zuk" secondAttribute="centerY" id="Ldx-a3-9H5"/>
                 <constraint firstItem="4Ql-XC-axP" firstAttribute="width" secondItem="IfJ-Sy-Kji" secondAttribute="width" id="Vb3-3T-VYb"/>
+                <constraint firstItem="yBW-Sc-n2C" firstAttribute="top" secondItem="eD6-uF-Nrg" secondAttribute="bottom" constant="15" id="XPe-OI-PdT"/>
                 <constraint firstItem="4Ql-XC-axP" firstAttribute="top" secondItem="IfJ-Sy-Kji" secondAttribute="bottom" constant="15" id="j3c-Hp-bPw"/>
                 <constraint firstItem="Cst-m8-NU8" firstAttribute="width" secondItem="IfJ-Sy-Kji" secondAttribute="width" id="oFf-Fa-rsi"/>
                 <constraint firstItem="9Wu-yM-dGN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wUX-14-b5H"/>
+                <constraint firstItem="yBW-Sc-n2C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z14-3b-RbO"/>
                 <constraint firstItem="Hr7-yK-amw" firstAttribute="leading" secondItem="TyL-um-Zuk" secondAttribute="trailing" constant="5" id="zER-bF-SRj"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -125,6 +139,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="icon1" width="1592" height="504"/>
+        <image name="icon1" width="796" height="252"/>
     </resources>
 </document>

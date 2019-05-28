@@ -11,6 +11,7 @@
 #import "DYZUpdatePwdController.h"
 #import "DYZMemberManager.h"
 #import "APILogin.h"
+#import "DYZWebViewController.h"
 
 @interface DYZLoginController ()
 
@@ -64,5 +65,14 @@
     [self.navigationController pushViewController:[DYZRegisterController new] animated:YES];
 }
 
+- (IBAction)pirvateProDidClick:(UIButton *)sender {
+    NSString *url = @"http://dy.dyzy58.com.cn/";
+    DYZWebViewController *vc = [[DYZWebViewController alloc] initWithWebUrlString:url];
+    vc.fromController = self;
+    vc.showsBackgroundLabel = NO;
+    vc.showsToolBar = NO;
+    vc.navigationType = AXWebViewControllerNavigationBarItem;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

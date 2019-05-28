@@ -58,6 +58,7 @@ typedef enum : NSUInteger {
     MineOption *option = [MineOption new];
     option.name = name;
     option.pos = pos;
+    NSLog(@"---name--- %@ ---- pos = %ld", name, pos);
     return option;
 }
 @end
@@ -149,7 +150,8 @@ typedef enum : NSUInteger {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
+    MineOption *option = _optionsList[indexPath.row];
+    switch (option.pos) {
         case enumOptionCourse: {
             DYZCoursesTableController *vc = [DYZCoursesTableController new];
             [self.navigationController pushViewController:vc animated:YES];
@@ -250,18 +252,26 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"我的课程" pos:enumOptionCourse],
     [MineOption createOption:@"我的预约" pos:enumOptionAppoint],
     [MineOption createOption:@"我的资料" pos:enumOptionInfo],
-    [MineOption createOption:@"充值中心" pos:enumOptionPay],
-    [MineOption createOption:@"我的订单" pos:enumOptionOrder],
+//    [MineOption createOption:@"充值中心" pos:enumOptionPay],
+//    [MineOption createOption:@"我的订单" pos:enumOptionOrder],
     [MineOption createOption:@"我的收藏" pos:enumOptionCollection],
     [MineOption createOption:@"我的报名" pos:enumOptionApply],
-    [MineOption createOption:@"会员权益" pos:enumOptionMember],
-    [MineOption createOption:@"我的积分" pos:enumOptionScore],
+//    [MineOption createOption:@"会员权益" pos:enumOptionMember],
+//    [MineOption createOption:@"我的积分" pos:enumOptionScore],
     [MineOption createOption:@"系统消息" pos:enumOptionMessage],
     [MineOption createOption:@"分享" pos:enumOptionShare],
     [MineOption createOption:@"在线客服" pos:enumOptionService],
     [MineOption createOption:@"修改密码" pos:enumOptionChangePwd],
     [MineOption createOption:@"联系客服" pos:enumOptionPhone],
     ] mutableCopy];
+        
+        if (   ![[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+            || ![DYZMemberManager isLogin]) {
+            [self addItemOption:[MineOption createOption:@"充值中心" pos:enumOptionPay]];
+            [self addItemOption:[MineOption createOption:@"我的订单" pos:enumOptionOrder]];
+            [self addItemOption:[MineOption createOption:@"会员权益" pos:enumOptionMember]];
+            [self addItemOption:[MineOption createOption:@"我的积分" pos:enumOptionScore]];
+        }
         
         _optionsList = [[_optionsList sortedArrayUsingComparator:^NSComparisonResult(MineOption  *obj1, MineOption *obj2) {
             return obj1.pos > obj2.pos;
