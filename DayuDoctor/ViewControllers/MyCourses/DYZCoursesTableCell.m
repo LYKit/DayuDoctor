@@ -25,7 +25,8 @@
         _descLabel.text = @"未购买";
     }
     
-    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+    if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+        || ![DYZMemberManager isLogin]) {
         _descLabel.hidden = YES;
     } else {
         _descLabel.hidden = NO;

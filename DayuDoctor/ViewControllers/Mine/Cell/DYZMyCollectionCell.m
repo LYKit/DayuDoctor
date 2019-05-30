@@ -32,7 +32,8 @@
         _selectImgView.highlighted = NO;
     }
     
-    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+    if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+        || ![DYZMemberManager isLogin]) {
         _priceLabel.hidden = YES;
         _amountLabel.hidden = YES;
     } else {

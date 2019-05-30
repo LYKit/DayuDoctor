@@ -33,7 +33,8 @@
     _lblMoney.text = _model.amount;
     _lblCount.text = [NSString stringWithFormat:@"已购买人数%@",_model.buynum];
     
-    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+    if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+        || ![DYZMemberManager isLogin]) {
         _lblMoney.hidden = YES;
         _lblCount.hidden = YES;
     } else {

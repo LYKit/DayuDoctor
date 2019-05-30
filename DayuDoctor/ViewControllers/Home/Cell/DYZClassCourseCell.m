@@ -27,7 +27,8 @@
     _priceLabel.text = [NSString stringWithFormat:@"￥%@", classCourse.amount];
     _buyNumLabel.text = [NSString stringWithFormat:@"已购买人数 %@", classCourse.buynum];
     
-    if ([[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]) {
+    if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+        || ![DYZMemberManager isLogin]) {
         _priceLabel.hidden = YES;
         _buyNumLabel.hidden = YES;
     } else {
