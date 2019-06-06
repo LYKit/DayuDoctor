@@ -2532,8 +2532,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Dayu Zhongyuan Information Technology Consulting Co., Ltd. (J8577ZAN82)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J8577ZAN82;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2549,7 +2549,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tc.com.dy.DayuDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = DayuDoctorAPPStoreNew;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2562,8 +2562,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Dayu Zhongyuan Information Technology Consulting Co., Ltd. (J8577ZAN82)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = J8577ZAN82;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2579,7 +2579,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tc.com.dy.DayuDoctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = DayuDoctorAPPStoreNew;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -43,7 +43,6 @@
     
     _imgView = [UIImageView new];
     [self.contentView addSubview:_imgView];
-    _imgView.backgroundColor = [UIColor yellowColor];
     
     [_imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(10);

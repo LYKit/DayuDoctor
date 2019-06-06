@@ -37,7 +37,6 @@
     }];
     
     _qrImgView = [UIImageView new];
-    _qrImgView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:_qrImgView];
     [_qrImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(label.mas_bottom).mas_offset(20);

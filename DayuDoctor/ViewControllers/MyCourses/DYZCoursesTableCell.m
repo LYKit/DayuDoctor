@@ -19,17 +19,19 @@
 - (void)setCourse:(Course *)course {
     [_imgView setImageWithURL:[NSURL URLWithString:course.img] placeholder:nil];
     _titleLabel.text = course.title;
-    if ([course.buynum isEqualToString:@"1"]) {
-        _descLabel.text = @"已经购买";
-    } else {
-        _descLabel.text = @"未购买";
-    }
     
     if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
         || ![DYZMemberManager isLogin]) {
-        _descLabel.hidden = YES;
+        _descLabel.text = [NSString stringWithFormat:@"主讲人：%@", course.teacher];
+        _descLabel.textColor = [UIColor colorWithHexString:@"#666666"];
     } else {
-        _descLabel.hidden = NO;
+        
+        if ([course.buynum isEqualToString:@"1"]) {
+            _descLabel.text = @"已经购买";
+        } else {
+            _descLabel.text = @"未购买";
+        }
+        _descLabel.textColor = [UIColor redColor];
     }
 }
 
