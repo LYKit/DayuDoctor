@@ -11,6 +11,7 @@
 #import "DYZClassCourseCell.h"
 #import "DYZBaseNavigationController.h"
 #import "DYZApplyController.h"
+#import "DYZClassCourseDetailController.h"
 
 @interface DYZClassCourseController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -122,7 +123,15 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ClassifyCourse *model = self.models[indexPath.row];
-    [self openWebPageWithUrlString:model.url];
+    
+    if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+        || ![DYZMemberManager isLogin]) {
+        DYZClassCourseDetailController *vc = [DYZClassCourseDetailController new];
+        vc.course = model;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        [self openWebPageWithUrlString:model.url];
+    }
 }
 
 

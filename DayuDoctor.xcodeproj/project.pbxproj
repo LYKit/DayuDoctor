@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D44ABDA22AB8DFE0019CAB1 /* DYZClassCourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44ABD922AB8DFE0019CAB1 /* DYZClassCourseDetailController.m */; };
+		0D44ABE022ABA7690019CAB1 /* UIImage+DYZAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44ABDF22ABA7690019CAB1 /* UIImage+DYZAdd.m */; };
+		0D44ABE322ABBF7C0019CAB1 /* APICourseDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44ABE222ABBF7C0019CAB1 /* APICourseDetail.m */; };
+		0D44ABE622AC0F1C0019CAB1 /* DYZClassCourseDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44ABE522AC0F1C0019CAB1 /* DYZClassCourseDetailCell.m */; };
+		0D44ABE922AC158D0019CAB1 /* APICourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44ABE822AC158D0019CAB1 /* APICourseItem.m */; };
+		0D44ABEC22ACF2280019CAB1 /* APICollectCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D44ABEB22ACF2280019CAB1 /* APICollectCourse.m */; };
 		0D4BB8F8221905E7007B37F8 /* DYZMyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8F7221905E7007B37F8 /* DYZMyCollectionViewController.m */; };
 		0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8FA221939AD007B37F8 /* APIMyCollectionList.m */; };
 		0D4BB8FE22195E9F007B37F8 /* DYZMyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BB8FD22195E9F007B37F8 /* DYZMyCollectionCell.m */; };
@@ -294,6 +300,18 @@
 
 /* Begin PBXFileReference section */
 		0B4CCD65CC6307E2717DA444 /* Pods-DayuDoctor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DayuDoctor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DayuDoctor/Pods-DayuDoctor.debug.xcconfig"; sourceTree = "<group>"; };
+		0D44ABD822AB8DFE0019CAB1 /* DYZClassCourseDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZClassCourseDetailController.h; sourceTree = "<group>"; };
+		0D44ABD922AB8DFE0019CAB1 /* DYZClassCourseDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZClassCourseDetailController.m; sourceTree = "<group>"; };
+		0D44ABDE22ABA7690019CAB1 /* UIImage+DYZAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+DYZAdd.h"; sourceTree = "<group>"; };
+		0D44ABDF22ABA7690019CAB1 /* UIImage+DYZAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DYZAdd.m"; sourceTree = "<group>"; };
+		0D44ABE122ABBF7C0019CAB1 /* APICourseDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICourseDetail.h; sourceTree = "<group>"; };
+		0D44ABE222ABBF7C0019CAB1 /* APICourseDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICourseDetail.m; sourceTree = "<group>"; };
+		0D44ABE422AC0F1C0019CAB1 /* DYZClassCourseDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZClassCourseDetailCell.h; sourceTree = "<group>"; };
+		0D44ABE522AC0F1C0019CAB1 /* DYZClassCourseDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZClassCourseDetailCell.m; sourceTree = "<group>"; };
+		0D44ABE722AC158D0019CAB1 /* APICourseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICourseItem.h; sourceTree = "<group>"; };
+		0D44ABE822AC158D0019CAB1 /* APICourseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICourseItem.m; sourceTree = "<group>"; };
+		0D44ABEA22ACF2280019CAB1 /* APICollectCourse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APICollectCourse.h; sourceTree = "<group>"; };
+		0D44ABEB22ACF2280019CAB1 /* APICollectCourse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APICollectCourse.m; sourceTree = "<group>"; };
 		0D4BB8F6221905E7007B37F8 /* DYZMyCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DYZMyCollectionViewController.h; sourceTree = "<group>"; };
 		0D4BB8F7221905E7007B37F8 /* DYZMyCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYZMyCollectionViewController.m; sourceTree = "<group>"; };
 		0D4BB8F9221939AD007B37F8 /* APIMyCollectionList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIMyCollectionList.h; sourceTree = "<group>"; };
@@ -1026,6 +1044,12 @@
 				C199DC30223014E800183098 /* APISearchClear.m */,
 				C123DAD32234D2F8000E5C85 /* APIUploadImg.h */,
 				C123DAD42234D2F8000E5C85 /* APIUploadImg.m */,
+				0D44ABE122ABBF7C0019CAB1 /* APICourseDetail.h */,
+				0D44ABE222ABBF7C0019CAB1 /* APICourseDetail.m */,
+				0D44ABE722AC158D0019CAB1 /* APICourseItem.h */,
+				0D44ABE822AC158D0019CAB1 /* APICourseItem.m */,
+				0D44ABEA22ACF2280019CAB1 /* APICollectCourse.h */,
+				0D44ABEB22ACF2280019CAB1 /* APICollectCourse.m */,
 			);
 			path = EntityAPI;
 			sourceTree = "<group>";
@@ -1217,6 +1241,8 @@
 				C1E54A64222BDB700053D229 /* UIViewController+PresentInWindow.m */,
 				C1E8CEBE2222918A003CC670 /* NSString+SizeWithFont.h */,
 				C1E8CEBD2222918A003CC670 /* NSString+SizeWithFont.m */,
+				0D44ABDE22ABA7690019CAB1 /* UIImage+DYZAdd.h */,
+				0D44ABDF22ABA7690019CAB1 /* UIImage+DYZAdd.m */,
 				C1E8CEB3222273AC003CC670 /* UIView+CALayerRelation.h */,
 				C1E8CEB2222273AC003CC670 /* UIView+CALayerRelation.m */,
 				C11C645821F8752A000D0CB7 /* UIImageView+DYZWebImageView.h */,
@@ -1567,6 +1593,8 @@
 				C1C9BB662212D4100059B3B5 /* DYZFaceTeachController.xib */,
 				0DDA159422227E93005F6E76 /* DYZClassCourseController.h */,
 				0DDA159522227E93005F6E76 /* DYZClassCourseController.m */,
+				0D44ABD822AB8DFE0019CAB1 /* DYZClassCourseDetailController.h */,
+				0D44ABD922AB8DFE0019CAB1 /* DYZClassCourseDetailController.m */,
 				C1E54A3F222A6ED70053D229 /* DYZHospitalController.h */,
 				C1E54A40222A6ED70053D229 /* DYZHospitalController.m */,
 				C1E54A41222A6ED70053D229 /* DYZHospitalController.xib */,
@@ -1637,6 +1665,8 @@
 				C1E54A5C222BBE260053D229 /* DYZMessageCell.xib */,
 				C1E53D402268A71E003AEC4B /* DYZHomeBannerCell.h */,
 				C1E53D412268A71E003AEC4B /* DYZHomeBannerCell.m */,
+				0D44ABE422AC0F1C0019CAB1 /* DYZClassCourseDetailCell.h */,
+				0D44ABE522AC0F1C0019CAB1 /* DYZClassCourseDetailCell.m */,
 				C1E53D422268A71E003AEC4B /* DYZHomeBannerCell.xib */,
 			);
 			path = Cell;
@@ -2198,6 +2228,7 @@
 				C1E8CED822229B3F003CC670 /* VTContentView.m in Sources */,
 				0D4BB8FB221939AD007B37F8 /* APIMyCollectionList.m in Sources */,
 				0D53177422276B3300951DA2 /* VideoCacheController.m in Sources */,
+				0D44ABE022ABA7690019CAB1 /* UIImage+DYZAdd.m in Sources */,
 				C1C9BB8A221426AD0059B3B5 /* LYAlertView.m in Sources */,
 				C1E8CED922229B3F003CC670 /* VTMagicController.m in Sources */,
 				C1E8CEB0222111F8003CC670 /* DYZSearchCollectionCell.m in Sources */,
@@ -2227,6 +2258,7 @@
 				C199DBE4222FD11700183098 /* AXWebViewController.m in Sources */,
 				C183E63E221BDDAB00A2D380 /* DYZMeetDetailController.m in Sources */,
 				C123DAEA22351026000E5C85 /* DistrictModel.m in Sources */,
+				0D44ABE622AC0F1C0019CAB1 /* DYZClassCourseDetailCell.m in Sources */,
 				C1C9BB6C2212D4FC0059B3B5 /* DYZMineInfoController.m in Sources */,
 				C199DBCA222FBE8200183098 /* UIScrollView+GKCategory.m in Sources */,
 				C199DBC4222FBE8200183098 /* GKPopTransitionAnimation.m in Sources */,
@@ -2253,6 +2285,7 @@
 				C199DBCD222FBE8200183098 /* GKNavigationBar.m in Sources */,
 				0D7AEFDE2235404600F0468D /* PlayerViewController.m in Sources */,
 				C1F17A462254860E00E1DF80 /* ZCMURLRoute.m in Sources */,
+				0D44ABE322ABBF7C0019CAB1 /* APICourseDetail.m in Sources */,
 				C108B56622316504002AC7BD /* DYZRequestObject.m in Sources */,
 				C199DB98222EACDF00183098 /* DYZOrderInfoCell.m in Sources */,
 				C1E54A49222A8D7A0053D229 /* UIViewController+DYZWebView.m in Sources */,
@@ -2323,6 +2356,7 @@
 				C123DAE822351026000E5C85 /* CityModel.m in Sources */,
 				C1E54A69222BE0290053D229 /* APIVersion.m in Sources */,
 				0D8683D321F48C9C002E255A /* DYZCoursesTableController.m in Sources */,
+				0D44ABEC22ACF2280019CAB1 /* APICollectCourse.m in Sources */,
 				C1E54A7A222D4C040053D229 /* APIOrderList.m in Sources */,
 				0DBEA30A222BD714005E0F72 /* APIDeleteCollection.m in Sources */,
 				0D5176582225AC3600A8A1D9 /* YCDownloadItem.m in Sources */,
@@ -2349,10 +2383,12 @@
 				C123DAD52234D2F8000E5C85 /* APIUploadImg.m in Sources */,
 				0DDA158622226D5F005F6E76 /* DYZCachedListController.m in Sources */,
 				C13A5E8421EDCF0D00493EE7 /* LYErrorConfig.m in Sources */,
+				0D44ABDA22AB8DFE0019CAB1 /* DYZClassCourseDetailController.m in Sources */,
 				C1BCDB5921F7049B00CDF3EB /* DYZMainHeaderView.m in Sources */,
 				0D8683C921F47FF7002E255A /* DYZBaseViewController.m in Sources */,
 				C1E8CEDA22229B3F003CC670 /* VTMenuBar.m in Sources */,
 				0DD6131321F850DB00C97464 /* ZFNoramlViewController.m in Sources */,
+				0D44ABE922AC158D0019CAB1 /* APICourseItem.m in Sources */,
 				C1A2069D223EAB9000F24D75 /* ZHPickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2532,9 +2568,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Dayu Zhongyuan Information Technology Consulting Co., Ltd. (J8577ZAN82)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J8577ZAN82;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
@@ -2547,9 +2583,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tc.com.dy.DayuDoctor;
+				PRODUCT_BUNDLE_IDENTIFIER = tc.com.dy.DayuDoctor.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = DayuDoctorAPPStoreNew;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2562,9 +2598,9 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = DayuDoctor/DayuDoctor.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Dayu Zhongyuan Information Technology Consulting Co., Ltd. (J8577ZAN82)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = J8577ZAN82;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WG4X3PL2V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DayuDoctor/FrameworkService/AlipaySDK",
@@ -2577,9 +2613,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tc.com.dy.DayuDoctor;
+				PRODUCT_BUNDLE_IDENTIFIER = tc.com.dy.DayuDoctor.;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = DayuDoctorAPPStoreNew;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -112,7 +112,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Player/PlayerViewController.m"
@@ -128,7 +128,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Player/PlayerViewController.m"
@@ -144,7 +144,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DayuDoctor/ViewControllers/Player/PlayerViewController.m"
@@ -275,8 +275,8 @@
                   symbolName = "-[AppDelegate application:openURL:sourceApplication:annotation:]"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.954885"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.3820111"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "260"
@@ -290,8 +290,8 @@
                   symbolName = "__64-[AppDelegate application:openURL:sourceApplication:annotation:]_block_invoke"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.956553"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.383956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "260"
@@ -305,8 +305,8 @@
                   symbolName = "__destroy_helper_block_"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.958142"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.3859479"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "260"
@@ -354,8 +354,8 @@
                   symbolName = "-[AppDelegate alipayResult:]"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.965703"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.396666"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "208"
@@ -369,8 +369,8 @@
                   symbolName = "__28-[AppDelegate alipayResult:]_block_invoke_2"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.967286"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.398618"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "209"
@@ -402,8 +402,8 @@
                   symbolName = "-[AppDelegate alipayResult:]"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.971186"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.403594"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "228"
@@ -417,8 +417,8 @@
                   symbolName = "__28-[AppDelegate alipayResult:]_block_invoke_3"
                   moduleName = "DayuDoctor"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhuopin/Desktop/tea/DayuDoctor/DayuDoctor/AppDelegate.m"
-                  timestampString = "581397362.972895"
+                  urlString = "file:///Users/zhuopin/Desktop/test/DayuDoctor/DayuDoctor/AppDelegate.m"
+                  timestampString = "581771312.405442"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "230"
@@ -440,7 +440,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "-p_webView:shouldStartLoadWithRequest:navigationType:"
+            landmarkName = "-userContentController:didReceiveScriptMessage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -472,7 +472,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "-p_webView:shouldStartLoadWithRequest:navigationType:"
+            landmarkName = "-userContentController:didReceiveScriptMessage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -489,6 +489,38 @@
             startingLineNumber = "171"
             endingLineNumber = "171"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/CommonView/DYZWebViewController.m"
+            timestampString = "581758525.618937"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-userContentController:didReceiveScriptMessage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DayuDoctor/CommonView/DYZWebViewController.m"
+            timestampString = "581770623.22829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-p_webView:shouldStartLoadWithRequest:navigationType:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
