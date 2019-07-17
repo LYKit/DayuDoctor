@@ -21,6 +21,11 @@
 		<key>DZNEmptyDataSet.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>FDStackView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
 		<key>MBProgressHUD.xcscheme</key>
@@ -75,7 +80,7 @@
 		<key>WMPlayer.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>14</integer>
 		</dict>
 		<key>YYKit.xcscheme</key>
 		<dict>
