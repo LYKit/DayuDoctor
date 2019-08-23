@@ -21,6 +21,13 @@
 
 @implementation CourseDetail
 
+- (NSString *)details {
+    if (!_details.length) {
+        return @"暂无详情，我们尽快更新哦";
+    }
+    return _details;
+}
+
 @end
 
 

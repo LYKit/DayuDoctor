@@ -23,6 +23,7 @@
 @property (nonatomic, copy) NSString *details; // 0 未支付  1已支付
 @property (nonatomic, copy) NSString *follow;
 @property (nonatomic, copy) NSString *buy;
+
 @end
 
 

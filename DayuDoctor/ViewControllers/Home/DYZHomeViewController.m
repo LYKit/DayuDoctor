@@ -190,7 +190,7 @@ typedef enum : NSUInteger {
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case enumHeaderImageSection: {
-            return CGSizeMake(SCREEN_WIDTH, 150);
+            return CGSizeMake(SCREEN_WIDTH, IS_IPAD?200:150);
         } break;
         case enumNewsRollSection: {
             return CGSizeMake(SCREEN_WIDTH, 40);

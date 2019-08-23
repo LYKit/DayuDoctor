@@ -10,11 +10,11 @@
 #import "DYZMainViewController.h"
 #import "DYZMineViewController.h"
 #import "DYZClassifyController.h"
-#import "DYZApplyController.h"
 #import "DHGuidePageHUD.h"
 #import "DYZLoginController.h"
 #import "DYZBaseNavigationController.h"
-
+#import "ZFPlayer/ZFKVOController.h"
+#import "DYZClassCourseController.h"
 
 @interface DYZMainTabBarController ()
 
@@ -28,6 +28,11 @@
     [super viewDidLoad];
     [self createTabBar];
     [self customizeTabBarAppearance];
+    
+    
+    NSURL* associateBundleURL = [[NSBundle bundleForClass:[ZFKVOController class]] URLForResource:@"Frameworks" withExtension:nil];
+    
+    NSLog(@"%@",associateBundleURL);
 
     [DYZMemberManager aotuLogin];
     
@@ -62,7 +67,8 @@
     DYZClassifyController *secondViewController = [[DYZClassifyController alloc] init];
     UIViewController *secondNavigationController = [[DYZBaseNavigationController alloc]
                                                     initWithRootViewController:secondViewController];
-    DYZApplyController *thirdViewController = [[DYZApplyController alloc] init];
+    DYZClassCourseController *thirdViewController = [[DYZClassCourseController alloc] init];
+    thirdViewController.classID = @"100";
     UIViewController *thirdNavigationController = [[DYZBaseNavigationController alloc]
                                                     initWithRootViewController:thirdViewController];
     

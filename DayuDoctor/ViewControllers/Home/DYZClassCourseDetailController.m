@@ -31,12 +31,14 @@
 
 @property (nonatomic, strong) ResponseCourseItem *itemResponse;
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) UILabel *lblDetail;
 @property (nonatomic, strong) UIView *bottomBgView;
 
 
 @property (nonatomic, strong) UIButton *collecBtn;
 @property (nonatomic, strong) UIButton *buyBtn;
+@property (nonatomic, copy) NSString *detailInfo;
+@property (nonatomic, strong) NSArray *imageArray;
 
 
 @end
@@ -54,8 +56,10 @@
     _request = [APICourseDetail new];
     _request.id = _course.cid;
     [_request startPostWithSuccessBlock:^(ResponseCourseDetail *course, NSDictionary *options) {
-        NSString *html = course.detail.details;
-        [_webView loadHTMLString:html baseURL:nil];
+        
+        self.detailInfo = course.detail.details;
+        
+        [self reloadView];
         if ([course.detail.follow isEqualToString:@"true"]) {
             _collecBtn.selected = YES;
         } else {
@@ -79,6 +83,96 @@
     } failBlock:^(LYNetworkError *error, NSDictionary *options) {
         
     }];
+}
+
+- (void)reloadView {
+    NSString *detail = [self filterHTML:_detailInfo];
+    self.lblDetail.text = detail;
+    CGFloat height = [detail sizeForFont:_lblDetail.font size:CGSizeMake(CGRectGetWidth(self.view.frame)-32, CGFLOAT_MAX) mode:NSLineBreakByWordWrapping].height;
+    [self.lblDetail mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+    
+    if (!detail.length) {
+        self.imageArray = [self getImageurlFromHtml:_detailInfo];
+
+        CGFloat margin = 200;
+        CGFloat totalHeight = _imageArray.count * margin;
+        for (int i = 0; i < _imageArray.count; i++) {
+            NSString *url = _imageArray[i];
+            UIImageView *imageView = [UIImageView new];
+            [self.container addSubview:imageView];
+            [imageView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(_leftButton.mas_bottom).offset(i*margin+10);
+                make.left.right.equalTo(_container);
+                make.height.mas_equalTo(margin);
+            }];
+            
+            [imageView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                if (image) {
+                    CGFloat height = _container.width  * (image.size.height/image.size.width);
+                    [imageView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.height.mas_equalTo(height);
+                    }];
+                    [self.lblDetail mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.height.mas_equalTo(totalHeight+(height-margin));
+                    }];
+                    [_container mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.bottom.equalTo(_lblDetail.mas_bottom).mas_offset(10);
+                    }];
+                }
+            }];
+        }
+        [self.lblDetail mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(_imageArray.count * 200);
+        }];
+    }
+}
+
+- (NSArray *) getImageurlFromHtml:(NSString *) webString
+{
+    NSMutableArray * imageurlArray = [NSMutableArray arrayWithCapacity:1];
+    
+    //标签匹配
+   NSString *parten = @"<img(.*?)>";
+   NSError* error = NULL;
+   NSRegularExpression *reg = [NSRegularExpression regularExpressionWithPattern:parten options:0 error:&error];
+   NSArray* match = [reg matchesInString:webString options:0 range:NSMakeRange(0, [webString length] - 1)];
+   
+       for (NSTextCheckingResult * result in match) {
+                  
+      //过去数组中的标签
+      NSRange range = [result range];
+      NSString * subString = [webString substringWithRange:range];
+                  
+
+      //从图片中的标签中提取ImageURL
+      NSRegularExpression *subReg = [NSRegularExpression regularExpressionWithPattern:@"http://(.*?)\"" options:0 error:NULL];
+      NSArray* match = [subReg matchesInString:subString options:0 range:NSMakeRange(0, [subString length] - 1)];
+      NSTextCheckingResult * subRes = match[0];
+        NSRange subRange = [subRes range];
+        subRange.length = subRange.length -1;
+        NSString * imagekUrl = [subString substringWithRange:subRange];
+                   
+        //将提取出的图片URL添加到图片数组中
+        [imageurlArray addObject:imagekUrl];
+    }
+   
+    return imageurlArray;
+}
+
+
+-(NSString *)filterHTML:(NSString *)html
+{
+    NSScanner * scanner = [NSScanner scannerWithString:html];
+    NSString * text = nil;
+    while([scanner isAtEnd]==NO)
+    {
+        [scanner scanUpToString:@"<" intoString:nil];
+        [scanner scanUpToString:@">" intoString:&text];
+        html = [html stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>",text] withString:@""];
+    }
+    return html;
 }
 
 - (void)_initScrollViewWithContainer {
@@ -163,11 +257,11 @@
     }];
 
     
-    _webView = [UIWebView new];
-    _webView.delegate = self;
-    [_container addSubview:_webView];
+    _lblDetail = [UILabel new];
+    _lblDetail.numberOfLines = 0;
+    [_container addSubview:_lblDetail];
 
-    [_webView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_lblDetail mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_leftButton.mas_bottom).mas_offset(10);
         make.left.mas_equalTo(16);
         make.right.mas_equalTo(-16);
@@ -239,7 +333,7 @@
 
     
     [_container mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_webView.mas_bottom).mas_offset(10);
+        make.bottom.equalTo(_lblDetail.mas_bottom).mas_offset(10);
     }];
 }
 
@@ -306,18 +400,18 @@
     if (button == _leftButton) {
         _rightButton.selected = NO;
         _tableView.hidden = YES;
-        _webView.hidden = NO;
+        _lblDetail.hidden = NO;
         
         [_container mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(_scrollView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
             make.width.mas_equalTo(SCREEN_WIDTH);
-            make.bottom.equalTo(_webView.mas_bottom).mas_offset(10);
+            make.bottom.equalTo(_lblDetail.mas_bottom).mas_offset(10);
         }];
     }
     
     if (button == _rightButton) {
         _leftButton.selected = NO;
-        _webView.hidden = YES;
+        _lblDetail.hidden = YES;
         _tableView.hidden = NO;
         
         [_container mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -326,13 +420,6 @@
             make.bottom.equalTo(_tableView.mas_bottom).mas_offset(10);
         }];
     }
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    CGFloat height = webView.scrollView.contentSize.height;
-    [_webView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height);
-    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

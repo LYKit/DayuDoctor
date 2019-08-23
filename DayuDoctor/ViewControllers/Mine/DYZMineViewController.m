@@ -265,7 +265,7 @@ typedef enum : NSUInteger {
     [MineOption createOption:@"联系客服" pos:enumOptionPhone],
     ] mutableCopy];
         
-        if (   ![[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
+        if (![[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
             || ![DYZMemberManager isLogin]) {
             [self addItemOption:[MineOption createOption:@"充值中心" pos:enumOptionPay]];
             [self addItemOption:[MineOption createOption:@"我的订单" pos:enumOptionOrder]];

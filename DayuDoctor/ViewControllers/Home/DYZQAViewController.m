@@ -97,12 +97,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 150;
+        return IS_IPAD ? 200:150;
     }
     __weak typeof(self) weakSelf = self;
-    return [tableView fd_heightForCellWithIdentifier:kDYZQACell cacheByIndexPath:indexPath configuration:^(DYZQACell *cell) {
+    return ([tableView fd_heightForCellWithIdentifier:kDYZQACell cacheByIndexPath:indexPath configuration:^(DYZQACell *cell) {
         cell.model = weakSelf.models[indexPath.row];
-    }];
+    }] * (IS_IPAD ? 1.2 : 1));
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

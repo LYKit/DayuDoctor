@@ -107,7 +107,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 150;
+        return IS_IPAD?200:150;
     }
     return 100;
 }

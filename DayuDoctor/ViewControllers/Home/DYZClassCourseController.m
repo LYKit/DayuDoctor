@@ -32,22 +32,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"课程列表";
-
+    
     [self setupTableView];
     _request = [APICourseClassify new];
     _request.currPage = 1;
     _request.pageSize = 20;
-    _request.classifyId = _classID ?: _classify.classID;
+    _request.classifyId = _classify.classID ? _classify.classID :_classID;
     _request.dataSource = self.models;
     _request.noResultView = self.tableView;
     [self requestClassifyClass];
     
-    self.navigationItem.leftBarButtonItem = ({
-        UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
-        left.tintColor = [UIColor colorWithHexString:@"666666"];
-        left;
-    });
+    self.navigationItem.title = _classID ? @"报名" : @"课程列表";
+    if (self.navigationController.viewControllers.count > 1) {
+        self.navigationItem.leftBarButtonItem = ({
+            UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(backAction)];
+            left.tintColor = [UIColor colorWithHexString:@"666666"];
+            left;
+        });
+    }
 }
 
 - (void)backAction { // 定的什么鸡儿奇葩交互
@@ -123,7 +125,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ClassifyCourse *model = self.models[indexPath.row];
-    
+    NSLog(@"点击cell");
     if (   [[DYZMemberManager getMemberInfo].mobile isEqualToString:@"18610592122"]
         || ![DYZMemberManager isLogin]) {
         DYZClassCourseDetailController *vc = [DYZClassCourseDetailController new];
